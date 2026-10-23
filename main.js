@@ -13,7 +13,7 @@ const caseStudiesData = {
     role: "Product Design Intern · UI/UX, Research & Product Thinking",
     badge: "Health Tech · Physical Wellness",
     badgeClass: "pill-green",
-    overview: "A workplace wellness app designed to help employees build healthy daily habits across movement, sleep, and nutrition, with built-in health coaching and activity tracking.",
+    overview: "SupportFit, built with Supportroom, is a workplace wellness app that helps employees build real habits around movement, sleep, and nutrition. I led the end-to-end design: the user flows, the nutrition logic (BMR, BMI, calorie burn), daily activity tracking, and therapist consultation bookings.",
     pillars: [
       "Smart Watch & Device Sync (Apple Health, Google Fit, wearables)",
       "Weekly Health Stats (sleep, steps & activity trends)",
@@ -21,19 +21,19 @@ const caseStudiesData = {
       "Personalized Daily Goals (tailored calories & hydration)"
     ],
     contributions: [
-      "Collaborated with certified therapists to turn wellness advice into features people actually enjoy using every day.",
-      "Redesigned the whole flow from the first-time setup quiz to booking a 1-on-1 session.",
-      "Led the V2 redesign by fixing where people dropped off and adding gentle motivation—like streaks, badges, and company step challenges.",
+      "Worked with certified therapists to turn their wellness advice into features people would actually want to use every day.",
+      "Redesigned the full flow, from the first-time setup quiz all the way to booking a 1-on-1 session.",
+      "Led the V2 redesign by finding where people were dropping off and adding light motivation: streaks, badges, company-wide step challenges.",
       "Designed in-app messaging, voice notes, and post-session follow-up notes between coaches and users.",
-      "Built the Resource Center UI, organizing short workout videos, breathing exercises, and articles into clean, searchable categories."
+      "Built the Resource Center UI and organized workout videos, breathing exercises, and articles into categories people could actually find things in."
     ],
     researchData: [
-      "Calculated daily calorie burn based on personal weight, height, age, and activity levels.",
-      "Used standard BMR (Mifflin-St Jeor) and BMI formulas so users got tailored daily targets rather than random guesses.",
-      "Adjusted daily calorie targets automatically when a user logged a workout or walked extra steps.",
-      "Ran user tests to make logging meals and water take just 2 to 3 taps, avoiding tedious forms that cause people to quit tracking."
+      "Mapped calorie burn based on height, weight, age, and how active someone really is day to day, not how active they say they are in a form.",
+      "Used the Mifflin-St Jeor BMR formula and standard BMI calculations, so users get targets built for them instead of rough averages.",
+      "Adjusted daily calorie targets automatically whenever someone logged a workout or extra steps.",
+      "Ran user tests until logging a meal or water took just 2 to 3 taps. Long forms are usually why people stop tracking altogether."
     ],
-    impact: "Turned SupportFit into a simple, everyday wellness companion that employees can open, check, and log in seconds.",
+    impact: "These changes turned SupportFit into something people could actually use daily. Pairing solid nutrition logic with simple, friendly screens gave employees a tool they could open, check, and log in seconds.",
     gallery: [
       { src: "./SupportFit/MAIN.png", caption: "SupportFit - Main Dashboard & Activity Summary" },
       { src: "./SupportFit/13 Pro - 242 1.png", caption: "SupportFit - Daily Water Intake Tracker" },
@@ -56,7 +56,7 @@ const caseStudiesData = {
     role: "Product Design Intern · Marketplace UX & Workflows",
     badge: "Travel Marketplace · B2B / B2C",
     badgeClass: "pill-orange",
-    overview: "A web marketplace connecting travelers directly with verified local tour operators. Designed package search, custom trip inquiries, live quote chats, and an operator dashboard.",
+    overview: "TravelHoster is a web-based travel marketplace connecting travelers directly with verified tour operators. I designed the core experience across mobile and web: custom trip requests (\"Tailor Trip\"), live quote negotiations with local operators, and the admin management dashboards.",
     pillars: [
       "Browse Tour Packages (curated itineraries with upfront pricing)",
       "Customize Your Trip (Tailor Trip request builder)",
@@ -64,19 +64,19 @@ const caseStudiesData = {
       "Smart Request Routing (matches travelers with regional experts)"
     ],
     contributions: [
-      "Designed the main user journeys: searching travel packages, sending custom trip requests, and completing confirmed bookings.",
-      "Made sure every feature worked just as smoothly on a phone as on a desktop, so travelers didn't lose functionality on the go.",
-      "Designed the “Tailor Trip” intake flow and the routing rules that match traveler requests to the right local tour operators.",
-      "Built the tour operator dashboard to track incoming leads, send quotes, confirm bookings, and view monthly earnings.",
-      "Created simple admin tools so the internal operations team could easily update seasonal destination banners, featured packages, and pricing without needing a developer."
+      "Designed the core journeys: searching packages, sending custom trip requests, completing a booking.",
+      "Made sure every feature worked as well on a phone as it did on a desktop, so travelers didn't lose anything on the go.",
+      "Designed the \"Tailor Trip\" intake flow and the routing logic that matches traveler requests to the right local operators.",
+      "Built the tour operator dashboard for tracking leads, sending quotes, confirming bookings, and checking monthly earnings.",
+      "Built simple admin tools so the operations team could update seasonal banners, featured packages, and pricing themselves, without needing a developer involved."
     ],
     researchData: [
-      "Mapped out how travelers and tour operators interact—balancing fast responses for travelers with qualified leads for operators.",
-      "Set a 24-hour response window for new inquiries so travelers get fast answers and leads don't go cold.",
-      "Designed clear price breakdowns showing the base trip, taxes, optional activities, and deposit amounts upfront to build trust.",
-      "Tested the chat and quote screen with users to keep counter-offers reasonable and prevent back-and-forth friction."
+      "Mapped how travelers and operators interact, balancing fast answers for travelers against qualified leads for operators.",
+      "Set a 24-hour response window on new inquiries, so travelers get quick answers and leads don't go cold.",
+      "Designed price breakdowns that show the base trip, taxes, optional activities, and deposit upfront, so there's no guessing.",
+      "Tested the chat and quote screens with users to keep counter-offers reasonable and cut down on back and forth."
     ],
-    impact: "Gave TravelHoster a solid, practical foundation for launch—making trip planning feel like a helpful conversation with a local guide.",
+    impact: "This gave TravelHoster a solid, practical base to launch on. Instead of locking travelers into rigid packages, the platform makes trip planning feel more like talking to a local guide: more flexibility for travelers, more bookings for operators.",
     gallery: [
       { src: "./TravelHoster/MAIN.png", caption: "TravelHoster - Itinerary Search & Discover Interface" },
       { src: "./TravelHoster/Tailor trip Filled 1.png", caption: "TravelHoster - Tailor Trip Custom Inquiry Flow" },
@@ -95,7 +95,7 @@ const caseStudiesData = {
     role: "Product Design Intern · Civic Tech & System Workflows",
     badge: "Civic Tech · Local Governance",
     badgeClass: "pill-blue",
-    overview: "An app and dashboard that connects local residents directly with their ward councillors for reporting and resolving community problems.",
+    overview: "MyCouncillor connects residents directly with their ward councillors. I designed the full experience: making it easy for citizens to report problems with photos and GPS, and giving councillors a dashboard to assign repair crews and track fixes through to completion.",
     pillars: [
       "Photo & GPS Issue Reports (automatic location & camera uploads)",
       "Live Status Updates (clear 6-step progress tracker)",
@@ -103,19 +103,19 @@ const caseStudiesData = {
       "Councillor Overview Dashboard (pending tickets & problem heatmaps)"
     ],
     contributions: [
-      "Designed the resident mobile app from the ground up: simple login, camera uploads, and automatic location detection.",
+      "Designed the resident app from scratch: simple login, camera uploads, automatic location detection.",
       "Built the councillor tablet and desktop portal for reviewing complaints, dispatching workers, and sending status updates.",
-      "Added a photo verification rule: repair crews must upload a photo of the completed fix before a ticket can be closed.",
-      "Designed community features like councillor office hours, public neighbourhood notices, and ongoing local development updates.",
-      "Created an accessible design system with high-contrast text and clear icons so people of all age groups can use the app comfortably."
+      "Added a photo verification rule: repair crews have to upload a photo of the completed fix before a ticket can close.",
+      "Designed community features like councillor office hours, public notices, and ongoing local development updates.",
+      "Built an accessible design system with high-contrast text and clear icons, so people of any age could use the app comfortably."
     ],
     researchData: [
-      "Created a clear 6-step progress tracker for every ticket: Reported → Under Review → Assigned to Crew → Work in Progress → Fixed (with photo) → Citizen Confirmed.",
-      "Organized common complaints into 5 simple categories: Roads, Water, Garbage & Sanitation, Streetlights, and Parks.",
-      "Tested the app with local residents of all ages, trimming the reporting flow down to 3 quick steps: snap photo, confirm location, submit.",
-      "Grouped complaints submitted within 25 meters of each other so the ward office didn't get buried in duplicate tickets for the same pothole."
+      "Built a 6-step progress tracker for every ticket: Reported, Under Review, Assigned to Crew, Work in Progress, Fixed (with photo), Citizen Confirmed.",
+      "Organized complaints into 5 categories: Roads, Water, Garbage & Sanitation, Streetlights, and Parks.",
+      "Tested the app with local residents of all ages and trimmed the reporting flow down to 3 steps: snap a photo, confirm location, submit.",
+      "Grouped complaints within 25 meters of each other, so the ward office wasn't buried in duplicate tickets for the same pothole."
     ],
-    impact: "Replaced lost paper complaints and frantic phone calls with an open, trackable system for both residents and ward offices.",
+    impact: "This replaced lost paper complaints and endless phone calls with something open and trackable. Residents can see their issue was received and is being worked on, and the councillor's office gets a real queue of what needs fixing in the ward, not a pile of forgotten voicemails.",
     gallery: [
       { src: "./MyCouncilor/MAIN.png", caption: "MyCouncillor - Citizen Issue Reporting Home" },
       { src: "./MyCouncilor/Dashboard-1P 1.png", caption: "MyCouncillor - Councillor Administration Dashboard" },
@@ -136,7 +136,7 @@ const caseStudiesData = {
     role: "Product Design Intern · App & Portal Workflows",
     badge: "Society Management · Access Control",
     badgeClass: "pill-purple",
-    overview: "A community and visitor management app for residential apartment societies that replaces paper logbooks with fast QR check-ins.",
+    overview: "CheckIn is a community and visitor management app for residential societies. I took early wireframes and turned them into a full system: QR entry passes for guests, instant approval alerts on resident phones, outdoor tablet screens for security guards, monthly maintenance billing, and emergency SOS alerts.",
     pillars: [
       "Fast QR Entry Passes (easy WhatsApp guest and courier passes)",
       "Resident Approval Alerts (instant notifications for unexpected guests)",
@@ -144,19 +144,19 @@ const caseStudiesData = {
       "Guard Tablet & Admin Portal (outdoor guard tablet & admin dashboard)"
     ],
     contributions: [
-      "Worked across four key users: residents, security guards, facility managers, and committee admins.",
-      "Designed the full Admin and Superadmin portals for managing flats, tracking visitor logs, and clubhouse bookings.",
-      "Created fast entry passes for guests, daily domestic helpers (cooks, cleaners, drivers), and quick delivery drops.",
-      "Designed an SOS emergency button that alerts the security gate and nearby neighbours with one tap.",
-      "Created community tools for society notices, maintenance complaints, clubhouse bookings, and resident polls."
+      "Worked across all four groups to find where people got stuck day to day, at the gate and inside the society.",
+      "Took full design ownership of the Admin and Superadmin portals, building out visitor logs and clubhouse booking tools.",
+      "Designed fast entry passes for guests, daily domestic help (cooks, cleaners, drivers), and quick delivery drop-offs.",
+      "Designed an SOS button that alerts the security gate and nearby neighbours with one tap.",
+      "Built community tools for notices, maintenance complaints, clubhouse bookings, and resident polls."
     ],
     researchData: [
-      "Replaced slow paper logbooks with quick QR scanning to cut gate wait times from minutes to seconds.",
-      "Ensured the guard tablet works even if the gate Wi-Fi temporarily drops, syncing entries as soon as connection returns.",
-      "Kept resident phone numbers and personal details private from delivery personnel while preserving security logs.",
-      "Tested the interface with security guards in direct sunlight, using big buttons, high contrast, and clear confirmation chimes."
+      "Replaced slow paper logbooks with QR scanning, cutting gate wait times from minutes down to seconds.",
+      "Made sure the guard tablet keeps working even if the gate Wi-Fi drops, syncing entries once the connection is back.",
+      "Kept resident phone numbers and personal details hidden from delivery staff, while still keeping the security log intact.",
+      "Tested the interface with guards standing in direct sunlight: big buttons, high contrast, clear confirmation sounds."
     ],
-    impact: "Provided a dependable way to replace paper registers with fast digital check-ins, keeping communities secure and lines moving.",
+    impact: "Paper registers at the gate are gone. Guards move visitors through without hassle, residents know exactly who's coming up, and society managers have a proper log of everything instead of a logbook nobody can search.",
     gallery: [
       { src: "./CheckIn/MAIN.png", caption: "CheckIn - Resident Dashboard & Society Home" },
       { src: "./CheckIn/Alert 1.png", caption: "CheckIn - Admin SOS Alert Creation & Dispatch" },

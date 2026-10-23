@@ -21,17 +21,17 @@ const caseStudiesData = {
       "Personalized Daily Goals (tailored calories & hydration)"
     ],
     contributions: [
-      "Worked with certified therapists to turn their wellness advice into features people would actually want to use every day.",
-      "Redesigned the full flow, from the first-time setup quiz all the way to booking a 1-on-1 session.",
-      "Led the V2 redesign by finding where people were dropping off and adding light motivation: streaks, badges, company-wide step challenges.",
+      "Worked with developers and made the entire weight loss algorithm and logic for each person based on onboarding questions.",
+      "Designed the full flow, from the first-time setup quiz all the way to booking a 1-on-1 session.",
+      "Led the V2 redesign to further make the app useful by adding light motivation: streaks, badges, company-wide challenges, etc.",
       "Designed in-app messaging, voice notes, and post-session follow-up notes between coaches and users.",
       "Built the Resource Center UI and organized workout videos, breathing exercises, and articles into categories people could actually find things in."
     ],
     researchData: [
       "Mapped calorie burn based on height, weight, age, and how active someone really is day to day, not how active they say they are in a form.",
       "Used the Mifflin-St Jeor BMR formula and standard BMI calculations, so users get targets built for them instead of rough averages.",
-      "Adjusted daily calorie targets automatically whenever someone logged a workout or extra steps.",
-      "Ran user tests until logging a meal or water took just 2 to 3 taps. Long forms are usually why people stop tracking altogether."
+      "Adjusted targets automatically whenever someone logged a workout or extra steps.",
+      "Made push notifications and decided time of delivery to maximise logging rate."
     ],
     impact: "These changes turned SupportFit into something people could actually use daily. Pairing solid nutrition logic with simple, friendly screens gave employees a tool they could open, check, and log in seconds.",
     gallery: [
@@ -64,7 +64,7 @@ const caseStudiesData = {
       "Smart Request Routing (matches travelers with regional experts)"
     ],
     contributions: [
-      "Designed the core journeys: searching packages, sending custom trip requests, completing a booking.",
+      "Designed all the core journeys: searching packages, sending custom trip requests, completing a booking.",
       "Made sure every feature worked as well on a phone as it did on a desktop, so travelers didn't lose anything on the go.",
       "Designed the \"Tailor Trip\" intake flow and the routing logic that matches traveler requests to the right local operators.",
       "Built the tour operator dashboard for tracking leads, sending quotes, confirming bookings, and checking monthly earnings.",
@@ -72,9 +72,9 @@ const caseStudiesData = {
     ],
     researchData: [
       "Mapped how travelers and operators interact, balancing fast answers for travelers against qualified leads for operators.",
-      "Set a 24-hour response window on new inquiries, so travelers get quick answers and leads don't go cold.",
+      "Set a response window on new inquiries, so travelers get quick answers and leads don't go cold.",
       "Designed price breakdowns that show the base trip, taxes, optional activities, and deposit upfront, so there's no guessing.",
-      "Tested the chat and quote screens with users to keep counter-offers reasonable and cut down on back and forth."
+      "Made the entire package making flow intuitive for Travel Operators."
     ],
     impact: "This gave TravelHoster a solid, practical base to launch on. Instead of locking travelers into rigid packages, the platform makes trip planning feel more like talking to a local guide: more flexibility for travelers, more bookings for operators.",
     gallery: [
@@ -104,7 +104,7 @@ const caseStudiesData = {
     ],
     contributions: [
       "Designed the resident app from scratch: simple login, camera uploads, automatic location detection.",
-      "Built the councillor tablet and desktop portal for reviewing complaints, dispatching workers, and sending status updates.",
+      "Built the councillor dashboard for reviewing complaints, dispatching workers, and sending status updates.",
       "Added a photo verification rule: repair crews have to upload a photo of the completed fix before a ticket can close.",
       "Designed community features like councillor office hours, public notices, and ongoing local development updates.",
       "Built an accessible design system with high-contrast text and clear icons, so people of any age could use the app comfortably."
@@ -113,7 +113,7 @@ const caseStudiesData = {
       "Built a 6-step progress tracker for every ticket: Reported, Under Review, Assigned to Crew, Work in Progress, Fixed (with photo), Citizen Confirmed.",
       "Organized complaints into 5 categories: Roads, Water, Garbage & Sanitation, Streetlights, and Parks.",
       "Tested the app with local residents of all ages and trimmed the reporting flow down to 3 steps: snap a photo, confirm location, submit.",
-      "Grouped complaints within 25 meters of each other, so the ward office wasn't buried in duplicate tickets for the same pothole."
+      "Grouped complaints within part numbers, so the ward office wasn't buried in duplicate tickets for the same pothole."
     ],
     impact: "This replaced lost paper complaints and endless phone calls with something open and trackable. Residents can see their issue was received and is being worked on, and the councillor's office gets a real queue of what needs fixing in the ward, not a pile of forgotten voicemails.",
     gallery: [
@@ -152,9 +152,9 @@ const caseStudiesData = {
     ],
     researchData: [
       "Replaced slow paper logbooks with QR scanning, cutting gate wait times from minutes down to seconds.",
-      "Made sure the guard tablet keeps working even if the gate Wi-Fi drops, syncing entries once the connection is back.",
+      "Made sure every interface was in sync with every other maintaining parity between interfaces.",
       "Kept resident phone numbers and personal details hidden from delivery staff, while still keeping the security log intact.",
-      "Tested the interface with guards standing in direct sunlight: big buttons, high contrast, clear confirmation sounds."
+      "Pitched the product to a society visiting physically with prototype, it was well received."
     ],
     impact: "Paper registers at the gate are gone. Guards move visitors through without hassle, residents know exactly who's coming up, and society managers have a proper log of everything instead of a logbook nobody can search.",
     gallery: [

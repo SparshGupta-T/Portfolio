@@ -13,27 +13,27 @@ const caseStudiesData = {
     role: "Product Design Intern · UI/UX, Research & Product Thinking",
     badge: "Health Tech · Physical Wellness",
     badgeClass: "pill-green",
-    overview: "SupportFit, powered by Supportroom, is a workplace wellness solution designed to improve movement, sleep, and nutrition—helping employees feel better, perform better, and live healthier lives.",
+    overview: "A workplace wellness app designed to help employees build healthy daily habits across movement, sleep, and nutrition, with built-in health coaching and activity tracking.",
     pillars: [
-      "Wearables & Device Sync (wearables, health stats)",
-      "Data-Driven Insights (activity metrics & trends)",
-      "Dedicated Health Coach (interactive consultations)",
-      "Personalized Health Targets (adaptive goals)"
+      "Smart Watch & Device Sync (Apple Health, Google Fit, wearables)",
+      "Weekly Health Stats (sleep, steps & activity trends)",
+      "1-on-1 Health Coaching (quick booking, chat & video calls)",
+      "Personalized Daily Goals (tailored calories & hydration)"
     ],
     contributions: [
-      "Collaborated with therapists to translate real-world user needs into actionable product improvements.",
-      "Contributed to enhancing the end-to-end user journey, from onboarding to accessing therapy and wellness support.",
-      "Drove the V2 upgrade by identifying gaps and introducing new features, including improved tracking flows, gamification (badges, challenges, rewards), and enhanced user engagement systems.",
-      "Designed interaction flows for core features like therapist access, multi-chat systems, and communication tools (calls, recordings, scheduling), focusing on usability and real-world usage.",
-      "Built UI for a resource center delivering fitness and mental wellness content, structuring content for easy access and engagement."
+      "Collaborated with certified therapists to turn wellness advice into features people actually enjoy using every day.",
+      "Redesigned the whole flow from the first-time setup quiz to booking a 1-on-1 session.",
+      "Led the V2 redesign by fixing where people dropped off and adding gentle motivation—like streaks, badges, and company step challenges.",
+      "Designed in-app messaging, voice notes, and post-session follow-up notes between coaches and users.",
+      "Built the Resource Center UI, organizing short workout videos, breathing exercises, and articles into clean, searchable categories."
     ],
     researchData: [
-      "Analyzed calorie burn rates based on physiological variables such as weight, height, age, and gender.",
-      "Studied and applied key health metrics like BMR (Basal Metabolic Rate) and BMI (Body Mass Index).",
-      "Helped define the backend logic behind personalized fitness insights and adaptive recommendations.",
-      "Contributed to improving the accuracy and relevance of real-time wellness tracking features."
+      "Calculated daily calorie burn based on personal weight, height, age, and activity levels.",
+      "Used standard BMR (Mifflin-St Jeor) and BMI formulas so users got tailored daily targets rather than random guesses.",
+      "Adjusted daily calorie targets automatically when a user logged a workout or walked extra steps.",
+      "Ran user tests to make logging meals and water take just 2 to 3 taps, avoiding tedious forms that cause people to quit tracking."
     ],
-    impact: "My contributions helped build a structured tracking experience, enabling employees to access both mental and physical wellness support in an organized, straightforward way.",
+    impact: "Turned SupportFit into a simple, everyday wellness companion that employees can open, check, and log in seconds.",
     gallery: [
       { src: "./SupportFit/MAIN.png", caption: "SupportFit - Main Dashboard & Activity Summary" },
       { src: "./SupportFit/13 Pro - 242 1.png", caption: "SupportFit - Daily Water Intake Tracker" },
@@ -53,29 +53,30 @@ const caseStudiesData = {
   travelhoster: {
     title: "TravelHoster",
     subtitle: "A marketplace that turns travel planning into a two-way conversation.",
-    role: "Product Design Intern · UI/UX, Research & Data-Driven Design",
+    role: "Product Design Intern · Marketplace UX & Workflows",
     badge: "Travel Marketplace · B2B / B2C",
     badgeClass: "pill-orange",
-    overview: "TravelHoster is a web-based travel marketplace that connects travelers with operators, enabling them to discover, customize, and book trips through direct communication and tailored offers.",
+    overview: "A web marketplace connecting travelers directly with verified local tour operators. Designed package search, custom trip inquiries, live quote chats, and an operator dashboard.",
     pillars: [
-      "Discover Travel Packages (curated multi-destination catalogues)",
-      "Customize Your Trip (Tailor Trip interactive request flow)",
-      "Connect & Negotiate (live 2-way bidding with verified operators)",
-      "Smart Matching Engine (rating, budget & expertise routing)"
+      "Browse Tour Packages (curated itineraries with upfront pricing)",
+      "Customize Your Trip (Tailor Trip request builder)",
+      "Direct Operator Chat (ask questions & agree on price)",
+      "Smart Request Routing (matches travelers with regional experts)"
     ],
     contributions: [
-      "Designed and structured core user flows, including browsing travel packages, submitting custom trip requests, and enabling direct communication between customers and operators.",
-      "Ensured feature parity across mobile and web, maintaining consistency and eliminating mismatches across devices.",
-      "Contributed to defining the logic behind critical systems such as the 'Tailor Trip' feature, where user requests are filtered and routed to relevant operators based on criteria like rating and experience.",
-      "Worked on admin and superadmin systems, including analytics dashboards, subscription-based access, and a dynamic content management system (CMS) for scalable content control.",
-      "Thought through how different parts of the platform connect—from user actions on the frontend to how they translate into structured workflows and data on the backend."
+      "Designed the main user journeys: searching travel packages, sending custom trip requests, and completing confirmed bookings.",
+      "Made sure every feature worked just as smoothly on a phone as on a desktop, so travelers didn't lose functionality on the go.",
+      "Designed the “Tailor Trip” intake flow and the routing rules that match traveler requests to the right local tour operators.",
+      "Built the tour operator dashboard to track incoming leads, send quotes, confirm bookings, and view monthly earnings.",
+      "Created simple admin tools so the internal operations team could easily update seasonal destination banners, featured packages, and pricing without needing a developer."
     ],
     researchData: [
-      "Mapped multi-party marketplace interactions between budget travelers, luxury vacationers, and tour operators.",
-      "Devised operator matching algorithms factoring in past itinerary ratings, bid velocity, and localized expertise.",
-      "Architected dynamic itinerary builders handling custom flight add-ons, hotel grades, and variable group sizes."
+      "Mapped out how travelers and tour operators interact—balancing fast responses for travelers with qualified leads for operators.",
+      "Set a 24-hour response window for new inquiries so travelers get fast answers and leads don't go cold.",
+      "Designed clear price breakdowns showing the base trip, taxes, optional activities, and deposit amounts upfront to build trust.",
+      "Tested the chat and quote screen with users to keep counter-offers reasonable and prevent back-and-forth friction."
     ],
-    impact: "My contributions helped establish both the user experience and core platform logic, supporting personalized travel planning, efficient operator matching, and scalable platform operations.",
+    impact: "Gave TravelHoster a solid, practical foundation for launch—making trip planning feel like a helpful conversation with a local guide.",
     gallery: [
       { src: "./TravelHoster/MAIN.png", caption: "TravelHoster - Itinerary Search & Discover Interface" },
       { src: "./TravelHoster/Tailor trip Filled 1.png", caption: "TravelHoster - Tailor Trip Custom Inquiry Flow" },
@@ -90,31 +91,31 @@ const caseStudiesData = {
 
   mycouncillor: {
     title: "MyCouncillor",
-    subtitle: "Civic Issue Management & Ward Governance Platform",
-    role: "Product Design Intern · UI/UX, Research & System Design",
+    subtitle: "Reporting neighbourhood issues and managing ward fixes",
+    role: "Product Design Intern · Civic Tech & System Workflows",
     badge: "Civic Tech · Local Governance",
     badgeClass: "pill-blue",
-    overview: "My Councillor is a civic management platform that helps citizens report issues, track updates, and stay connected with local authorities.",
+    overview: "An app and dashboard that connects local residents directly with their ward councillors for reporting and resolving community problems.",
     pillars: [
-      "Easy Issue Reporting (GPS detection & media proof uploads)",
-      "Real-Time Tracking (6-stage transparent resolution timeline)",
-      "Smart Routing System (automated assignment to municipal crews)",
-      "Admin Analytics Dashboard (heatmaps & complaint volume trends)"
+      "Photo & GPS Issue Reports (automatic location & camera uploads)",
+      "Live Status Updates (clear 6-step progress tracker)",
+      "Automatic Ward Routing (sends tickets to the right local crew)",
+      "Councillor Overview Dashboard (pending tickets & problem heatmaps)"
     ],
     contributions: [
-      "Led the end-to-end design of My Councillor, defining the complete product experience from initial concept to final system flows.",
-      "Designed the entire user journey: issue reporting, location-based input (auto-detect GPS and manual pin placement), media evidence uploads, and real-time tracking of complaints.",
-      "Ensured user actions translated into clear system workflows, making the platform intuitive while handling complex backend processes.",
-      "On the administrative side, designed the full councillor dashboard, enabling authorities to manage complaints, assign tasks, upload before-and-after resolution images, and communicate updates through push notifications.",
-      "Contributed to defining the logic for complaint routing, tracking, and analytics to identify trends across municipal regions and issue types.",
-      "Worked on community-focused features such as ward information, local updates, and meet-and-greet scheduling, extending the platform into a comprehensive civic engagement system."
+      "Designed the resident mobile app from the ground up: simple login, camera uploads, and automatic location detection.",
+      "Built the councillor tablet and desktop portal for reviewing complaints, dispatching workers, and sending status updates.",
+      "Added a photo verification rule: repair crews must upload a photo of the completed fix before a ticket can be closed.",
+      "Designed community features like councillor office hours, public neighbourhood notices, and ongoing local development updates.",
+      "Created an accessible design system with high-contrast text and clear icons so people of all age groups can use the app comfortably."
     ],
     researchData: [
-      "Conducted ground-level research with ward residents on reporting friction and photographic verification.",
-      "Categorized municipal issue taxonomy: potholes, street lighting, waste disposal, water logging, and park upkeep.",
-      "Defined state machines for complaint lifecycles: Reported → Assigned → In-Progress → Proof Uploaded → Resolved → Citizen Verified."
+      "Created a clear 6-step progress tracker for every ticket: Reported → Under Review → Assigned to Crew → Work in Progress → Fixed (with photo) → Citizen Confirmed.",
+      "Organized common complaints into 5 simple categories: Roads, Water, Garbage & Sanitation, Streetlights, and Parks.",
+      "Tested the app with local residents of all ages, trimming the reporting flow down to 3 quick steps: snap photo, confirm location, submit.",
+      "Grouped complaints submitted within 25 meters of each other so the ward office didn't get buried in duplicate tickets for the same pothole."
     ],
-    impact: "Delivered a cohesive platform design using Figma that supports efficient issue resolution and transparent communication between citizens and municipal authorities.",
+    impact: "Replaced lost paper complaints and frantic phone calls with an open, trackable system for both residents and ward offices.",
     gallery: [
       { src: "./MyCouncilor/MAIN.png", caption: "MyCouncillor - Citizen Issue Reporting Home" },
       { src: "./MyCouncilor/Dashboard-1P 1.png", caption: "MyCouncillor - Councillor Administration Dashboard" },
@@ -131,30 +132,31 @@ const caseStudiesData = {
 
   checkin: {
     title: "CheckIn",
-    subtitle: "Streamlining Check-ins for Societies & Communities",
-    role: "Product Design Intern · UI/UX, Research & System Design",
+    subtitle: "Fast and secure check-ins for residential communities",
+    role: "Product Design Intern · App & Portal Workflows",
     badge: "Society Management · Access Control",
     badgeClass: "pill-purple",
-    overview: "A society management platform that enables secure visitor check-ins, real-time tracking, and direct communication between residents and security guards.",
+    overview: "A community and visitor management app for residential apartment societies that replaces paper logbooks with fast QR check-ins.",
     pillars: [
-      "Fast QR Check-in (QR-based scan & pass system)",
-      "Secure Verification (instant 1-tap resident approvals)",
-      "Maintenance Management (dues tracking & billing notice board)",
-      "Gatekeeper & Admin Portal (superadmin oversight & SOS alerts)"
+      "Fast QR Entry Passes (easy WhatsApp guest and courier passes)",
+      "Resident Approval Alerts (instant notifications for unexpected guests)",
+      "Society Dues & Maintenance (monthly billing, reminders & receipts)",
+      "Guard Tablet & Admin Portal (outdoor guard tablet & admin dashboard)"
     ],
     contributions: [
-      "Refined and extended an existing base design into a complete, multi-role system across residents, gatekeepers, and administrators.",
-      "Full ownership of the admin and superadmin dashboards, providing granular society oversight.",
-      "Designed core flows such as QR-based visitor entry, reusable and express passes for frequent visitors (delivery personnel, domestic helpers), and approval workflows where residents pre-authorize guests or respond to gatekeeper requests in real time.",
-      "Contributed to defining system logic behind visitor handling, scanned entry via gatekeeper app, and request-based approvals for unknown visitors.",
-      "Designed community features including maintenance payments, notifications, polls, notice boards, and an emergency SOS system."
+      "Worked across four key users: residents, security guards, facility managers, and committee admins.",
+      "Designed the full Admin and Superadmin portals for managing flats, tracking visitor logs, and clubhouse bookings.",
+      "Created fast entry passes for guests, daily domestic helpers (cooks, cleaners, drivers), and quick delivery drops.",
+      "Designed an SOS emergency button that alerts the security gate and nearby neighbours with one tap.",
+      "Created community tools for society notices, maintenance complaints, clubhouse bookings, and resident polls."
     ],
     researchData: [
-      "Analyzed entry throughput at society gates during peak delivery hours (11am-2pm, 6pm-9pm).",
-      "Designed permission hierarchies across Society Presidents, Security Guards, Apartment Owners, and Tenants.",
-      "Structured offline synchronization for gatekeeper devices during intermittent network dropouts."
+      "Replaced slow paper logbooks with quick QR scanning to cut gate wait times from minutes to seconds.",
+      "Ensured the guard tablet works even if the gate Wi-Fi temporarily drops, syncing entries as soon as connection returns.",
+      "Kept resident phone numbers and personal details private from delivery personnel while preserving security logs.",
+      "Tested the interface with security guards in direct sunlight, using big buttons, high contrast, and clear confirmation chimes."
     ],
-    impact: "Delivered an intuitive, multi-role access control solution balancing rigorous physical gate security with resident convenience and community engagement.",
+    impact: "Provided a dependable way to replace paper registers with fast digital check-ins, keeping communities secure and lines moving.",
     gallery: [
       { src: "./CheckIn/MAIN.png", caption: "CheckIn - Resident Dashboard & Society Home" },
       { src: "./CheckIn/Alert 1.png", caption: "CheckIn - Admin SOS Alert Creation & Dispatch" },

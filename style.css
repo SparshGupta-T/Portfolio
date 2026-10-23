@@ -98,6 +98,8 @@ html {
   text-size-adjust: 100%;
   overflow-x: hidden;
   width: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.22) transparent;
 }
 
 body {
@@ -112,10 +114,53 @@ body {
   min-height: 100dvh;
 }
 
+/* Firefox & Cross-Browser Focus and Form Controls Reset */
 button, input, textarea, select {
   -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   font-family: inherit;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* Text Selection Styling (WebKit & Gecko) */
+::selection {
+  background: #EEF2FF;
+  color: #3730A3;
+}
+
+::-moz-selection {
+  background: #EEF2FF;
+  color: #3730A3;
+}
+
+/* Universal No-Scrollbar Utility (Works across Firefox, Chrome, Safari, Edge) */
+.samples-grid-scroll,
+.case-study-switcher-bar,
+.nav-pill-bar,
+.showcase-switch-pill,
+.study-switch-pills,
+.mobile-bottom-nav,
+.no-scrollbar {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.samples-grid-scroll::-webkit-scrollbar,
+.case-study-switcher-bar::-webkit-scrollbar,
+.nav-pill-bar::-webkit-scrollbar,
+.showcase-switch-pill::-webkit-scrollbar,
+.study-switch-pills::-webkit-scrollbar,
+.mobile-bottom-nav::-webkit-scrollbar,
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 
 /* ==========================================================================
@@ -1557,8 +1602,8 @@ section[id] {
 
 .executive-highlight-card {
   background: linear-gradient(180deg, #FFFFFF 0%, #FAFAFA 100%);
-  border: 1px solid rgba(217, 119, 6, 0.22);
-  box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(217, 119, 6, 0.06);
+  border: 1px solid var(--border-card);
+  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.06);
 }
 
 /* Senior Recommender Header (ABOVE quote) */

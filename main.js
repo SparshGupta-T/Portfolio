@@ -15,7 +15,7 @@ const caseStudiesData = {
     badgeClass: "pill-green",
     overview: "SupportFit, powered by Supportroom, is a workplace wellness solution designed to improve movement, sleep, and nutrition—helping employees feel better, perform better, and live healthier lives.",
     pillars: [
-      "Seamless Device Integration (wearables, health stats)",
+      "Wearables & Device Sync (wearables, health stats)",
       "Data-Driven Insights (activity metrics & trends)",
       "Dedicated Health Coach (interactive consultations)",
       "Personalized Health Targets (adaptive goals)"
@@ -33,7 +33,7 @@ const caseStudiesData = {
       "Helped define the backend logic behind personalized fitness insights and adaptive recommendations.",
       "Contributed to improving the accuracy and relevance of real-time wellness tracking features."
     ],
-    impact: "My contributions helped move the platform toward a more insight-driven and user-focused experience, enabling employees to access both mental and physical wellness support in a seamless and meaningful way.",
+    impact: "My contributions helped build a structured tracking experience, enabling employees to access both mental and physical wellness support in an organized, straightforward way.",
     gallery: [
       { src: "./SupportFit/MAIN.png", caption: "SupportFit - Main Dashboard & Activity Summary" },
       { src: "./SupportFit/13 Pro - 242 1.png", caption: "SupportFit - Daily Water Intake Tracker" },
@@ -135,9 +135,9 @@ const caseStudiesData = {
     role: "Product Design Intern · UI/UX, Research & System Design",
     badge: "Society Management · Access Control",
     badgeClass: "pill-purple",
-    overview: "A society management platform that enables secure visitor check-ins, real-time tracking, and seamless communication between residents and security guards.",
+    overview: "A society management platform that enables secure visitor check-ins, real-time tracking, and direct communication between residents and security guards.",
     pillars: [
-      "Seamless Check-in (QR-based scan & pass system)",
+      "Fast QR Check-in (QR-based scan & pass system)",
       "Secure Verification (instant 1-tap resident approvals)",
       "Maintenance Management (dues tracking & billing notice board)",
       "Gatekeeper & Admin Portal (superadmin oversight & SOS alerts)"

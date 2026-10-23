@@ -31,7 +31,8 @@
 
   <!-- Floating Google Labs Style Navigation Pill -->
   <div class="header-container">
-    <nav class="nav-pill-bar" id="navbar">
+    <nav class="nav-pill-bar" id="navbar" aria-label="Main Navigation">
+      <!-- Desktop Navigation Menu (hidden on mobile) -->
       <ul class="nav-menu-list">
         <li><a href="#projects" class="nav-item-link">Work</a></li>
         <li><a href="#experience" class="nav-item-link">Experience</a></li>
@@ -43,16 +44,116 @@
         <li><a href="#contact" class="nav-item-link">Contact</a></li>
       </ul>
 
+      <!-- Mobile Hamburger Button (visible on mobile only) -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Navigation Menu" aria-expanded="false" aria-controls="mobileNavDrawer">
+        <span class="hamburger-icon" aria-hidden="true">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+        </span>
+        <span class="mobile-menu-label">Menu</span>
+      </button>
+
+      <!-- CTA Buttons: Resume & Contact (Kept visible on mobile & desktop) -->
       <div class="nav-cta-group">
-        <a href="./Spash Resume GET.pdf" target="_blank" class="btn-pill btn-secondary" style="padding: 7px 15px; font-size: 0.82rem;">
+        <a href="./Spash Resume GET.pdf" target="_blank" class="btn-pill btn-secondary nav-cta-resume" aria-label="Resume PDF">
           <span>Resume</span>
-          <span>↗</span>
+          <span class="cta-arrow">↗</span>
         </a>
-        <a href="#contact" class="btn-pill btn-primary" style="padding: 7px 15px; font-size: 0.82rem;">
-          <span>Connect</span>
+        <a href="#contact" class="btn-pill btn-primary nav-cta-contact" aria-label="Contact Section">
+          <span>Contact</span>
         </a>
       </div>
     </nav>
+
+    <!-- Mobile Navigation Backdrop Scrim -->
+    <div class="mobile-nav-backdrop" id="mobileNavBackdrop" aria-hidden="true"></div>
+
+    <!-- Mobile Navigation Drawer / Menu Panel -->
+    <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true" role="dialog" aria-label="Navigation Menu">
+      <div class="mobile-nav-header">
+        <div class="mobile-nav-title-group">
+          <span class="mobile-nav-badge">Sections</span>
+        </div>
+        <button class="mobile-nav-close-btn" id="mobileNavCloseBtn" aria-label="Close menu">✕</button>
+      </div>
+
+      <div class="mobile-nav-sections">
+        <a href="#projects" class="mobile-nav-link" data-section="projects">
+          <span class="mobile-nav-num">01</span>
+          <div class="mobile-nav-text">
+            <span class="mobile-nav-heading">Work</span>
+            <span class="mobile-nav-sub">Selected case studies & systems</span>
+          </div>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+        <a href="#experience" class="mobile-nav-link" data-section="experience">
+          <span class="mobile-nav-num">02</span>
+          <div class="mobile-nav-text">
+            <span class="mobile-nav-heading">Experience</span>
+            <span class="mobile-nav-sub">Johnson Controls & IEEE</span>
+          </div>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+        <a href="#extras" class="mobile-nav-link" data-section="extras">
+          <span class="mobile-nav-num">03</span>
+          <div class="mobile-nav-text">
+            <span class="mobile-nav-heading">Extras</span>
+            <span class="mobile-nav-sub">Patents, pitch summits & talks</span>
+          </div>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+        <a href="#skills" class="mobile-nav-link" data-section="skills">
+          <span class="mobile-nav-num">04</span>
+          <div class="mobile-nav-text">
+            <span class="mobile-nav-heading">Skills</span>
+            <span class="mobile-nav-sub">Hardware, design systems & code</span>
+          </div>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+        <a href="#recommendations" class="mobile-nav-link" data-section="recommendations">
+          <span class="mobile-nav-num">05</span>
+          <div class="mobile-nav-text">
+            <span class="mobile-nav-heading">Recommendation</span>
+            <span class="mobile-nav-sub">Endorsements from mentors & peers</span>
+          </div>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+        <a href="#about" class="mobile-nav-link" data-section="about">
+          <span class="mobile-nav-num">06</span>
+          <div class="mobile-nav-text">
+            <span class="mobile-nav-heading">About</span>
+            <span class="mobile-nav-sub">Instrumentation & system philosophy</span>
+          </div>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+        <a href="#archive" class="mobile-nav-link" data-section="archive">
+          <span class="mobile-nav-num">07</span>
+          <div class="mobile-nav-text">
+            <span class="mobile-nav-heading">Archive</span>
+            <span class="mobile-nav-sub">Exploratory labs & past projects</span>
+          </div>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+        <a href="#contact" class="mobile-nav-link" data-section="contact">
+          <span class="mobile-nav-num">08</span>
+          <div class="mobile-nav-text">
+            <span class="mobile-nav-heading">Contact</span>
+            <span class="mobile-nav-sub">Send a message or connect</span>
+          </div>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+      </div>
+
+      <div class="mobile-nav-footer">
+        <a href="./Spash Resume GET.pdf" target="_blank" class="mobile-nav-footer-btn secondary">
+          <span>Resume PDF ↗</span>
+        </a>
+        <a href="mailto:work.sparshgupta@gmail.com" class="mobile-nav-footer-btn primary">
+          <span>Email Sparsh</span>
+        </a>
+      </div>
+    </div>
   </div>
 
   <div class="site-wrapper">

@@ -846,7 +846,7 @@ window.handleFormSubmit = function() {
 // ==========================================
 function initScrollSpy() {
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-item-link');
+  const navLinks = document.querySelectorAll('.nav-item-link, .mobile-nav-link');
 
   if (!navLinks.length || !sections.length) return;
 
@@ -867,13 +867,123 @@ function initScrollSpy() {
 
         navLinks.forEach(link => {
           link.classList.remove('active');
-          if (link.getAttribute('href') === `#${currentId}`) {
+          const href = link.getAttribute('href') || '';
+          if (href === `#${currentId}` || href.endsWith(`#${currentId}`)) {
             link.classList.add('active');
           }
         });
         ticking = false;
       });
       ticking = true;
+    }
+  }, { passive: true });
+}
+
+// ==========================================
+// 9b. Mobile Navigation Drawer Toggle & Interactions
+// ==========================================
+function initMobileNav() {
+  const toggleBtn = document.getElementById('mobileMenuBtn');
+  const drawer = document.getElementById('mobileNavDrawer');
+  const backdrop = document.getElementById('mobileNavBackdrop');
+  const closeBtn = document.getElementById('mobileNavCloseBtn');
+  const links = document.querySelectorAll('.mobile-nav-link');
+
+  if (!toggleBtn || !drawer) return;
+
+  function openMenu() {
+    toggleBtn.classList.add('is-active');
+    toggleBtn.setAttribute('aria-expanded', 'true');
+    drawer.classList.add('is-open');
+    drawer.setAttribute('aria-hidden', 'false');
+    if (backdrop) {
+      backdrop.classList.add('is-open');
+      backdrop.setAttribute('aria-hidden', 'false');
+    }
+    document.body.classList.add('mobile-menu-open');
+  }
+
+  function closeMenu() {
+    toggleBtn.classList.remove('is-active');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    drawer.classList.remove('is-open');
+    drawer.setAttribute('aria-hidden', 'true');
+    if (backdrop) {
+      backdrop.classList.remove('is-open');
+      backdrop.setAttribute('aria-hidden', 'true');
+    }
+    document.body.classList.remove('mobile-menu-open');
+  }
+
+  function toggleMenu() {
+    if (drawer.classList.contains('is-open')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  }
+
+  toggleBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    toggleMenu();
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeMenu();
+    });
+  }
+
+  if (backdrop) {
+    backdrop.addEventListener('click', () => {
+      closeMenu();
+    });
+  }
+
+  // Handle mobile navigation link clicks
+  links.forEach(link => {
+    link.addEventListener('click', (e) => {
+      links.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+      const href = link.getAttribute('href');
+      // If it's an on-page anchor link on the current page
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        closeMenu();
+        const targetId = href.substring(1);
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) {
+          setTimeout(() => {
+            const isMobile = window.innerWidth <= 860;
+            const headerOffset = isMobile ? 20 : 64;
+            const elementPosition = targetEl.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }, 100);
+        }
+      } else {
+        // Link to other page or PDF
+        closeMenu();
+      }
+    });
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer.classList.contains('is-open')) {
+      closeMenu();
+    }
+  });
+
+  // Auto-close if screen is resized back to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 860 && drawer.classList.contains('is-open')) {
+      closeMenu();
     }
   }, { passive: true });
 }
@@ -1066,6 +1176,20 @@ function initCustomCursor() {
 }
 
 // ==========================================
+// 9c. Card Color Inversions on Tap / Click (Pillars & About Card)
+// ==========================================
+function initCardInversions() {
+  const cards = document.querySelectorAll('.pillar-deep-card, .about-card-lab');
+  cards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      // Don't toggle if user clicked an interactive anchor, button or input inside
+      if (e.target.closest('a, button, input, textarea, select')) return;
+      card.classList.toggle('is-inverted');
+    });
+  });
+}
+
+// ==========================================
 // 12. Initialization on DOM Loaded / Ready
 // ==========================================
 function initApp() {
@@ -1075,6 +1199,8 @@ function initApp() {
   initLightbox();
   initCopyEmail();
   initScrollSpy();
+  initMobileNav();
+  initCardInversions();
   initCaseStudyStage();
   initCalmMouseFocus();
   initCustomCursor();

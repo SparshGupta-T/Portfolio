@@ -29,16 +29,18 @@
   </div>
   <div class="subtle-dot-matrix" aria-hidden="true"></div>
 
-  <!-- Floating Google Labs Style Navigation Pill -->
-  <div class="header-container">
-    <nav class="nav-pill-bar">
-      <a href="./index.html#projects" class="brand-link" aria-label="Back to All Work">
-        <span class="brand-spark">←</span>
-        <span class="brand-text-full">Back to All Work</span>
-        <span class="brand-text-short">Work</span>
-      </a>
+  <!-- Floating Google Labs Style Navigation Header -->
+  <div class="header-container case-study-header-container">
+    <!-- Standalone Back to Work Pill Button (Separated from main nav menu items) -->
+    <a href="./index.html#projects" class="case-study-back-pill" aria-label="Back to All Work">
+      <span class="back-pill-arrow">←</span>
+      <span class="back-pill-label-full">Back to All Work</span>
+      <span class="back-pill-label-short">Work</span>
+    </a>
 
-      <!-- Case Study Quick Switcher -->
+    <!-- Main Navigation Bar: Quick Switcher (Desktop) / Hamburger Menu + Resume + Contact (Mobile) -->
+    <nav class="nav-pill-bar" aria-label="Case Study Navigation">
+      <!-- Case Study Quick Switcher (Desktop) -->
       <div class="study-switch-pills">
         <a href="./supportfit.html" class="study-switch-link">SupportFit</a>
         <a href="./travelhoster.html" class="study-switch-link">TravelHoster</a>
@@ -46,16 +48,127 @@
         <a href="./checkin.html" class="study-switch-link active">CheckIn</a>
       </div>
 
+      <!-- Mobile Hamburger Button (visible on mobile only) -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Navigation Menu" aria-expanded="false" aria-controls="mobileNavDrawer">
+        <span class="hamburger-icon" aria-hidden="true">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+        </span>
+        <span class="mobile-menu-label">Menu</span>
+      </button>
+
+      <!-- CTA Buttons: Resume & Contact (Kept visible on mobile & desktop) -->
       <div class="nav-cta-group">
-        <a href="./Spash Resume GET.pdf" target="_blank" class="btn-pill btn-secondary" style="padding: 7px 15px; font-size: 0.82rem;">
+        <a href="./Spash Resume GET.pdf" target="_blank" class="btn-pill btn-secondary nav-cta-resume" aria-label="Resume PDF">
           <span>Resume</span>
-          <span>↗</span>
+          <span class="cta-arrow">↗</span>
         </a>
-        <a href="./index.html#contact" class="btn-pill btn-primary" style="padding: 7px 15px; font-size: 0.82rem;">
-          <span>Contact Me</span>
+        <a href="./index.html#contact" class="btn-pill btn-primary nav-cta-contact" aria-label="Contact Section">
+          <span>Contact</span>
         </a>
       </div>
     </nav>
+
+    <!-- Mobile Navigation Backdrop Scrim -->
+    <div class="mobile-nav-backdrop" id="mobileNavBackdrop" aria-hidden="true"></div>
+
+    <!-- Mobile Navigation Drawer / Menu Panel -->
+    <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true" role="dialog" aria-label="Navigation Menu">
+      <div class="mobile-nav-header">
+        <div class="mobile-nav-title-group">
+          <span class="mobile-nav-badge">Case Studies</span>
+          <span class="mobile-nav-title">All Projects</span>
+        </div>
+        <button class="mobile-nav-close-btn" id="mobileNavCloseBtn" aria-label="Close menu">✕</button>
+      </div>
+
+      <div class="mobile-nav-sections">
+        <a href="./supportfit.html" class="mobile-nav-link">
+          <span class="mobile-nav-num">01</span>
+          <div class="mobile-nav-text">
+            <span class="mobile-nav-heading">SupportFit</span>
+            <span class="mobile-nav-sub">Health Tech · Physical Wellness</span>
+          </div>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+        <a href="./travelhoster.html" class="mobile-nav-link">
+          <span class="mobile-nav-num">02</span>
+          <div class="mobile-nav-text">
+            <span class="mobile-nav-heading">TravelHoster</span>
+            <span class="mobile-nav-sub">Travel Marketplace · B2B / B2C</span>
+          </div>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+        <a href="./mycouncillor.html" class="mobile-nav-link">
+          <span class="mobile-nav-num">03</span>
+          <div class="mobile-nav-text">
+            <span class="mobile-nav-heading">MyCouncillor</span>
+            <span class="mobile-nav-sub">Civic Tech · Local Governance</span>
+          </div>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+        <a href="./checkin.html" class="mobile-nav-link active">
+          <span class="mobile-nav-num">04</span>
+          <div class="mobile-nav-text">
+            <span class="mobile-nav-heading">CheckIn (Current)</span>
+            <span class="mobile-nav-sub">Security & Visitor Management</span>
+          </div>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+      </div>
+
+      <div class="mobile-nav-header" style="margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border-subtle);">
+        <div class="mobile-nav-title-group">
+          <span class="mobile-nav-badge">Portfolio</span>
+          <span class="mobile-nav-title">Sections</span>
+        </div>
+      </div>
+
+      <div class="mobile-nav-sections">
+        <a href="./index.html#projects" class="mobile-nav-link">
+          <span class="mobile-nav-num">05</span>
+          <div class="mobile-nav-text">
+            <span class="mobile-nav-heading">Work</span>
+            <span class="mobile-nav-sub">All featured systems & work</span>
+          </div>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+        <a href="./index.html#experience" class="mobile-nav-link">
+          <span class="mobile-nav-num">06</span>
+          <div class="mobile-nav-text">
+            <span class="mobile-nav-heading">Experience</span>
+            <span class="mobile-nav-sub">Johnson Controls & IEEE</span>
+          </div>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+        <a href="./index.html#about" class="mobile-nav-link">
+          <span class="mobile-nav-num">07</span>
+          <div class="mobile-nav-text">
+            <span class="mobile-nav-heading">About</span>
+            <span class="mobile-nav-sub">Background & story</span>
+          </div>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+        <a href="./index.html#contact" class="mobile-nav-link">
+          <span class="mobile-nav-num">08</span>
+          <div class="mobile-nav-text">
+            <span class="mobile-nav-heading">Contact</span>
+            <span class="mobile-nav-sub">Get in touch with Sparsh</span>
+          </div>
+          <span class="mobile-nav-arrow">→</span>
+        </a>
+      </div>
+
+      <div class="mobile-nav-footer">
+        <a href="./Spash Resume GET.pdf" target="_blank" class="mobile-nav-footer-btn secondary">
+          <span>Resume PDF ↗</span>
+        </a>
+        <a href="mailto:work.sparshgupta@gmail.com" class="mobile-nav-footer-btn primary">
+          <span>Email Sparsh</span>
+        </a>
+      </div>
+    </div>
   </div>
 
   <div class="site-wrapper">

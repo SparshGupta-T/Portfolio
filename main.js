@@ -308,6 +308,29 @@ function initProjectCarousels() {
     box.addEventListener('mouseenter', stopAutoScroll);
     box.addEventListener('mouseleave', startAutoScroll);
 
+    // Touch swipe navigation for mobile screens
+    let boxTouchStartX = 0;
+    let boxTouchStartY = 0;
+    box.addEventListener('touchstart', (e) => {
+      if (!e.changedTouches.length) return;
+      boxTouchStartX = e.changedTouches[0].screenX;
+      boxTouchStartY = e.changedTouches[0].screenY;
+      stopAutoScroll();
+    }, { passive: true });
+
+    box.addEventListener('touchend', (e) => {
+      if (!e.changedTouches.length) return;
+      const boxTouchEndX = e.changedTouches[0].screenX;
+      const boxTouchEndY = e.changedTouches[0].screenY;
+      const diffX = boxTouchEndX - boxTouchStartX;
+      const diffY = boxTouchEndY - boxTouchStartY;
+      if (Math.abs(diffX) > 35 && Math.abs(diffX) > Math.abs(diffY)) {
+        if (diffX < 0) goToScreen(currentIndex + 1);
+        else goToScreen(currentIndex - 1);
+      }
+      startAutoScroll();
+    }, { passive: true });
+
     // Initial start & register with visibility manager
     startAutoScroll();
     activeCarouselControllers.push({ start: startAutoScroll, stop: stopAutoScroll });
@@ -415,9 +438,32 @@ function initHeroInteractiveStage() {
     card.addEventListener('mouseenter', stopAutoAdvance);
     card.addEventListener('mouseleave', startAutoAdvance);
 
-    // Gentle Parallax Motion on Phone Shell (No 3D plane clipping)
+    // Touch swipe navigation for mobile screens
+    let heroTouchStartX = 0;
+    let heroTouchStartY = 0;
+    card.addEventListener('touchstart', (e) => {
+      if (!e.changedTouches.length) return;
+      heroTouchStartX = e.changedTouches[0].screenX;
+      heroTouchStartY = e.changedTouches[0].screenY;
+      stopAutoAdvance();
+    }, { passive: true });
+
+    card.addEventListener('touchend', (e) => {
+      if (!e.changedTouches.length) return;
+      const heroTouchEndX = e.changedTouches[0].screenX;
+      const heroTouchEndY = e.changedTouches[0].screenY;
+      const diffX = heroTouchEndX - heroTouchStartX;
+      const diffY = heroTouchEndY - heroTouchStartY;
+      if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)) {
+        if (diffX < 0) switchHero(currentIndex + 1);
+        else switchHero(currentIndex - 1);
+      }
+      startAutoAdvance();
+    }, { passive: true });
+
+    // Gentle Parallax Motion on Phone Shell (Desktop Mouse only, never on touchscreens)
     const phoneShell = card.querySelector('.hero-phone-shell');
-    if (phoneShell) {
+    if (phoneShell && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
       let bounds = null;
 
       card.addEventListener('mouseenter', () => {
@@ -785,6 +831,30 @@ function initLightbox() {
     if (e.target === overlay) closeLightbox();
   });
 
+  // Touch swipe gestures for mobile lightbox (swipe left/right for next/prev, swipe down to dismiss)
+  let lbStartX = 0;
+  let lbStartY = 0;
+  overlay.addEventListener('touchstart', (e) => {
+    if (!e.changedTouches.length) return;
+    lbStartX = e.changedTouches[0].screenX;
+    lbStartY = e.changedTouches[0].screenY;
+  }, { passive: true });
+
+  overlay.addEventListener('touchend', (e) => {
+    if (!e.changedTouches.length) return;
+    const lbEndX = e.changedTouches[0].screenX;
+    const lbEndY = e.changedTouches[0].screenY;
+    const diffX = lbEndX - lbStartX;
+    const diffY = lbEndY - lbStartY;
+
+    if (Math.abs(diffX) > 45 && Math.abs(diffX) > Math.abs(diffY)) {
+      if (diffX < 0) nextLightboxItem();
+      else prevLightboxItem();
+    } else if (diffY > 80 && Math.abs(diffY) > Math.abs(diffX)) {
+      closeLightbox();
+    }
+  }, { passive: true });
+
   window.addEventListener('keydown', (e) => {
     if (!overlay.classList.contains('active')) return;
     if (e.key === 'Escape') closeLightbox();
@@ -822,23 +892,125 @@ function initCopyEmail() {
 }
 
 // ==========================================
-// 8. Contact Form Handling
+// 8. Contact Form Handling (FormSubmit.co + Anti-Spam Honeypot)
 // ==========================================
-window.handleFormSubmit = function() {
-  const name = document.getElementById('contactName')?.value;
-  const email = document.getElementById('contactEmail')?.value;
-  const message = document.getElementById('contactMessage')?.value;
-  const feedback = document.getElementById('formFeedback');
+window.handleFormSubmit = async function(e) {
+  if (e && e.preventDefault) e.preventDefault();
 
-  if (feedback) {
-    feedback.style.display = 'block';
-    feedback.textContent = `Thank you, ${name}! Your note has been noted. Sparsh will get back to you at ${email} shortly.`;
-    feedback.style.color = '#166534';
+  const form = document.getElementById('contactForm');
+  const nameInput = document.getElementById('contactName');
+  const emailInput = document.getElementById('contactEmail');
+  const messageInput = document.getElementById('contactMessage');
+  const honeyInput = document.getElementById('contactHoneypot');
+  const feedback = document.getElementById('formFeedback');
+  const submitBtn = document.getElementById('contactSubmitBtn') || form?.querySelector('button[type="submit"]');
+
+  const name = nameInput?.value?.trim() || '';
+  const email = emailInput?.value?.trim() || '';
+  const message = messageInput?.value?.trim() || '';
+
+  // 1. Anti-Spam Honeypot Check: Bots fill hidden fields; humans cannot see it.
+  if (honeyInput && honeyInput.value) {
+    if (feedback) {
+      feedback.style.display = 'block';
+      feedback.textContent = 'Thank you! Your message has been received.';
+      feedback.style.color = '#166534';
+      feedback.style.background = '#F0FDF4';
+      feedback.style.border = '1px solid #BBF7D0';
+    }
+    if (form) form.reset();
+    return;
   }
 
-  // Pre-fill mailto link as fallback
-  const mailtoLink = `mailto:work.sparshgupta@gmail.com?subject=Contact%20from%20${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0A%0AFrom:%20${encodeURIComponent(name)}%20(${encodeURIComponent(email)})`;
-  window.open(mailtoLink, '_blank');
+  // 2. Input validation
+  if (!name || name.length < 2) {
+    if (feedback) {
+      feedback.style.display = 'block';
+      feedback.textContent = 'Please enter your name.';
+      feedback.style.color = '#991B1B';
+      feedback.style.background = '#FEF2F2';
+      feedback.style.border = '1px solid #FECDD3';
+    }
+    return;
+  }
+
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    if (feedback) {
+      feedback.style.display = 'block';
+      feedback.textContent = 'Please enter a valid email address.';
+      feedback.style.color = '#991B1B';
+      feedback.style.background = '#FEF2F2';
+      feedback.style.border = '1px solid #FECDD3';
+    }
+    return;
+  }
+
+  if (!message || message.length < 10) {
+    if (feedback) {
+      feedback.style.display = 'block';
+      feedback.textContent = 'Please write a message with at least 10 characters.';
+      feedback.style.color = '#991B1B';
+      feedback.style.background = '#FEF2F2';
+      feedback.style.border = '1px solid #FECDD3';
+    }
+    return;
+  }
+
+  // 3. Set loading button state
+  const originalBtnHTML = submitBtn ? submitBtn.innerHTML : '';
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span>Sending...</span>';
+  }
+  if (feedback) feedback.style.display = 'none';
+
+  try {
+    const response = await fetch('https://formsubmit.co/ajax/work.sparshgupta@gmail.com', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        message: message,
+        _subject: `New Portfolio Message from ${name}`,
+        _template: 'table'
+      })
+    });
+
+    const result = await response.json();
+
+    if (response.ok && result.success !== 'false') {
+      if (feedback) {
+        feedback.style.display = 'block';
+        feedback.textContent = `Thank you, ${name}! Your message has been sent directly to Sparsh's inbox.`;
+        feedback.style.color = '#166534';
+        feedback.style.background = '#F0FDF4';
+        feedback.style.border = '1px solid #BBF7D0';
+      }
+      if (form) form.reset();
+    } else {
+      throw new Error(result.message || 'Submission failed');
+    }
+  } catch (err) {
+    // Graceful fallback to direct mailto if network fails
+    if (feedback) {
+      feedback.style.display = 'block';
+      feedback.textContent = `Opening email client... You can also email Sparsh directly at work.sparshgupta@gmail.com.`;
+      feedback.style.color = '#166534';
+      feedback.style.background = '#F0FDF4';
+      feedback.style.border = '1px solid #BBF7D0';
+    }
+    const mailtoLink = `mailto:work.sparshgupta@gmail.com?subject=Contact%20from%20${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0A%0AFrom:%20${encodeURIComponent(name)}%20(${encodeURIComponent(email)})`;
+    window.open(mailtoLink, '_blank');
+  } finally {
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnHTML;
+    }
+  }
 };
 
 // ==========================================
@@ -1069,6 +1241,29 @@ function initCaseStudyStage() {
   container.addEventListener('mouseenter', stopAuto);
   container.addEventListener('mouseleave', startAuto);
 
+  // Touch swipe support for mobile case study screen stage
+  let stageTouchStartX = 0;
+  let stageTouchStartY = 0;
+  stage.addEventListener('touchstart', (e) => {
+    if (!e.changedTouches.length) return;
+    stageTouchStartX = e.changedTouches[0].screenX;
+    stageTouchStartY = e.changedTouches[0].screenY;
+    stopAuto();
+  }, { passive: true });
+
+  stage.addEventListener('touchend', (e) => {
+    if (!e.changedTouches.length) return;
+    const stageTouchEndX = e.changedTouches[0].screenX;
+    const stageTouchEndY = e.changedTouches[0].screenY;
+    const diffX = stageTouchEndX - stageTouchStartX;
+    const diffY = stageTouchEndY - stageTouchStartY;
+    if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)) {
+      if (diffX < 0) switchScreen(currentIdx + 1);
+      else switchScreen(currentIdx - 1);
+    }
+    startAuto();
+  }, { passive: true });
+
   startAuto();
   activeCarouselControllers.push({ start: startAuto, stop: stopAuto });
 }
@@ -1177,16 +1372,42 @@ function initCustomCursor() {
 
 // ==========================================
 // 9c. Card Color Inversions on Tap / Click (Pillars & About Card)
+// Enforces single-active-card behavior: only one card can invert at a time,
+// and tapping anywhere outside immediately reverts all cards back to normal.
 // ==========================================
 function initCardInversions() {
-  const cards = document.querySelectorAll('.pillar-deep-card, .about-card-lab');
+  const cards = Array.from(document.querySelectorAll('.pillar-deep-card, .about-card-lab'));
+  if (!cards.length) return;
+
   cards.forEach(card => {
     card.addEventListener('click', (e) => {
       // Don't toggle if user clicked an interactive anchor, button or input inside
       if (e.target.closest('a, button, input, textarea, select')) return;
-      card.classList.toggle('is-inverted');
+
+      const wasInverted = card.classList.contains('is-inverted');
+
+      // Revert all other cards so multiple cards can NEVER stay inverted at the same time
+      cards.forEach(c => {
+        if (c !== card) c.classList.remove('is-inverted');
+      });
+
+      // Toggle this card: if it was already inverted, revert it; otherwise invert it
+      if (wasInverted) {
+        card.classList.remove('is-inverted');
+      } else {
+        card.classList.add('is-inverted');
+      }
     });
   });
+
+  // Revert inverted card if anywhere else on the document is clicked or tapped
+  function handleOutsideInteraction(e) {
+    if (e.target.closest('.pillar-deep-card, .about-card-lab')) return;
+    cards.forEach(c => c.classList.remove('is-inverted'));
+  }
+
+  document.addEventListener('click', handleOutsideInteraction);
+  document.addEventListener('touchstart', handleOutsideInteraction, { passive: true });
 }
 
 // ==========================================

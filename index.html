@@ -1507,29 +1507,34 @@
         </div>
 
         <div class="contact-form-side">
-          <form id="contactForm" onsubmit="event.preventDefault(); handleFormSubmit();">
+          <form id="contactForm" action="https://formsubmit.co/work.sparshgupta@gmail.com" method="POST" onsubmit="event.preventDefault(); handleFormSubmit(event);">
+            <!-- Invisible Anti-Spam Honeypot Field (Bots fill this, humans cannot see it) -->
+            <input type="text" name="_honey" id="contactHoneypot" style="display:none !important;" tabindex="-1" autocomplete="off">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_subject" value="New Portfolio Message via Sparsh Portfolio">
+
             <div class="form-group-field">
               <label for="contactName">Name</label>
-              <input type="text" id="contactName" class="form-input-control" placeholder="Enter your name" required>
+              <input type="text" name="name" id="contactName" class="form-input-control" placeholder="Enter your name" required minlength="2">
             </div>
 
             <div class="form-group-field" style="margin-top: 12px;">
               <label for="contactEmail">Email</label>
-              <input type="email" id="contactEmail" class="form-input-control" placeholder="Enter your email" required>
+              <input type="email" name="email" id="contactEmail" class="form-input-control" placeholder="Enter your email" required>
             </div>
 
             <div class="form-group-field" style="margin-top: 12px;">
               <label for="contactMessage">Message</label>
-              <textarea id="contactMessage" class="form-input-control"
-                placeholder="Tell me about your product, team, or idea..." required></textarea>
+              <textarea name="message" id="contactMessage" class="form-input-control"
+                placeholder="Tell me about your product, team, or idea..." required minlength="10"></textarea>
             </div>
 
-            <button type="submit" class="btn-pill btn-primary" style="margin-top: 16px; width: 100%;">
+            <button type="submit" id="contactSubmitBtn" class="btn-pill btn-primary" style="margin-top: 16px; width: 100%;">
               <span>Send Message</span>
               <span>→</span>
             </button>
             <div id="formFeedback"
-              style="display: none; margin-top: 10px; font-size: 0.85rem; font-weight: 600; color: #166534; text-align: center;">
+              style="display: none; margin-top: 12px; font-size: 0.88rem; font-weight: 600; text-align: center; padding: 10px 14px; border-radius: var(--radius-md);">
             </div>
           </form>
         </div>

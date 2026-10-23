@@ -180,6 +180,13 @@ input::-moz-focus-inner {
   }
 }
 
+@media (hover: none), (pointer: coarse) {
+  .custom-cursor-dot,
+  .custom-cursor-blob {
+    display: none !important;
+  }
+}
+
 .custom-cursor-dot {
   position: fixed;
   top: 0;
@@ -402,8 +409,11 @@ input::-moz-focus-inner {
   display: none;
 }
 
-/* Standalone Back to Work Pill Button (Separated from main nav pill) - Subtle Frosted Glass on Desktop */
+/* Standalone Back to Work Circular Button on Desktop (Subtle Frosted Glass) */
 .case-study-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 12px;
 }
 
@@ -411,52 +421,52 @@ input::-moz-focus-inner {
   pointer-events: auto;
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 6px 14px 6px 8px;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 50%;
   background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--border-card);
-  border-radius: var(--radius-pill);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
   text-decoration: none;
   color: var(--text-secondary);
-  font-weight: 600;
-  font-size: 0.86rem;
-  letter-spacing: -0.01em;
   transition: all var(--transition-bounce);
-  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .case-study-back-pill:hover {
-  background: #FFFFFF;
-  border-color: var(--border-card-hover);
-  color: var(--text-primary);
+  background: #0B0F19;
+  border-color: #0B0F19;
+  color: #FFFFFF;
   transform: translateY(-2px);
-  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.case-study-back-pill:active {
+  transform: scale(0.95);
+  background: #000000;
+  border-color: #000000;
 }
 
 .case-study-back-pill .back-pill-arrow {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: var(--bg-subtle);
-  border: 1px solid var(--border-subtle);
+  font-size: 1.15rem;
+  line-height: 1;
   color: var(--text-secondary);
-  font-size: 0.8rem;
-  font-weight: 700;
-  transition: transform var(--transition-bounce), background 0.2s ease, color 0.2s ease;
+  transition: transform var(--transition-bounce), color 0.2s ease;
 }
 
 .case-study-back-pill:hover .back-pill-arrow {
   transform: translateX(-2px);
-  background: #E2E8F0;
-  color: var(--text-primary);
+  color: #FFFFFF;
 }
 
+.case-study-back-pill .back-pill-label-full,
 .case-study-back-pill .back-pill-label-short {
   display: none;
 }
@@ -1910,9 +1920,7 @@ section[id] {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Invert colors on hover or tap: black background & white text */
-.about-card-lab:hover,
-.about-card-lab:active,
+/* Invert colors on tap / click: black background & white text */
 .about-card-lab.is-inverted {
   background: #0B0F19 !important;
   border-color: #1E293B !important;
@@ -1929,8 +1937,6 @@ section[id] {
   transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.about-card-lab:hover .about-quote-box,
-.about-card-lab:active .about-quote-box,
 .about-card-lab.is-inverted .about-quote-box {
   background: #141A29 !important;
   border-color: rgba(255, 255, 255, 0.12) !important;
@@ -1945,14 +1951,10 @@ section[id] {
   transition: color 0.3s ease;
 }
 
-.about-card-lab:hover .about-quote-text,
-.about-card-lab:active .about-quote-text,
 .about-card-lab.is-inverted .about-quote-text {
   color: #FFFFFF !important;
 }
 
-.about-card-lab:hover .skill-pill-tag,
-.about-card-lab:active .skill-pill-tag,
 .about-card-lab.is-inverted .skill-pill-tag {
   background: rgba(255, 255, 255, 0.12) !important;
   color: #E2E8F0 !important;
@@ -1972,16 +1974,45 @@ section[id] {
   transition: color 0.3s ease;
 }
 
-.about-card-lab:hover .about-narrative p,
-.about-card-lab:active .about-narrative p,
 .about-card-lab.is-inverted .about-narrative p {
   color: #CBD5E1 !important;
 }
 
-.about-card-lab:hover .about-narrative strong,
-.about-card-lab:active .about-narrative strong,
 .about-card-lab.is-inverted .about-narrative strong {
   color: #FFFFFF !important;
+}
+
+/* Mouse Hover only on desktop fine pointers */
+@media (hover: hover) and (pointer: fine) {
+  .about-card-lab:hover {
+    background: #0B0F19 !important;
+    border-color: #1E293B !important;
+    box-shadow: 0 24px 50px -12px rgba(0, 0, 0, 0.55) !important;
+    transform: translateY(-3px);
+  }
+
+  .about-card-lab:hover .about-quote-box {
+    background: #141A29 !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+  }
+
+  .about-card-lab:hover .about-quote-text {
+    color: #FFFFFF !important;
+  }
+
+  .about-card-lab:hover .skill-pill-tag {
+    background: rgba(255, 255, 255, 0.12) !important;
+    color: #E2E8F0 !important;
+    border-color: rgba(255, 255, 255, 0.18) !important;
+  }
+
+  .about-card-lab:hover .about-narrative p {
+    color: #CBD5E1 !important;
+  }
+
+  .about-card-lab:hover .about-narrative strong {
+    color: #FFFFFF !important;
+  }
 }
 
 /* ==========================================================================
@@ -2526,6 +2557,8 @@ textarea.form-input-control {
     max-height: calc(100vh - 92px);
     max-height: calc(100dvh - 92px);
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
     scrollbar-width: thin;
     padding: 14px;
     pointer-events: none;
@@ -2540,6 +2573,10 @@ textarea.form-input-control {
     visibility: visible;
     pointer-events: auto;
     transform: translateY(0) scale(1);
+  }
+
+  body.mobile-menu-open {
+    overflow: hidden !important;
   }
 
   .mobile-nav-header {
@@ -2645,7 +2682,7 @@ textarea.form-input-control {
     color: #0B0F19;
     width: 28px;
     height: 28px;
-    border-radius: 8px;
+    border-radius: 50%;
     background: rgba(11, 15, 25, 0.06);
     border: 1.5px solid #0B0F19;
     display: inline-flex;
@@ -2821,25 +2858,24 @@ textarea.form-input-control {
     transition: color 0.25s ease;
   }
 
-  /* Pillar card mobile hover & tap inversion */
-  .pillar-deep-card:hover,
-  .pillar-deep-card:active,
+  /* Pillar card mobile tap inversion (single active card on tap, no sticky hover) */
   .pillar-deep-card.is-inverted {
     background: #0B0F19 !important;
     border-color: #1E293B !important;
     box-shadow: 0 16px 34px -8px rgba(0, 0, 0, 0.5) !important;
   }
 
-  .pillar-deep-card:hover .pillar-deep-title,
-  .pillar-deep-card:active .pillar-deep-title,
   .pillar-deep-card.is-inverted .pillar-deep-title {
     color: #FFFFFF !important;
   }
 
-  .pillar-deep-card:hover .pillar-deep-desc,
-  .pillar-deep-card:active .pillar-deep-desc,
   .pillar-deep-card.is-inverted .pillar-deep-desc {
     color: #E2E8F0 !important;
+  }
+
+  .pillar-deep-card.is-inverted .pillar-num-badge {
+    background: rgba(255, 255, 255, 0.22) !important;
+    color: #FFFFFF !important;
   }
 
   /* Mobile Case Study Header Container: 2 Separate Floating Pills at Bottom */
@@ -2869,6 +2905,7 @@ textarea.form-input-control {
     justify-content: center !important;
     gap: 6px !important;
     height: 42px !important;
+    width: auto !important;
     padding: 0 14px 0 10px !important;
     background: #0B0F19 !important;
     border: 1px solid #1E293B !important;
@@ -3942,9 +3979,7 @@ textarea.form-input-control {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Invert colors on hover or tap: black card & white text */
-.pillar-deep-card:hover,
-.pillar-deep-card:active,
+/* Invert colors on tap / click: black card & white text */
 .pillar-deep-card.is-inverted {
   background: #0B0F19 !important;
   border-color: #1E293B !important;
@@ -3952,23 +3987,40 @@ textarea.form-input-control {
   box-shadow: 0 20px 38px -10px rgba(0, 0, 0, 0.45) !important;
 }
 
-.pillar-deep-card:hover .pillar-deep-title,
-.pillar-deep-card:active .pillar-deep-title,
 .pillar-deep-card.is-inverted .pillar-deep-title {
   color: #FFFFFF !important;
 }
 
-.pillar-deep-card:hover .pillar-deep-desc,
-.pillar-deep-card:active .pillar-deep-desc,
 .pillar-deep-card.is-inverted .pillar-deep-desc {
   color: #E2E8F0 !important;
 }
 
-.pillar-deep-card:hover .pillar-num-badge,
-.pillar-deep-card:active .pillar-num-badge,
 .pillar-deep-card.is-inverted .pillar-num-badge {
   background: rgba(255, 255, 255, 0.22) !important;
   color: #FFFFFF !important;
+}
+
+/* Mouse Hover only on desktop fine pointers (never sticky on touchscreens) */
+@media (hover: hover) and (pointer: fine) {
+  .pillar-deep-card:hover {
+    background: #0B0F19 !important;
+    border-color: #1E293B !important;
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 20px 38px -10px rgba(0, 0, 0, 0.45) !important;
+  }
+
+  .pillar-deep-card:hover .pillar-deep-title {
+    color: #FFFFFF !important;
+  }
+
+  .pillar-deep-card:hover .pillar-deep-desc {
+    color: #E2E8F0 !important;
+  }
+
+  .pillar-deep-card:hover .pillar-num-badge {
+    background: rgba(255, 255, 255, 0.22) !important;
+    color: #FFFFFF !important;
+  }
 }
 
 .pillar-deep-header {

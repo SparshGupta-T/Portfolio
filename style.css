@@ -327,23 +327,29 @@ input::-moz-focus-inner {
   width: 100%;
   max-width: 1240px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 84px 24px 0;
 }
 
 /* ==========================================================================
    HEADER & NAVIGATION (Google Labs Floating Pill)
+   Website smoothly scrolls underneath this fixed floating header
    ========================================================================== */
 .header-container {
-  position: sticky;
+  position: fixed;
   top: 14px;
-  z-index: 100;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   display: flex;
   justify-content: center;
   padding: 0 16px;
-  margin-bottom: 32px;
+  pointer-events: none;
+  margin-bottom: 0;
+  transition: transform 0.3s ease;
 }
 
 .nav-pill-bar {
+  pointer-events: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2189,89 +2195,173 @@ textarea.form-input-control {
      MOBILE NAVIGATION & DOCK
      ======================================================================== */
   
-  /* Hide desktop menu links */
-  .nav-menu-list {
-    display: none !important;
-  }
+  /* ========================================================================
+     MOBILE NAVIGATION & FLOATING HEADER
+     ======================================================================== */
   
   .mobile-menu-toggle {
     display: none;
   }
 
-  /* HOME PAGE: Bring Header to Bottom as Floating Action Pill */
-  .home-page .header-container {
+  /* Universal Floating Fixed Header on Mobile across all pages */
+  .header-container,
+  .home-page .header-container,
+  .case-study-page .header-container {
     position: fixed;
-    bottom: 18px;
-    bottom: calc(18px + env(safe-area-inset-bottom, 0px));
-    top: auto;
+    top: 10px;
+    bottom: auto;
     left: 0;
     right: 0;
     margin: 0 auto;
-    padding: 0 16px;
-    z-index: 999;
+    padding: 0 10px;
+    z-index: 1000;
     pointer-events: none;
     display: flex;
     justify-content: center;
+    width: 100%;
+  }
+
+  .site-wrapper {
+    padding: 72px 16px 0;
+  }
+
+  .case-study-page .site-wrapper {
+    padding-top: 72px;
   }
 
   .home-page .nav-pill-bar {
     pointer-events: auto;
-    padding: 6px 10px;
-    gap: 8px;
+    max-width: calc(100vw - 20px);
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 10px;
     background: rgba(255, 255, 255, 0.94);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    box-shadow: 0 12px 36px -4px rgba(0, 0, 0, 0.16), 0 2px 8px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 8px 26px -4px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.05);
     border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: var(--radius-pill);
     margin: 0 auto;
     width: auto;
-    max-width: 90vw;
+  }
+
+  .home-page .nav-pill-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Show horizontally scrollable navigation items on mobile */
+  .home-page .nav-menu-list {
+    display: flex !important;
+    align-items: center;
+    gap: 3px;
+    flex-shrink: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .home-page .nav-item-link {
+    padding: 5px 9px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    border-radius: var(--radius-pill);
+    color: var(--text-secondary);
+  }
+
+  .home-page .nav-item-link.active {
+    background: var(--bg-subtle);
+    color: var(--text-primary);
+    font-weight: 600;
   }
 
   .home-page .nav-cta-group {
     display: flex;
     align-items: center;
-    gap: 8px;
-    width: auto;
+    gap: 5px;
+    flex-shrink: 0;
   }
 
   .home-page .nav-cta-group .btn-pill {
     width: auto !important;
-    padding: 9px 18px !important;
-    font-size: 0.86rem !important;
+    padding: 6px 11px !important;
+    font-size: 0.78rem !important;
     font-weight: 600;
+    white-space: nowrap;
   }
 
   .home-page {
-    padding-bottom: 88px;
+    padding-bottom: 40px;
   }
 
-  /* CASE STUDY PAGES: Sleek Non-Warping Top Header + Fixed Bottom Action Pill */
-  .case-study-page .header-container {
-    position: sticky;
-    top: 10px;
-    z-index: 100;
-    margin-bottom: 16px;
-    padding: 0 14px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
+  /* CASE STUDY PAGES: Floating Top Header Pill */
   .case-study-page .nav-pill-bar {
-    width: 100%;
-    max-width: 100%;
+    pointer-events: auto;
+    width: auto;
+    max-width: calc(100vw - 20px);
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 8px;
-    padding: 6px 10px;
+    padding: 5px 10px;
     border-radius: var(--radius-pill);
     background: rgba(255, 255, 255, 0.94);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    box-shadow: 0 6px 20px -2px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 8px 24px -2px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.04);
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+
+  .case-study-page .nav-pill-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Pillars Deep Grid (Case Studies): Clean 1-column mobile stack without awkward number badges */
+  .pillars-deep-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    margin-top: 12px;
+  }
+
+  .pillar-deep-card {
+    padding: 18px 20px !important;
+    border-radius: var(--radius-md) !important;
+    gap: 8px !important;
+    background: #FFFFFF !important;
+    border: 1px solid var(--border-card) !important;
+    transform: none !important;
+    box-shadow: var(--shadow-subtle) !important;
+  }
+
+  .pillar-deep-header {
+    display: block !important;
+  }
+
+  /* Remove the cramped numbering badge on mobile as requested by user */
+  .pillar-deep-card .pillar-num-badge {
+    display: none !important;
+  }
+
+  .pillar-deep-title {
+    font-size: 1.05rem !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
+    color: var(--text-primary) !important;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .pillar-deep-desc {
+    font-size: 0.92rem !important;
+    line-height: 1.58 !important;
+    color: var(--text-secondary) !important;
   }
 
   .case-study-page .brand-link {
@@ -2345,12 +2435,17 @@ textarea.form-input-control {
   }
 
   .case-study-page .case-study-header {
-    gap: 10px;
+    gap: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .case-study-page .case-study-tag-row {
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 8px;
     margin-bottom: 6px;
@@ -2378,16 +2473,35 @@ textarea.form-input-control {
     word-break: normal;
     overflow-wrap: break-word;
     hyphens: none;
+    text-align: center;
   }
 
   .case-study-page .case-study-tagline {
     font-size: clamp(1.05rem, 3.8vw, 1.22rem);
     line-height: 1.42;
+    text-align: center;
   }
 
   .case-study-page .hero-desc-main {
     font-size: 0.94rem;
     line-height: 1.62;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 580px;
+  }
+
+  .case-study-page .case-study-cta-group {
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 6px;
+  }
+
+  .case-study-page .case-study-cta-group .btn-pill {
+    justify-content: center;
   }
 
   .case-study-page .case-study-stage-card {
@@ -2414,23 +2528,43 @@ textarea.form-input-control {
     padding: 16px 0 32px;
   }
 
+  .hero-left-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+  }
+
+  .status-badge-soft {
+    align-self: center;
+    margin: 0 auto;
+  }
+
   .hero-title-main {
     font-size: clamp(2.1rem, 7.2vw, 3.8rem);
     line-height: 1.15;
     word-break: normal;
     overflow-wrap: break-word;
     hyphens: none;
+    text-align: center;
   }
 
   .hero-desc-lead {
     font-size: 0.98rem;
     line-height: 1.62;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 540px;
   }
 
   .hero-buttons-row {
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
+    justify-content: center;
     width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
     gap: 10px;
   }
 
@@ -2438,11 +2572,23 @@ textarea.form-input-control {
     width: 100% !important;
     padding: 12px 18px;
     font-size: 0.92rem;
+    justify-content: center;
+  }
+
+  .hero-trust-ribbon {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .trust-ribbon-label {
+    text-align: center;
   }
 
   .trust-logos-wrap {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 8px;
   }
 
@@ -3466,6 +3612,10 @@ textarea.form-input-control {
   color: var(--text-primary);
 }
 
+.study-nav-card.nav-next {
+  text-align: right;
+}
+
 .study-switch-pills {
   display: flex;
   align-items: center;
@@ -3517,11 +3667,12 @@ textarea.form-input-control {
     display: inline;
   }
   .site-wrapper {
-    padding: 0 16px;
+    padding: 72px 16px 0;
   }
   .case-study-meta-bar {
-    grid-template-columns: 1fr;
-    padding: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 14px;
   }
   .meta-item-box {
     padding: 12px 14px;
@@ -3530,11 +3681,19 @@ textarea.form-input-control {
     flex-direction: column;
     align-items: stretch;
   }
-  .study-nav-card {
+  .study-nav-card,
+  .study-nav-card.nav-next {
     min-width: 100%;
+    text-align: left !important;
   }
   .case-study-page .case-study-stage-card .study-hero-screen-stage {
     height: 230px;
+  }
+}
+
+@media (max-width: 380px) {
+  .case-study-meta-bar {
+    grid-template-columns: 1fr;
   }
 }
 

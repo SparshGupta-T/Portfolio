@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SupportFit Case Study | Sparsh Gupta</title>
+  <meta name="description" content="SupportFit Case Study — Physical Wellness platform built from scratch by Sparsh Gupta. UI/UX, Research, BMR/BMI calculations, and gamification loops.">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+</head>
+<body>
+
+  <!-- Ambient Diffuse Glow Canvas (Google Labs Vibe) -->
+  <div class="ambient-glow" aria-hidden="true">
+    <div class="ambient-circle-1"></div>
+    <div class="ambient-circle-2"></div>
+    <div class="ambient-circle-3"></div>
+  </div>
+  <div class="subtle-dot-matrix" aria-hidden="true"></div>
+
+  <!-- Floating Google Labs Style Navigation Pill -->
+  <div class="header-container">
+    <nav class="nav-pill-bar">
+      <a href="./index.html#projects" class="brand-link">
+        <span class="brand-spark">←</span>
+        <span>Back to All Work</span>
+      </a>
+
+      <!-- Case Study Quick Switcher -->
+      <div class="study-switch-pills">
+        <a href="./supportfit.html" class="study-switch-link active">SupportFit</a>
+        <a href="./travelhoster.html" class="study-switch-link">TravelHoster</a>
+        <a href="./mycouncillor.html" class="study-switch-link">MyCouncillor</a>
+        <a href="./checkin.html" class="study-switch-link">CheckIn</a>
+      </div>
+
+      <div class="nav-cta-group">
+        <a href="./Spash Resume GET.pdf" target="_blank" class="btn-pill btn-secondary" style="padding: 7px 15px; font-size: 0.82rem;">
+          <span>Resume</span>
+          <span>↗</span>
+        </a>
+        <a href="./index.html#contact" class="btn-pill btn-primary" style="padding: 7px 15px; font-size: 0.82rem;">
+          <span>Contact Me</span>
+        </a>
+      </div>
+    </nav>
+  </div>
+
+  <div class="site-wrapper">
+
+    <!-- ==================== CASE STUDY HERO ==================== -->
+    <header class="case-study-hero">
+      <a href="./index.html#projects" class="case-study-back-link">
+        <span>←</span>
+        <span>Back to Portfolio Projects</span>
+      </a>
+
+      <div class="case-study-hero-grid">
+        <!-- Left Column: Case Narrative & Metadata -->
+        <div class="case-study-header">
+          <div class="case-study-tag-row">
+            <div class="company-logo-chip" title="Supportroom">
+              <img src="./LOGOS/SupportRoom.png" alt="Supportroom">
+              <span style="font-size: 0.78rem; font-weight: 600; color: var(--text-secondary);">Powered by Supportroom</span>
+            </div>
+            <span class="domain-pill pill-green">Physical Wellness · Health Tech</span>
+          </div>
+
+          <h1 class="case-study-title">SupportFit</h1>
+          <p class="case-study-tagline">Physical Wellness That Powers Performance</p>
+          <p class="hero-desc-main" style="max-width: 620px; margin-top: 4px;">
+            SupportFit, powered by Supportroom, is a comprehensive workplace wellness solution designed to improve employee movement, sleep, and nutrition. I led the end-to-end product design from scratch—defining user personas, backend physiological calculation logic (BMR, BMI, calorie burn rates), gamification loops, and seamless consultation flows.
+          </p>
+
+          <div style="display: flex; gap: 12px; margin-top: 8px; flex-wrap: wrap;">
+            <a href="#screenFlows" class="btn-pill btn-primary" style="padding: 9px 18px; font-size: 0.86rem;">
+              <span>Explore Screen Flows</span>
+              <span>↓</span>
+            </a>
+            <a href="./Spash Resume GET.pdf" target="_blank" class="btn-pill btn-secondary" style="padding: 9px 18px; font-size: 0.86rem;">
+              <span>Download Resume</span>
+              <span>↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive Screen Stage -->
+        <div class="case-study-stage-card">
+          <div class="case-stage-container">
+            <button class="stage-nav-arrow prev" aria-label="Previous Screen">‹</button>
+            <div class="study-hero-screen-stage open-lightbox" data-img="./SupportFit/MAIN.png" data-caption="SupportFit - Main Platform Overview Screen">
+              <img src="./SupportFit/MAIN.png" alt="SupportFit Main Screen" class="study-hero-screen-img" id="studyMainImg">
+            </div>
+            <button class="stage-nav-arrow next" aria-label="Next Screen">›</button>
+          </div>
+
+          <div class="screen-selector-bar" style="margin-top: 16px;" id="supportfitSelector">
+            <button class="screen-dot-btn active" data-src="./SupportFit/MAIN.png" data-caption="SupportFit - Main Dashboard & Activity Summary" title="Main Screen"></button>
+            <button class="screen-dot-btn" data-src="./SupportFit/13 Pro - 242 1.png" data-caption="SupportFit - Daily Water Intake Tracker" title="Water Intake"></button>
+            <button class="screen-dot-btn" data-src="./SupportFit/13 Pro - 243 1.png" data-caption="SupportFit - Reminder & Alert Frequency Settings" title="Reminder Settings"></button>
+            <button class="screen-dot-btn" data-src="./SupportFit/13 Pro - 245 1.png" data-caption="SupportFit - Calorie & Meal Intake Tracker" title="Calorie Logic"></button>
+            <button class="screen-dot-btn" data-src="./SupportFit/13 Pro - 248 1.png" data-caption="SupportFit - Sleep Schedule & Health Reminders" title="Sleep Reminders"></button>
+            <button class="screen-dot-btn" data-src="./SupportFit/13 Pro - 260 1.png" data-caption="SupportFit - Weekly Sleep Duration & Stats Analysis" title="Sleep Stats"></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Metadata Strip (Elevated & Well-Padded) -->
+      <div class="case-study-meta-bar" style="margin-top: 36px;">
+        <div class="meta-item-box">
+          <span class="meta-item-label">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            Role & Scope
+          </span>
+          <span class="meta-item-val">Product Design & Systems Logic</span>
+        </div>
+        <div class="meta-item-box">
+          <span class="meta-item-label">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+            Industry Domain
+          </span>
+          <span class="meta-item-val">Workplace Wellness & Digital Health</span>
+        </div>
+        <div class="meta-item-box">
+          <span class="meta-item-label">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            Core Systems
+          </span>
+          <span class="meta-item-val">BMR/BMI Formulas, Gamification & Habits</span>
+        </div>
+        <div class="meta-item-box">
+          <span class="meta-item-label">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            Tools & Stack
+          </span>
+          <span class="meta-item-val">Figma, Framer, Data Modeling, Design Systems</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ==================== 4 CORE PRODUCT PILLARS ==================== -->
+    <section class="section-block" style="padding-top: 10px;">
+      <div class="study-section-title" style="margin-bottom: 8px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-primary);"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+        <span>Core Product Pillars</span>
+      </div>
+      <p class="study-section-desc" style="margin-bottom: 24px;">
+        Four foundational pillars architected into the system to guide employees toward sustainable wellness habits.
+      </p>
+
+      <div class="pillars-deep-grid">
+        <div class="pillar-deep-card">
+          <div class="pillar-deep-header">
+            <span class="pillar-num-badge">1</span>
+            <span class="pillar-deep-title">Seamless Device Integration</span>
+          </div>
+          <p class="pillar-deep-desc">
+            Continuous background synchronization with Apple Health, Google Fit, and smart wearables to automatically ingest daily steps, active heart rate, and sleep intervals.
+          </p>
+        </div>
+
+        <div class="pillar-deep-card">
+          <div class="pillar-deep-header">
+            <span class="pillar-num-badge">2</span>
+            <span class="pillar-deep-title">Data-Driven Insights</span>
+          </div>
+          <p class="pillar-deep-desc">
+            Transforming raw biometric data into actionable progress summaries, highlighting metabolic burnout patterns and recovery deficit trends over rolling 7-day windows.
+          </p>
+        </div>
+
+        <div class="pillar-deep-card">
+          <div class="pillar-deep-header">
+            <span class="pillar-num-badge">3</span>
+            <span class="pillar-deep-title">Dedicated Health Coach</span>
+          </div>
+          <p class="pillar-deep-desc">
+            Direct chat, voice, and video interaction flows connecting employees with verified nutritionists and fitness specialists, with instant session scheduling and follow-ups.
+          </p>
+        </div>
+
+        <div class="pillar-deep-card">
+          <div class="pillar-deep-header">
+            <span class="pillar-num-badge">4</span>
+            <span class="pillar-deep-title">Personalized Health Targets</span>
+          </div>
+          <p class="pillar-deep-desc">
+            Adaptive daily calorie deficit and hydration goals calculated dynamically using individualized BMR and BMI formulas rather than generic one-size-fits-all recommendations.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== DEEP DIVE: UNIFIED PRODUCT NARRATIVE ==================== -->
+    <section class="section-block" style="padding-top: 10px;">
+      <div class="study-narrative-card">
+        
+        <!-- Block 1: Role & Core Responsibilities -->
+        <div class="study-narrative-block">
+          <div class="study-section-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-primary);"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            <span>Role & End-to-End System Contributions</span>
+          </div>
+          <p class="study-section-desc">
+            I worked at the intersection of product, UX, and systems logic, ensuring developers had precise state machines, data inputs, and interaction models.
+          </p>
+          <ul class="study-checklist">
+            <li>Collaborated closely with certified therapists to translate clinical and wellness requirements into intuitive product features.</li>
+            <li>Restructured the end-to-end user journey, from initial wellness onboarding assessment to booking professional therapy sessions.</li>
+            <li>Drove the V2 platform upgrade by identifying drop-off friction and introducing gamification mechanics (streaks, achievement badges, team challenges).</li>
+            <li>Designed multi-channel communication tools including live chat, recorded voice notes, and automated session follow-up summaries.</li>
+            <li>Architected the complete UI for the Resource Center, delivering curated exercise routines and mental wellness guides tailored to user goals.</li>
+          </ul>
+        </div>
+
+        <!-- Block 2: Research & Mathematical Logic -->
+        <div class="study-narrative-block">
+          <div class="study-section-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-primary);"><path d="M3 3v18h18"></path><path d="m19 9-5 5-4-4-3 3"></path></svg>
+            <span>Physiological Modeling & System Logic</span>
+          </div>
+          <p class="study-section-desc">
+            System precision was key: every insight shown to users was backed by physiological data modeling and formula verification.
+          </p>
+          <ul class="study-checklist checklist-data">
+            <li>Analyzed metabolic calorie burn rate algorithms factoring in multi-variable inputs: weight, height, biological age, and daily movement tiers.</li>
+            <li>Implemented the Mifflin-St Jeor formula for Basal Metabolic Rate (BMR) and standard Body Mass Index (BMI) logic for baseline calibration.</li>
+            <li>Helped formulate adaptive recommendation engines that adjust daily calorie allowances based on logged physical exertion.</li>
+            <li>Conducted user testing sessions to eliminate cognitive overload during meal and water logging, streamlining the logging flow down to minimal taps without user friction.</li>
+          </ul>
+        </div>
+
+        <!-- Block 3: Platform Outcomes & What Was Built -->
+        <div class="study-narrative-block">
+          <div class="study-section-title" style="color: #047857;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #047857;"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07l14.14-14.14"></path></svg>
+            <span>Platform Outcomes & Delivered Experience</span>
+          </div>
+          <p class="study-impact-text" style="color: var(--text-secondary); line-height: 1.68; font-size: 0.98rem;">
+            My contributions transformed SupportFit from a static fitness checklist into a dynamic, data-driven wellness companion. By bridging biometric data models with compassionate interface design, employees gained an intuitive platform that fosters sustainable healthy habits and makes both mental and physical health support seamless to access.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== HIGH-RESOLUTION SCREEN FLOWS GALLERY ==================== -->
+    <section class="section-block" id="screenFlows" style="padding-top: 10px;">
+      <div class="study-section-title" style="margin-bottom: 8px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-primary);"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path></svg>
+        <span>High-Resolution Screen Flows</span>
+      </div>
+      <p class="study-section-desc" style="margin-bottom: 24px;">
+        Click any screen below to inspect the design tokens, typography, and micro-interactions in fullscreen view.
+      </p>
+
+      <div class="gallery-grid-study">
+        <div class="study-gallery-card open-lightbox" data-img="./SupportFit/MAIN.png" data-caption="SupportFit - Main Dashboard & Activity Summary">
+          <div class="study-gallery-img-wrap">
+            <img src="./SupportFit/MAIN.png" alt="Main Dashboard" class="study-gallery-img">
+          </div>
+          <span class="study-gallery-caption">Main Daily Dashboard</span>
+        </div>
+
+        <div class="study-gallery-card open-lightbox" data-img="./SupportFit/13 Pro - 242 1.png" data-caption="SupportFit - Daily Water Intake Tracker">
+          <div class="study-gallery-img-wrap">
+            <img src="./SupportFit/13 Pro - 242 1.png" alt="Water Intake Tracker" class="study-gallery-img">
+          </div>
+          <span class="study-gallery-caption">Water Intake Tracker</span>
+        </div>
+
+        <div class="study-gallery-card open-lightbox" data-img="./SupportFit/13 Pro - 243 1.png" data-caption="SupportFit - Reminder & Alert Frequency Settings">
+          <div class="study-gallery-img-wrap">
+            <img src="./SupportFit/13 Pro - 243 1.png" alt="Reminder Settings" class="study-gallery-img">
+          </div>
+          <span class="study-gallery-caption">Reminder Intervals</span>
+        </div>
+
+        <div class="study-gallery-card open-lightbox" data-img="./SupportFit/13 Pro - 245 1.png" data-caption="SupportFit - Calorie & Meal Intake Tracker">
+          <div class="study-gallery-img-wrap">
+            <img src="./SupportFit/13 Pro - 245 1.png" alt="Calorie Tracker" class="study-gallery-img">
+          </div>
+          <span class="study-gallery-caption">Calorie & Meal Intake</span>
+        </div>
+
+        <div class="study-gallery-card open-lightbox" data-img="./SupportFit/13 Pro - 247 1.png" data-caption="SupportFit - Routine Pre-Planning & Meal Schedule">
+          <div class="study-gallery-img-wrap">
+            <img src="./SupportFit/13 Pro - 247 1.png" alt="Routine Planning" class="study-gallery-img">
+          </div>
+          <span class="study-gallery-caption">Meal Routine Planning</span>
+        </div>
+
+        <div class="study-gallery-card open-lightbox" data-img="./SupportFit/13 Pro - 248 1.png" data-caption="SupportFit - Sleep Schedule & Health Reminders">
+          <div class="study-gallery-img-wrap">
+            <img src="./SupportFit/13 Pro - 248 1.png" alt="Sleep Reminder" class="study-gallery-img">
+          </div>
+          <span class="study-gallery-caption">Sleep Schedule Reminder</span>
+        </div>
+
+        <div class="study-gallery-card open-lightbox" data-img="./SupportFit/13 Pro - 249 1.png" data-caption="SupportFit - Daily Steps, Sports & Exercise Goals">
+          <div class="study-gallery-img-wrap">
+            <img src="./SupportFit/13 Pro - 249 1.png" alt="Steps and Sports" class="study-gallery-img">
+          </div>
+          <span class="study-gallery-caption">Steps, Sports & Exercise</span>
+        </div>
+
+        <div class="study-gallery-card open-lightbox" data-img="./SupportFit/13 Pro - 257 1.png" data-caption="SupportFit - Onboarding: Height & Weight (BMI Intake)">
+          <div class="study-gallery-img-wrap">
+            <img src="./SupportFit/13 Pro - 257 1.png" alt="BMI Onboarding" class="study-gallery-img">
+          </div>
+          <span class="study-gallery-caption">Height & Weight Intake</span>
+        </div>
+
+        <div class="study-gallery-card open-lightbox" data-img="./SupportFit/13 Pro - 260 1.png" data-caption="SupportFit - Weekly Sleep Duration & Stats Analysis">
+          <div class="study-gallery-img-wrap">
+            <img src="./SupportFit/13 Pro - 260 1.png" alt="Sleep Stats" class="study-gallery-img">
+          </div>
+          <span class="study-gallery-caption">Weekly Sleep Analytics</span>
+        </div>
+
+        <div class="study-gallery-card open-lightbox" data-img="./SupportFit/13 Pro - 261 1.png" data-caption="SupportFit - Monthly Sleep Tracking Calendar">
+          <div class="study-gallery-img-wrap">
+            <img src="./SupportFit/13 Pro - 261 1.png" alt="Monthly Sleep Calendar" class="study-gallery-img">
+          </div>
+          <span class="study-gallery-caption">Monthly Sleep Calendar</span>
+        </div>
+
+        <div class="study-gallery-card open-lightbox" data-img="./SupportFit/13 Pro - 268 1.png" data-caption="SupportFit - Mindfulness & Meditation Timer (ZenSpace)">
+          <div class="study-gallery-img-wrap">
+            <img src="./SupportFit/13 Pro - 268 1.png" alt="Meditation Timer" class="study-gallery-img">
+          </div>
+          <span class="study-gallery-caption">Mindfulness Timer (ZenSpace)</span>
+        </div>
+
+        <div class="study-gallery-card open-lightbox" data-img="./SupportFit/13 Pro - 269 1.png" data-caption="SupportFit - Guided Audio & Video Mindfulness Library">
+          <div class="study-gallery-img-wrap">
+            <img src="./SupportFit/13 Pro - 269 1.png" alt="Mindfulness Content Library" class="study-gallery-img">
+          </div>
+          <span class="study-gallery-caption">Guided Mindfulness Library</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PROJECT NAVIGATION FOOTER ==================== -->
+    <nav class="study-nav-footer">
+      <a href="./index.html#projects" class="study-nav-card">
+        <span class="study-nav-card-dir">← All Projects</span>
+        <span class="study-nav-card-title">Back to Portfolio</span>
+      </a>
+
+      <a href="./travelhoster.html" class="study-nav-card" style="text-align: right;">
+        <span class="study-nav-card-dir">Next Case Study →</span>
+        <span class="study-nav-card-title">TravelHoster Marketplace</span>
+      </a>
+    </nav>
+
+    <!-- FOOTER -->
+    <footer class="footer-bar">
+      <div>© 2026 Sparsh Gupta · Engineered with passion & system precision.</div>
+      <div class="footer-links-group">
+        <a href="./index.html#hero" class="footer-link">Home</a>
+        <a href="./Spash Resume GET.pdf" target="_blank" class="footer-link">Resume ↗</a>
+        <a href="./index.html#contact" class="footer-link">Contact</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ==================== LIGHTBOX MODAL ==================== -->
+  <div class="lab-modal-overlay" id="lightboxModalOverlay" aria-hidden="true">
+    <div class="lab-modal-dialog">
+      <button class="modal-close-btn" id="closeLightboxModal" aria-label="Close lightbox">✕</button>
+      <button class="lightbox-nav-arrow prev" id="lightboxPrevBtn" aria-label="Previous Image">‹</button>
+      <div class="lightbox-modal-content">
+        <img src="" alt="Enlarged View" class="lightbox-img-full" id="lightboxFullImg">
+        <div class="lightbox-caption-text" id="lightboxCaption"></div>
+      </div>
+      <button class="lightbox-nav-arrow next" id="lightboxNextBtn" aria-label="Next Image">›</button>
+    </div>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

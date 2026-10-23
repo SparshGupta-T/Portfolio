@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sparsh Gupta | Instrumentation Engineer & Product Designer</title>
+  <meta name="description" content="Portfolio of Sparsh Gupta — Instrumentation Engineer & Product Designer passionate about systems, hardware, software, and human interfaces. Currently GET at Johnson Controls.">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+</head>
+<body>
+
+  <!-- Ambient Diffuse Glow Canvas (Google Labs Vibe) -->
+  <div class="ambient-glow" aria-hidden="true">
+    <div class="ambient-circle-1"></div>
+    <div class="ambient-circle-2"></div>
+    <div class="ambient-circle-3"></div>
+  </div>
+  <div class="subtle-dot-matrix" aria-hidden="true"></div>
+
+  <!-- Floating Google Labs Style Navigation Pill -->
+  <div class="header-container">
+    <nav class="nav-pill-bar" id="navbar">
+      <ul class="nav-menu-list">
+        <li><a href="#projects" class="nav-item-link">Work</a></li>
+        <li><a href="#experience" class="nav-item-link">Experience</a></li>
+        <li><a href="#extras" class="nav-item-link">Extras</a></li>
+        <li><a href="#skills" class="nav-item-link">Skills</a></li>
+        <li><a href="#recommendations" class="nav-item-link">Recommendations</a></li>
+        <li><a href="#about" class="nav-item-link">About</a></li>
+        <li><a href="#archive" class="nav-item-link">Archive</a></li>
+        <li><a href="#contact" class="nav-item-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta-group">
+        <a href="./Spash Resume GET.pdf" target="_blank" class="btn-pill btn-secondary" style="padding: 7px 15px; font-size: 0.82rem;">
+          <span>Resume</span>
+          <span>↗</span>
+        </a>
+        <a href="#contact" class="btn-pill btn-primary" style="padding: 7px 15px; font-size: 0.82rem;">
+          <span>Connect</span>
+        </a>
+      </div>
+    </nav>
+  </div>
+
+  <div class="site-wrapper">
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero-section" id="hero">
+      <div class="hero-grid">
+        <div class="hero-left-column">
+          <!-- Active Status Chip -->
+          <div class="status-badge-soft">
+            <span class="pulse-indicator"></span>
+            <span>GET, GCE Post Sales · Johnson Controls</span>
+          </div>
+
+          <h1 class="hero-title-main">
+            Engineering products where <span class="text-gradient-soft">system logic</span> meets human intuition.
+          </h1>
+
+          <p class="hero-desc-main">
+            Hey, I’m <strong>Sparsh</strong> — an Instrumentation Engineer passionate about all things tech. Over the past 3.5 years, I’ve built products from scratch across building automation, digital marketplaces, civic tech, and computer vision models.
+          </p>
+
+          <div class="hero-buttons-row">
+            <a href="#projects" class="btn-pill btn-primary">
+              <span>Explore Projects</span>
+              <span>↓</span>
+            </a>
+            <a href="./Spash Resume GET.pdf" target="_blank" class="btn-pill btn-secondary">
+              <span>View Resume</span>
+              <span>↗</span>
+            </a>
+            <a href="#contact" class="btn-pill btn-accent">
+              <span>Contact Me</span>
+            </a>
+          </div>
+
+          <!-- Trust & Credentials Ribbon with User's Real Logos -->
+          <div class="hero-trust-ribbon">
+            <div class="trust-ribbon-label">Recognized & Experienced Across</div>
+            <div class="trust-logos-wrap">
+              <div class="trust-logo-chip" title="Johnson Controls - Building Automation & Controls">
+                <img src="./LOGOS/Johnson Control.png" alt="Johnson Controls Logo" class="trust-logo-img">
+                <span style="font-weight: 600;">Johnson Controls</span>
+              </div>
+              <a href="https://ieeexplore.ieee.org/abstract/document/11493068" target="_blank" rel="noopener noreferrer" class="trust-logo-chip" title="Published IEEE Paper - Deep Learning-Assisted Dynamic Plastic Identification Technique">
+                <img src="./LOGOS/IEEE.png" alt="IEEE Logo" class="trust-logo-img">
+                <span>Published Author ↗</span>
+              </a>
+              <div class="trust-logo-chip" title="IIM Calcutta & VCCircle Pitching">
+                <img src="./LOGOS/IIM Cacutta.png" alt="IIM Calcutta Logo" class="trust-logo-img">
+                <img src="./LOGOS/VC Circle.png" alt="VC Circle Logo" class="trust-logo-img">
+                <span>Investor Pitching</span>
+              </div>
+              <div class="trust-logo-chip" title="Hult Prize Global Accelerator">
+                <img src="./LOGOS/Hult Prize.png" alt="Hult Prize Logo" class="trust-logo-img">
+                <span>Global Accelerator</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Right Column: Interactive Featured Product Stage -->
+        <div class="hero-right-column">
+          <div class="hero-showcase-card">
+            <div class="showcase-header-bar">
+              <div class="showcase-switch-pill">
+                <button class="showcase-tab-btn active" data-hero-target="supportfit">SupportFit</button>
+                <button class="showcase-tab-btn" data-hero-target="travelhoster">TravelHoster</button>
+                <button class="showcase-tab-btn" data-hero-target="mycouncillor">MyCouncillor</button>
+                <button class="showcase-tab-btn" data-hero-target="checkin">CheckIn</button>
+              </div>
+            </div>
+
+            <div class="hero-device-wrapper">
+              <button class="hero-stage-arrow prev" aria-label="Previous Project">‹</button>
+
+              <!-- Phone Mockup Shell with direct link to case study -->
+              <a href="./supportfit.html" class="hero-phone-shell" id="heroDeviceLink" title="Click to view full SupportFit case study">
+                <img src="./SupportFit/MAIN.png" alt="Hero Featured Screen" class="hero-phone-screen" id="heroInteractiveImg">
+                <span class="hero-click-badge">Explore Case Study ↗</span>
+              </a>
+
+              <button class="hero-stage-arrow next" aria-label="Next Project">›</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FEATURED CASE STUDIES & PROJECTS ==================== -->
+    <section class="section-block" id="projects">
+      <div class="section-intro-header">
+        <span class="section-category-tag">Featured Work</span>
+        <h2 class="section-heading-primary">Products Engineered for Real-World Impact</h2>
+        <p class="section-subheading-text">
+          A selection of projects where I focused on how systems actually function—from data logic and state machines to user flows and interface polish.
+        </p>
+      </div>
+
+      <!-- Filter Tabs (Google Labs Style) -->
+      <div class="filter-tabs-container">
+        <button class="filter-chip-btn active" data-filter="all">
+          <span>All Work</span>
+          <span class="chip-count">4</span>
+        </button>
+        <button class="filter-chip-btn" data-filter="health">
+          <span>Health Tech</span>
+          <span class="chip-count">1</span>
+        </button>
+        <button class="filter-chip-btn" data-filter="marketplace">
+          <span>Marketplaces</span>
+          <span class="chip-count">1</span>
+        </button>
+        <button class="filter-chip-btn" data-filter="civic">
+          <span>Civic & Communities</span>
+          <span class="chip-count">2</span>
+        </button>
+      </div>
+
+      <!-- Project Cards Grid -->
+      <div class="projects-showcase-grid">
+
+        <!-- 1. SupportFit -->
+        <article class="project-lab-card" data-category="health">
+          <div class="project-card-top">
+            <div class="project-tag-row">
+              <span class="domain-pill pill-green">Physical Wellness · Health Tech</span>
+              <span class="role-tag-subtle">Product Design Intern</span>
+            </div>
+            <h3 class="project-card-title">SupportFit</h3>
+            <p class="project-card-tagline">Physical Wellness That Powers Performance</p>
+            <p class="project-card-desc">
+              Workplace wellness solution designed to improve movement, sleep, and nutrition. Engineered core system logic for BMR/BMI calculations, calorie tracking, gamification loops, and therapist consultations.
+            </p>
+
+            <!-- 4 Pillars -->
+            <div class="pillars-mini-grid">
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">1</span>
+                <span>Seamless Device Sync</span>
+              </div>
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">2</span>
+                <span>Data-Driven Insights</span>
+              </div>
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">3</span>
+                <span>Dedicated Health Coach</span>
+              </div>
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">4</span>
+                <span>Personalized Targets</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Carousel Box -->
+          <div class="project-preview-box">
+            <div class="project-stage-carousel-wrapper">
+              <button class="project-card-arrow prev" data-target="supportfit" aria-label="Previous screen">‹</button>
+              <div class="project-preview-media-stage open-lightbox" data-img="./SupportFit/MAIN.png" data-caption="SupportFit - Main Overview Screen">
+                <img src="./SupportFit/MAIN.png" alt="SupportFit Screen" class="project-preview-img" id="img-supportfit">
+                <span class="preview-zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -1px; margin-right: 4px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>Click to Enlarge</span>
+              </div>
+              <button class="project-card-arrow next" data-target="supportfit" aria-label="Next screen">›</button>
+            </div>
+            <!-- Bouncy Screen Dots -->
+            <div class="screen-selector-bar" data-target="supportfit">
+              <button class="screen-dot-btn active" data-src="./SupportFit/MAIN.png" data-caption="SupportFit - Main Dashboard & Activity Summary" title="Dashboard"></button>
+              <button class="screen-dot-btn" data-src="./SupportFit/13 Pro - 242 1.png" data-caption="SupportFit - Daily Water Intake Tracker" title="Water Intake"></button>
+              <button class="screen-dot-btn" data-src="./SupportFit/13 Pro - 243 1.png" data-caption="SupportFit - Reminder & Alert Frequency Settings" title="Reminder Settings"></button>
+              <button class="screen-dot-btn" data-src="./SupportFit/13 Pro - 245 1.png" data-caption="SupportFit - Calorie & Meal Intake Tracker" title="Calorie & Meal Intake"></button>
+              <button class="screen-dot-btn" data-src="./SupportFit/13 Pro - 248 1.png" data-caption="SupportFit - Sleep Schedule & Health Reminders" title="Sleep Reminders"></button>
+              <button class="screen-dot-btn" data-src="./SupportFit/13 Pro - 260 1.png" data-caption="SupportFit - Weekly Sleep Duration & Stats Analysis" title="Sleep Duration Stats"></button>
+            </div>
+          </div>
+
+          <div class="project-card-footer">
+            <a href="./supportfit.html" class="btn-open-study">
+              <span>Read Full Case Study</span>
+              <span>→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 2. TravelHoster -->
+        <article class="project-lab-card" data-category="marketplace">
+          <div class="project-card-top">
+            <div class="project-tag-row">
+              <span class="domain-pill pill-orange">Travel Marketplace · B2B & B2C</span>
+              <span class="role-tag-subtle">Product Design Intern</span>
+            </div>
+            <h3 class="project-card-title">TravelHoster</h3>
+            <p class="project-card-tagline">Turning travel planning into a two-way conversation</p>
+            <p class="project-card-desc">
+              Web-based travel marketplace connecting travelers directly with tour operators. Defined discovery logic, custom trip request routing (“Tailor Trip”), live operator negotiation, and full admin CMS portals.
+            </p>
+
+            <!-- 4 Pillars -->
+            <div class="pillars-mini-grid">
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">1</span>
+                <span>Discover Travel Packages</span>
+              </div>
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">2</span>
+                <span>Customize Your Trip</span>
+              </div>
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">3</span>
+                <span>Connect & Negotiate</span>
+              </div>
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">4</span>
+                <span>Smart Matching Engine</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Carousel Box -->
+          <div class="project-preview-box">
+            <div class="project-stage-carousel-wrapper">
+              <button class="project-card-arrow prev" data-target="travelhoster" aria-label="Previous screen">‹</button>
+              <div class="project-preview-media-stage open-lightbox" data-img="./TravelHoster/MAIN.png" data-caption="TravelHoster - Itinerary Search & Discover Interface">
+                <img src="./TravelHoster/MAIN.png" alt="TravelHoster Screen" class="project-preview-img" id="img-travelhoster">
+                <span class="preview-zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -1px; margin-right: 4px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>Click to Enlarge</span>
+              </div>
+              <button class="project-card-arrow next" data-target="travelhoster" aria-label="Next screen">›</button>
+            </div>
+            <!-- Bouncy Screen Dots -->
+            <div class="screen-selector-bar" data-target="travelhoster">
+              <button class="screen-dot-btn active" data-src="./TravelHoster/MAIN.png" data-caption="TravelHoster - Itinerary Search & Discover Interface" title="Discover Flow"></button>
+              <button class="screen-dot-btn" data-src="./TravelHoster/Tailor trip Filled 1.png" data-caption="TravelHoster - Tailor Trip Custom Inquiry Flow" title="Tailor Trip"></button>
+              <button class="screen-dot-btn" data-src="./TravelHoster/Desktop - 23 1.png" data-caption="TravelHoster - Operator & Partner Management Console" title="Partner Console"></button>
+              <button class="screen-dot-btn" data-src="./TravelHoster/Desktop - 93 1.png" data-caption="TravelHoster - Package Configuration & CMS Modal" title="Package CMS Modal"></button>
+              <button class="screen-dot-btn" data-src="./TravelHoster/Desktop - 180 1.png" data-caption="TravelHoster - Partner Revenue & Performance Analytics" title="Revenue Analytics"></button>
+              <button class="screen-dot-btn" data-src="./TravelHoster/Screenshot 2026-04-27 at 13.22.02 1.png" data-caption="TravelHoster - Regional Destination Showcase (Jammu & Kashmir)" title="Destination Showcase"></button>
+            </div>
+          </div>
+
+          <div class="project-card-footer">
+            <a href="./travelhoster.html" class="btn-open-study">
+              <span>Read Full Case Study</span>
+              <span>→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 3. MyCouncillor -->
+        <article class="project-lab-card" data-category="civic">
+          <div class="project-card-top">
+            <div class="project-tag-row">
+              <span class="domain-pill pill-blue">Civic Tech · Local Governance</span>
+              <span class="role-tag-subtle">Product Design Intern</span>
+            </div>
+            <h3 class="project-card-title">MyCouncillor</h3>
+            <p class="project-card-tagline">Streamlining civic issue reporting and ward governance</p>
+            <p class="project-card-desc">
+              Civic issue management platform enabling citizens to report local problems with GPS coordinates and photographic proof, backed by an admin triage dashboard for ward councillors and field workers.
+            </p>
+
+            <!-- 4 Pillars -->
+            <div class="pillars-mini-grid">
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">1</span>
+                <span>Easy Issue Reporting</span>
+              </div>
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">2</span>
+                <span>Real-Time Status Tracking</span>
+              </div>
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">3</span>
+                <span>Smart Routing System</span>
+              </div>
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">4</span>
+                <span>Admin Analytics Dashboard</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Carousel Box -->
+          <div class="project-preview-box">
+            <div class="project-stage-carousel-wrapper">
+              <button class="project-card-arrow prev" data-target="mycouncillor" aria-label="Previous screen">‹</button>
+              <div class="project-preview-media-stage open-lightbox" data-img="./MyCouncilor/MAIN.png" data-caption="MyCouncillor - Citizen App Home & Issue Reporting">
+                <img src="./MyCouncilor/MAIN.png" alt="MyCouncillor Screen" class="project-preview-img" id="img-mycouncillor">
+                <span class="preview-zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -1px; margin-right: 4px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>Click to Enlarge</span>
+              </div>
+              <button class="project-card-arrow next" data-target="mycouncillor" aria-label="Next screen">›</button>
+            </div>
+            <!-- Bouncy Screen Dots -->
+            <div class="screen-selector-bar" data-target="mycouncillor">
+              <button class="screen-dot-btn active" data-src="./MyCouncilor/MAIN.png" data-caption="MyCouncillor - Citizen App Home & Issue Reporting" title="Citizen Home"></button>
+              <button class="screen-dot-btn" data-src="./MyCouncilor/Dashboard-1P 1.png" data-caption="MyCouncillor - Councillor Administration Dashboard" title="Admin Dashboard"></button>
+              <button class="screen-dot-btn" data-src="./MyCouncilor/New Issues - P 1.png" data-caption="MyCouncillor - Incoming Complaints Triage View" title="Triage Queue"></button>
+              <button class="screen-dot-btn" data-src="./MyCouncilor/Pending Issue- PPP 1.png" data-caption="MyCouncillor - Task Assignment & Worker Routing" title="Task Assignment"></button>
+              <button class="screen-dot-btn" data-src="./MyCouncilor/iPhone 13 & 14 - 188 1.png" data-caption="MyCouncillor - Geolocation Pinpoint & Address Auto-detect" title="Geo Location"></button>
+              <button class="screen-dot-btn" data-src="./MyCouncilor/iPhone 13 & 14 - 214 1.png" data-caption="MyCouncillor - Real-time Status Tracking Timeline" title="Tracking Timeline"></button>
+            </div>
+          </div>
+
+          <div class="project-card-footer">
+            <a href="./mycouncillor.html" class="btn-open-study">
+              <span>Read Full Case Study</span>
+              <span>→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 4. CheckIn -->
+        <article class="project-lab-card" data-category="civic">
+          <div class="project-card-top">
+            <div class="project-tag-row">
+              <span class="domain-pill pill-purple">Society Management · Access Control</span>
+              <span class="role-tag-subtle">Product Design Intern</span>
+            </div>
+            <h3 class="project-card-title">CheckIn</h3>
+            <p class="project-card-tagline">Streamlining Check-ins for residential societies</p>
+            <p class="project-card-desc">
+              Visitor and community management ecosystem for high-density societies. Designed QR-based entry passes, domestic helper express approvals, society maintenance billing, notice boards, and emergency SOS alerts.
+            </p>
+
+            <!-- 4 Pillars -->
+            <div class="pillars-mini-grid">
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">1</span>
+                <span>Seamless QR Check-in</span>
+              </div>
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">2</span>
+                <span>Secure Resident Verification</span>
+              </div>
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">3</span>
+                <span>Maintenance Management</span>
+              </div>
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">4</span>
+                <span>Gatekeeper & Admin Portal</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Carousel Box -->
+          <div class="project-preview-box">
+            <div class="project-stage-carousel-wrapper">
+              <button class="project-card-arrow prev" data-target="checkin" aria-label="Previous screen">‹</button>
+              <div class="project-preview-media-stage open-lightbox" data-img="./CheckIn/MAIN.png" data-caption="CheckIn - Resident Dashboard & Society Home">
+                <img src="./CheckIn/MAIN.png" alt="CheckIn Screen" class="project-preview-img" id="img-checkin">
+                <span class="preview-zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -1px; margin-right: 4px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>Click to Enlarge</span>
+              </div>
+              <button class="project-card-arrow next" data-target="checkin" aria-label="Next screen">›</button>
+            </div>
+            <!-- Bouncy Screen Dots -->
+            <div class="screen-selector-bar" data-target="checkin">
+              <button class="screen-dot-btn active" data-src="./CheckIn/MAIN.png" data-caption="CheckIn - Resident Dashboard & Society Home" title="Resident Home"></button>
+              <button class="screen-dot-btn" data-src="./CheckIn/Alert 1.png" data-caption="CheckIn - Admin SOS Alert Creation & Dispatch" title="Admin SOS Dispatch"></button>
+              <button class="screen-dot-btn" data-src="./CheckIn/Homescreen Normal 1.png" data-caption="CheckIn - Community Notice Board & Resident Portal" title="Notice Board"></button>
+              <button class="screen-dot-btn" data-src="./CheckIn/Popup 1.png" data-caption="CheckIn - Emergency SOS Confirmation Modal (Slide To Send)" title="Emergency SOS Modal"></button>
+              <button class="screen-dot-btn" data-src="./CheckIn/Chat Analytics 1.png" data-caption="CheckIn - Community Issue Trends & Helpdesk Analytics" title="Helpdesk Analytics"></button>
+              <button class="screen-dot-btn" data-src="./CheckIn/User Perspective - Issuer 1.png" data-caption="CheckIn - Emergency SOS Broadcast Alert View" title="SOS Broadcast View"></button>
+            </div>
+          </div>
+
+          <div class="project-card-footer">
+            <a href="./checkin.html" class="btn-open-study">
+              <span>Read Full Case Study</span>
+              <span>→</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ==================== EXPERIENCE TIMELINE ==================== -->
+    <section class="section-block" id="experience">
+      <div class="section-intro-header">
+        <span class="section-category-tag">Career Journey</span>
+        <h2 class="section-heading-primary">Where I’ve Built & Learned</h2>
+        <p class="section-subheading-text">
+          Bridging industrial control engineering with agile product design and startup system structuring.
+        </p>
+      </div>
+
+      <div class="experience-stream">
+
+        <!-- 1. Johnson Controls -->
+        <article class="experience-card-lab">
+          <div class="exp-header-row">
+            <div class="exp-identity">
+              <div class="exp-avatar-badge avatar-jci">
+                <img src="./LOGOS/Johnson Control.png" alt="Johnson Controls" class="exp-avatar-logo">
+              </div>
+              <div class="exp-title-group">
+                <h3>Johnson Controls</h3>
+                <div class="exp-role-text">Graduate Engineer Trainee (GET) · GCE Post Sales</div>
+                <div style="font-size: 0.78rem; color: var(--text-muted); font-weight: 500; margin-top: 2px;">
+                  Full-Time (Joined Oct 5, 2026) · Prior: 45-Day Engineering Intern (Mar 2026 – Apr 2026)
+                </div>
+              </div>
+            </div>
+            <div class="exp-date-chip current">
+              <span>●</span> Oct 5, 2026 – Present (Full-Time)
+            </div>
+          </div>
+
+          <div class="exp-bullets-list">
+            <p>Joined full-time on October 5, 2026 as Graduate Engineer Trainee in GCE Post Sales following a high-impact 45-day internship in March–April 2026, working directly on enterprise building automation systems.</p>
+            <p>Worked in the controls domain on building automation systems (BAS), creating hardware submittals from mechanical drawings, specifications, and client proposals.</p>
+            <p>Configured complete HVAC systems—including AHUs, VAVs (8–20 units), chillers, and boilers—using Solution Navigator, generating flow diagrams, point schedules, BOMs, and sequences of operation.</p>
+            <p>Developed and aligned wiring diagrams and system layouts with mechanical designs using Visio and Excel, along with detailed schedules (RAC, damper, valve, AFMS).</p>
+            <p>Gained hands-on experience with SCT and CCT for system configuration and built Metasys UI graphics from scratch for monitoring and control.</p>
+          </div>
+
+          <!-- Technical Drawings & Work Samples -->
+          <div class="work-samples-module">
+            <div class="samples-header-bar">
+              <div class="samples-title-text">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 4px;"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg> Technical Drawings & Schematics (Few Work Samples)
+              </div>
+              <span class="samples-hint">Click any schematic to inspect</span>
+            </div>
+            <div class="samples-grid-scroll">
+              <div class="sample-thumb-item open-lightbox" data-img="./Johnson Controls/IMG_20260424_121358-2 1.png" data-caption="Johnson Controls - AHU-1 Flow Layout Schematic">
+                <div class="sample-thumb-img-wrap blueprint-tint">
+                  <img src="./Johnson Controls/IMG_20260424_121358-2 1.png" alt="AHU-1 Flow Layout" class="sample-thumb-img">
+                </div>
+                <span class="sample-thumb-label">AHU-1 Flow Layout</span>
+              </div>
+
+              <div class="sample-thumb-item open-lightbox" data-img="./Johnson Controls/IMG_20260424_121408 1.png" data-caption="Johnson Controls - Point Schedules & Sequences">
+                <div class="sample-thumb-img-wrap blueprint-tint">
+                  <img src="./Johnson Controls/IMG_20260424_121408 1.png" alt="Point Schedules" class="sample-thumb-img">
+                </div>
+                <span class="sample-thumb-label">Point Schedules & BOM</span>
+              </div>
+
+              <div class="sample-thumb-item open-lightbox" data-img="./Johnson Controls/IMG_20260424_121421-2 1.png" data-caption="Johnson Controls - HVAC Equipment Configuration">
+                <div class="sample-thumb-img-wrap blueprint-tint">
+                  <img src="./Johnson Controls/IMG_20260424_121421-2 1.png" alt="HVAC Equipment" class="sample-thumb-img">
+                </div>
+                <span class="sample-thumb-label">HVAC Config</span>
+              </div>
+
+              <div class="sample-thumb-item open-lightbox" data-img="./Johnson Controls/IMG_20260424_121434 1.png" data-caption="Johnson Controls - Controller Wiring Diagram Detail">
+                <div class="sample-thumb-img-wrap blueprint-tint">
+                  <img src="./Johnson Controls/IMG_20260424_121434 1.png" alt="Controller Wiring" class="sample-thumb-img">
+                </div>
+                <span class="sample-thumb-label">Wiring Detail</span>
+              </div>
+
+              <div class="sample-thumb-item open-lightbox" data-img="./Johnson Controls/IMG_20260424_121629 1.png" data-caption="Johnson Controls - Mechanical Layout Alignment">
+                <div class="sample-thumb-img-wrap blueprint-tint">
+                  <img src="./Johnson Controls/IMG_20260424_121629 1.png" alt="Mechanical Layout" class="sample-thumb-img">
+                </div>
+                <span class="sample-thumb-label">Mechanical Plan</span>
+              </div>
+
+              <div class="sample-thumb-item open-lightbox" data-img="./Johnson Controls/IMG_20260424_121714 2.png" data-caption="Johnson Controls - Metasys Graphics & Point Mapping">
+                <div class="sample-thumb-img-wrap blueprint-tint">
+                  <img src="./Johnson Controls/IMG_20260424_121714 2.png" alt="Metasys UI Graphic" class="sample-thumb-img">
+                </div>
+                <span class="sample-thumb-label">Metasys UI Graphic</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Scalenow Technosolutions -->
+        <article class="experience-card-lab">
+          <div class="exp-header-row">
+            <div class="exp-identity">
+              <div class="exp-avatar-badge avatar-scalenow">
+                <img src="./LOGOS/Scalenow.png" alt="Scalenow Technosolutions" class="exp-avatar-logo">
+              </div>
+              <div class="exp-title-group">
+                <h3>Scalenow Technosolutions</h3>
+                <div class="exp-role-text">Product Designer & UX Researcher</div>
+              </div>
+            </div>
+            <div class="exp-date-chip">Nov 2023 – Oct 2024</div>
+          </div>
+
+          <div class="exp-bullets-list">
+            <p>Worked across multiple products, driving end-to-end product design—from research and user flows to backend logic and system structuring. Collaborated closely with founders, contributed to product decisions, and pitched solutions to investors.</p>
+            <p>Designed and structured a travel marketplace connecting operators and travelers, defining discovery logic, pricing structures, upgrade flows, and core system behavior.</p>
+            <p>Built the My Councillor app for civic issue management—enabling users to report, track, and resolve local issues—along with a full admin panel (CMS, analytics, notifications, and workflow management for councillors).</p>
+            <p>Contributed to a visitor management system by redesigning flows and adding new modules for gatekeepers and admins.</p>
+          </div>
+
+          <!-- Scalenow Work Samples -->
+          <div class="work-samples-module">
+            <div class="samples-header-bar">
+              <div class="samples-title-text">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 4px;"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg> Scalenow Platform Screens (Few Work Samples)
+              </div>
+              <span class="samples-hint">Click any screen to inspect</span>
+            </div>
+            <div class="samples-grid-scroll">
+              <div class="sample-thumb-item open-lightbox" data-img="./Scalenow Technosolutions/Screenshot 2026-04-24 at 12.58.50 2.png" data-caption="Scalenow - Travel Marketplace Discovery Portal">
+                <div class="sample-thumb-img-wrap">
+                  <img src="./Scalenow Technosolutions/Screenshot 2026-04-24 at 12.58.50 2.png" alt="Travel Portal" class="sample-thumb-img">
+                </div>
+                <span class="sample-thumb-label">Marketplace Discovery</span>
+              </div>
+
+              <div class="sample-thumb-item open-lightbox" data-img="./Scalenow Technosolutions/Screenshot 2026-04-24 at 13.00.33 1.png" data-caption="Scalenow - Operator Negotiation & Booking Flow">
+                <div class="sample-thumb-img-wrap">
+                  <img src="./Scalenow Technosolutions/Screenshot 2026-04-24 at 13.00.33 1.png" alt="Negotiation Flow" class="sample-thumb-img">
+                </div>
+                <span class="sample-thumb-label">Negotiation Flow</span>
+              </div>
+
+              <div class="sample-thumb-item open-lightbox" data-img="./Scalenow Technosolutions/Screenshot 2026-04-24 at 13.02.05 1.png" data-caption="Scalenow - Package Customization Interface">
+                <div class="sample-thumb-img-wrap">
+                  <img src="./Scalenow Technosolutions/Screenshot 2026-04-24 at 13.02.05 1.png" alt="Package Customizer" class="sample-thumb-img">
+                </div>
+                <span class="sample-thumb-label">Customizer Interface</span>
+              </div>
+
+              <div class="sample-thumb-item open-lightbox" data-img="./Scalenow Technosolutions/Screenshot 2026-04-24 at 13.03.26 1.png" data-caption="Scalenow - Admin Analytics & CMS Portal">
+                <div class="sample-thumb-img-wrap">
+                  <img src="./Scalenow Technosolutions/Screenshot 2026-04-24 at 13.03.26 1.png" alt="Admin CMS Portal" class="sample-thumb-img">
+                </div>
+                <span class="sample-thumb-label">Admin Analytics</span>
+              </div>
+
+              <div class="sample-thumb-item open-lightbox" data-img="./Scalenow Technosolutions/Screenshot 2026-04-24 at 13.04.42 1.png" data-caption="Scalenow - Mobile User Experience">
+                <div class="sample-thumb-img-wrap">
+                  <img src="./Scalenow Technosolutions/Screenshot 2026-04-24 at 13.04.42 1.png" alt="Mobile Experience" class="sample-thumb-img">
+                </div>
+                <span class="sample-thumb-label">Mobile Experience</span>
+              </div>
+
+              <div class="sample-thumb-item open-lightbox" data-img="./Scalenow Technosolutions/Screenshot 2026-04-24 at 13.11.15 1.png" data-caption="Scalenow - Mobile Booking & Checkout Flow">
+                <div class="sample-thumb-img-wrap">
+                  <img src="./Scalenow Technosolutions/Screenshot 2026-04-24 at 13.11.15 1.png" alt="Mobile Booking Checkout" class="sample-thumb-img">
+                </div>
+                <span class="sample-thumb-label">Mobile Checkout</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. SupportRoom -->
+        <article class="experience-card-lab">
+          <div class="exp-header-row">
+            <div class="exp-identity">
+              <div class="exp-avatar-badge avatar-supportroom">
+                <img src="./LOGOS/SupportRoom.png" alt="SupportRoom" class="exp-avatar-logo">
+              </div>
+              <div class="exp-title-group">
+                <h3>SupportRoom</h3>
+                <div class="exp-role-text">Product Design Intern</div>
+              </div>
+            </div>
+            <div class="exp-date-chip">Mar 2024 – Apr 2024</div>
+          </div>
+
+          <div class="exp-bullets-list">
+            <p>Led end-to-end design of SupportFit, a fitness platform built from scratch—defining user personas, system logic (nutrition, calorie tracking, fitness states), and overall product structure.</p>
+            <p>Drove the V2 upgrade by identifying gaps and introducing new features, including improved tracking flows, gamification (badges, challenges, rewards), and enhanced user engagement systems.</p>
+            <p>Designed interaction flows for core features like therapist access, multi-chat systems, and communication tools (calls, recordings, scheduling), focusing on usability and real-world usage.</p>
+            <p>Built UI for a resource center delivering fitness and mental wellness content, structuring content for easy access and engagement.</p>
+          </div>
+
+          <!-- SupportRoom Work Samples -->
+          <div class="work-samples-module">
+            <div class="samples-header-bar">
+              <div class="samples-title-text">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 4px;"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg> SupportRoom Platform Screens (Few Work Samples)
+              </div>
+              <span class="samples-hint">Click any screen to inspect</span>
+            </div>
+            <div class="samples-grid-scroll">
+              <div class="sample-thumb-item open-lightbox" data-img="./SupportRoom/Screenshot 2026-04-24 at 10.40.31 2.png" data-caption="SupportRoom - Therapist Onboarding & Booking">
+                <div class="sample-thumb-img-wrap">
+                  <img src="./SupportRoom/Screenshot 2026-04-24 at 10.40.31 2.png" alt="Therapist Onboarding" class="sample-thumb-img">
+                </div>
+                <span class="sample-thumb-label">Therapist Booking</span>
+              </div>
+
+              <div class="sample-thumb-item open-lightbox" data-img="./SupportRoom/Screenshot 2026-04-24 at 10.50.06 2.png" data-caption="SupportRoom - Mental Wellness Dashboard">
+                <div class="sample-thumb-img-wrap">
+                  <img src="./SupportRoom/Screenshot 2026-04-24 at 10.50.06 2.png" alt="Mental Wellness" class="sample-thumb-img">
+                </div>
+                <span class="sample-thumb-label">Wellness Dashboard</span>
+              </div>
+
+              <div class="sample-thumb-item open-lightbox" data-img="./SupportRoom/Screenshot 2026-04-24 at 13.42.11 2.png" data-caption="SupportRoom - Multi-chat System & Messaging">
+                <div class="sample-thumb-img-wrap">
+                  <img src="./SupportRoom/Screenshot 2026-04-24 at 13.42.11 2.png" alt="Multi-chat Messaging" class="sample-thumb-img">
+                </div>
+                <span class="sample-thumb-label">Multi-Chat System</span>
+              </div>
+
+              <div class="sample-thumb-item open-lightbox" data-img="./SupportRoom/Screenshot 2026-04-24 at 13.46.35 1.png" data-caption="SupportRoom - Wellness Resource Library & Content">
+                <div class="sample-thumb-img-wrap">
+                  <img src="./SupportRoom/Screenshot 2026-04-24 at 13.46.35 1.png" alt="Resource Library" class="sample-thumb-img">
+                </div>
+                <span class="sample-thumb-label">Resource Center</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ==================== SOME EXTRAS (With ALL 6 User LOGOS!) ==================== -->
+    <section class="section-block" id="extras">
+      <div class="section-intro-header">
+        <span class="section-category-tag">Beyond The Screen</span>
+        <h2 class="section-heading-primary">Some Extras</h2>
+        <p class="section-subheading-text">
+          Passions, publications, competitive sports, and diverse pursuits that shape how I think and build.
+        </p>
+      </div>
+
+      <div class="extras-bento-layout">
+
+        <!-- 1. Global Accelerator (Hult Prize LOGO) -->
+        <div class="extra-bento-card">
+          <div class="extra-card-header">
+            <div class="logo-display-pill" title="Hult Prize">
+              <img src="./LOGOS/Hult Prize.png" alt="Hult Prize Logo" class="extra-logo-img">
+            </div>
+            <span class="extra-category-chip pill-green">Sustainability</span>
+          </div>
+          <div>
+            <h3 class="extra-title-text">Global Accelerator (Hult Prize)</h3>
+            <p class="extra-desc-text">
+              Presented a circular sustainable fashion concept focused on converting discarded clothing into reusable textile fibers to eliminate landfill waste.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2. Research Paper (IEEE LOGO) -->
+        <div class="extra-bento-card card-wide-2">
+          <div class="extra-card-header">
+            <div class="logo-display-pill" title="IEEE (Institute of Electrical and Electronics Engineers)">
+              <img src="./LOGOS/IEEE.png" alt="IEEE Logo" class="extra-logo-img">
+            </div>
+            <span class="extra-category-chip pill-blue">IEEE Xplore · AI / ML</span>
+          </div>
+          <div>
+            <h3 class="extra-title-text">Deep Learning-Assisted Dynamic Plastic Identification Technique</h3>
+            <p class="extra-desc-text">
+              Published in IEEE Conference Publication. Developed a machine learning computer vision model for real-time plastic waste detection, classifying polymer material types to assess recyclability and automate conveyor sorting.
+            </p>
+            <a href="https://ieeexplore.ieee.org/abstract/document/11493068" target="_blank" rel="noopener noreferrer" class="btn-pill btn-primary" style="margin-top: 14px; padding: 7px 16px; font-size: 0.82rem; width: fit-content;">
+              <span>Read on IEEE Xplore</span>
+              <span>↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 3. Martial Arts (Kyodokyokushin LOGO) -->
+        <div class="extra-bento-card">
+          <div class="extra-card-header">
+            <div class="logo-display-pill" title="KyodoKyokushin">
+              <img src="./LOGOS/Kyodokyokushin.png" alt="Kyodokyokushin Logo" class="extra-logo-img">
+            </div>
+            <span class="extra-category-chip pill-purple">Discipline</span>
+          </div>
+          <div>
+            <h3 class="extra-title-text">Martial Arts (KyodoKyokushin)</h3>
+            <p class="extra-desc-text">
+              Won multiple martial arts championships at state and international levels, actively practicing KyodoKyokushin. Built extreme discipline, endurance, and calm under high pressure.
+            </p>
+          </div>
+        </div>
+
+        <!-- 4. Japanese Proficiency (Japanese LOGO) -->
+        <div class="extra-bento-card">
+          <div class="extra-card-header">
+            <div class="logo-display-pill" title="Japanese Language">
+              <img src="./LOGOS/Japanese.png" alt="Japanese Language Logo" class="extra-logo-img">
+            </div>
+            <span class="extra-category-chip pill-orange">Language</span>
+          </div>
+          <div>
+            <h3 class="extra-title-text">Japanese Proficiency</h3>
+            <p class="extra-desc-text">
+              Fluent in spoken and conversational Japanese with high auditory comprehension. Currently learning to read and write kanji & kana, preparing for the JLPT exam.
+            </p>
+          </div>
+        </div>
+
+        <!-- 5. Investor Pitching (IIM Calcutta & VC Circle LOGOS) -->
+        <div class="extra-bento-card">
+          <div class="extra-card-header">
+            <div class="dual-logos-row">
+              <div class="logo-display-pill" title="IIM Calcutta">
+                <img src="./LOGOS/IIM Cacutta.png" alt="IIM Calcutta Logo" class="extra-logo-img">
+              </div>
+              <div class="logo-display-pill" title="VC Circle">
+                <img src="./LOGOS/VC Circle.png" alt="VC Circle Logo" class="extra-logo-img">
+              </div>
+            </div>
+            <span class="extra-category-chip pill-neutral">Venture</span>
+          </div>
+          <div>
+            <h3 class="extra-title-text">Investor Pitching @ IIM Calcutta</h3>
+            <p class="extra-desc-text">
+              Pitched startup ideas to top venture capital funds and angel investors at prestigious forums like VCCircle hosted at IIM Calcutta, receiving direct feedback on product-market fit.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== TOOLS (Mind Map / Node Hierarchy Tree) ==================== -->
+    <section class="section-block" id="skills">
+      <div class="section-intro-header">
+        <span class="section-category-tag">Competencies & Toolset</span>
+        <h2 class="section-heading-primary">Tools</h2>
+        <p class="section-subheading-text">
+          Tools and technologies I use to design, build, and understand digital products.
+        </p>
+      </div>
+
+      <div class="mindmap-wrapper">
+        <div class="mindmap-bg-grid" aria-hidden="true"></div>
+
+        <div class="mindmap-content-layer">
+
+          <!-- Level 1: Product Design (Top Cluster) -->
+          <div class="mindmap-top-tier">
+            <span class="mindmap-cluster-label">Product Design</span>
+            <div class="mindmap-cards-cluster">
+              <div class="mindmap-node-card">
+                <span class="node-tooltip">Interface Design & Systems</span>
+                <div class="mindmap-node-icon">
+                  <img src="./Skills Logo/Figma.png" alt="Figma" class="mindmap-node-img">
+                </div>
+                <span class="mindmap-node-name">Figma</span>
+              </div>
+
+              <div class="mindmap-node-card">
+                <span class="node-tooltip">Interactive Prototyping</span>
+                <div class="mindmap-node-icon">
+                  <img src="./Skills Logo/Framer.png" alt="Framer" class="mindmap-node-img">
+                </div>
+                <span class="mindmap-node-name">Framer</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Connector Canvas SVG Area -->
+          <div class="mindmap-connector-canvas-wrap" aria-hidden="true">
+            <svg class="mindmap-svg-tree" viewBox="0 0 1000 70" preserveAspectRatio="none">
+              <!-- Central Stem from Product Design Top Node (x=500, y=0) -->
+              <path d="M 500 0 L 500 16" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" fill="none" />
+              <circle cx="500" cy="16" r="4" fill="#D97706" />
+
+              <!-- Branch 1: Web Development (Target: x=125, y=66) - Gentle S-Curve -->
+              <path d="M 500 16 C 500 44, 125 24, 125 66" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" fill="none" />
+              <circle cx="125" cy="66" r="3.5" fill="#D97706" />
+
+              <!-- Branch 2: Building Systems (Target: x=375, y=66) - Gentle S-Curve -->
+              <path d="M 500 16 C 500 44, 375 28, 375 66" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" fill="none" />
+              <circle cx="375" cy="66" r="3.5" fill="#D97706" />
+
+              <!-- Branch 3: AI & Machine Learning (Target: x=625, y=66) - Gentle S-Curve -->
+              <path d="M 500 16 C 500 44, 625 28, 625 66" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" fill="none" />
+              <circle cx="625" cy="66" r="3.5" fill="#D97706" />
+
+              <!-- Branch 4: IoT & Embedded Systems (Target: x=875, y=66) - Gentle S-Curve -->
+              <path d="M 500 16 C 500 44, 875 24, 875 66" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" fill="none" />
+              <circle cx="875" cy="66" r="3.5" fill="#D97706" />
+            </svg>
+          </div>
+
+          <!-- Level 2: Four Balanced Branch Clusters -->
+          <div class="mindmap-branches-row">
+
+            <!-- Branch 1: Web Development -->
+            <div class="mindmap-branch-column">
+              <span class="mindmap-cluster-label">Web Development</span>
+              <div class="mindmap-cards-cluster">
+                <div class="mindmap-node-card">
+                  <span class="node-tooltip">Semantic Structure</span>
+                  <div class="mindmap-node-icon">
+                    <img src="./Skills Logo/HTML.png" alt="HTML5" class="mindmap-node-img">
+                  </div>
+                  <span class="mindmap-node-name">HTML</span>
+                </div>
+
+                <div class="mindmap-node-card">
+                  <span class="node-tooltip">CSS3 Tokens & Layout</span>
+                  <div class="mindmap-node-icon">
+                    <img src="./Skills Logo/CSS.png" alt="CSS3" class="mindmap-node-img">
+                  </div>
+                  <span class="mindmap-node-name">CSS</span>
+                </div>
+
+                <div class="mindmap-node-card">
+                  <span class="node-tooltip">Modern JavaScript Logic</span>
+                  <div class="mindmap-node-icon">
+                    <img src="./Skills Logo/Javascript.png" alt="JavaScript" class="mindmap-node-img">
+                  </div>
+                  <span class="mindmap-node-name">JS</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Branch 2: Building Systems -->
+            <div class="mindmap-branch-column branch-center">
+              <span class="mindmap-cluster-label">Building Systems</span>
+              <div class="mindmap-cards-cluster">
+                <div class="mindmap-node-card">
+                  <span class="node-tooltip">System Configuration Tool</span>
+                  <div class="mindmap-node-icon">
+                    <img src="./Skills Logo/SCT.png" alt="SCT" class="mindmap-node-img">
+                  </div>
+                  <span class="mindmap-node-name">SCT</span>
+                </div>
+
+                <div class="mindmap-node-card">
+                  <span class="node-tooltip">Controller Config Tool</span>
+                  <div class="mindmap-node-icon">
+                    <img src="./Skills Logo/CCT.png" alt="CCT" class="mindmap-node-img">
+                  </div>
+                  <span class="mindmap-node-name">CCT</span>
+                </div>
+
+                <div class="mindmap-node-card">
+                  <span class="node-tooltip">Solution Navigator</span>
+                  <div class="mindmap-node-icon">
+                    <img src="./Skills Logo/Solution Navigator.png" alt="Solution Navigator" class="mindmap-node-img">
+                  </div>
+                  <span class="mindmap-node-name">SN</span>
+                </div>
+
+                <div class="mindmap-node-card">
+                  <span class="node-tooltip">Metasys User Interface</span>
+                  <div class="mindmap-node-icon">
+                    <img src="./Skills Logo/Metasys.png" alt="Metasys" class="mindmap-node-img">
+                  </div>
+                  <span class="mindmap-node-name">MUI</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Branch 3: AI & Machine Learning -->
+            <div class="mindmap-branch-column">
+              <span class="mindmap-cluster-label">AI & Machine Learning</span>
+              <div class="mindmap-cards-cluster">
+                <div class="mindmap-node-card">
+                  <span class="node-tooltip">Google Colab Model Training</span>
+                  <div class="mindmap-node-icon">
+                    <img src="./Skills Logo/Colab.png" alt="Google Colab" class="mindmap-node-img">
+                  </div>
+                  <span class="mindmap-node-name">Colab</span>
+                </div>
+
+                <div class="mindmap-node-card">
+                  <span class="node-tooltip">PyTorch Neural Networks</span>
+                  <div class="mindmap-node-icon">
+                    <img src="./Skills Logo/PyTorch.png" alt="PyTorch" class="mindmap-node-img">
+                  </div>
+                  <span class="mindmap-node-name">PyTorch</span>
+                </div>
+
+                <div class="mindmap-node-card">
+                  <span class="node-tooltip">TensorFlow ML Pipelines</span>
+                  <div class="mindmap-node-icon">
+                    <img src="./Skills Logo/TensorFlow.png" alt="TensorFlow" class="mindmap-node-img">
+                  </div>
+                  <span class="mindmap-node-name">TF</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Branch 4: IoT & Systems -->
+            <div class="mindmap-branch-column">
+              <span class="mindmap-cluster-label">IoT & Systems</span>
+              <div class="mindmap-cards-cluster">
+                <div class="mindmap-node-card">
+                  <span class="node-tooltip">Arduino Hardware & Sensors</span>
+                  <div class="mindmap-node-icon">
+                    <img src="./Skills Logo/Arduino.png" alt="Arduino" class="mindmap-node-img">
+                  </div>
+                  <span class="mindmap-node-name">Arduino</span>
+                </div>
+
+                <div class="mindmap-node-card">
+                  <span class="node-tooltip">ThingSpeak IoT Analytics</span>
+                  <div class="mindmap-node-icon">
+                    <img src="./Skills Logo/Thingspeak.png" alt="ThingSpeak" class="mindmap-node-img">
+                  </div>
+                  <span class="mindmap-node-name">IoT</span>
+                </div>
+
+                <div class="mindmap-node-card">
+                  <span class="node-tooltip">Blynk IoT Device Control</span>
+                  <div class="mindmap-node-icon">
+                    <img src="./Skills Logo/Blynk.png" alt="Blynk" class="mindmap-node-img">
+                  </div>
+                  <span class="mindmap-node-name">Blynk</span>
+                </div>
+
+                <div class="mindmap-node-card">
+                  <span class="node-tooltip tooltip-align-right">C Systems Programming</span>
+                  <div class="mindmap-node-icon">
+                    <img src="./Skills Logo/C.png" alt="C Language" class="mindmap-node-img">
+                  </div>
+                  <span class="mindmap-node-name">C</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== RECOMMENDATIONS ==================== -->
+    <section class="section-block" id="recommendations">
+      <div class="section-intro-header">
+        <span class="section-category-tag">Leadership Endorsement</span>
+        <h2 class="section-heading-primary">Executive Recommendation</h2>
+        <p class="section-subheading-text">
+          Direct endorsement on product ownership, user-first execution, and engineering maturity.
+        </p>
+      </div>
+
+      <div class="testimonial-card-lab executive-highlight-card">
+        <!-- Senior Leadership Profile Header (Placed ABOVE the recommendation text) -->
+        <div class="recommender-profile-header">
+          <div class="recommender-main-info">
+            <div class="recommender-avatar-circle">SM</div>
+            <div>
+              <div class="recommender-name-row">
+                <h3 class="recommender-name">Suvankar Malakar</h3>
+                <span class="executive-title-chip">CEO & Technical Leadership</span>
+              </div>
+              <div class="recommender-designation">
+                CEO · Scalenow Technosolutions Pvt Ltd.
+              </div>
+            </div>
+          </div>
+
+          <div class="recommender-profile-actions">
+            <div class="logo-display-pill" title="Scalenow Technosolutions" style="height: 40px; padding: 4px 12px;">
+              <img src="./LOGOS/Scalenow.png" alt="Scalenow Technosolutions" style="max-height: 22px; width: auto; object-fit: contain;">
+            </div>
+            <a href="https://www.linkedin.com/in/suvankar-malakar-7b892935/" target="_blank" rel="noopener noreferrer" class="linkedin-profile-pill" title="View Suvankar Malakar on LinkedIn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.65 1.65 0 1 0 0-3.3 1.65 1.65 0 0 0 0 3.3m1.4 9.74V9.89H5.06v8.61h2.8z"></path></svg>
+              <span>Suvankar Malakar on LinkedIn ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Recommendation Quote Body -->
+        <div class="testimonial-quote-wrapper">
+          <div class="quote-mark-soft">“</div>
+          <div class="testimonial-text-body">
+            <p>
+              It is with great enthusiasm and genuine admiration that I recommend Sparsh Gupta — a rare blend of creative brilliance, intellectual sharpness, and professional maturity that is difficult to come by, especially at such an early stage of one’s career.
+            </p>
+            <p>
+              At Scalenow Technosolutions, we work at the intersection of technology, design, and digital commerce — and what we look for most in our collaborators is not just skill, but <strong>ownership</strong>. Sparsh embodies that ownership mindset completely. He approaches every task with a deep sense of responsibility, and his work reflects the kind of maturity we would expect from a far more experienced professional.
+            </p>
+            <p>
+              What immediately stood out to me was his proficiency in UI/UX Design. His ability to think from the user’s perspective — demonstrated convincingly through his competition-winning redesign of Amazon’s mobile application — is precisely the kind of user-first thinking that drives great digital products. He understands that design is not just aesthetics; it is a solution to a problem.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT ME ==================== -->
+    <section class="section-block" id="about">
+      <div class="section-intro-header">
+        <span class="section-category-tag">Background & Philosophy</span>
+        <h2 class="section-heading-primary">Engineering From UI to Hardware</h2>
+        <p class="section-subheading-text">
+          Driven by curiosity of how systems function end-to-end.
+        </p>
+      </div>
+
+      <div class="about-card-lab">
+        <div class="about-quote-box">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+            <span style="display: inline-flex; width: 8px; height: 8px; border-radius: 50%; background: var(--accent-primary);"></span>
+            <span style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-primary);">Core Principle</span>
+          </div>
+          <div class="about-quote-text">
+            “I spend a lot of time figuring out how things actually work—breaking them down, structuring them, and making them better.”
+          </div>
+          <div style="margin-top: 24px; display: flex; flex-wrap: wrap; gap: 8px;">
+            <span class="skill-pill-tag">Systems Engineering</span>
+            <span class="skill-pill-tag">Control Architectures</span>
+            <span class="skill-pill-tag">Human-Centered UI</span>
+            <span class="skill-pill-tag">3.5+ Yrs Building</span>
+          </div>
+        </div>
+
+        <div class="about-narrative">
+          <p>
+            I’m a product-focused engineer passionate about all things tech—whether it’s hardware, software, or building systems end-to-end. Over the past 3.5 years, I’ve worked on products from scratch across different domains, focusing not just on design but on how things actually function—flows, backend logic, and data.
+          </p>
+          <p>
+            I work with Figma, Framer, HTML, CSS, JavaScript, and C, and also have hands-on experience with control systems (Metasys, SCT, CCT, Solution Navigator) from my time at Johnson Controls. I’ve also published an IEEE paper on a vision-based model for plastic waste detection.
+          </p>
+          <p>
+            I’m generally curious about how things work at every level—from UI to hardware—and right now I’m focused on building, learning deeply, and figuring out where I want to go all in.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== BEYOND THE PUBLIC CASE STUDIES / ARCHIVE ==================== -->
+    <section class="section-block" id="archive">
+      <div class="section-intro-header">
+        <span class="section-category-tag">System Archive & Technical Work</span>
+        <h2 class="section-heading-primary">Beyond the Public Case Studies</h2>
+        <p class="section-subheading-text">
+          Four case studies only represent a fraction of the systems I’ve architected over four years. Much of my deepest engineering work was designed for internal operations, enterprise platforms, or reached complete technical readiness before strategic client shifts.
+        </p>
+      </div>
+
+      <!-- Grounded Personal Statement Box -->
+      <div class="archive-statement-card">
+        <p class="archive-statement-text">
+          To be candid: <strong>four portfolio case studies do not represent four continuous years of building.</strong> A substantial portion of the platforms I’ve researched, engineered, and designed reached full structural maturity, state-machine definition, and design completion—whether deployed behind internal operational firewalls or taken through exhaustive ground-level research before client-side strategic shifts.
+        </p>
+        <p class="archive-statement-text">
+          Whether shipped into production or developed through comprehensive wireframing, component libraries, and technical specifications, the engineering dedication and craft were identical. Below is an overview of what was built:
+        </p>
+      </div>
+
+      <!-- 4 High-Density Systems Cards Grid -->
+      <div class="archive-grid">
+
+        <!-- Card 1: Industrial Forecasting & Factory Dispatch -->
+        <div class="archive-card">
+          <div class="archive-card-header">
+            <h3 class="archive-card-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-primary);"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              Industrial Forecasting & Factory Job Dispatch
+            </h3>
+            <span class="archive-pill archive-pill-systems">Operational Systems</span>
+          </div>
+          <p class="archive-card-desc">
+            Engineered graphical user interfaces for rolling operational forecasting, factory floor job assignments, and automated line scheduling. Implemented specialized UI paradigms—including neumorphic and glassmorphic control surfaces—tailored for complex, data-heavy industrial environments.
+          </p>
+          <div class="archive-card-tags">
+            <span class="archive-subtag">Rolling Forecast GUI</span>
+            <span class="archive-subtag">Factory Job Dispatch</span>
+            <span class="archive-subtag">Neumorphic & Glassmorphic UI</span>
+            <span class="archive-subtag">High-Density Analytics</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Field Logistics & Gamified Platform -->
+        <div class="archive-card">
+          <div class="archive-card-header">
+            <h3 class="archive-card-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #0284C7;"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+              Field Logistics & Gamified Incentive Platform
+            </h3>
+            <span class="archive-pill archive-pill-research">Field Operations & Commerce</span>
+          </div>
+          <p class="archive-card-desc">
+            Designed the web portals and field agent application for sales tracking and service dispatch. Led ground-level user research to architect GPS verification, task assignment and acceptance lifecycles, digital catalogue downloads, performance dashboards, and an integrated points-and-rewards redemption economy.
+          </p>
+          <div class="archive-card-tags">
+            <span class="archive-subtag">Field Force Tracking</span>
+            <span class="archive-subtag">Job Dispatch Engine</span>
+            <span class="archive-subtag">Gamified Points & Rewards</span>
+            <span class="archive-subtag">Product Catalogues</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Clinical Teletherapy & Wellness -->
+        <div class="archive-card">
+          <div class="archive-card-header">
+            <h3 class="archive-card-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #10B981;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              Clinical Teletherapy & Wellness Game Loops
+            </h3>
+            <span class="archive-pill archive-pill-wellness">Healthcare & Engagement</span>
+          </div>
+          <p class="archive-card-desc">
+            Delivered comprehensive redesigns across health and therapy platforms—including dedicated consultation workspaces, multi-user real-time chatrooms, executive analytics, and interactive mental health gamification loops featuring daily habit challenges, quotes, and wellness mini-games.
+          </p>
+          <div class="archive-card-tags">
+            <span class="archive-subtag">Therapist Consoles</span>
+            <span class="archive-subtag">Multi-Chat Engine</span>
+            <span class="archive-subtag">Wellness Mini-Games</span>
+            <span class="archive-subtag">Habit Loop Mechanics</span>
+          </div>
+        </div>
+
+        <!-- Card 4: Superadmins & Brand Identities -->
+        <div class="archive-card">
+          <div class="archive-card-header">
+            <h3 class="archive-card-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #D97706;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              Multi-Role Superadmin Systems & Brand Identities
+            </h3>
+            <span class="archive-pill archive-pill-systems">Core Infrastructure</span>
+          </div>
+          <p class="archive-card-desc">
+            Architected centralized superadmin command centers with granular multi-role permission hierarchies, moderation queues, subscription management, and dynamic CMS controls. Additionally crafted complete brand identity systems, landing page architectures, and responsive web experiences for early-stage ventures.
+          </p>
+          <div class="archive-card-tags">
+            <span class="archive-subtag">Multi-Role Superadmin</span>
+            <span class="archive-subtag">Content Management Systems</span>
+            <span class="archive-subtag">Brand Identity Design</span>
+            <span class="archive-subtag">Design Systems</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section class="section-block" id="contact">
+      <div class="contact-card-lab">
+        <div class="contact-info-side">
+          <span class="section-category-tag">Let’s Connect</span>
+          <h2>Let’s work together.</h2>
+          <p>
+            Have an ambitious product, an engineering challenge, or want to discuss systems, hardware, or human interface design? My inbox is always open.
+          </p>
+
+          <div>
+            <div style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted); margin-bottom: 6px;">DIRECT EMAIL</div>
+            <div class="email-copy-box">
+              <span class="email-address-text" id="emailText">work.sparshgupta@gmail.com</span>
+              <button class="btn-copy-email" id="copyEmailBtn">Copy Email</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-side">
+          <form id="contactForm" onsubmit="event.preventDefault(); handleFormSubmit();">
+            <div class="form-group-field">
+              <label for="contactName">Name</label>
+              <input type="text" id="contactName" class="form-input-control" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group-field" style="margin-top: 12px;">
+              <label for="contactEmail">Email</label>
+              <input type="email" id="contactEmail" class="form-input-control" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group-field" style="margin-top: 12px;">
+              <label for="contactMessage">Message</label>
+              <textarea id="contactMessage" class="form-input-control" placeholder="Tell me about your product, team, or idea..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-pill btn-primary" style="margin-top: 16px; width: 100%;">
+              <span>Send Message</span>
+              <span>→</span>
+            </button>
+            <div id="formFeedback" style="display: none; margin-top: 10px; font-size: 0.85rem; font-weight: 600; color: #166534; text-align: center;"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer-bar">
+      <div>© 2026 Sparsh Gupta · Engineered with passion & system precision.</div>
+      <div class="footer-links-group">
+        <a href="#hero" class="footer-link">Back to Top ↑</a>
+        <a href="./Spash Resume GET.pdf" target="_blank" class="footer-link">Resume ↗</a>
+        <a href="mailto:work.sparshgupta@gmail.com" class="footer-link">Email</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ==================== LIGHTBOX MODAL ==================== -->
+  <div class="lab-modal-overlay" id="lightboxModalOverlay" aria-hidden="true">
+    <div class="lab-modal-dialog">
+      <button class="modal-close-btn" id="closeLightboxModal" aria-label="Close lightbox">✕</button>
+      <button class="lightbox-nav-arrow prev" id="lightboxPrevBtn" aria-label="Previous Image">‹</button>
+      <div class="lightbox-modal-content">
+        <img src="" alt="Enlarged View" class="lightbox-img-full" id="lightboxFullImg">
+        <div class="lightbox-caption-text" id="lightboxCaption"></div>
+      </div>
+      <button class="lightbox-nav-arrow next" id="lightboxNextBtn" aria-label="Next Image">›</button>
+    </div>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

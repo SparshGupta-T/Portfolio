@@ -1,0 +1,51 @@
+# Cloudflare Pages Caching and Security Headers
+# https://developers.cloudflare.com/pages/configuration/headers/
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Vite bundled assets (fingerprinted with content hash)
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Static image folders
+/SupportFit/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/TravelHoster/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/MyCouncilor/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/CheckIn/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/LOGOS/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/Johnson*/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/Scalenow*/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/Skills*/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/SupportRoom/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+# PDFs
+/*.pdf
+  Cache-Control: public, max-age=86400, stale-while-revalidate=3600
+
+# HTML documents (always revalidate to ensure live updates on new deploy)
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/
+  Cache-Control: public, max-age=0, must-revalidate

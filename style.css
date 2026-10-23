@@ -3,9 +3,7 @@
    Inspired by Google Labs (labs.google)
    Vibe: Soft • Bouncy • Subtle • Calm
    ========================================================================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
-
+/* Fonts loaded via preconnected <link> tags in HTML <head> for optimal FCP */
 /* --- Root Design Tokens (Google Labs Inspired Calm Palette) --- */
 :root {
   /* Canvas & Surfaces */
@@ -95,6 +93,8 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -103,6 +103,7 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
+  width: 100%;
   position: relative;
   min-height: 100vh;
 }
@@ -334,6 +335,10 @@ body {
 
 .brand-link:hover .brand-spark {
   transform: rotate(90deg) scale(1.15);
+}
+
+.brand-text-short {
+  display: none;
 }
 
 .nav-menu-list {
@@ -2112,41 +2117,508 @@ textarea.form-input-control {
 }
 
 @media (max-width: 768px) {
+  /* ========================================================================
+     MOBILE NAVIGATION & DOCK
+     ======================================================================== */
+  
+  /* Hide desktop menu links */
   .nav-menu-list {
+    display: none !important;
+  }
+  
+  .mobile-menu-toggle {
     display: none;
   }
-  .mobile-menu-toggle {
-    display: block;
+
+  /* HOME PAGE: Bring Header to Bottom as Floating Action Pill */
+  .home-page .header-container {
+    position: fixed;
+    bottom: 18px;
+    bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+    top: auto;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 0 16px;
+    z-index: 999;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
   }
-  .extras-bento-layout {
+
+  .home-page .nav-pill-bar {
+    pointer-events: auto;
+    padding: 6px 10px;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow: 0 12px 36px -4px rgba(0, 0, 0, 0.16), 0 2px 8px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: var(--radius-pill);
+    margin: 0 auto;
+    width: auto;
+    max-width: 90vw;
+  }
+
+  .home-page .nav-cta-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: auto;
+  }
+
+  .home-page .nav-cta-group .btn-pill {
+    width: auto !important;
+    padding: 9px 18px !important;
+    font-size: 0.86rem !important;
+    font-weight: 600;
+  }
+
+  .home-page {
+    padding-bottom: 88px;
+  }
+
+  /* CASE STUDY PAGES: Sleek Non-Warping Top Header + Fixed Bottom Action Pill */
+  .case-study-page .header-container {
+    position: sticky;
+    top: 10px;
+    z-index: 100;
+    margin-bottom: 16px;
+    padding: 0 14px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .case-study-page .nav-pill-bar {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 6px 10px;
+    border-radius: var(--radius-pill);
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 6px 20px -2px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
+  }
+
+  .case-study-page .brand-link {
+    flex-shrink: 0;
+    font-size: 0.86rem;
+    gap: 6px;
+    white-space: nowrap;
+    color: var(--text-primary);
+  }
+
+  .case-study-page .brand-spark {
+    width: 26px;
+    height: 26px;
+    font-size: 0.82rem;
+  }
+
+  /* Horizontally scrollable smooth switcher */
+  .case-study-page .study-switch-pills {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 4px;
+    padding: 3px;
+    background: var(--bg-subtle);
+    border-radius: var(--radius-pill);
+    max-width: 100%;
+    flex-shrink: 1;
+  }
+
+  .case-study-page .study-switch-pills::-webkit-scrollbar {
+    display: none;
+  }
+
+  .case-study-page .study-switch-link {
+    font-size: 0.74rem;
+    padding: 5px 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    border-radius: var(--radius-pill);
+  }
+
+  /* On mobile case study pages, hide top nav CTA buttons to keep header clean & focused (Resume & Contact are prominently in hero and footer) */
+  .case-study-page .nav-cta-group {
+    display: none !important;
+  }
+
+  .case-study-page {
+    padding-bottom: 40px;
+  }
+
+  /* ========================================================================
+     CASE STUDY HERO & HEADING FIXES
+     ======================================================================== */
+  .case-study-page .case-study-hero {
+    padding: 8px 0 24px;
+  }
+
+  /* Hide duplicate back link in hero (already accessible in top pill) */
+  .case-study-page .case-study-back-link {
+    display: none;
+  }
+
+  .case-study-page .case-study-hero-grid {
     grid-template-columns: 1fr;
+    gap: 22px;
+    margin-top: 4px;
   }
-  .extra-bento-card.card-wide-2 {
-    grid-column: span 1;
+
+  .case-study-page .case-study-header {
+    gap: 10px;
   }
-  .skills-matrix-grid {
-    grid-template-columns: 1fr;
+
+  .case-study-page .case-study-tag-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 6px;
   }
-  .pillars-mini-grid {
-    grid-template-columns: 1fr;
+
+  .case-study-page .company-logo-chip {
+    height: 30px;
+    padding: 3px 10px;
+    font-size: 0.76rem;
   }
+
+  .case-study-page .company-logo-chip img {
+    max-height: 16px;
+  }
+
+  .case-study-page .domain-pill {
+    font-size: 0.74rem;
+    padding: 4px 10px;
+  }
+
+  .case-study-page .case-study-title {
+    font-size: clamp(2rem, 7.5vw, 2.75rem);
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    word-break: normal;
+    overflow-wrap: break-word;
+    hyphens: none;
+  }
+
+  .case-study-page .case-study-tagline {
+    font-size: clamp(1.05rem, 3.8vw, 1.22rem);
+    line-height: 1.42;
+  }
+
+  .case-study-page .hero-desc-main {
+    font-size: 0.94rem;
+    line-height: 1.62;
+  }
+
+  .case-study-page .case-study-stage-card {
+    padding: 16px;
+    border-radius: var(--radius-lg);
+  }
+
+  .case-study-page .case-study-stage-card .study-hero-screen-stage {
+    height: 270px;
+    padding: 10px;
+    border-radius: 14px;
+  }
+
+  .case-study-page .stage-nav-arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 1.1rem;
+  }
+
+  /* ========================================================================
+     HOMEPAGE HERO SECTION
+     ======================================================================== */
+  .hero-section {
+    padding: 16px 0 32px;
+  }
+
+  .hero-title-main {
+    font-size: clamp(2.1rem, 7.2vw, 3.8rem);
+    line-height: 1.15;
+    word-break: normal;
+    overflow-wrap: break-word;
+    hyphens: none;
+  }
+
+  .hero-desc-lead {
+    font-size: 0.98rem;
+    line-height: 1.62;
+  }
+
   .hero-buttons-row {
     flex-direction: column;
     align-items: stretch;
-  }
-  .btn-pill {
     width: 100%;
+    gap: 10px;
   }
+
+  .hero-buttons-row .btn-pill {
+    width: 100% !important;
+    padding: 12px 18px;
+    font-size: 0.92rem;
+  }
+
+  .trust-logos-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .trust-logo-chip {
+    padding: 6px 12px;
+    font-size: 0.78rem;
+  }
+
+  .hero-showcase-card {
+    padding: 16px;
+    border-radius: var(--radius-lg);
+  }
+
+  .showcase-header-bar {
+    padding: 8px 10px;
+  }
+
+  .showcase-switch-pill {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 4px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .showcase-switch-pill::-webkit-scrollbar {
+    display: none;
+  }
+
+  .showcase-tab-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 5px 10px;
+    font-size: 0.75rem;
+  }
+
+  .hero-stage-carousel-wrap {
+    height: 380px;
+    max-height: 52vh;
+  }
+
   .hero-phone-shell {
-    width: 240px;
+    width: 210px;
+    border-radius: 36px;
+    padding: 8px;
   }
+
   .hero-phone-screen {
     height: auto;
     max-height: 480px;
+    border-radius: 28px;
   }
+
   .floating-pill-badge {
     position: static;
     margin-top: 10px;
+  }
+
+  /* ========================================================================
+     PROJECTS SHOWCASE SECTION
+     ======================================================================== */
+  .projects-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .project-lab-card {
+    padding: 20px 16px;
+    border-radius: var(--radius-lg);
+  }
+
+  .project-card-title {
+    font-size: 1.35rem;
+  }
+
+  .project-card-tagline {
+    font-size: 0.92rem;
+  }
+
+  .project-card-desc {
+    font-size: 0.88rem;
+    line-height: 1.58;
+  }
+
+  .pillars-mini-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .pillar-mini-item {
+    padding: 8px 12px;
+    font-size: 0.82rem;
+  }
+
+  .project-preview-media-stage {
+    height: 210px;
+  }
+
+  .project-card-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 1.1rem;
+  }
+
+  .project-card-arrow.prev { left: 4px; }
+  .project-card-arrow.next { right: 4px; }
+
+  .btn-open-study {
+    padding: 10px 16px;
+    font-size: 0.86rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* ========================================================================
+     EXTRAS, SKILLS & TIMELINE SECTIONS
+     ======================================================================== */
+  .extras-bento-layout {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .extra-bento-card {
+    padding: 22px 18px;
+    border-radius: var(--radius-lg);
+  }
+
+  .extra-bento-card.card-wide-2 {
+    grid-column: span 1;
+  }
+
+  .skills-matrix-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-card-lab {
+    padding: 22px 18px;
+    border-radius: var(--radius-lg);
+  }
+
+  .experience-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .role-tenure-badge {
+    align-self: flex-start;
+  }
+
+  /* ========================================================================
+     TOOLS & MIND MAP SECTION (No Horizontal Overflow)
+     ======================================================================== */
+  .mindmap-wrapper {
+    padding: 24px 14px 28px;
+    border-radius: var(--radius-lg);
+  }
+
+  .mindmap-cards-cluster {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .mindmap-node-card {
+    width: 64px;
+    min-height: 74px;
+    padding: 8px 4px 6px;
+  }
+
+  .mindmap-node-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .mindmap-node-img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .mindmap-node-name {
+    font-size: 0.72rem;
+  }
+
+  /* ========================================================================
+     ARCHIVE, CONTACT & FOOTER SECTIONS
+     ======================================================================== */
+  .archive-statement-card {
+    padding: 22px 18px;
+    border-radius: var(--radius-lg);
+  }
+
+  .archive-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .archive-card {
+    padding: 20px 18px;
+    border-radius: var(--radius-lg);
+  }
+
+  .contact-card-lab {
+    padding: 26px 18px;
+    border-radius: var(--radius-lg);
+  }
+
+  .contact-cta-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .contact-cta-buttons .btn-pill {
+    width: 100% !important;
+    justify-content: center;
+  }
+
+  .footer-bar {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+    padding: 24px 0 16px;
+  }
+
+  .footer-links-group {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .lab-modal-dialog {
+    width: 95%;
+    max-width: 95%;
+    max-height: 90vh;
+    padding: 14px 10px;
+  }
+
+  .lightbox-img-full {
+    max-height: 65vh;
   }
 }
 
@@ -2961,8 +3433,21 @@ textarea.form-input-control {
 }
 
 @media (max-width: 600px) {
+  .brand-text-full {
+    display: none;
+  }
+  .brand-text-short {
+    display: inline;
+  }
+  .site-wrapper {
+    padding: 0 16px;
+  }
   .case-study-meta-bar {
     grid-template-columns: 1fr;
+    padding: 16px;
+  }
+  .meta-item-box {
+    padding: 12px 14px;
   }
   .study-nav-footer {
     flex-direction: column;
@@ -2970,6 +3455,9 @@ textarea.form-input-control {
   }
   .study-nav-card {
     min-width: 100%;
+  }
+  .case-study-page .case-study-stage-card .study-hero-screen-stage {
+    height: 230px;
   }
 }
 

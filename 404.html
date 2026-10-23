@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Page Not Found | Sparsh Gupta</title>
+  <meta name="description" content="The page you are looking for does not exist. Return to Sparsh Gupta's portfolio.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+</head>
+<body class="home-page" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 24px;">
+
+  <!-- Ambient Diffuse Glow Canvas -->
+  <div class="ambient-glow" aria-hidden="true">
+    <div class="ambient-circle-1"></div>
+    <div class="ambient-circle-2"></div>
+    <div class="ambient-circle-3"></div>
+  </div>
+  <div class="subtle-dot-matrix" aria-hidden="true"></div>
+
+  <main style="max-width: 580px; width: 100%; text-align: center; position: relative; z-index: 10;">
+    <div class="status-badge-soft" style="margin: 0 auto 20px; display: inline-flex;">
+      <span class="pulse-indicator" style="background: #F59E0B;"></span>
+      <span>HTTP 404 · Signal Lost</span>
+    </div>
+
+    <h1 style="font-family: var(--font-family-display); font-size: clamp(2.4rem, 6vw, 3.8rem); font-weight: 700; color: var(--text-primary); line-height: 1.1; margin-bottom: 14px;">
+      Lost in the <span class="text-gradient-soft">system</span>.
+    </h1>
+
+    <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 28px;">
+      The page or case study route you requested could not be found. It may have been archived or restructured.
+    </p>
+
+    <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+      <a href="./index.html" class="btn-pill btn-primary" style="padding: 10px 22px; font-size: 0.92rem;">
+        <span>← Return to Home</span>
+      </a>
+      <a href="./index.html#projects" class="btn-pill btn-secondary" style="padding: 10px 22px; font-size: 0.92rem;">
+        <span>Explore Work</span>
+        <span>↗</span>
+      </a>
+    </div>
+
+    <div style="margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border-card); font-size: 0.85rem; color: var(--text-muted);">
+      Looking for something specific? Contact <a href="mailto:work.sparshgupta@gmail.com" style="color: var(--accent-primary); text-decoration: none; font-weight: 500;">work.sparshgupta@gmail.com</a>
+    </div>
+  </main>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

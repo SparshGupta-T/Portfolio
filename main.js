@@ -205,6 +205,18 @@ function smoothSwapImage(imgEl, newSrc, newAlt = '', onLoaded = null) {
 }
 
 // ==========================================
+// Global Carousel Controllers Registry (Pause on background tab)
+// ==========================================
+const activeCarouselControllers = [];
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) {
+    activeCarouselControllers.forEach(c => { if (typeof c.stop === 'function') c.stop(); });
+  } else {
+    activeCarouselControllers.forEach(c => { if (typeof c.start === 'function') c.start(); });
+  }
+});
+
+// ==========================================
 // 2. Interactive In-Card Carousel with Auto-Scroll & Arrow Controls
 // ==========================================
 function initProjectCarousels() {
@@ -294,8 +306,9 @@ function initProjectCarousels() {
     box.addEventListener('mouseenter', stopAutoScroll);
     box.addEventListener('mouseleave', startAutoScroll);
 
-    // Initial start
+    // Initial start & register with visibility manager
     startAutoScroll();
+    activeCarouselControllers.push({ start: startAutoScroll, stop: stopAutoScroll });
   });
 }
 
@@ -430,6 +443,7 @@ function initHeroInteractiveStage() {
 
   if (tabBtns.length && heroImg) {
     startAutoAdvance();
+    activeCarouselControllers.push({ start: startAutoAdvance, stop: stopAutoAdvance });
   }
 }
 
@@ -437,7 +451,9 @@ function initHeroInteractiveStage() {
 // Subtle Calm Mouse Focus Spotlight Effect
 // ==========================================
 function initCalmMouseFocus() {
+  if (window.matchMedia('(pointer: coarse)').matches) return;
   const hoverElements = document.querySelectorAll('.project-lab-card, .experience-card-lab, .extra-bento-card, .mindmap-node-card, .testimonial-card-lab');
+  if (!hoverElements.length) return;
 
   hoverElements.forEach(el => {
     el.addEventListener('mousemove', (e) => {
@@ -446,7 +462,7 @@ function initCalmMouseFocus() {
       const y = e.clientY - rect.top;
       el.style.setProperty('--mouse-x', `${x}px`);
       el.style.setProperty('--mouse-y', `${y}px`);
-    });
+    }, { passive: true });
   });
 }
 
@@ -494,6 +510,8 @@ function initStudyModal() {
   const closeBtn = document.getElementById('closeStudyModal');
   const modalContent = document.getElementById('studyModalContent');
   const triggers = document.querySelectorAll('.open-study-btn');
+
+  if (!overlay || !modalContent) return;
 
   function openStudy(studyKey) {
     const data = caseStudiesData[studyKey];
@@ -618,7 +636,7 @@ function initStudyModal() {
 // ==========================================
 // 6. Lightbox Viewer for Images & Schematics with Next/Prev Navigation
 // ==========================================
-let openLightbox;
+let openLightbox = function() {};
 function initLightbox() {
   const overlay = document.getElementById('lightboxModalOverlay');
   const closeBtn = document.getElementById('closeLightboxModal');
@@ -626,6 +644,8 @@ function initLightbox() {
   const captionEl = document.getElementById('lightboxCaption');
   const prevBtn = document.getElementById('lightboxPrevBtn');
   const nextBtn = document.getElementById('lightboxNextBtn');
+
+  if (!overlay || !fullImg) return;
 
   let currentGallery = [];
   let currentIndex = 0;
@@ -826,24 +846,33 @@ function initScrollSpy() {
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-item-link');
 
+  if (!navLinks.length || !sections.length) return;
+
+  let ticking = false;
   window.addEventListener('scroll', () => {
-    let currentId = '';
-    const scrollPos = window.scrollY + 180;
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        let currentId = '';
+        const scrollPos = window.scrollY + 180;
 
-    sections.forEach(sec => {
-      const top = sec.offsetTop;
-      const height = sec.offsetHeight;
-      if (scrollPos >= top && scrollPos < top + height) {
-        currentId = sec.getAttribute('id');
-      }
-    });
+        sections.forEach(sec => {
+          const top = sec.offsetTop;
+          const height = sec.offsetHeight;
+          if (scrollPos >= top && scrollPos < top + height) {
+            currentId = sec.getAttribute('id');
+          }
+        });
 
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${currentId}`) {
-        link.classList.add('active');
-      }
-    });
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${currentId}`) {
+            link.classList.add('active');
+          }
+        });
+        ticking = false;
+      });
+      ticking = true;
+    }
   }, { passive: true });
 }
 
@@ -929,6 +958,7 @@ function initCaseStudyStage() {
   container.addEventListener('mouseleave', startAuto);
 
   startAuto();
+  activeCarouselControllers.push({ start: startAuto, stop: stopAuto });
 }
 
 // ==========================================
@@ -953,6 +983,29 @@ function initCustomCursor() {
   let blobX = -100;
   let blobY = -100;
   let hasMoved = false;
+  let isLoopRunning = false;
+
+  // Smooth fluid blob trailing animation loop (lerp) with idle sleep
+  function renderCursor() {
+    const dx = mouseX - blobX;
+    const dy = mouseY - blobY;
+    blobX += dx * 0.22;
+    blobY += dy * 0.22;
+    blob.style.transform = `translate3d(${blobX.toFixed(2)}px, ${blobY.toFixed(2)}px, 0) translate(-50%, -50%)`;
+
+    if (Math.abs(dx) > 0.15 || Math.abs(dy) > 0.15) {
+      requestAnimationFrame(renderCursor);
+    } else {
+      isLoopRunning = false;
+    }
+  }
+
+  function startCursorLoop() {
+    if (!isLoopRunning) {
+      isLoopRunning = true;
+      requestAnimationFrame(renderCursor);
+    }
+  }
 
   window.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
@@ -966,16 +1019,8 @@ function initCustomCursor() {
       dot.style.opacity = '1';
       blob.style.opacity = '1';
     }
+    startCursorLoop();
   }, { passive: true });
-
-  // Smooth fluid blob trailing animation loop (lerp)
-  function renderCursor() {
-    blobX += (mouseX - blobX) * 0.22;
-    blobY += (mouseY - blobY) * 0.22;
-    blob.style.transform = `translate3d(${blobX.toFixed(2)}px, ${blobY.toFixed(2)}px, 0) translate(-50%, -50%)`;
-    requestAnimationFrame(renderCursor);
-  }
-  requestAnimationFrame(renderCursor);
 
   // Focus morphing on interactive elements
   const interactiveSelector = 'a, button, [role="button"], input, textarea, select, .screen-dot-btn, .project-card-arrow, .filter-chip-btn, .open-lightbox, .mindmap-node-card, .pillar-deep-card, .meta-item-box, .sample-thumb-item, .hero-stage-arrow, .showcase-tab-btn, .lightbox-nav-arrow';
@@ -1013,6 +1058,7 @@ function initCustomCursor() {
     if (hasMoved) {
       dot.style.opacity = '1';
       blob.style.opacity = '1';
+      startCursorLoop();
     }
   });
 }
@@ -1040,5 +1086,9 @@ if (document.readyState === 'loading') {
 
 // Export data and lightbox helper globally
 window.caseStudiesData = caseStudiesData;
-window.openLightbox = openLightbox;
+window.openLightbox = (...args) => {
+  if (typeof openLightbox === 'function') {
+    openLightbox(...args);
+  }
+};
 

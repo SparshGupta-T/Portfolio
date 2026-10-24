@@ -284,6 +284,7 @@ function initProjectCarousels() {
 
     let currentIndex = 0;
     let autoTimer = null;
+    let isBoxInView = false;
 
     function goToScreen(idx) {
       if (idx < 0) idx = dots.length - 1;
@@ -311,8 +312,13 @@ function initProjectCarousels() {
 
     function startAutoScroll() {
       stopAutoScroll();
+      if (!isBoxInView) return;
       autoTimer = setInterval(() => {
-        goToScreen(currentIndex + 1);
+        if (isBoxInView) {
+          goToScreen(currentIndex + 1);
+        } else {
+          stopAutoScroll();
+        }
       }, 3800);
     }
 
@@ -376,8 +382,23 @@ function initProjectCarousels() {
       startAutoScroll();
     }, { passive: true });
 
-    // Initial start & register with visibility manager
-    startAutoScroll();
+    // Start only when in view & register with visibility manager
+    if ('IntersectionObserver' in window) {
+      const boxObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          isBoxInView = entry.isIntersecting;
+          if (isBoxInView) {
+            startAutoScroll();
+          } else {
+            stopAutoScroll();
+          }
+        });
+      }, { threshold: 0.15 });
+      boxObserver.observe(box);
+    } else {
+      isBoxInView = true;
+      startAutoScroll();
+    }
     activeCarouselControllers.push({ start: startAutoScroll, stop: stopAutoScroll });
   });
 }
@@ -411,6 +432,7 @@ function initHeroInteractiveStage() {
   const keys = ['recyclenet', 'supportfit', 'travelhoster', 'mycouncillor', 'checkin'];
   let currentIndex = 0;
   let autoTimer = null;
+  let isHeroInView = true;
 
   function switchHero(index) {
     if (index < 0) index = keys.length - 1;
@@ -419,16 +441,23 @@ function initHeroInteractiveStage() {
 
     const targetKey = keys[currentIndex];
 
+    const pill = document.querySelector('.showcase-switch-pill');
+    let activeBtn = null;
+
     tabBtns.forEach(b => {
       if (b.getAttribute('data-hero-target') === targetKey) {
         b.classList.add('active');
-        try {
-          b.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-        } catch (_) {}
+        activeBtn = b;
       } else {
         b.classList.remove('active');
       }
     });
+
+    // Smoothly scroll ONLY the horizontal switcher pill container (NEVER the page/window)
+    if (pill && activeBtn && pill.scrollWidth > pill.clientWidth) {
+      const targetLeft = activeBtn.offsetLeft - (pill.clientWidth / 2) + (activeBtn.clientWidth / 2);
+      pill.scrollTo({ left: targetLeft, behavior: 'smooth' });
+    }
 
     // Update phone shell link to active case study
     const heroLink = document.getElementById('heroDeviceLink');
@@ -445,8 +474,13 @@ function initHeroInteractiveStage() {
 
   function startAutoAdvance() {
     stopAutoAdvance();
+    if (!isHeroInView) return;
     autoTimer = setInterval(() => {
-      switchHero(currentIndex + 1);
+      if (isHeroInView) {
+        switchHero(currentIndex + 1);
+      } else {
+        stopAutoAdvance();
+      }
     }, 4500);
   }
 
@@ -540,7 +574,21 @@ function initHeroInteractiveStage() {
   }
 
   if (tabBtns.length && heroImg) {
-    startAutoAdvance();
+    if ('IntersectionObserver' in window && card) {
+      const heroObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          isHeroInView = entry.isIntersecting;
+          if (isHeroInView) {
+            startAutoAdvance();
+          } else {
+            stopAutoAdvance();
+          }
+        });
+      }, { threshold: 0.1 });
+      heroObserver.observe(card);
+    } else {
+      startAutoAdvance();
+    }
     activeCarouselControllers.push({ start: startAutoAdvance, stop: stopAutoAdvance });
   }
 }
@@ -1227,6 +1275,7 @@ function initCaseStudyStage() {
 
   let currentIdx = 0;
   let autoTimer = null;
+  let isStageInView = false;
 
   function switchScreen(idx) {
     if (idx < 0) idx = dots.length - 1;
@@ -1251,8 +1300,13 @@ function initCaseStudyStage() {
 
   function startAuto() {
     stopAuto();
+    if (!isStageInView) return;
     autoTimer = setInterval(() => {
-      switchScreen(currentIdx + 1);
+      if (isStageInView) {
+        switchScreen(currentIdx + 1);
+      } else {
+        stopAuto();
+      }
     }, 4500);
   }
 
@@ -1314,7 +1368,22 @@ function initCaseStudyStage() {
     startAuto();
   }, { passive: true });
 
-  startAuto();
+  if ('IntersectionObserver' in window && container) {
+    const stageObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        isStageInView = entry.isIntersecting;
+        if (isStageInView) {
+          startAuto();
+        } else {
+          stopAuto();
+        }
+      });
+    }, { threshold: 0.15 });
+    stageObserver.observe(container);
+  } else {
+    isStageInView = true;
+    startAuto();
+  }
   activeCarouselControllers.push({ start: startAuto, stop: stopAuto });
 }
 

@@ -474,7 +474,7 @@ function initHeroInteractiveStage() {
 
     // Smoothly scroll ONLY the horizontal switcher pill container (NEVER the page/window)
     if (pill && activeBtn && pill.scrollWidth > pill.clientWidth) {
-      const targetLeft = activeBtn.offsetLeft - (pill.clientWidth / 2) + (activeBtn.clientWidth / 2);
+      const targetLeft = Math.max(0, activeBtn.offsetLeft - (pill.clientWidth / 2) + (activeBtn.clientWidth / 2));
       pill.scrollTo({ left: targetLeft, behavior: 'smooth' });
     }
 

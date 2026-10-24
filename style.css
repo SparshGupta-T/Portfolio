@@ -3629,8 +3629,10 @@ textarea.form-input-control {
   border-radius: var(--radius-xl);
   padding: 48px 36px 52px;
   box-shadow: var(--shadow-card);
-  overflow: visible;
+  overflow: hidden;
   margin-top: 10px;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 .mindmap-bg-grid {
@@ -3676,7 +3678,8 @@ textarea.form-input-control {
   align-items: center;
   gap: 8px;
   justify-content: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  max-width: 100%;
 }
 
 /* Mind Map Node Card - Compact & Balanced */
@@ -3834,7 +3837,7 @@ textarea.form-input-control {
   transform: translateY(0) !important;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1180px) {
   .mindmap-connector-canvas-wrap {
     display: none;
   }
@@ -3850,6 +3853,9 @@ textarea.form-input-control {
     height: 20px;
     background: #CBD5E1;
     margin: 0 auto 10px;
+  }
+  .mindmap-wrapper {
+    padding: 36px 20px 42px;
   }
 }
 

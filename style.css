@@ -111,16 +111,23 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
+  overflow-x: clip;
   width: 100%;
   position: relative;
   min-height: 100vh;
   min-height: 100dvh;
-  -webkit-overflow-scrolling: touch;
 }
 
 strong, b {
-  font-weight: 600;
-  color: var(--text-primary);
+  font-weight: 500;
+  color: #374151;
+  letter-spacing: -0.005em;
+}
+
+h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong,
+.section-title strong, .hero-title-tag strong, .project-card-title strong {
+  font-weight: inherit;
+  color: inherit;
 }
 
 /* Firefox & Cross-Browser Focus and Form Controls Reset */
@@ -200,6 +207,15 @@ input::-moz-focus-inner {
   .custom-cursor-dot,
   .custom-cursor-blob {
     display: none !important;
+  }
+
+  /* Prevent iOS touch-drag hover transforms that trigger tile re-rasterization */
+  .project-lab-card:hover,
+  .study-gallery-card:hover,
+  .experience-card-lab:hover,
+  .sample-thumb-item:hover,
+  .extra-bento-card:hover {
+    transform: none !important;
   }
 }
 
@@ -867,7 +883,6 @@ input::-moz-focus-inner {
   justify-content: center;
   align-items: center;
   transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
-  will-change: transform;
   cursor: pointer;
   text-decoration: none;
   box-sizing: border-box;
@@ -1332,9 +1347,7 @@ section[id] {
   position: absolute;
   bottom: 8px;
   right: 8px;
-  background: rgba(255, 255, 255, 0.92);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.96);
   border: 1px solid var(--border-card);
   border-radius: var(--radius-pill);
   padding: 4px 10px;
@@ -2793,7 +2806,6 @@ textarea.form-input-control {
     opacity: 0;
     visibility: hidden;
     transform: translate3d(0, 10px, 0);
-    will-change: transform, opacity;
     transition: opacity 0.18s cubic-bezier(0.16, 1, 0.3, 1), transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.18s ease;
   }
 
@@ -4837,7 +4849,6 @@ textarea.form-input-control {
 .study-hero-screen-img,
 .lightbox-img-full {
   transition: opacity 0.24s cubic-bezier(0.4, 0, 0.2, 1), transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), filter 0.2s ease !important;
-  will-change: opacity, transform;
 }
 
 /* ==========================================================================
@@ -4862,8 +4873,8 @@ textarea.form-input-control {
 }
 
 .archive-statement-text strong {
-  color: var(--text-primary);
-  font-weight: 700;
+  color: #374151;
+  font-weight: 500;
 }
 
 .archive-statement-text:last-child {
@@ -5035,7 +5046,7 @@ textarea.form-input-control {
    ========================================================================== */
 .study-gallery-img-wrap,
 .project-preview-media-stage {
-  contain: paint;
+  contain: layout;
 }
 
 /* ==========================================================================

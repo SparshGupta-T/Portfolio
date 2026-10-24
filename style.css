@@ -2514,11 +2514,6 @@ textarea.form-input-control {
 }
 
 @media (max-width: 768px) {
-  /* Remove scroll reading progress on mobile view */
-  .reading-progress-track {
-    display: none !important;
-  }
-
   /* ========================================================================
      MOBILE NAVIGATION & DOCK
      ======================================================================== */
@@ -4959,28 +4954,6 @@ textarea.form-input-control {
 }
 
 /* ==========================================================================
-   CASE STUDY READING PROGRESS BAR (Calm 2.5px Gradient Progress)
-   ========================================================================== */
-.reading-progress-track {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2.5px;
-  background: transparent;
-  z-index: 9999;
-  pointer-events: none;
-}
-
-.reading-progress-bar {
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(90deg, #5046E5, #06B6D4);
-  transition: width 0.08s ease-out;
-  border-radius: 0 2px 2px 0;
-}
-
-/* ==========================================================================
    EXECUTIVE PRINT STYLESHEET (Clean resume-grade printing / PDF export)
    ========================================================================== */
 @media print {
@@ -5000,7 +4973,6 @@ textarea.form-input-control {
   .custom-cursor-dot,
   .custom-cursor-follower,
   .lab-modal-overlay,
-  .reading-progress-track,
   .btn-open-study {
     display: none !important;
   }

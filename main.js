@@ -1634,59 +1634,6 @@ function initSpeculativePrefetch() {
   document.addEventListener('touchstart', handleInteraction, { passive: true });
 }
 
-// Case Study Reading Progress Bar (Desktop & Tablet only, disabled on mobile)
-function initReadingProgress() {
-  if (!document.body.classList.contains('case-study-page')) return;
-  if (window.innerWidth <= 768) return;
-
-  let track = document.getElementById('readingProgressTrack');
-  if (!track) {
-    track = document.createElement('div');
-    track.id = 'readingProgressTrack';
-    track.className = 'reading-progress-track';
-    track.setAttribute('aria-hidden', 'true');
-    const bar = document.createElement('div');
-    bar.className = 'reading-progress-bar';
-    bar.id = 'readingProgressBar';
-    track.appendChild(bar);
-    document.body.prepend(track);
-  }
-
-  const progressBar = document.getElementById('readingProgressBar');
-  if (!progressBar) return;
-
-  let ticking = false;
-  function updateProgress() {
-    if (window.innerWidth <= 768) {
-      if (track) track.style.display = 'none';
-      return;
-    } else {
-      if (track) track.style.display = '';
-    }
-
-    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-    if (totalHeight <= 0) {
-      progressBar.style.width = '0%';
-      return;
-    }
-    const currentScroll = window.scrollY || document.documentElement.scrollTop;
-    const progress = Math.min(100, Math.max(0, (currentScroll / totalHeight) * 100));
-    progressBar.style.width = `${progress}%`;
-    ticking = false;
-  }
-
-  function onScroll() {
-    if (!ticking) {
-      window.requestAnimationFrame(updateProgress);
-      ticking = true;
-    }
-  }
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', onScroll, { passive: true });
-  updateProgress();
-}
-
 // External Link Security & Rel Attributes
 function initExternalLinkSecurity() {
   document.querySelectorAll('a[target="_blank"]').forEach((a) => {
@@ -1713,7 +1660,6 @@ function initApp() {
   initCalmMouseFocus();
   initCustomCursor();
   initSpeculativePrefetch();
-  initReadingProgress();
   initExternalLinkSecurity();
 }
 

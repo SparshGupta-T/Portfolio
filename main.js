@@ -7,6 +7,51 @@
 // 1. Comprehensive Case Studies Data Store
 // ==========================================
 const caseStudiesData = {
+  recyclenet: {
+    title: "RecycleNet",
+    subtitle: "Deep Learning-Assisted Dynamic Plastic Identification Technique For Automated Waste Segregation",
+    role: "Lead Researcher & Systems Developer · Computer Vision, Deep Learning & Edge Deployment",
+    badge: "Deep Learning · Computer Vision & Edge AI",
+    badgeClass: "pill-cyan",
+    overview: "RecycleNet combines modern deep learning architectures (YOLO26 & RF-DETR transformers) with cross-platform edge execution frameworks to automate real-time industrial plastic resin identification across the 6 standard codes (PET, HDPE, PVC, LDPE, PP, PS). Operating at ultra-low latency down to 2.0 ms on edge devices, the system eliminates reliance on expensive NIR spectrometers and hazardous manual sorting. Features a multi-threaded Python Flask / OpenCV desktop inference loop and an entirely offline native Android application built with Kotlin, Jetpack Compose, CameraX, and PyTorch Lite. Published in IEEE ICCECE 2026.",
+    pillars: [
+      "Custom Dataset: 2,420 Images & 8,884 Resin Bounding Boxes",
+      "Edge Benchmarking: 2.0 ms Inference Loop (YOLO26n)",
+      "Cross-Platform Desktop Pipeline: Flask, OpenCV & Metal/CUDA",
+      "Offline Mobile Architecture: Kotlin, Jetpack Compose & PyTorch Lite"
+    ],
+    contributions: [
+      "Curated, organized, and annotated a completely custom multi-angle dataset of 2,420 high-resolution images across 8,884 bounding boxes for 6 standard resin types (PET, HDPE, PVC, LDPE, PP, PS) using Roboflow.",
+      "Benchmarked edge-focused deployment paradigms utilizing YOLO26n, YOLOv8s, YOLO26m, and RF-DETR transformers on dual parallel Nvidia T4 GPUs on Kaggle/Colab.",
+      "Achieved a 2.0 ms processing turnaround per tensor grid with YOLO26n (58.6% mAP@50, 2.38M parameters) and peak structural accuracy of 62.0% mAP@50 with RF-DETR (14.8 ms), boosting Precision from 57.4% to 72.3% and Recall from 45.5% to 54.2% over previous YOLOv8 models.",
+      "Built a multi-threaded Python Flask microserver (app.py) and asynchronous OpenCV VideoCapture streaming loop with Apple Silicon MPS and Nvidia CUDA acceleration.",
+      "Engineered an entirely offline native Android mobile application in Kotlin and Jetpack Compose (Material 3), implementing CameraX live frame analysis and PyTorch Lite (.ptl) on-device inference for zero-cloud, grid-free operation.",
+      "Co-authored and published the peer-reviewed research paper in the IEEE ICCECE 2026 conference."
+    ],
+    researchData: [
+      "Benchmarked trade-offs: YOLO26n (2.38M params, 2.0 ms, 58.6% mAP50) vs RF-DETR (31.99M params, 14.8 ms, 62.0% mAP50).",
+      "Replaced expensive Near-Infrared (NIR) spectrometers and hazardous manual sorting with low-cost consumer webcams and edge mobile sensors.",
+      "Trained models on Roboflow annotated 70/20/10 train/validation/test split with real-time geometric transformations, axial rotation, and salt-and-pepper noise augmentations.",
+      "Class-wise confusion analysis proved strong visual distinguishability for PET (81%) and LDPE (75%), while isolating subtle inter-class features for PP and PVC."
+    ],
+    impact: "RecycleNet proves that industrial-grade resin classification can run offline on commodity smartphones and low-power edge microprocessors at 2.0 ms latency, slashing sensor deployment costs and enabling decentralized automated recycling systems.",
+    gallery: [
+      { src: "./RecycleNET/main hero recycle net.png", caption: "RecycleNet - Intelligent Waste Classifier Mobile Interface" },
+      { src: "./RecycleNET/Group 9.png", caption: "RecycleNet - Real-time Vision Desktop Inference Dashboard" },
+      { src: "./RecycleNET/image 29.png", caption: "RecycleNet - Native Android Material 3 Mobile Home Interface" },
+      { src: "./RecycleNET/image 31.png", caption: "RecycleNet - Real-Time Mobile CameraX Live Scanner (PVC Detection)" },
+      { src: "./RecycleNET/image 32.png", caption: "RecycleNet - Offline PyTorch Lite Static Image Analysis (PET Detection)" },
+      { src: "./RecycleNET/download 8.png", caption: "RecycleNet - Comprehensive Model Architecture Benchmark Metrics" },
+      { src: "./RecycleNET/download 9.png", caption: "RecycleNet - Precision vs Recall Comparison across Evaluated Models" },
+      { src: "./RecycleNET/download 10.png", caption: "RecycleNet - Performance Improvement from Previous Work to Current Work" },
+      { src: "./RecycleNET/image 36.png", caption: "RecycleNet - Accuracy vs Inference Time Trade-Off" },
+      { src: "./RecycleNET/dropped-image 1.png", caption: "RecycleNet - Accuracy vs Model Parameters Trade-Off" },
+      { src: "./RecycleNET/YOLO26N.png", caption: "RecycleNet - Normalized Confusion Matrix for YOLO26n" },
+      { src: "./RecycleNET/image 34.png", caption: "RecycleNet - Desktop OpenCV & Flask Inference Architecture Flowchart" },
+      { src: "./RecycleNET/image 35.png", caption: "RecycleNet - Android CameraX & PyTorch Lite Mobile Architecture Flowchart" }
+    ]
+  },
+
   supportfit: {
     title: "SupportFit",
     subtitle: "Physical Wellness That Powers Performance",
@@ -348,6 +393,7 @@ function initHeroInteractiveStage() {
   const card = document.querySelector('.hero-showcase-card');
 
   const screenMap = {
+    recyclenet: './RecycleNET/main hero recycle net.png',
     supportfit: './SupportFit/MAIN.png',
     travelhoster: './TravelHoster/MAIN.png',
     mycouncillor: './MyCouncilor/MAIN.png',
@@ -355,13 +401,14 @@ function initHeroInteractiveStage() {
   };
 
   const heroUrls = {
+    recyclenet: './recyclenet.html',
     supportfit: './supportfit.html',
     travelhoster: './travelhoster.html',
     mycouncillor: './mycouncillor.html',
     checkin: './checkin.html'
   };
 
-  const keys = ['supportfit', 'travelhoster', 'mycouncillor', 'checkin'];
+  const keys = ['recyclenet', 'supportfit', 'travelhoster', 'mycouncillor', 'checkin'];
   let currentIndex = 0;
   let autoTimer = null;
 
@@ -375,6 +422,9 @@ function initHeroInteractiveStage() {
     tabBtns.forEach(b => {
       if (b.getAttribute('data-hero-target') === targetKey) {
         b.classList.add('active');
+        try {
+          b.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        } catch (_) {}
       } else {
         b.classList.remove('active');
       }

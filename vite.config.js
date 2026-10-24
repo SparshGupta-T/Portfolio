@@ -14,6 +14,7 @@ function copyStaticAssetsPlugin() {
         'Johnson Controls',
         'LOGOS',
         'MyCouncilor',
+        'RecycleNET',
         'Scalenow Technosolutions',
         'Skills Logo',
         'SupportFit',
@@ -52,6 +53,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(process.cwd(), 'index.html'),
+        recyclenet: resolve(process.cwd(), 'recyclenet.html'),
         supportfit: resolve(process.cwd(), 'supportfit.html'),
         travelhoster: resolve(process.cwd(), 'travelhoster.html'),
         mycouncillor: resolve(process.cwd(), 'mycouncillor.html'),

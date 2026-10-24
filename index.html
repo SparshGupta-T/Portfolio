@@ -42,8 +42,8 @@
     <nav class="nav-pill-bar" id="navbar" aria-label="Main Navigation">
       <!-- Desktop Navigation Menu (hidden on mobile) -->
       <ul class="nav-menu-list">
-        <li><a href="#projects" class="nav-item-link">Work</a></li>
         <li><a href="#experience" class="nav-item-link">Experience</a></li>
+        <li><a href="#projects" class="nav-item-link">Work</a></li>
         <li><a href="#extras" class="nav-item-link">Extras</a></li>
         <li><a href="#skills" class="nav-item-link">Skills</a></li>
         <li><a href="#recommendations" class="nav-item-link">Recommendation</a></li>
@@ -89,19 +89,19 @@
       </div>
 
       <div class="mobile-nav-sections">
-        <a href="#projects" class="mobile-nav-link" data-section="projects">
+        <a href="#experience" class="mobile-nav-link" data-section="experience">
           <span class="mobile-nav-num">01</span>
           <div class="mobile-nav-text">
-            <span class="mobile-nav-heading">Work</span>
-            <span class="mobile-nav-sub">Selected case studies & systems</span>
+            <span class="mobile-nav-heading">Experience</span>
+            <span class="mobile-nav-sub">Johnson Controls, Scalenow & IEEE</span>
           </div>
           <span class="mobile-nav-arrow">→</span>
         </a>
-        <a href="#experience" class="mobile-nav-link" data-section="experience">
+        <a href="#projects" class="mobile-nav-link" data-section="projects">
           <span class="mobile-nav-num">02</span>
           <div class="mobile-nav-text">
-            <span class="mobile-nav-heading">Experience</span>
-            <span class="mobile-nav-sub">Johnson Controls & IEEE</span>
+            <span class="mobile-nav-heading">Work</span>
+            <span class="mobile-nav-sub">Selected case studies & systems</span>
           </div>
           <span class="mobile-nav-arrow">→</span>
         </a>
@@ -189,7 +189,11 @@
           </p>
 
           <div class="hero-buttons-row">
-            <a href="#projects" class="btn-pill btn-primary">
+            <a href="#experience" class="btn-pill btn-primary">
+              <span>View Experience</span>
+              <span>↓</span>
+            </a>
+            <a href="#projects" class="btn-pill btn-secondary">
               <span>Explore Projects</span>
               <span>↓</span>
             </a>
@@ -234,7 +238,8 @@
           <div class="hero-showcase-card">
             <div class="showcase-header-bar">
               <div class="showcase-switch-pill">
-                <button class="showcase-tab-btn active" data-hero-target="supportfit">SupportFit</button>
+                <button class="showcase-tab-btn active" data-hero-target="recyclenet">RecycleNet</button>
+                <button class="showcase-tab-btn" data-hero-target="supportfit">SupportFit</button>
                 <button class="showcase-tab-btn" data-hero-target="travelhoster">TravelHoster</button>
                 <button class="showcase-tab-btn" data-hero-target="mycouncillor">MyCouncillor</button>
                 <button class="showcase-tab-btn" data-hero-target="checkin">CheckIn</button>
@@ -245,9 +250,9 @@
               <button class="hero-stage-arrow prev" aria-label="Previous Project">‹</button>
 
               <!-- Phone Mockup Shell with direct link to case study -->
-              <a href="./supportfit.html" class="hero-phone-shell" id="heroDeviceLink"
-                title="Click to view full SupportFit case study">
-                <img src="./SupportFit/MAIN.png" alt="Hero Featured Screen" class="hero-phone-screen"
+              <a href="./recyclenet.html" class="hero-phone-shell" id="heroDeviceLink"
+                title="Click to view full RecycleNet case study">
+                <img src="./RecycleNET/main hero recycle net.png" alt="Hero Featured Screen" class="hero-phone-screen"
                   id="heroInteractiveImg">
                 <span class="hero-click-badge">Explore Case Study ↗</span>
               </a>
@@ -256,355 +261,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- ==================== FEATURED CASE STUDIES & PROJECTS ==================== -->
-    <section class="section-block" id="projects">
-      <div class="section-intro-header">
-        <span class="section-category-tag">Featured Work</span>
-        <h2 class="section-heading-primary">Featured Projects</h2>
-        <p class="section-subheading-text">
-          A few projects that show how I think about products: the actual user journey, the logic underneath it, and
-          interfaces that stay out of the way.
-        </p>
-      </div>
-
-      <!-- Filter Tabs (Google Labs Style) -->
-      <div class="filter-tabs-container">
-        <button class="filter-chip-btn active" data-filter="all">
-          <span>All Work</span>
-          <span class="chip-count">4</span>
-        </button>
-        <button class="filter-chip-btn" data-filter="health">
-          <span>Health Tech</span>
-          <span class="chip-count">1</span>
-        </button>
-        <button class="filter-chip-btn" data-filter="marketplace">
-          <span>Marketplaces</span>
-          <span class="chip-count">1</span>
-        </button>
-        <button class="filter-chip-btn" data-filter="civic">
-          <span>Civic & Communities</span>
-          <span class="chip-count">2</span>
-        </button>
-      </div>
-
-      <!-- Project Cards Grid -->
-      <div class="projects-showcase-grid">
-
-        <!-- 1. SupportFit -->
-        <article class="project-lab-card" data-category="health">
-          <div class="project-card-top">
-            <div class="project-tag-row">
-              <span class="domain-pill pill-green">Physical Wellness · Health Tech</span>
-              <span class="role-tag-subtle">Product Design Intern</span>
-            </div>
-            <h3 class="project-card-title">SupportFit</h3>
-            <p class="project-card-tagline">Physical Wellness That Powers Performance</p>
-            <p class="project-card-desc">
-              A workplace wellness app that helps employees build real habits around movement, sleep, and nutrition. It
-              comes with health coaching and activity tracking built in.
-            </p>
-
-            <!-- 4 Pillars -->
-            <div class="pillars-mini-grid">
-              <div class="pillar-mini-item">
-                <span class="pillar-num-badge">1</span>
-                <span>Smart Watch & Device Sync</span>
-              </div>
-              <div class="pillar-mini-item">
-                <span class="pillar-num-badge">2</span>
-                <span>Weekly Health Stats</span>
-              </div>
-              <div class="pillar-mini-item">
-                <span class="pillar-num-badge">3</span>
-                <span>1-on-1 Health Coaching</span>
-              </div>
-              <div class="pillar-mini-item">
-                <span class="pillar-num-badge">4</span>
-                <span>Daily Activity Goals</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Interactive Carousel Box -->
-          <div class="project-preview-box">
-            <div class="project-stage-carousel-wrapper">
-              <button class="project-card-arrow prev" data-target="supportfit" aria-label="Previous screen">‹</button>
-              <div class="project-preview-media-stage open-lightbox" data-img="./SupportFit/MAIN.png"
-                data-caption="SupportFit - Main Overview Screen">
-                <img src="./SupportFit/MAIN.png" alt="SupportFit Screen" class="project-preview-img"
-                  id="img-supportfit">
-                <span class="preview-zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
-                    style="vertical-align: -1px; margin-right: 4px;">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                  </svg>Click to Enlarge</span>
-              </div>
-              <button class="project-card-arrow next" data-target="supportfit" aria-label="Next screen">›</button>
-            </div>
-            <!-- Bouncy Screen Dots -->
-            <div class="screen-selector-bar" data-target="supportfit">
-              <button class="screen-dot-btn active" data-src="./SupportFit/MAIN.png"
-                data-caption="SupportFit - Main Dashboard & Activity Summary" title="Dashboard"></button>
-              <button class="screen-dot-btn" data-src="./SupportFit/13 Pro - 242 1.png"
-                data-caption="SupportFit - Daily Water Intake Tracker" title="Water Intake"></button>
-              <button class="screen-dot-btn" data-src="./SupportFit/13 Pro - 243 1.png"
-                data-caption="SupportFit - Reminder & Alert Frequency Settings" title="Reminder Settings"></button>
-              <button class="screen-dot-btn" data-src="./SupportFit/13 Pro - 245 1.png"
-                data-caption="SupportFit - Calorie & Meal Intake Tracker" title="Calorie & Meal Intake"></button>
-              <button class="screen-dot-btn" data-src="./SupportFit/13 Pro - 248 1.png"
-                data-caption="SupportFit - Sleep Schedule & Health Reminders" title="Sleep Reminders"></button>
-              <button class="screen-dot-btn" data-src="./SupportFit/13 Pro - 260 1.png"
-                data-caption="SupportFit - Weekly Sleep Duration & Stats Analysis"
-                title="Sleep Duration Stats"></button>
-            </div>
-          </div>
-
-          <div class="project-card-footer">
-            <a href="./supportfit.html" class="btn-open-study">
-              <span>Read Full Case Study</span>
-              <span>→</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- 2. TravelHoster -->
-        <article class="project-lab-card" data-category="marketplace">
-          <div class="project-card-top">
-            <div class="project-tag-row">
-              <span class="domain-pill pill-orange">Travel Marketplace · B2B & B2C</span>
-              <span class="role-tag-subtle">Product Design Intern</span>
-            </div>
-            <h3 class="project-card-title">TravelHoster</h3>
-            <p class="project-card-tagline">Turning travel planning into a two-way conversation</p>
-            <p class="project-card-desc">
-              A web marketplace connecting travelers directly with verified local tour operators. I designed the package
-              search, the custom trip requests, live quote chats, and the operator dashboard.
-            </p>
-
-            <!-- 4 Pillars -->
-            <div class="pillars-mini-grid">
-              <div class="pillar-mini-item">
-                <span class="pillar-num-badge">1</span>
-                <span>Browse Tour Packages</span>
-              </div>
-              <div class="pillar-mini-item">
-                <span class="pillar-num-badge">2</span>
-                <span>Customize Your Trip</span>
-              </div>
-              <div class="pillar-mini-item">
-                <span class="pillar-num-badge">3</span>
-                <span>Direct Operator Chat</span>
-              </div>
-              <div class="pillar-mini-item">
-                <span class="pillar-num-badge">4</span>
-                <span>Smart Request Routing</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Interactive Carousel Box -->
-          <div class="project-preview-box">
-            <div class="project-stage-carousel-wrapper">
-              <button class="project-card-arrow prev" data-target="travelhoster" aria-label="Previous screen">‹</button>
-              <div class="project-preview-media-stage open-lightbox" data-img="./TravelHoster/MAIN.png"
-                data-caption="TravelHoster - Itinerary Search & Discover Interface">
-                <img src="./TravelHoster/MAIN.png" alt="TravelHoster Screen" class="project-preview-img"
-                  id="img-travelhoster">
-                <span class="preview-zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
-                    style="vertical-align: -1px; margin-right: 4px;">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                  </svg>Click to Enlarge</span>
-              </div>
-              <button class="project-card-arrow next" data-target="travelhoster" aria-label="Next screen">›</button>
-            </div>
-            <!-- Bouncy Screen Dots -->
-            <div class="screen-selector-bar" data-target="travelhoster">
-              <button class="screen-dot-btn active" data-src="./TravelHoster/MAIN.png"
-                data-caption="TravelHoster - Itinerary Search & Discover Interface" title="Discover Flow"></button>
-              <button class="screen-dot-btn" data-src="./TravelHoster/Tailor trip Filled 1.png"
-                data-caption="TravelHoster - Tailor Trip Custom Inquiry Flow" title="Tailor Trip"></button>
-              <button class="screen-dot-btn" data-src="./TravelHoster/Desktop - 23 1.png"
-                data-caption="TravelHoster - Operator & Partner Management Console" title="Partner Console"></button>
-              <button class="screen-dot-btn" data-src="./TravelHoster/Desktop - 93 1.png"
-                data-caption="TravelHoster - Package Configuration & CMS Modal" title="Package CMS Modal"></button>
-              <button class="screen-dot-btn" data-src="./TravelHoster/Desktop - 180 1.png"
-                data-caption="TravelHoster - Partner Revenue & Performance Analytics"
-                title="Revenue Analytics"></button>
-              <button class="screen-dot-btn" data-src="./TravelHoster/Screenshot 2026-04-27 at 13.22.02 1.png"
-                data-caption="TravelHoster - Regional Destination Showcase (Jammu & Kashmir)"
-                title="Destination Showcase"></button>
-            </div>
-          </div>
-
-          <div class="project-card-footer">
-            <a href="./travelhoster.html" class="btn-open-study">
-              <span>Read Full Case Study</span>
-              <span>→</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- 3. MyCouncillor -->
-        <article class="project-lab-card" data-category="civic">
-          <div class="project-card-top">
-            <div class="project-tag-row">
-              <span class="domain-pill pill-blue">Civic Tech · Local Governance</span>
-              <span class="role-tag-subtle">Product Design Intern</span>
-            </div>
-            <h3 class="project-card-title">MyCouncillor</h3>
-            <p class="project-card-tagline">Civic issue reporting and local ward management</p>
-            <p class="project-card-desc">
-              A mobile app and admin dashboard for reporting neighbourhood problems, potholes, broken streetlights,
-              missed garbage pickup, straight to ward councillors, with photos and live status updates.
-            </p>
-
-            <!-- 4 Pillars -->
-            <div class="pillars-mini-grid">
-              <div class="pillar-mini-item">
-                <span class="pillar-num-badge">1</span>
-                <span>Photo & GPS Issue Reports</span>
-              </div>
-              <div class="pillar-mini-item">
-                <span class="pillar-num-badge">2</span>
-                <span>Live Status Updates</span>
-              </div>
-              <div class="pillar-mini-item">
-                <span class="pillar-num-badge">3</span>
-                <span>Automatic Ward Routing</span>
-              </div>
-              <div class="pillar-mini-item">
-                <span class="pillar-num-badge">4</span>
-                <span>Councillor Overview Dashboard</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Interactive Carousel Box -->
-          <div class="project-preview-box">
-            <div class="project-stage-carousel-wrapper">
-              <button class="project-card-arrow prev" data-target="mycouncillor" aria-label="Previous screen">‹</button>
-              <div class="project-preview-media-stage open-lightbox" data-img="./MyCouncilor/MAIN.png"
-                data-caption="MyCouncillor - Citizen App Home & Issue Reporting">
-                <img src="./MyCouncilor/MAIN.png" alt="MyCouncillor Screen" class="project-preview-img"
-                  id="img-mycouncillor">
-                <span class="preview-zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
-                    style="vertical-align: -1px; margin-right: 4px;">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                  </svg>Click to Enlarge</span>
-              </div>
-              <button class="project-card-arrow next" data-target="mycouncillor" aria-label="Next screen">›</button>
-            </div>
-            <!-- Bouncy Screen Dots -->
-            <div class="screen-selector-bar" data-target="mycouncillor">
-              <button class="screen-dot-btn active" data-src="./MyCouncilor/MAIN.png"
-                data-caption="MyCouncillor - Citizen App Home & Issue Reporting" title="Citizen Home"></button>
-              <button class="screen-dot-btn" data-src="./MyCouncilor/Dashboard-1P 1.png"
-                data-caption="MyCouncillor - Councillor Administration Dashboard" title="Admin Dashboard"></button>
-              <button class="screen-dot-btn" data-src="./MyCouncilor/New Issues - P 1.png"
-                data-caption="MyCouncillor - Incoming Complaints Triage View" title="Triage Queue"></button>
-              <button class="screen-dot-btn" data-src="./MyCouncilor/Pending Issue- PPP 1.png"
-                data-caption="MyCouncillor - Task Assignment & Worker Routing" title="Task Assignment"></button>
-              <button class="screen-dot-btn" data-src="./MyCouncilor/iPhone 13 & 14 - 188 1.png"
-                data-caption="MyCouncillor - Geolocation Pinpoint & Address Auto-detect" title="Geo Location"></button>
-              <button class="screen-dot-btn" data-src="./MyCouncilor/iPhone 13 & 14 - 214 1.png"
-                data-caption="MyCouncillor - Real-time Status Tracking Timeline" title="Tracking Timeline"></button>
-            </div>
-          </div>
-
-          <div class="project-card-footer">
-            <a href="./mycouncillor.html" class="btn-open-study">
-              <span>Read Full Case Study</span>
-              <span>→</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- 4. CheckIn -->
-        <article class="project-lab-card" data-category="civic">
-          <div class="project-card-top">
-            <div class="project-tag-row">
-              <span class="domain-pill pill-purple">Society Management · Access Control</span>
-              <span class="role-tag-subtle">Product Design Intern</span>
-            </div>
-            <h3 class="project-card-title">CheckIn</h3>
-            <p class="project-card-tagline">Fast and secure check-ins for residential communities</p>
-            <p class="project-card-desc">
-              A visitor and community management app for apartment societies. I designed the QR passes for guests and
-              delivery riders, resident approval alerts, maintenance dues, and emergency alerts.
-            </p>
-
-            <!-- 4 Pillars -->
-            <div class="pillars-mini-grid">
-              <div class="pillar-mini-item">
-                <span class="pillar-num-badge">1</span>
-                <span>Fast QR Entry Passes</span>
-              </div>
-              <div class="pillar-mini-item">
-                <span class="pillar-num-badge">2</span>
-                <span>Resident Approval Alerts</span>
-              </div>
-              <div class="pillar-mini-item">
-                <span class="pillar-num-badge">3</span>
-                <span>Society Dues & Maintenance</span>
-              </div>
-              <div class="pillar-mini-item">
-                <span class="pillar-num-badge">4</span>
-                <span>Guard & Admin Controls</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Interactive Carousel Box -->
-          <div class="project-preview-box">
-            <div class="project-stage-carousel-wrapper">
-              <button class="project-card-arrow prev" data-target="checkin" aria-label="Previous screen">‹</button>
-              <div class="project-preview-media-stage open-lightbox" data-img="./CheckIn/MAIN.png"
-                data-caption="CheckIn - Resident Dashboard & Society Home">
-                <img src="./CheckIn/MAIN.png" alt="CheckIn Screen" class="project-preview-img" id="img-checkin">
-                <span class="preview-zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
-                    style="vertical-align: -1px; margin-right: 4px;">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                  </svg>Click to Enlarge</span>
-              </div>
-              <button class="project-card-arrow next" data-target="checkin" aria-label="Next screen">›</button>
-            </div>
-            <!-- Bouncy Screen Dots -->
-            <div class="screen-selector-bar" data-target="checkin">
-              <button class="screen-dot-btn active" data-src="./CheckIn/MAIN.png"
-                data-caption="CheckIn - Resident Dashboard & Society Home" title="Resident Home"></button>
-              <button class="screen-dot-btn" data-src="./CheckIn/Alert 1.png"
-                data-caption="CheckIn - Admin SOS Alert Creation & Dispatch" title="Admin SOS Dispatch"></button>
-              <button class="screen-dot-btn" data-src="./CheckIn/Homescreen Normal 1.png"
-                data-caption="CheckIn - Community Notice Board & Resident Portal" title="Notice Board"></button>
-              <button class="screen-dot-btn" data-src="./CheckIn/Popup 1.png"
-                data-caption="CheckIn - Emergency SOS Confirmation Modal (Slide To Send)"
-                title="Emergency SOS Modal"></button>
-              <button class="screen-dot-btn" data-src="./CheckIn/Chat Analytics 1.png"
-                data-caption="CheckIn - Community Issue Trends & Helpdesk Analytics"
-                title="Helpdesk Analytics"></button>
-              <button class="screen-dot-btn" data-src="./CheckIn/User Perspective - Issuer 1.png"
-                data-caption="CheckIn - Emergency SOS Broadcast Alert View" title="SOS Broadcast View"></button>
-            </div>
-          </div>
-
-          <div class="project-card-footer">
-            <a href="./checkin.html" class="btn-open-study">
-              <span>Read Full Case Study</span>
-              <span>→</span>
-            </a>
-          </div>
-        </article>
-
       </div>
     </section>
 
@@ -904,6 +560,453 @@
                 <span class="sample-thumb-label">Workouts & Yoga Library</span>
               </div>
             </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ==================== FEATURED CASE STUDIES & PROJECTS ==================== -->
+    <section class="section-block" id="projects">
+      <div class="section-intro-header">
+        <span class="section-category-tag">Featured Work</span>
+        <h2 class="section-heading-primary">Featured Projects</h2>
+        <p class="section-subheading-text">
+          A few projects that show how I think about products: the actual user journey, the logic underneath it, and
+          interfaces that stay out of the way.
+        </p>
+      </div>
+
+      <!-- Filter Tabs (Google Labs Style) -->
+      <div class="filter-tabs-container">
+        <button class="filter-chip-btn active" data-filter="all">
+          <span>All Work</span>
+          <span class="chip-count">5</span>
+        </button>
+        <button class="filter-chip-btn" data-filter="ai">
+          <span>AI & Computer Vision</span>
+          <span class="chip-count">1</span>
+        </button>
+        <button class="filter-chip-btn" data-filter="health">
+          <span>Health Tech</span>
+          <span class="chip-count">1</span>
+        </button>
+        <button class="filter-chip-btn" data-filter="marketplace">
+          <span>Marketplaces</span>
+          <span class="chip-count">1</span>
+        </button>
+        <button class="filter-chip-btn" data-filter="civic">
+          <span>Civic & Communities</span>
+          <span class="chip-count">2</span>
+        </button>
+      </div>
+
+      <!-- Project Cards Grid -->
+      <div class="projects-showcase-grid">
+
+        <!-- 1. RecycleNet -->
+        <article class="project-lab-card" data-category="ai">
+          <div class="project-card-top">
+            <div class="project-tag-row">
+              <span class="domain-pill pill-cyan">Deep Learning · Computer Vision & Edge AI</span>
+              <span class="role-tag-subtle">Lead Researcher & Systems Developer</span>
+            </div>
+            <h3 class="project-card-title">RecycleNet</h3>
+            <p class="project-card-tagline">Deep Learning-Assisted Dynamic Plastic Identification Technique For Automated Waste Segregation</p>
+            <p class="project-card-desc">
+              An edge-optimized computer vision system trained on 2,420 custom images and 8,884 annotations to classify 6 industrial resin codes (PET, HDPE, PVC, LDPE, PP, PS) in real time. Delivers 2.0 ms inference latency on edge devices and 62.0% mAP@50 with RF-DETR transformers. Deployed via Python Flask/OpenCV desktop streaming and an offline native Kotlin/Jetpack Compose Android app with PyTorch Lite. Published in IEEE ICCECE 2026.
+            </p>
+
+            <!-- 4 Pillars -->
+            <div class="pillars-mini-grid">
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">1</span>
+                <span>2,420 Custom Dataset & 6 Resin Codes</span>
+              </div>
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">2</span>
+                <span>2.0 ms Edge Latency (YOLO26n)</span>
+              </div>
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">3</span>
+                <span>Offline Native Android App (PyTorch Lite)</span>
+              </div>
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">4</span>
+                <span>Published IEEE Conference Paper</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Carousel Box -->
+          <div class="project-preview-box">
+            <div class="project-stage-carousel-wrapper">
+              <button class="project-card-arrow prev" data-target="recyclenet" aria-label="Previous screen">‹</button>
+              <div class="project-preview-media-stage open-lightbox" data-img="./RecycleNET/Group 9.png"
+                data-caption="RecycleNet - Real-time Vision Desktop Inference Dashboard">
+                <img src="./RecycleNET/Group 9.png" alt="RecycleNet Screen" class="project-preview-img"
+                  id="img-recyclenet">
+                <span class="preview-zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                    style="vertical-align: -1px; margin-right: 4px;">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>Click to Enlarge</span>
+              </div>
+              <button class="project-card-arrow next" data-target="recyclenet" aria-label="Next screen">›</button>
+            </div>
+            <!-- Bouncy Screen Dots -->
+            <div class="screen-selector-bar" data-target="recyclenet">
+              <button class="screen-dot-btn active" data-src="./RecycleNET/main hero recycle net.png"
+                data-caption="RecycleNet - Intelligent Waste Classifier Mobile Interface" title="Mobile App Hero"></button>
+              <button class="screen-dot-btn" data-src="./RecycleNET/Group 9.png"
+                data-caption="RecycleNet - Real-Time Desktop Inference & Live Webcam Stream" title="Desktop Inference"></button>
+              <button class="screen-dot-btn" data-src="./RecycleNET/image 29.png"
+                data-caption="RecycleNet - Native Android Material 3 Mobile Interface" title="Mobile App Home"></button>
+              <button class="screen-dot-btn" data-src="./RecycleNET/image 31.png"
+                data-caption="RecycleNet - Real-Time Mobile CameraX Live Scanner (PVC Detection)" title="Live Scanner"></button>
+              <button class="screen-dot-btn" data-src="./RecycleNET/image 32.png"
+                data-caption="RecycleNet - Offline PyTorch Lite Static Image Analysis (PET Detection)" title="Image Analysis"></button>
+              <button class="screen-dot-btn" data-src="./RecycleNET/download 8.png"
+                data-caption="RecycleNet - Comprehensive Model Architecture Benchmark Metrics" title="Model Metrics"></button>
+              <button class="screen-dot-btn" data-src="./RecycleNET/image 34.png"
+                data-caption="RecycleNet - Desktop OpenCV & Flask Inference Architecture Flowchart" title="Desktop Architecture"></button>
+              <button class="screen-dot-btn" data-src="./RecycleNET/image 35.png"
+                data-caption="RecycleNet - Android CameraX & PyTorch Lite Mobile Architecture Flowchart" title="Mobile Architecture"></button>
+            </div>
+          </div>
+
+          <div class="project-card-footer">
+            <a href="./recyclenet.html" class="btn-open-study">
+              <span>Read Full Case Study</span>
+              <span>→</span>
+            </a>
+            <div class="project-card-ext-links" style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <a href="https://ieeexplore.ieee.org/abstract/document/11493068" target="_blank" rel="noopener noreferrer" class="btn-pill btn-secondary" style="font-size: 0.78rem; padding: 6px 14px;" title="Published IEEE Paper">
+                <span>IEEE Paper</span>
+                <span>↗</span>
+              </a>
+              <a href="https://github.com/SparshGupta-T/RecycleNet" target="_blank" rel="noopener noreferrer" class="btn-pill btn-secondary" style="font-size: 0.78rem; padding: 6px 14px;" title="GitHub Android App">
+                <span>GitHub (App)</span>
+                <span>↗</span>
+              </a>
+              <a href="https://github.com/SparshGupta-T/WasteSorting" target="_blank" rel="noopener noreferrer" class="btn-pill btn-secondary" style="font-size: 0.78rem; padding: 6px 14px;" title="GitHub Desktop Server">
+                <span>GitHub (Desktop)</span>
+                <span>↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. SupportFit -->
+        <article class="project-lab-card" data-category="health">
+          <div class="project-card-top">
+            <div class="project-tag-row">
+              <span class="domain-pill pill-green">Physical Wellness · Health Tech</span>
+              <span class="role-tag-subtle">Product Design Intern</span>
+            </div>
+            <h3 class="project-card-title">SupportFit</h3>
+            <p class="project-card-tagline">Physical Wellness That Powers Performance</p>
+            <p class="project-card-desc">
+              A workplace wellness app that helps employees build real habits around movement, sleep, and nutrition. It
+              comes with health coaching and activity tracking built in.
+            </p>
+
+            <!-- 4 Pillars -->
+            <div class="pillars-mini-grid">
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">1</span>
+                <span>Smart Watch & Device Sync</span>
+              </div>
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">2</span>
+                <span>Weekly Health Stats</span>
+              </div>
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">3</span>
+                <span>1-on-1 Health Coaching</span>
+              </div>
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">4</span>
+                <span>Daily Activity Goals</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Carousel Box -->
+          <div class="project-preview-box">
+            <div class="project-stage-carousel-wrapper">
+              <button class="project-card-arrow prev" data-target="supportfit" aria-label="Previous screen">‹</button>
+              <div class="project-preview-media-stage open-lightbox" data-img="./SupportFit/MAIN.png"
+                data-caption="SupportFit - Main Overview Screen">
+                <img src="./SupportFit/MAIN.png" alt="SupportFit Screen" class="project-preview-img"
+                  id="img-supportfit">
+                <span class="preview-zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                    style="vertical-align: -1px; margin-right: 4px;">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>Click to Enlarge</span>
+              </div>
+              <button class="project-card-arrow next" data-target="supportfit" aria-label="Next screen">›</button>
+            </div>
+            <!-- Bouncy Screen Dots -->
+            <div class="screen-selector-bar" data-target="supportfit">
+              <button class="screen-dot-btn active" data-src="./SupportFit/MAIN.png"
+                data-caption="SupportFit - Main Dashboard & Activity Summary" title="Dashboard"></button>
+              <button class="screen-dot-btn" data-src="./SupportFit/13 Pro - 242 1.png"
+                data-caption="SupportFit - Daily Water Intake Tracker" title="Water Intake"></button>
+              <button class="screen-dot-btn" data-src="./SupportFit/13 Pro - 243 1.png"
+                data-caption="SupportFit - Reminder & Alert Frequency Settings" title="Reminder Settings"></button>
+              <button class="screen-dot-btn" data-src="./SupportFit/13 Pro - 245 1.png"
+                data-caption="SupportFit - Calorie & Meal Intake Tracker" title="Calorie & Meal Intake"></button>
+              <button class="screen-dot-btn" data-src="./SupportFit/13 Pro - 248 1.png"
+                data-caption="SupportFit - Sleep Schedule & Health Reminders" title="Sleep Reminders"></button>
+              <button class="screen-dot-btn" data-src="./SupportFit/13 Pro - 260 1.png"
+                data-caption="SupportFit - Weekly Sleep Duration & Stats Analysis"
+                title="Sleep Duration Stats"></button>
+            </div>
+          </div>
+
+          <div class="project-card-footer">
+            <a href="./supportfit.html" class="btn-open-study">
+              <span>Read Full Case Study</span>
+              <span>→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 3. TravelHoster -->
+        <article class="project-lab-card" data-category="marketplace">
+          <div class="project-card-top">
+            <div class="project-tag-row">
+              <span class="domain-pill pill-orange">Travel Marketplace · B2B & B2C</span>
+              <span class="role-tag-subtle">Product Design Intern</span>
+            </div>
+            <h3 class="project-card-title">TravelHoster</h3>
+            <p class="project-card-tagline">Turning travel planning into a two-way conversation</p>
+            <p class="project-card-desc">
+              A web marketplace connecting travelers directly with verified local tour operators. I designed the package
+              search, the custom trip requests, live quote chats, and the operator dashboard.
+            </p>
+
+            <!-- 4 Pillars -->
+            <div class="pillars-mini-grid">
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">1</span>
+                <span>Browse Tour Packages</span>
+              </div>
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">2</span>
+                <span>Customize Your Trip</span>
+              </div>
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">3</span>
+                <span>Direct Operator Chat</span>
+              </div>
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">4</span>
+                <span>Smart Request Routing</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Carousel Box -->
+          <div class="project-preview-box">
+            <div class="project-stage-carousel-wrapper">
+              <button class="project-card-arrow prev" data-target="travelhoster" aria-label="Previous screen">‹</button>
+              <div class="project-preview-media-stage open-lightbox" data-img="./TravelHoster/MAIN.png"
+                data-caption="TravelHoster - Itinerary Search & Discover Interface">
+                <img src="./TravelHoster/MAIN.png" alt="TravelHoster Screen" class="project-preview-img"
+                  id="img-travelhoster">
+                <span class="preview-zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                    style="vertical-align: -1px; margin-right: 4px;">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>Click to Enlarge</span>
+              </div>
+              <button class="project-card-arrow next" data-target="travelhoster" aria-label="Next screen">›</button>
+            </div>
+            <!-- Bouncy Screen Dots -->
+            <div class="screen-selector-bar" data-target="travelhoster">
+              <button class="screen-dot-btn active" data-src="./TravelHoster/MAIN.png"
+                data-caption="TravelHoster - Itinerary Search & Discover Interface" title="Discover Flow"></button>
+              <button class="screen-dot-btn" data-src="./TravelHoster/Tailor trip Filled 1.png"
+                data-caption="TravelHoster - Tailor Trip Custom Inquiry Flow" title="Tailor Trip"></button>
+              <button class="screen-dot-btn" data-src="./TravelHoster/Desktop - 23 1.png"
+                data-caption="TravelHoster - Operator & Partner Management Console" title="Partner Console"></button>
+              <button class="screen-dot-btn" data-src="./TravelHoster/Desktop - 93 1.png"
+                data-caption="TravelHoster - Package Configuration & CMS Modal" title="Package CMS Modal"></button>
+              <button class="screen-dot-btn" data-src="./TravelHoster/Desktop - 180 1.png"
+                data-caption="TravelHoster - Partner Revenue & Performance Analytics"
+                title="Revenue Analytics"></button>
+              <button class="screen-dot-btn" data-src="./TravelHoster/Screenshot 2026-04-27 at 13.22.02 1.png"
+                data-caption="TravelHoster - Regional Destination Showcase (Jammu & Kashmir)"
+                title="Destination Showcase"></button>
+            </div>
+          </div>
+
+          <div class="project-card-footer">
+            <a href="./travelhoster.html" class="btn-open-study">
+              <span>Read Full Case Study</span>
+              <span>→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 4. MyCouncillor -->
+        <article class="project-lab-card" data-category="civic">
+          <div class="project-card-top">
+            <div class="project-tag-row">
+              <span class="domain-pill pill-blue">Civic Tech · Local Governance</span>
+              <span class="role-tag-subtle">Product Design Intern</span>
+            </div>
+            <h3 class="project-card-title">MyCouncillor</h3>
+            <p class="project-card-tagline">Civic issue reporting and local ward management</p>
+            <p class="project-card-desc">
+              A mobile app and admin dashboard for reporting neighbourhood problems, potholes, broken streetlights,
+              missed garbage pickup, straight to ward councillors, with photos and live status updates.
+            </p>
+
+            <!-- 4 Pillars -->
+            <div class="pillars-mini-grid">
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">1</span>
+                <span>Photo & GPS Issue Reports</span>
+              </div>
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">2</span>
+                <span>Live Status Updates</span>
+              </div>
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">3</span>
+                <span>Automatic Ward Routing</span>
+              </div>
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">4</span>
+                <span>Councillor Overview Dashboard</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Carousel Box -->
+          <div class="project-preview-box">
+            <div class="project-stage-carousel-wrapper">
+              <button class="project-card-arrow prev" data-target="mycouncillor" aria-label="Previous screen">‹</button>
+              <div class="project-preview-media-stage open-lightbox" data-img="./MyCouncilor/MAIN.png"
+                data-caption="MyCouncillor - Citizen App Home & Issue Reporting">
+                <img src="./MyCouncilor/MAIN.png" alt="MyCouncillor Screen" class="project-preview-img"
+                  id="img-mycouncillor">
+                <span class="preview-zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                    style="vertical-align: -1px; margin-right: 4px;">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>Click to Enlarge</span>
+              </div>
+              <button class="project-card-arrow next" data-target="mycouncillor" aria-label="Next screen">›</button>
+            </div>
+            <!-- Bouncy Screen Dots -->
+            <div class="screen-selector-bar" data-target="mycouncillor">
+              <button class="screen-dot-btn active" data-src="./MyCouncilor/MAIN.png"
+                data-caption="MyCouncillor - Citizen App Home & Issue Reporting" title="Citizen Home"></button>
+              <button class="screen-dot-btn" data-src="./MyCouncilor/Dashboard-1P 1.png"
+                data-caption="MyCouncillor - Councillor Administration Dashboard" title="Admin Dashboard"></button>
+              <button class="screen-dot-btn" data-src="./MyCouncilor/New Issues - P 1.png"
+                data-caption="MyCouncillor - Incoming Complaints Triage View" title="Triage Queue"></button>
+              <button class="screen-dot-btn" data-src="./MyCouncilor/Pending Issue- PPP 1.png"
+                data-caption="MyCouncillor - Task Assignment & Worker Routing" title="Task Assignment"></button>
+              <button class="screen-dot-btn" data-src="./MyCouncilor/iPhone 13 & 14 - 188 1.png"
+                data-caption="MyCouncillor - Geolocation Pinpoint & Address Auto-detect" title="Geo Location"></button>
+              <button class="screen-dot-btn" data-src="./MyCouncilor/iPhone 13 & 14 - 214 1.png"
+                data-caption="MyCouncillor - Real-time Status Tracking Timeline" title="Tracking Timeline"></button>
+            </div>
+          </div>
+
+          <div class="project-card-footer">
+            <a href="./mycouncillor.html" class="btn-open-study">
+              <span>Read Full Case Study</span>
+              <span>→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 5. CheckIn -->
+        <article class="project-lab-card" data-category="civic">
+          <div class="project-card-top">
+            <div class="project-tag-row">
+              <span class="domain-pill pill-purple">Society Management · Access Control</span>
+              <span class="role-tag-subtle">Product Design Intern</span>
+            </div>
+            <h3 class="project-card-title">CheckIn</h3>
+            <p class="project-card-tagline">Fast and secure check-ins for residential communities</p>
+            <p class="project-card-desc">
+              A visitor and community management app for apartment societies. I designed the QR passes for guests and
+              delivery riders, resident approval alerts, maintenance dues, and emergency alerts.
+            </p>
+
+            <!-- 4 Pillars -->
+            <div class="pillars-mini-grid">
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">1</span>
+                <span>Fast QR Entry Passes</span>
+              </div>
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">2</span>
+                <span>Resident Approval Alerts</span>
+              </div>
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">3</span>
+                <span>Society Dues & Maintenance</span>
+              </div>
+              <div class="pillar-mini-item">
+                <span class="pillar-num-badge">4</span>
+                <span>Guard & Admin Controls</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Carousel Box -->
+          <div class="project-preview-box">
+            <div class="project-stage-carousel-wrapper">
+              <button class="project-card-arrow prev" data-target="checkin" aria-label="Previous screen">‹</button>
+              <div class="project-preview-media-stage open-lightbox" data-img="./CheckIn/MAIN.png"
+                data-caption="CheckIn - Resident Dashboard & Society Home">
+                <img src="./CheckIn/MAIN.png" alt="CheckIn Screen" class="project-preview-img" id="img-checkin">
+                <span class="preview-zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                    style="vertical-align: -1px; margin-right: 4px;">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>Click to Enlarge</span>
+              </div>
+              <button class="project-card-arrow next" data-target="checkin" aria-label="Next screen">›</button>
+            </div>
+            <!-- Bouncy Screen Dots -->
+            <div class="screen-selector-bar" data-target="checkin">
+              <button class="screen-dot-btn active" data-src="./CheckIn/MAIN.png"
+                data-caption="CheckIn - Resident Dashboard & Society Home" title="Resident Home"></button>
+              <button class="screen-dot-btn" data-src="./CheckIn/Alert 1.png"
+                data-caption="CheckIn - Admin SOS Alert Creation & Dispatch" title="Admin SOS Dispatch"></button>
+              <button class="screen-dot-btn" data-src="./CheckIn/Homescreen Normal 1.png"
+                data-caption="CheckIn - Community Notice Board & Resident Portal" title="Notice Board"></button>
+              <button class="screen-dot-btn" data-src="./CheckIn/Popup 1.png"
+                data-caption="CheckIn - Emergency SOS Confirmation Modal (Slide To Send)"
+                title="Emergency SOS Modal"></button>
+              <button class="screen-dot-btn" data-src="./CheckIn/Chat Analytics 1.png"
+                data-caption="CheckIn - Community Issue Trends & Helpdesk Analytics"
+                title="Helpdesk Analytics"></button>
+              <button class="screen-dot-btn" data-src="./CheckIn/User Perspective - Issuer 1.png"
+                data-caption="CheckIn - Emergency SOS Broadcast Alert View" title="SOS Broadcast View"></button>
+            </div>
+          </div>
+
+          <div class="project-card-footer">
+            <a href="./checkin.html" class="btn-open-study">
+              <span>Read Full Case Study</span>
+              <span>→</span>
+            </a>
           </div>
         </article>
 

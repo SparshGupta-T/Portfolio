@@ -597,12 +597,24 @@ input::-moz-focus-inner {
   grid-template-columns: 1.15fr 0.85fr;
   align-items: center;
   gap: 48px;
+  width: 100%;
 }
 
 .hero-left-column {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  min-width: 0;
+  width: 100%;
+}
+
+.hero-right-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  width: 100%;
 }
 
 /* Soft Status Chip */
@@ -734,6 +746,10 @@ input::-moz-focus-inner {
   flex-direction: column;
   align-items: center;
   transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  width: 100%;
+  max-width: 480px;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .hero-showcase-card:hover {
@@ -1094,6 +1110,18 @@ section[id] {
   border: 1px solid var(--pastel-sage-border);
 }
 
+.pill-cyan {
+  background: #ecfeff;
+  color: #0e7490;
+  border: 1px solid #a5f3fc;
+}
+
+.pill-teal {
+  background: #f0fdfa;
+  color: #0f766e;
+  border: 1px solid #99f6e4;
+}
+
 .pill-orange {
   background: var(--pastel-peach-bg);
   color: var(--pastel-peach-text);
@@ -1327,6 +1355,8 @@ section[id] {
   justify-content: space-between;
   padding-top: 14px;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .btn-open-study {
@@ -2314,12 +2344,23 @@ textarea.form-input-control {
    ========================================================================== */
 @media (max-width: 1024px) {
   .hero-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 40px;
+    width: 100%;
+    max-width: 100%;
+  }
+  .hero-left-column,
+  .hero-right-column {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
   }
   .hero-showcase-card {
-    max-width: 520px;
+    width: 100%;
+    max-width: 480px;
     margin: 0 auto;
+    box-sizing: border-box;
+    overflow: hidden;
   }
   .projects-showcase-grid {
     grid-template-columns: 1fr;
@@ -3078,6 +3119,29 @@ textarea.form-input-control {
      ======================================================================== */
   .hero-section {
     padding: 16px 0 32px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    max-width: 100%;
+    gap: 28px;
+  }
+
+  .hero-left-column,
+  .hero-right-column {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-right-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   .hero-left-column {
@@ -3150,31 +3214,46 @@ textarea.form-input-control {
   }
 
   .hero-showcase-card {
-    padding: 16px;
+    width: 100%;
+    max-width: min(440px, 100%);
+    min-width: 0;
+    margin: 0 auto;
+    padding: 16px 12px;
     border-radius: var(--radius-lg);
+    box-sizing: border-box;
+    overflow: hidden;
   }
 
   .showcase-header-bar {
     width: 100%;
+    max-width: 100%;
+    min-width: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0;
+    padding: 0 2px;
     margin: 0 auto 14px auto;
+    box-sizing: border-box;
+    overflow: hidden;
   }
 
   .showcase-switch-pill {
-    display: inline-flex;
+    display: flex;
     margin: 0 auto;
     max-width: 100%;
     overflow-x: auto;
+    overscroll-behavior-x: contain;
     flex-wrap: nowrap;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    gap: 4px;
-    justify-content: center;
+    -ms-overflow-style: none;
+    gap: 3px;
+    justify-content: flex-start;
     align-items: center;
-    padding: 3px 5px;
+    padding: 3px 4px;
+    border-radius: var(--radius-pill);
+    background: var(--bg-subtle);
+    box-sizing: border-box;
   }
 
   .showcase-switch-pill::-webkit-scrollbar {
@@ -3184,26 +3263,50 @@ textarea.form-input-control {
   .showcase-tab-btn {
     white-space: nowrap;
     flex-shrink: 0;
-    padding: 6px 12px;
-    font-size: 0.74rem;
+    padding: 5px 8px;
+    font-size: 0.72rem;
+    font-weight: 600;
   }
 
-  .hero-stage-carousel-wrap {
-    height: 380px;
-    max-height: 52vh;
+  .hero-device-wrapper {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 6px 0;
+    box-sizing: border-box;
   }
 
   .hero-phone-shell {
-    width: 210px;
+    width: 220px;
+    max-width: calc(100% - 64px);
+    margin: 0 auto;
     border-radius: 36px;
-    padding: 8px;
+    padding: 0;
+    box-sizing: border-box;
   }
 
   .hero-phone-screen {
+    width: 100%;
     height: auto;
     max-height: 480px;
     border-radius: 28px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
   }
+
+  .hero-stage-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+
+  .hero-stage-arrow.prev { left: 0px; }
+  .hero-stage-arrow.next { right: 0px; }
 
   .floating-pill-badge {
     position: static;

@@ -1188,37 +1188,59 @@ function initScrollSpy() {
 
   if (!navLinks.length || !sections.length) return;
 
-  let ticking = false;
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        let currentId = '';
-        const scrollPos = window.scrollY + 180;
+  function setActiveLink(id) {
+    if (!id) return;
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href') || '';
+      if (href === `#${id}` || href.endsWith(`#${id}`)) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  }
 
-        sections.forEach(sec => {
-          const top = sec.offsetTop;
-          const height = sec.offsetHeight;
-          if (scrollPos >= top && scrollPos < top + height) {
-            currentId = sec.getAttribute('id');
-          }
-        });
-
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          const href = link.getAttribute('href') || '';
-          if (href === `#${currentId}` || href.endsWith(`#${currentId}`)) {
-            link.classList.add('active');
-          }
-        });
-        ticking = false;
+  if ('IntersectionObserver' in window) {
+    // High-performance compositor-driven observation with 0 scroll listeners or reflows
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActiveLink(entry.target.getAttribute('id'));
+        }
       });
-      ticking = true;
-    }
-  }, { passive: true });
+    }, {
+      rootMargin: '-20% 0px -65% 0px',
+      threshold: 0
+    });
+
+    sections.forEach(sec => observer.observe(sec));
+  } else {
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          let currentId = '';
+          const scrollPos = window.scrollY + 180;
+
+          sections.forEach(sec => {
+            const top = sec.offsetTop;
+            const height = sec.offsetHeight;
+            if (scrollPos >= top && scrollPos < top + height) {
+              currentId = sec.getAttribute('id');
+            }
+          });
+
+          if (currentId) setActiveLink(currentId);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
 }
 
 // ==========================================
-// 9b. Mobile Navigation Drawer Toggle & Interactions
+// 9b. Mobile Navigation Drawer Toggle & Interactions (Instant Touch Response)
 // ==========================================
 function initMobileNav() {
   const toggleBtn = document.getElementById('mobileMenuBtn');
@@ -1238,7 +1260,6 @@ function initMobileNav() {
       backdrop.classList.add('is-open');
       backdrop.setAttribute('aria-hidden', 'false');
     }
-    document.body.classList.add('mobile-menu-open');
   }
 
   function closeMenu() {
@@ -1250,7 +1271,6 @@ function initMobileNav() {
       backdrop.classList.remove('is-open');
       backdrop.setAttribute('aria-hidden', 'true');
     }
-    document.body.classList.remove('mobile-menu-open');
   }
 
   function toggleMenu() {
@@ -1261,23 +1281,57 @@ function initMobileNav() {
     }
   }
 
-  toggleBtn.addEventListener('click', (e) => {
+  // Instant touch response: bypasses Safari's 300ms click delay with debounced pointer/touch handling
+  let lastTouchTime = 0;
+  function handleToggle(e) {
+    const isTouch = e.type === 'touchstart' || (e.type === 'pointerdown' && e.pointerType === 'touch');
+    if (isTouch) {
+      lastTouchTime = Date.now();
+    } else if (e.type === 'click' && Date.now() - lastTouchTime < 450) {
+      // Suppress synthesized ghost click on touch devices
+      e.preventDefault();
+      e.stopPropagation();
+      return;
+    }
     e.preventDefault();
     e.stopPropagation();
     toggleMenu();
-  });
+  }
+
+  toggleBtn.addEventListener('pointerdown', (e) => {
+    if (e.pointerType === 'touch') handleToggle(e);
+  }, { passive: false });
+  toggleBtn.addEventListener('click', handleToggle);
 
   if (closeBtn) {
-    closeBtn.addEventListener('click', (e) => {
+    let lastCloseTouch = 0;
+    function handleClose(e) {
+      const isTouch = e.type === 'touchstart' || (e.type === 'pointerdown' && e.pointerType === 'touch');
+      if (isTouch) {
+        lastCloseTouch = Date.now();
+      } else if (e.type === 'click' && Date.now() - lastCloseTouch < 450) {
+        e.preventDefault();
+        e.stopPropagation();
+        return;
+      }
       e.preventDefault();
+      e.stopPropagation();
       closeMenu();
-    });
+    }
+    closeBtn.addEventListener('pointerdown', (e) => {
+      if (e.pointerType === 'touch') handleClose(e);
+    }, { passive: false });
+    closeBtn.addEventListener('click', handleClose);
   }
 
   if (backdrop) {
     backdrop.addEventListener('click', () => {
       closeMenu();
     });
+    backdrop.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      closeMenu();
+    }, { passive: false });
     backdrop.addEventListener('touchmove', (e) => {
       e.preventDefault();
     }, { passive: false });
@@ -1305,7 +1359,7 @@ function initMobileNav() {
               top: offsetPosition,
               behavior: 'smooth'
             });
-          }, 100);
+          }, 60);
         }
       } else {
         // Link to other page or PDF
@@ -1616,8 +1670,9 @@ function initCardInversions() {
 // 12. Pro-Dev Performance & Polish Details
 // ==========================================
 
-// Speculative Instant-Navigation Prefetcher (Zero Perceived Latency)
+// Speculative Instant-Navigation Prefetcher (Zero Perceived Latency on Desktop)
 function initSpeculativePrefetch() {
+  if (window.matchMedia('(pointer: coarse)').matches) return;
   if (navigator.connection && (navigator.connection.saveData || /(2g)/.test(navigator.connection.effectiveType))) {
     return;
   }

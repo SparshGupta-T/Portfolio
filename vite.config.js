@@ -25,6 +25,9 @@ function copyStaticAssetsPlugin() {
       const filesToCopy = [
         'Sparsh_Resume.pdf',
         '_headers',
+        '_redirects',
+        'robots.txt',
+        'sitemap.xml',
       ];
 
       foldersToCopy.forEach((folder) => {

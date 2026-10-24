@@ -11,7 +11,10 @@
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
-# Static image folders
+# Static image & project asset folders (Cached for 1 week with stale-while-revalidate)
+/RecycleNET/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
 /SupportFit/*
   Cache-Control: public, max-age=604800, stale-while-revalidate=86400
 
@@ -39,11 +42,11 @@
 /SupportRoom/*
   Cache-Control: public, max-age=604800, stale-while-revalidate=86400
 
-# PDFs
+# PDFs (Resume)
 /*.pdf
   Cache-Control: public, max-age=86400, stale-while-revalidate=3600
 
-# HTML documents (always revalidate to ensure live updates on new deploy)
+# HTML documents (always revalidate to ensure instantaneous live updates on each new deploy)
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
 

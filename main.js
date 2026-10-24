@@ -1598,7 +1598,99 @@ function initCardInversions() {
 }
 
 // ==========================================
-// 12. Initialization on DOM Loaded / Ready
+// 12. Pro-Dev Performance & Polish Details
+// ==========================================
+
+// Speculative Instant-Navigation Prefetcher (Zero Perceived Latency)
+function initSpeculativePrefetch() {
+  if (navigator.connection && (navigator.connection.saveData || /(2g)/.test(navigator.connection.effectiveType))) {
+    return;
+  }
+
+  const prefetchedUrls = new Set();
+
+  function prefetchUrl(url) {
+    if (!url || prefetchedUrls.has(url)) return;
+    prefetchedUrls.add(url);
+
+    const link = document.createElement('link');
+    link.rel = 'prefetch';
+    link.href = url;
+    link.as = 'document';
+    document.head.appendChild(link);
+  }
+
+  function handleInteraction(e) {
+    const link = e.target.closest('a[href]');
+    if (!link) return;
+    const href = link.getAttribute('href');
+    if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('http://') || href.startsWith('https://') || href.startsWith('javascript:')) {
+      return;
+    }
+    prefetchUrl(href);
+  }
+
+  document.addEventListener('mouseover', handleInteraction, { passive: true });
+  document.addEventListener('touchstart', handleInteraction, { passive: true });
+}
+
+// Case Study Reading Progress Bar
+function initReadingProgress() {
+  if (!document.body.classList.contains('case-study-page')) return;
+
+  let track = document.getElementById('readingProgressTrack');
+  if (!track) {
+    track = document.createElement('div');
+    track.id = 'readingProgressTrack';
+    track.className = 'reading-progress-track';
+    track.setAttribute('aria-hidden', 'true');
+    const bar = document.createElement('div');
+    bar.className = 'reading-progress-bar';
+    bar.id = 'readingProgressBar';
+    track.appendChild(bar);
+    document.body.prepend(track);
+  }
+
+  const progressBar = document.getElementById('readingProgressBar');
+  if (!progressBar) return;
+
+  let ticking = false;
+  function updateProgress() {
+    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (totalHeight <= 0) {
+      progressBar.style.width = '0%';
+      return;
+    }
+    const currentScroll = window.scrollY || document.documentElement.scrollTop;
+    const progress = Math.min(100, Math.max(0, (currentScroll / totalHeight) * 100));
+    progressBar.style.width = `${progress}%`;
+    ticking = false;
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      window.requestAnimationFrame(updateProgress);
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  updateProgress();
+}
+
+// External Link Security & Rel Attributes
+function initExternalLinkSecurity() {
+  document.querySelectorAll('a[target="_blank"]').forEach((a) => {
+    const rel = a.getAttribute('rel') || '';
+    if (!rel.includes('noopener')) {
+      a.setAttribute('rel', (rel + ' noopener noreferrer').trim());
+    }
+  });
+}
+
+// ==========================================
+// 13. Initialization on DOM Loaded / Ready
 // ==========================================
 function initApp() {
   initHeroInteractiveStage();
@@ -1612,6 +1704,9 @@ function initApp() {
   initCaseStudyStage();
   initCalmMouseFocus();
   initCustomCursor();
+  initSpeculativePrefetch();
+  initReadingProgress();
+  initExternalLinkSecurity();
 }
 
 if (document.readyState === 'loading') {

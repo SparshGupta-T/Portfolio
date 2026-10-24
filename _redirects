@@ -1,0 +1,15 @@
+# Cloudflare Pages Redirects & Clean URL Rewrites
+# https://developers.cloudflare.com/pages/configuration/redirects/
+
+# Clean URL rewrites (serve .html seamlessly without file extensions in the URL bar)
+/recyclenet      /recyclenet.html      200
+/supportfit      /supportfit.html      200
+/travelhoster    /travelhoster.html    200
+/mycouncillor    /mycouncillor.html    200
+/checkin         /checkin.html         200
+
+# Professional Shorthand Redirects for bio, resume, and social links
+/resume          /Sparsh_Resume.pdf    302
+/cv              /Sparsh_Resume.pdf    302
+/linkedin        https://www.linkedin.com/in/sparsh-gupta-a9b261247  302
+/github          https://github.com/SparshGupta-T                    302

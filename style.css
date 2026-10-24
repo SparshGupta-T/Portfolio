@@ -4846,5 +4846,90 @@ textarea.form-input-control {
   contain: paint;
 }
 
+/* ==========================================================================
+   KEYBOARD FOCUS-VISIBLE ACCESSIBILITY (Clean Google Labs Focus Ring)
+   ========================================================================== */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-primary) !important;
+  outline-offset: 3px !important;
+  border-radius: inherit;
+}
+
+/* ==========================================================================
+   CASE STUDY READING PROGRESS BAR (Calm 2.5px Gradient Progress)
+   ========================================================================== */
+.reading-progress-track {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2.5px;
+  background: transparent;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.reading-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #5046E5, #06B6D4);
+  transition: width 0.08s ease-out;
+  border-radius: 0 2px 2px 0;
+}
+
+/* ==========================================================================
+   EXECUTIVE PRINT STYLESHEET (Clean resume-grade printing / PDF export)
+   ========================================================================== */
+@media print {
+  body {
+    background: #FFFFFF !important;
+    color: #111827 !important;
+  }
+
+  .ambient-glow,
+  .subtle-dot-matrix,
+  .header-container,
+  .mobile-drawer-overlay,
+  .case-study-back-pill,
+  .nav-pill-bar,
+  .stage-nav-arrow,
+  .screen-selector-bar,
+  .custom-cursor-dot,
+  .custom-cursor-follower,
+  .lab-modal-overlay,
+  .reading-progress-track,
+  .btn-open-study {
+    display: none !important;
+  }
+
+  .site-wrapper {
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .project-lab-card,
+  .experience-card-lab,
+  .study-narrative-card,
+  .study-gallery-card,
+  .pillar-deep-card,
+  .case-study-meta-bar {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    box-shadow: none !important;
+    border: 1px solid #E5E7EB !important;
+    background: #FFFFFF !important;
+    margin-bottom: 24px !important;
+  }
+
+  a {
+    text-decoration: underline !important;
+    color: #111827 !important;
+  }
+}
+
 
 

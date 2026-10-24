@@ -23,7 +23,7 @@ function copyStaticAssetsPlugin() {
       ];
 
       const filesToCopy = [
-        'Spash Resume GET.pdf',
+        'Sparsh_Resume.pdf',
         '_headers',
       ];
 

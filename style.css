@@ -118,6 +118,11 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
+strong, b {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
 /* Firefox & Cross-Browser Focus and Form Controls Reset */
 button, input, textarea, select {
   -webkit-appearance: none;

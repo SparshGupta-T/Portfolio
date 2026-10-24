@@ -549,6 +549,7 @@ function initHeroInteractiveStage() {
     const phoneShell = card.querySelector('.hero-phone-shell');
     if (phoneShell && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
       let bounds = null;
+      let rafId = null;
 
       card.addEventListener('mouseenter', () => {
         bounds = card.getBoundingClientRect();
@@ -557,16 +558,22 @@ function initHeroInteractiveStage() {
 
       card.addEventListener('mousemove', (e) => {
         if (!bounds) bounds = card.getBoundingClientRect();
-        const x = (e.clientX - bounds.left) / bounds.width - 0.5;
-        const y = (e.clientY - bounds.top) / bounds.height - 0.5;
-        const transX = (x * 14).toFixed(1);
-        const transY = (y * 14).toFixed(1);
-        const rot = (x * 2.2).toFixed(2);
-        phoneShell.style.transform = `translate3d(${transX}px, ${transY}px, 0) rotate(${rot}deg) scale(1.02)`;
-      });
+        const clientX = e.clientX;
+        const clientY = e.clientY;
+        if (rafId) cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(() => {
+          const x = (clientX - bounds.left) / bounds.width - 0.5;
+          const y = (clientY - bounds.top) / bounds.height - 0.5;
+          const transX = (x * 14).toFixed(1);
+          const transY = (y * 14).toFixed(1);
+          const rot = (x * 2.2).toFixed(2);
+          phoneShell.style.transform = `translate3d(${transX}px, ${transY}px, 0) rotate(${rot}deg) scale(1.02)`;
+        });
+      }, { passive: true });
 
       card.addEventListener('mouseleave', () => {
         bounds = null;
+        if (rafId) cancelAnimationFrame(rafId);
         phoneShell.style.transition = 'transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1)';
         phoneShell.style.transform = 'translate3d(0px, 0px, 0) rotate(0deg) scale(1)';
       });
@@ -602,12 +609,29 @@ function initCalmMouseFocus() {
   if (!hoverElements.length) return;
 
   hoverElements.forEach(el => {
+    let rect = null;
+    let rafId = null;
+
+    el.addEventListener('mouseenter', () => {
+      rect = el.getBoundingClientRect();
+    }, { passive: true });
+
     el.addEventListener('mousemove', (e) => {
-      const rect = el.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      el.style.setProperty('--mouse-x', `${x}px`);
-      el.style.setProperty('--mouse-y', `${y}px`);
+      if (!rect) rect = el.getBoundingClientRect();
+      const clientX = e.clientX;
+      const clientY = e.clientY;
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        const x = clientX - rect.left;
+        const y = clientY - rect.top;
+        el.style.setProperty('--mouse-x', `${x}px`);
+        el.style.setProperty('--mouse-y', `${y}px`);
+      });
+    }, { passive: true });
+
+    el.addEventListener('mouseleave', () => {
+      rect = null;
+      if (rafId) cancelAnimationFrame(rafId);
     }, { passive: true });
   });
 }

@@ -4609,4 +4609,25 @@ textarea.form-input-control {
   color: #FFFFFF;
 }
 
+/* ==========================================================================
+   PERFORMANCE & RENDERING OPTIMIZATIONS (Smooth 60/120fps Scroll & Low RAM)
+   ========================================================================== */
+.project-lab-card,
+.extra-bento-card,
+.testimonial-card-lab {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 650px;
+}
+
+.study-gallery-card {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 320px;
+}
+
+.study-gallery-img-wrap,
+.project-preview-media-stage {
+  contain: paint;
+}
+
+
 

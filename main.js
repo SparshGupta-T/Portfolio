@@ -511,7 +511,8 @@ function initHeroInteractiveStage() {
   }
 
   tabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
       const target = btn.getAttribute('data-hero-target');
       const foundIdx = keys.indexOf(target);
       if (foundIdx !== -1) {
@@ -1251,7 +1252,10 @@ function initMobileNav() {
 
   if (!toggleBtn || !drawer) return;
 
+  let menuOpenTimestamp = 0;
+
   function openMenu() {
+    menuOpenTimestamp = Date.now();
     toggleBtn.classList.add('is-active');
     toggleBtn.setAttribute('aria-expanded', 'true');
     drawer.classList.add('is-open');
@@ -1281,57 +1285,30 @@ function initMobileNav() {
     }
   }
 
-  // Instant touch response: bypasses Safari's 300ms click delay with debounced pointer/touch handling
-  let lastTouchTime = 0;
-  function handleToggle(e) {
-    const isTouch = e.type === 'touchstart' || (e.type === 'pointerdown' && e.pointerType === 'touch');
-    if (isTouch) {
-      lastTouchTime = Date.now();
-    } else if (e.type === 'click' && Date.now() - lastTouchTime < 450) {
-      // Suppress synthesized ghost click on touch devices
-      e.preventDefault();
-      e.stopPropagation();
-      return;
-    }
+  // Clean, zero-delay tap handling (touch-action: manipulation handles 0ms delay in CSS)
+  toggleBtn.addEventListener('click', (e) => {
     e.preventDefault();
     e.stopPropagation();
     toggleMenu();
-  }
-
-  toggleBtn.addEventListener('pointerdown', (e) => {
-    if (e.pointerType === 'touch') handleToggle(e);
-  }, { passive: false });
-  toggleBtn.addEventListener('click', handleToggle);
+  });
 
   if (closeBtn) {
-    let lastCloseTouch = 0;
-    function handleClose(e) {
-      const isTouch = e.type === 'touchstart' || (e.type === 'pointerdown' && e.pointerType === 'touch');
-      if (isTouch) {
-        lastCloseTouch = Date.now();
-      } else if (e.type === 'click' && Date.now() - lastCloseTouch < 450) {
-        e.preventDefault();
-        e.stopPropagation();
-        return;
-      }
+    closeBtn.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
       closeMenu();
-    }
-    closeBtn.addEventListener('pointerdown', (e) => {
-      if (e.pointerType === 'touch') handleClose(e);
-    }, { passive: false });
-    closeBtn.addEventListener('click', handleClose);
+    });
   }
 
   if (backdrop) {
-    backdrop.addEventListener('click', () => {
-      closeMenu();
-    });
-    backdrop.addEventListener('touchstart', (e) => {
+    function handleBackdropDismiss(e) {
+      // Shield against any residual/trailing event from the tap that opened the menu
+      if (Date.now() - menuOpenTimestamp < 350) return;
       e.preventDefault();
       closeMenu();
-    }, { passive: false });
+    }
+    backdrop.addEventListener('click', handleBackdropDismiss);
+    backdrop.addEventListener('touchend', handleBackdropDismiss);
     backdrop.addEventListener('touchmove', (e) => {
       e.preventDefault();
     }, { passive: false });

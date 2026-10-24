@@ -2501,9 +2501,24 @@ textarea.form-input-control {
     grid-template-columns: 1fr;
     gap: 32px;
   }
+  .testimonial-card-lab {
+    padding: 30px 22px;
+  }
+  .study-switch-pills {
+    gap: 2px;
+  }
+  .study-switch-link {
+    padding: 5px 10px;
+    font-size: 0.76rem;
+  }
 }
 
 @media (max-width: 768px) {
+  /* Remove scroll reading progress on mobile view */
+  .reading-progress-track {
+    display: none !important;
+  }
+
   /* ========================================================================
      MOBILE NAVIGATION & DOCK
      ======================================================================== */
@@ -4474,7 +4489,7 @@ textarea.form-input-control {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .case-study-hero-grid {
     grid-template-columns: 1fr;
     gap: 32px;

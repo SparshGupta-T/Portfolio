@@ -1634,9 +1634,10 @@ function initSpeculativePrefetch() {
   document.addEventListener('touchstart', handleInteraction, { passive: true });
 }
 
-// Case Study Reading Progress Bar
+// Case Study Reading Progress Bar (Desktop & Tablet only, disabled on mobile)
 function initReadingProgress() {
   if (!document.body.classList.contains('case-study-page')) return;
+  if (window.innerWidth <= 768) return;
 
   let track = document.getElementById('readingProgressTrack');
   if (!track) {
@@ -1656,6 +1657,13 @@ function initReadingProgress() {
 
   let ticking = false;
   function updateProgress() {
+    if (window.innerWidth <= 768) {
+      if (track) track.style.display = 'none';
+      return;
+    } else {
+      if (track) track.style.display = '';
+    }
+
     const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
     if (totalHeight <= 0) {
       progressBar.style.width = '0%';

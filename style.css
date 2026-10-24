@@ -200,13 +200,17 @@ input::-moz-focus-inner {
   left: 0;
   width: 6px;
   height: 6px;
+  margin-top: -3px;
+  margin-left: -3px;
   background-color: var(--text-primary);
   border-radius: 50%;
   pointer-events: none;
   z-index: 999999;
-  transform: translate3d(-100px, -100px, 0) translate(-50%, -50%);
-  transition: opacity 0.2s ease, background-color 0.2s ease;
+  transform: translate3d(-100px, -100px, 0);
+  transition: opacity 0.15s ease, background-color 0.15s ease;
   will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .custom-cursor-blob {
@@ -215,24 +219,31 @@ input::-moz-focus-inner {
   left: 0;
   width: 32px;
   height: 32px;
+  margin-top: -16px;
+  margin-left: -16px;
   background: rgba(217, 119, 6, 0.08);
   border: 1.5px solid rgba(217, 119, 6, 0.4);
   border-radius: 50% !important;
   pointer-events: none;
   z-index: 999998;
-  transform: translate3d(-100px, -100px, 0) translate(-50%, -50%);
-  transition: width 0.2s cubic-bezier(0.2, 0.8, 0.2, 1),
-              height 0.2s cubic-bezier(0.2, 0.8, 0.2, 1),
-              background-color 0.2s ease,
-              border-color 0.2s ease,
-              opacity 0.2s ease;
-  will-change: transform, width, height;
+  transform: translate3d(-100px, -100px, 0);
+  transition: width 0.15s cubic-bezier(0.2, 0.8, 0.2, 1),
+              height 0.15s cubic-bezier(0.2, 0.8, 0.2, 1),
+              margin 0.15s cubic-bezier(0.2, 0.8, 0.2, 1),
+              background-color 0.15s ease,
+              border-color 0.15s ease,
+              opacity 0.15s ease;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 /* Interactive Focus: Keep circular, shrink smaller around dot, change color */
 .custom-cursor-blob.is-hovering {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
+  margin-top: -11px;
+  margin-left: -11px;
   border-radius: 50% !important;
   background: rgba(80, 70, 229, 0.16);
   border-color: rgba(80, 70, 229, 0.7);
@@ -246,6 +257,8 @@ input::-moz-focus-inner {
 .custom-cursor-blob.is-clicking {
   width: 16px;
   height: 16px;
+  margin-top: -8px;
+  margin-left: -8px;
   border-radius: 50% !important;
   background: rgba(80, 70, 229, 0.28);
   border-color: var(--accent-primary);
@@ -1002,6 +1015,9 @@ section[id] {
 .section-category-tag {
   display: inline-flex;
   align-items: center;
+  align-self: flex-start;
+  width: fit-content;
+  max-width: fit-content;
   gap: 6px;
   font-size: 0.78rem;
   font-weight: 600;
@@ -2094,6 +2110,12 @@ section[id] {
   display: flex;
   flex-direction: column;
   gap: 18px;
+}
+
+.contact-info-side .section-category-tag {
+  align-self: flex-start !important;
+  width: fit-content !important;
+  max-width: fit-content !important;
 }
 
 .contact-info-side h2 {

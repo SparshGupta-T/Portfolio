@@ -1482,17 +1482,25 @@ function initCustomCursor() {
   let hasMoved = false;
   let isLoopRunning = false;
 
-  // Smooth fluid blob trailing animation loop (lerp) with idle sleep
+  // Snappy fluid blob trailing animation loop with zero sluggish drag on Safari
   function renderCursor() {
+    // 1:1 dot follow in the exact same render frame for 100% VSync lockstep
+    dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+
     const dx = mouseX - blobX;
     const dy = mouseY - blobY;
-    blobX += dx * 0.22;
-    blobY += dy * 0.22;
-    blob.style.transform = `translate3d(${blobX.toFixed(2)}px, ${blobY.toFixed(2)}px, 0) translate(-50%, -50%)`;
 
-    if (Math.abs(dx) > 0.15 || Math.abs(dy) > 0.15) {
+    // Agile follow rate (0.42) - responsive and tight on Safari & 120Hz ProMotion displays
+    blobX += dx * 0.42;
+    blobY += dy * 0.42;
+    blob.style.transform = `translate3d(${blobX.toFixed(1)}px, ${blobY.toFixed(1)}px, 0)`;
+
+    if (Math.abs(dx) > 0.1 || Math.abs(dy) > 0.1) {
       requestAnimationFrame(renderCursor);
     } else {
+      blobX = mouseX;
+      blobY = mouseY;
+      blob.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
       isLoopRunning = false;
     }
   }
@@ -1507,7 +1515,6 @@ function initCustomCursor() {
   window.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
-    dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
 
     if (!hasMoved) {
       hasMoved = true;
@@ -1515,6 +1522,8 @@ function initCustomCursor() {
       blobY = mouseY;
       dot.style.opacity = '1';
       blob.style.opacity = '1';
+      dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+      blob.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
     }
     startCursorLoop();
   }, { passive: true });

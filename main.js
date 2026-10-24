@@ -36,19 +36,19 @@ const caseStudiesData = {
     ],
     impact: "RecycleNet proves that industrial plastic resin classification can run offline on regular edge hardware and phones at 2.0 ms latency, enabling low-cost, decentralized automated waste sorting.",
     gallery: [
-      { src: "./RecycleNET/main hero recycle net.png", caption: "RecycleNet - Intelligent Waste Classifier Mobile Interface" },
-      { src: "./RecycleNET/Group 9.png", caption: "RecycleNet - Real-Time Desktop Inference & Live Webcam Stream (PET Bottle Detection)" },
-      { src: "./RecycleNET/image 29.png", caption: "RecycleNet - Native Android Material 3 Mobile Home Interface" },
-      { src: "./RecycleNET/image 31.png", caption: "RecycleNet - Real-Time Mobile CameraX Live Scanner (PVC Detection with 63% Confidence)" },
-      { src: "./RecycleNET/image 32.png", caption: "RecycleNet - Offline PyTorch Lite Static Image Inspection (PET Bottle Detection with 88% Confidence)" },
-      { src: "./RecycleNET/download 8.png", caption: "RecycleNet - Comprehensive Benchmark Metrics Table across YOLO26n, YOLOv8s, YOLO26m, and RF-DETR" },
-      { src: "./RecycleNET/download 9.png", caption: "RecycleNet - Precision vs. Recall Comparison Across Evaluated Model Architectures" },
-      { src: "./RecycleNET/download 10.png", caption: "RecycleNet - Quantitative Progress Comparison from Previous YOLOv8 to Current YOLO26n Architecture" },
-      { src: "./RecycleNET/image 36.png", caption: "RecycleNet - Accuracy (mAP@50) vs Inference Latency (ms) Trade-off Curve" },
-      { src: "./RecycleNET/dropped-image 1.png", caption: "RecycleNet - Accuracy (mAP@50) vs Model Parameter Footprint (Millions of Weights)" },
-      { src: "./RecycleNET/YOLO26N.png", caption: "RecycleNet - Normalized Confusion Matrix for Edge-Optimized YOLO26n" },
-      { src: "./RecycleNET/image 34.png", caption: "RecycleNet - Unified Desktop Architecture Flowchart (Data Preparation, Flask Microserver & OpenCV Loop)" },
-      { src: "./RecycleNET/image 35.png", caption: "RecycleNet - Mobile Edge Deployment Flowchart (Kotlin, Jetpack Compose, CameraX & PyTorch Lite)" }
+      { src: "./RecycleNET/main hero recycle net.webp", caption: "RecycleNet - Intelligent Waste Classifier Mobile Interface" },
+      { src: "./RecycleNET/Group 9.webp", caption: "RecycleNet - Real-Time Desktop Inference & Live Webcam Stream (PET Bottle Detection)" },
+      { src: "./RecycleNET/image 29.webp", caption: "RecycleNet - Native Android Material 3 Mobile Home Interface" },
+      { src: "./RecycleNET/image 31.webp", caption: "RecycleNet - Real-Time Mobile CameraX Live Scanner (PVC Detection with 63% Confidence)" },
+      { src: "./RecycleNET/image 32.webp", caption: "RecycleNet - Offline PyTorch Lite Static Image Inspection (PET Bottle Detection with 88% Confidence)" },
+      { src: "./RecycleNET/download 8.webp", caption: "RecycleNet - Comprehensive Benchmark Metrics Table across YOLO26n, YOLOv8s, YOLO26m, and RF-DETR" },
+      { src: "./RecycleNET/download 9.webp", caption: "RecycleNet - Precision vs. Recall Comparison Across Evaluated Model Architectures" },
+      { src: "./RecycleNET/download 10.webp", caption: "RecycleNet - Quantitative Progress Comparison from Previous YOLOv8 to Current YOLO26n Architecture" },
+      { src: "./RecycleNET/image 36.webp", caption: "RecycleNet - Accuracy (mAP@50) vs Inference Latency (ms) Trade-off Curve" },
+      { src: "./RecycleNET/dropped-image 1.webp", caption: "RecycleNet - Accuracy (mAP@50) vs Model Parameter Footprint (Millions of Weights)" },
+      { src: "./RecycleNET/YOLO26N.webp", caption: "RecycleNet - Normalized Confusion Matrix for Edge-Optimized YOLO26n" },
+      { src: "./RecycleNET/image 34.webp", caption: "RecycleNet - Unified Desktop Architecture Flowchart (Data Preparation, Flask Microserver & OpenCV Loop)" },
+      { src: "./RecycleNET/image 35.webp", caption: "RecycleNet - Mobile Edge Deployment Flowchart (Kotlin, Jetpack Compose, CameraX & PyTorch Lite)" }
     ]
   },
 
@@ -80,18 +80,18 @@ const caseStudiesData = {
     ],
     impact: "These changes turned SupportFit into something people could actually use daily. Pairing solid nutrition logic with simple, friendly screens gave employees a tool they could open, check, and log in seconds.",
     gallery: [
-      { src: "./SupportFit/MAIN.png", caption: "SupportFit - Main Dashboard & Activity Summary" },
-      { src: "./SupportFit/13 Pro - 242 1.png", caption: "SupportFit - Daily Water Intake Tracker" },
-      { src: "./SupportFit/13 Pro - 243 1.png", caption: "SupportFit - Reminder & Alert Frequency Settings" },
-      { src: "./SupportFit/13 Pro - 245 1.png", caption: "SupportFit - Calorie & Meal Intake Tracker" },
-      { src: "./SupportFit/13 Pro - 247 1.png", caption: "SupportFit - Routine Pre-Planning & Meal Schedule" },
-      { src: "./SupportFit/13 Pro - 248 1.png", caption: "SupportFit - Sleep Schedule & Health Reminders" },
-      { src: "./SupportFit/13 Pro - 249 1.png", caption: "SupportFit - Daily Steps, Sports & Exercise Goals" },
-      { src: "./SupportFit/13 Pro - 257 1.png", caption: "SupportFit - Onboarding: Height & Weight (BMI Intake)" },
-      { src: "./SupportFit/13 Pro - 260 1.png", caption: "SupportFit - Weekly Sleep Duration & Stats Analysis" },
-      { src: "./SupportFit/13 Pro - 261 1.png", caption: "SupportFit - Monthly Sleep Tracking Calendar" },
-      { src: "./SupportFit/13 Pro - 268 1.png", caption: "SupportFit - Mindfulness & Meditation Timer (ZenSpace)" },
-      { src: "./SupportFit/13 Pro - 269 1.png", caption: "SupportFit - Guided Audio & Video Mindfulness Library" }
+      { src: "./SupportFit/MAIN.webp", caption: "SupportFit - Main Dashboard & Activity Summary" },
+      { src: "./SupportFit/13 Pro - 242 1.webp", caption: "SupportFit - Daily Water Intake Tracker" },
+      { src: "./SupportFit/13 Pro - 243 1.webp", caption: "SupportFit - Reminder & Alert Frequency Settings" },
+      { src: "./SupportFit/13 Pro - 245 1.webp", caption: "SupportFit - Calorie & Meal Intake Tracker" },
+      { src: "./SupportFit/13 Pro - 247 1.webp", caption: "SupportFit - Routine Pre-Planning & Meal Schedule" },
+      { src: "./SupportFit/13 Pro - 248 1.webp", caption: "SupportFit - Sleep Schedule & Health Reminders" },
+      { src: "./SupportFit/13 Pro - 249 1.webp", caption: "SupportFit - Daily Steps, Sports & Exercise Goals" },
+      { src: "./SupportFit/13 Pro - 257 1.webp", caption: "SupportFit - Onboarding: Height & Weight (BMI Intake)" },
+      { src: "./SupportFit/13 Pro - 260 1.webp", caption: "SupportFit - Weekly Sleep Duration & Stats Analysis" },
+      { src: "./SupportFit/13 Pro - 261 1.webp", caption: "SupportFit - Monthly Sleep Tracking Calendar" },
+      { src: "./SupportFit/13 Pro - 268 1.webp", caption: "SupportFit - Mindfulness & Meditation Timer (ZenSpace)" },
+      { src: "./SupportFit/13 Pro - 269 1.webp", caption: "SupportFit - Guided Audio & Video Mindfulness Library" }
     ]
   },
 
@@ -123,14 +123,14 @@ const caseStudiesData = {
     ],
     impact: "This gave TravelHoster a solid, practical base to launch on. Instead of locking travelers into rigid packages, the platform makes trip planning feel more like talking to a local guide: more flexibility for travelers, more bookings for operators.",
     gallery: [
-      { src: "./TravelHoster/MAIN.png", caption: "TravelHoster - Itinerary Search & Discover Interface" },
-      { src: "./TravelHoster/Tailor trip Filled 1.png", caption: "TravelHoster - Tailor Trip Custom Inquiry Flow" },
-      { src: "./TravelHoster/Desktop - 23 1.png", caption: "TravelHoster - Operator & Partner Management Console" },
-      { src: "./TravelHoster/Desktop - 93 1.png", caption: "TravelHoster - Package Configuration & CMS Modal" },
-      { src: "./TravelHoster/Desktop - 180 1.png", caption: "TravelHoster - Partner Revenue & Performance Analytics" },
-      { src: "./TravelHoster/Account 1.png", caption: "TravelHoster - Traveler Booking Details & Cost Breakdown" },
-      { src: "./TravelHoster/Screenshot 2026-04-24 at 12.58.50 1.png", caption: "TravelHoster - Desktop Marketplace Landing & Search Hero" },
-      { src: "./TravelHoster/Screenshot 2026-04-27 at 13.22.02 1.png", caption: "TravelHoster - Regional Destination Showcase (Jammu & Kashmir)" }
+      { src: "./TravelHoster/MAIN.webp", caption: "TravelHoster - Itinerary Search & Discover Interface" },
+      { src: "./TravelHoster/Tailor trip Filled 1.webp", caption: "TravelHoster - Tailor Trip Custom Inquiry Flow" },
+      { src: "./TravelHoster/Desktop - 23 1.webp", caption: "TravelHoster - Operator & Partner Management Console" },
+      { src: "./TravelHoster/Desktop - 93 1.webp", caption: "TravelHoster - Package Configuration & CMS Modal" },
+      { src: "./TravelHoster/Desktop - 180 1.webp", caption: "TravelHoster - Partner Revenue & Performance Analytics" },
+      { src: "./TravelHoster/Account 1.webp", caption: "TravelHoster - Traveler Booking Details & Cost Breakdown" },
+      { src: "./TravelHoster/Screenshot 2026-04-24 at 12.58.50 1.webp", caption: "TravelHoster - Desktop Marketplace Landing & Search Hero" },
+      { src: "./TravelHoster/Screenshot 2026-04-27 at 13.22.02 1.webp", caption: "TravelHoster - Regional Destination Showcase (Jammu & Kashmir)" }
     ]
   },
 
@@ -162,16 +162,16 @@ const caseStudiesData = {
     ],
     impact: "This replaced lost paper complaints and endless phone calls with something open and trackable. Residents can see their issue was received and is being worked on, and the councillor's office gets a real queue of what needs fixing in the ward, not a pile of forgotten voicemails.",
     gallery: [
-      { src: "./MyCouncilor/MAIN.png", caption: "MyCouncillor - Citizen Issue Reporting Home" },
-      { src: "./MyCouncilor/Dashboard-1P 1.png", caption: "MyCouncillor - Councillor Administration Dashboard" },
-      { src: "./MyCouncilor/New Issues - P 1.png", caption: "MyCouncillor - Incoming Citizen Complaints Triage" },
-      { src: "./MyCouncilor/Pending Issue- PPP 1.png", caption: "MyCouncillor - Task Assignment & Municipal Worker Routing" },
-      { src: "./MyCouncilor/iPhone 13 & 14 - 188 1.png", caption: "MyCouncillor - Geolocation Pinpoint & Address Selection" },
-      { src: "./MyCouncilor/iPhone 13 & 14 - 202 1.png", caption: "MyCouncillor - Photo Evidence & Camera Upload" },
-      { src: "./MyCouncilor/iPhone 13 & 14 - 214 1.png", caption: "MyCouncillor - Real-Time Status Resolution Timeline" },
-      { src: "./MyCouncilor/iPhone 13 & 14 - 236 1.png", caption: "MyCouncillor - Ward Public Health Services Directory" },
-      { src: "./MyCouncilor/iPhone 13 & 14 - 259 1.png", caption: "MyCouncillor - Government Welfare Schemes Portal (Lakshmir Bhandar)" },
-      { src: "./MyCouncilor/iPhone 13 & 14 - 269 1.png", caption: "MyCouncillor - Scheme Application Tracking & Document History" }
+      { src: "./MyCouncilor/MAIN.webp", caption: "MyCouncillor - Citizen Issue Reporting Home" },
+      { src: "./MyCouncilor/Dashboard-1P 1.webp", caption: "MyCouncillor - Councillor Administration Dashboard" },
+      { src: "./MyCouncilor/New Issues - P 1.webp", caption: "MyCouncillor - Incoming Citizen Complaints Triage" },
+      { src: "./MyCouncilor/Pending Issue- PPP 1.webp", caption: "MyCouncillor - Task Assignment & Municipal Worker Routing" },
+      { src: "./MyCouncilor/iPhone 13 & 14 - 188 1.webp", caption: "MyCouncillor - Geolocation Pinpoint & Address Selection" },
+      { src: "./MyCouncilor/iPhone 13 & 14 - 202 1.webp", caption: "MyCouncillor - Photo Evidence & Camera Upload" },
+      { src: "./MyCouncilor/iPhone 13 & 14 - 214 1.webp", caption: "MyCouncillor - Real-Time Status Resolution Timeline" },
+      { src: "./MyCouncilor/iPhone 13 & 14 - 236 1.webp", caption: "MyCouncillor - Ward Public Health Services Directory" },
+      { src: "./MyCouncilor/iPhone 13 & 14 - 259 1.webp", caption: "MyCouncillor - Government Welfare Schemes Portal (Lakshmir Bhandar)" },
+      { src: "./MyCouncilor/iPhone 13 & 14 - 269 1.webp", caption: "MyCouncillor - Scheme Application Tracking & Document History" }
     ]
   },
 
@@ -203,14 +203,14 @@ const caseStudiesData = {
     ],
     impact: "Paper registers at the gate are gone. Guards move visitors through without hassle, residents know exactly who's coming up, and society managers have a proper log of everything instead of a logbook nobody can search.",
     gallery: [
-      { src: "./CheckIn/MAIN.png", caption: "CheckIn - Resident Dashboard & Society Home" },
-      { src: "./CheckIn/Alert 1.png", caption: "CheckIn - Admin SOS Alert Creation & Dispatch" },
-      { src: "./CheckIn/Homescreen Normal 1.png", caption: "CheckIn - Community Notice Board & Resident Portal" },
-      { src: "./CheckIn/Popup 1.png", caption: "CheckIn - Emergency SOS Confirmation Modal (Slide To Send)" },
-      { src: "./CheckIn/Chat Analytics 1.png", caption: "CheckIn - Community Issue Trends & Helpdesk Analytics" },
-      { src: "./CheckIn/User Perspective - Issuer 1.png", caption: "CheckIn - Emergency SOS Broadcast Alert View" },
-      { src: "./CheckIn/Screenshot 2026-04-28 at 08.59.28 1.png", caption: "CheckIn - Product Landing Page & Value Proposition" },
-      { src: "./CheckIn/Screenshot 2026-04-28 at 09.01.21 1.png", caption: "CheckIn - Admin User Feedback & Bug Triage System" }
+      { src: "./CheckIn/MAIN.webp", caption: "CheckIn - Resident Dashboard & Society Home" },
+      { src: "./CheckIn/Alert 1.webp", caption: "CheckIn - Admin SOS Alert Creation & Dispatch" },
+      { src: "./CheckIn/Homescreen Normal 1.webp", caption: "CheckIn - Community Notice Board & Resident Portal" },
+      { src: "./CheckIn/Popup 1.webp", caption: "CheckIn - Emergency SOS Confirmation Modal (Slide To Send)" },
+      { src: "./CheckIn/Chat Analytics 1.webp", caption: "CheckIn - Community Issue Trends & Helpdesk Analytics" },
+      { src: "./CheckIn/User Perspective - Issuer 1.webp", caption: "CheckIn - Emergency SOS Broadcast Alert View" },
+      { src: "./CheckIn/Screenshot 2026-04-28 at 08.59.28 1.webp", caption: "CheckIn - Product Landing Page & Value Proposition" },
+      { src: "./CheckIn/Screenshot 2026-04-28 at 09.01.21 1.webp", caption: "CheckIn - Admin User Feedback & Bug Triage System" }
     ]
   }
 };
@@ -433,11 +433,11 @@ function initHeroInteractiveStage() {
   const card = document.querySelector('.hero-showcase-card');
 
   const screenMap = {
-    recyclenet: './RecycleNET/main hero recycle net.png',
-    supportfit: './SupportFit/MAIN.png',
-    travelhoster: './TravelHoster/MAIN.png',
-    mycouncillor: './MyCouncilor/MAIN.png',
-    checkin: './CheckIn/MAIN.png'
+    recyclenet: './RecycleNET/main hero recycle net.webp',
+    supportfit: './SupportFit/MAIN.webp',
+    travelhoster: './TravelHoster/MAIN.webp',
+    mycouncillor: './MyCouncilor/MAIN.webp',
+    checkin: './CheckIn/MAIN.webp'
   };
 
   const heroUrls = {

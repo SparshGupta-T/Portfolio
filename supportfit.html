@@ -24,9 +24,12 @@
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  </noscript>
+  <link rel="preload" href="https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yygg_vb.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./style.css">
   <link rel="icon" type="image/x-icon" href="./favicon.ico?v=2">
   <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=">
@@ -192,7 +195,7 @@
     </div>
   </div>
 
-  <div class="site-wrapper">
+  <main class="site-wrapper" id="main-content">
 
     <!-- ==================== CASE STUDY HERO ==================== -->
     <header class="case-study-hero">
@@ -206,7 +209,7 @@
         <div class="case-study-header">
           <div class="case-study-tag-row">
             <div class="company-logo-chip" title="Supportroom">
-              <img decoding="async" src="./LOGOS/SupportRoom.webp" alt="Supportroom">
+              <img width="263" height="236" decoding="async" src="./LOGOS/SupportRoom.webp" alt="Supportroom">
               <span style="font-size: 0.78rem; font-weight: 600; color: var(--text-secondary);">Powered by
                 Supportroom</span>
             </div>
@@ -233,7 +236,7 @@
             <button class="stage-nav-arrow prev" aria-label="Previous Screen">‹</button>
             <div class="study-hero-screen-stage open-lightbox" data-img="./SupportFit/MAIN.webp"
               data-caption="SupportFit - Main Platform Overview Screen">
-              <img src="./SupportFit/MAIN.webp" alt="SupportFit Main Screen" class="study-hero-screen-img" id="studyMainImg" fetchpriority="high" decoding="async">
+              <img width="1164" height="2096" src="./SupportFit/MAIN.webp" alt="SupportFit Main Screen" class="study-hero-screen-img" id="studyMainImg" fetchpriority="high" decoding="async">
             </div>
             <button class="stage-nav-arrow next" aria-label="Next Screen">›</button>
           </div>
@@ -450,7 +453,7 @@
         <div class="study-gallery-card open-lightbox" data-img="./SupportFit/MAIN.webp"
           data-caption="SupportFit - Main Dashboard & Activity Summary">
           <div class="study-gallery-img-wrap">
-            <img loading="lazy" decoding="async" src="./SupportFit/MAIN.webp" alt="Main Dashboard" class="study-gallery-img">
+            <img width="1164" height="2096" loading="lazy" decoding="async" src="./SupportFit/MAIN.webp" alt="Main Dashboard" class="study-gallery-img">
           </div>
           <span class="study-gallery-caption">Main Daily Dashboard</span>
         </div>
@@ -458,7 +461,7 @@
         <div class="study-gallery-card open-lightbox" data-img="./SupportFit/13 Pro - 242 1.webp"
           data-caption="SupportFit - Daily Water Intake Tracker">
           <div class="study-gallery-img-wrap">
-            <img loading="lazy" decoding="async" src="./SupportFit/13 Pro - 242 1.webp" alt="Water Intake Tracker" class="study-gallery-img">
+            <img width="554" height="1308" loading="lazy" decoding="async" src="./SupportFit/13 Pro - 242 1.webp" alt="Water Intake Tracker" class="study-gallery-img">
           </div>
           <span class="study-gallery-caption">Water Intake Tracker</span>
         </div>
@@ -466,7 +469,7 @@
         <div class="study-gallery-card open-lightbox" data-img="./SupportFit/13 Pro - 243 1.webp"
           data-caption="SupportFit - Reminder & Alert Frequency Settings">
           <div class="study-gallery-img-wrap">
-            <img loading="lazy" decoding="async" src="./SupportFit/13 Pro - 243 1.webp" alt="Reminder Settings" class="study-gallery-img">
+            <img width="606" height="1304" loading="lazy" decoding="async" src="./SupportFit/13 Pro - 243 1.webp" alt="Reminder Settings" class="study-gallery-img">
           </div>
           <span class="study-gallery-caption">Reminder Intervals</span>
         </div>
@@ -474,7 +477,7 @@
         <div class="study-gallery-card open-lightbox" data-img="./SupportFit/13 Pro - 245 1.webp"
           data-caption="SupportFit - Calorie & Meal Intake Tracker">
           <div class="study-gallery-img-wrap">
-            <img loading="lazy" decoding="async" src="./SupportFit/13 Pro - 245 1.webp" alt="Calorie Tracker" class="study-gallery-img">
+            <img width="542" height="1306" loading="lazy" decoding="async" src="./SupportFit/13 Pro - 245 1.webp" alt="Calorie Tracker" class="study-gallery-img">
           </div>
           <span class="study-gallery-caption">Calorie & Meal Intake</span>
         </div>
@@ -482,7 +485,7 @@
         <div class="study-gallery-card open-lightbox" data-img="./SupportFit/13 Pro - 247 1.webp"
           data-caption="SupportFit - Routine Pre-Planning & Meal Schedule">
           <div class="study-gallery-img-wrap">
-            <img loading="lazy" decoding="async" src="./SupportFit/13 Pro - 247 1.webp" alt="Routine Planning" class="study-gallery-img">
+            <img width="607" height="1307" loading="lazy" decoding="async" src="./SupportFit/13 Pro - 247 1.webp" alt="Routine Planning" class="study-gallery-img">
           </div>
           <span class="study-gallery-caption">Meal Routine Planning</span>
         </div>
@@ -490,7 +493,7 @@
         <div class="study-gallery-card open-lightbox" data-img="./SupportFit/13 Pro - 248 1.webp"
           data-caption="SupportFit - Sleep Schedule & Health Reminders">
           <div class="study-gallery-img-wrap">
-            <img loading="lazy" decoding="async" src="./SupportFit/13 Pro - 248 1.webp" alt="Sleep Reminder" class="study-gallery-img">
+            <img width="607" height="1304" loading="lazy" decoding="async" src="./SupportFit/13 Pro - 248 1.webp" alt="Sleep Reminder" class="study-gallery-img">
           </div>
           <span class="study-gallery-caption">Sleep Schedule Reminder</span>
         </div>
@@ -498,7 +501,7 @@
         <div class="study-gallery-card open-lightbox" data-img="./SupportFit/13 Pro - 249 1.webp"
           data-caption="SupportFit - Daily Steps, Sports & Exercise Goals">
           <div class="study-gallery-img-wrap">
-            <img loading="lazy" decoding="async" src="./SupportFit/13 Pro - 249 1.webp" alt="Steps and Sports" class="study-gallery-img">
+            <img width="571" height="1306" loading="lazy" decoding="async" src="./SupportFit/13 Pro - 249 1.webp" alt="Steps and Sports" class="study-gallery-img">
           </div>
           <span class="study-gallery-caption">Steps, Sports & Exercise</span>
         </div>
@@ -506,7 +509,7 @@
         <div class="study-gallery-card open-lightbox" data-img="./SupportFit/13 Pro - 257 1.webp"
           data-caption="SupportFit - Onboarding: Height & Weight (BMI Intake)">
           <div class="study-gallery-img-wrap">
-            <img loading="lazy" decoding="async" src="./SupportFit/13 Pro - 257 1.webp" alt="BMI Onboarding" class="study-gallery-img">
+            <img width="607" height="1304" loading="lazy" decoding="async" src="./SupportFit/13 Pro - 257 1.webp" alt="BMI Onboarding" class="study-gallery-img">
           </div>
           <span class="study-gallery-caption">Height & Weight Intake</span>
         </div>
@@ -514,7 +517,7 @@
         <div class="study-gallery-card open-lightbox" data-img="./SupportFit/13 Pro - 260 1.webp"
           data-caption="SupportFit - Weekly Sleep Duration & Stats Analysis">
           <div class="study-gallery-img-wrap">
-            <img loading="lazy" decoding="async" src="./SupportFit/13 Pro - 260 1.webp" alt="Sleep Stats" class="study-gallery-img">
+            <img width="607" height="1304" loading="lazy" decoding="async" src="./SupportFit/13 Pro - 260 1.webp" alt="Sleep Stats" class="study-gallery-img">
           </div>
           <span class="study-gallery-caption">Weekly Sleep Analytics</span>
         </div>
@@ -522,7 +525,7 @@
         <div class="study-gallery-card open-lightbox" data-img="./SupportFit/13 Pro - 261 1.webp"
           data-caption="SupportFit - Monthly Sleep Tracking Calendar">
           <div class="study-gallery-img-wrap">
-            <img loading="lazy" decoding="async" src="./SupportFit/13 Pro - 261 1.webp" alt="Monthly Sleep Calendar" class="study-gallery-img">
+            <img width="607" height="1304" loading="lazy" decoding="async" src="./SupportFit/13 Pro - 261 1.webp" alt="Monthly Sleep Calendar" class="study-gallery-img">
           </div>
           <span class="study-gallery-caption">Monthly Sleep Calendar</span>
         </div>
@@ -530,7 +533,7 @@
         <div class="study-gallery-card open-lightbox" data-img="./SupportFit/13 Pro - 268 1.webp"
           data-caption="SupportFit - Mindfulness & Meditation Timer (ZenSpace)">
           <div class="study-gallery-img-wrap">
-            <img loading="lazy" decoding="async" src="./SupportFit/13 Pro - 268 1.webp" alt="Meditation Timer" class="study-gallery-img">
+            <img width="594" height="1306" loading="lazy" decoding="async" src="./SupportFit/13 Pro - 268 1.webp" alt="Meditation Timer" class="study-gallery-img">
           </div>
           <span class="study-gallery-caption">Mindfulness Timer (ZenSpace)</span>
         </div>
@@ -538,7 +541,7 @@
         <div class="study-gallery-card open-lightbox" data-img="./SupportFit/13 Pro - 269 1.webp"
           data-caption="SupportFit - Guided Audio & Video Mindfulness Library">
           <div class="study-gallery-img-wrap">
-            <img loading="lazy" decoding="async" src="./SupportFit/13 Pro - 269 1.webp" alt="Mindfulness Content Library" class="study-gallery-img">
+            <img width="592" height="1304" loading="lazy" decoding="async" src="./SupportFit/13 Pro - 269 1.webp" alt="Mindfulness Content Library" class="study-gallery-img">
           </div>
           <span class="study-gallery-caption">Guided Mindfulness Library</span>
         </div>
@@ -570,7 +573,7 @@
       </div>
     </footer>
 
-  </div>
+  </main>
 
   <!-- ==================== LIGHTBOX MODAL ==================== -->
   <div class="lab-modal-overlay" id="lightboxModalOverlay" aria-hidden="true">

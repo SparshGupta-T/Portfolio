@@ -24,9 +24,12 @@
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  </noscript>
+  <link rel="preload" href="https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yygg_vb.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./style.css">
   <link rel="icon" type="image/x-icon" href="./favicon.ico?v=2">
   <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=">
@@ -192,7 +195,7 @@
     </div>
   </div>
 
-  <div class="site-wrapper">
+  <main class="site-wrapper" id="main-content">
 
     <!-- ==================== CASE STUDY HERO ==================== -->
     <header class="case-study-hero">
@@ -206,7 +209,7 @@
         <div class="case-study-header">
           <div class="case-study-tag-row">
             <div class="company-logo-chip" title="Scalenow Technosolutions">
-              <img decoding="async" src="./LOGOS/Scalenow.webp" alt="Scalenow">
+              <img width="260" height="260" decoding="async" src="./LOGOS/Scalenow.webp" alt="Scalenow">
               <span style="font-size: 0.78rem; font-weight: 600; color: var(--text-secondary);">Scalenow
                 Technosolutions</span>
             </div>
@@ -233,7 +236,7 @@
             <button class="stage-nav-arrow prev" aria-label="Previous Screen">‹</button>
             <div class="study-hero-screen-stage open-lightbox" data-img="./CheckIn/MAIN.webp"
               data-caption="CheckIn - Main Society Interface">
-              <img src="./CheckIn/MAIN.webp" alt="CheckIn Main Screen" class="study-hero-screen-img" id="studyMainImg" fetchpriority="high" decoding="async">
+              <img width="507" height="955" src="./CheckIn/MAIN.webp" alt="CheckIn Main Screen" class="study-hero-screen-img" id="studyMainImg" fetchpriority="high" decoding="async">
             </div>
             <button class="stage-nav-arrow next" aria-label="Next Screen">›</button>
           </div>
@@ -450,7 +453,7 @@
         <div class="study-gallery-card open-lightbox" data-img="./CheckIn/MAIN.webp"
           data-caption="CheckIn - Resident Dashboard & Society Home">
           <div class="study-gallery-img-wrap">
-            <img loading="lazy" decoding="async" src="./CheckIn/MAIN.webp" alt="Main Interface" class="study-gallery-img">
+            <img width="507" height="955" loading="lazy" decoding="async" src="./CheckIn/MAIN.webp" alt="Main Interface" class="study-gallery-img">
           </div>
           <span class="study-gallery-caption">Resident Dashboard Home</span>
         </div>
@@ -458,7 +461,7 @@
         <div class="study-gallery-card open-lightbox" data-img="./CheckIn/Alert 1.webp"
           data-caption="CheckIn - Admin SOS Alert Creation & Dispatch">
           <div class="study-gallery-img-wrap">
-            <img loading="lazy" decoding="async" src="./CheckIn/Alert 1.webp" alt="Admin SOS Alert Dispatch" class="study-gallery-img">
+            <img width="992" height="708" loading="lazy" decoding="async" src="./CheckIn/Alert 1.webp" alt="Admin SOS Alert Dispatch" class="study-gallery-img">
           </div>
           <span class="study-gallery-caption">Admin SOS Alert Dispatch</span>
         </div>
@@ -466,7 +469,7 @@
         <div class="study-gallery-card open-lightbox" data-img="./CheckIn/Homescreen Normal 1.webp"
           data-caption="CheckIn - Community Notice Board & Resident Portal">
           <div class="study-gallery-img-wrap">
-            <img loading="lazy" decoding="async" src="./CheckIn/Homescreen Normal 1.webp" alt="Resident Portal" class="study-gallery-img">
+            <img width="366" height="784" loading="lazy" decoding="async" src="./CheckIn/Homescreen Normal 1.webp" alt="Resident Portal" class="study-gallery-img">
           </div>
           <span class="study-gallery-caption">Community Notice Board</span>
         </div>
@@ -474,7 +477,7 @@
         <div class="study-gallery-card open-lightbox" data-img="./CheckIn/Popup 1.webp"
           data-caption="CheckIn - Emergency SOS Confirmation Modal (Slide To Send)">
           <div class="study-gallery-img-wrap">
-            <img loading="lazy" decoding="async" src="./CheckIn/Popup 1.webp" alt="Emergency SOS Modal" class="study-gallery-img">
+            <img width="366" height="784" loading="lazy" decoding="async" src="./CheckIn/Popup 1.webp" alt="Emergency SOS Modal" class="study-gallery-img">
           </div>
           <span class="study-gallery-caption">Emergency SOS Modal</span>
         </div>
@@ -482,7 +485,7 @@
         <div class="study-gallery-card open-lightbox" data-img="./CheckIn/Chat Analytics 1.webp"
           data-caption="CheckIn - Community Issue Trends & Helpdesk Analytics">
           <div class="study-gallery-img-wrap">
-            <img loading="lazy" decoding="async" src="./CheckIn/Chat Analytics 1.webp" alt="Issue Analytics" class="study-gallery-img">
+            <img width="785" height="707" loading="lazy" decoding="async" src="./CheckIn/Chat Analytics 1.webp" alt="Issue Analytics" class="study-gallery-img">
           </div>
           <span class="study-gallery-caption">Helpdesk & Issue Analytics</span>
         </div>
@@ -490,7 +493,7 @@
         <div class="study-gallery-card open-lightbox" data-img="./CheckIn/User Perspective - Issuer 1.webp"
           data-caption="CheckIn - Emergency SOS Broadcast Alert View">
           <div class="study-gallery-img-wrap">
-            <img loading="lazy" decoding="async" src="./CheckIn/User Perspective - Issuer 1.webp" alt="SOS Broadcast View" class="study-gallery-img">
+            <img width="366" height="784" loading="lazy" decoding="async" src="./CheckIn/User Perspective - Issuer 1.webp" alt="SOS Broadcast View" class="study-gallery-img">
           </div>
           <span class="study-gallery-caption">Emergency SOS Broadcast View</span>
         </div>
@@ -498,7 +501,7 @@
         <div class="study-gallery-card open-lightbox" data-img="./CheckIn/Screenshot 2026-04-28 at 08.59.28 1.webp"
           data-caption="CheckIn - Product Landing Page & Value Proposition">
           <div class="study-gallery-img-wrap">
-            <img loading="lazy" decoding="async" src="./CheckIn/Screenshot 2026-04-28 at 08.59.28 1.webp" alt="CheckIn Landing Page" class="study-gallery-img">
+            <img width="889" height="707" loading="lazy" decoding="async" src="./CheckIn/Screenshot 2026-04-28 at 08.59.28 1.webp" alt="CheckIn Landing Page" class="study-gallery-img">
           </div>
           <span class="study-gallery-caption">Product Landing Page Hero</span>
         </div>
@@ -506,7 +509,7 @@
         <div class="study-gallery-card open-lightbox" data-img="./CheckIn/Screenshot 2026-04-28 at 09.01.21 1.webp"
           data-caption="CheckIn - Admin User Feedback & Bug Triage System">
           <div class="study-gallery-img-wrap">
-            <img loading="lazy" decoding="async" src="./CheckIn/Screenshot 2026-04-28 at 09.01.21 1.webp" alt="Admin Feedback Triage" class="study-gallery-img">
+            <img width="1080" height="707" loading="lazy" decoding="async" src="./CheckIn/Screenshot 2026-04-28 at 09.01.21 1.webp" alt="Admin Feedback Triage" class="study-gallery-img">
           </div>
           <span class="study-gallery-caption">User Feedback & Bug Triage</span>
         </div>
@@ -538,7 +541,7 @@
       </div>
     </footer>
 
-  </div>
+  </main>
 
   <!-- ==================== LIGHTBOX MODAL ==================== -->
   <div class="lab-modal-overlay" id="lightboxModalOverlay" aria-hidden="true">

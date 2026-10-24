@@ -24,9 +24,12 @@
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  </noscript>
+  <link rel="preload" href="https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yygg_vb.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./style.css">
   <link rel="icon" type="image/x-icon" href="./favicon.ico?v=2">
   <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=">
@@ -192,7 +195,7 @@
     </div>
   </div>
 
-  <div class="site-wrapper">
+  <main class="site-wrapper" id="main-content">
 
     <!-- ==================== CASE STUDY HERO ==================== -->
     <header class="case-study-hero">
@@ -206,7 +209,7 @@
         <div class="case-study-header">
           <div class="case-study-tag-row">
             <div class="company-logo-chip" title="RecycleNet">
-              <img src="./RecycleNET/RecycleNet LOGO.webp" alt="RecycleNet Logo"
+              <img width="470" height="599" src="./RecycleNET/RecycleNet LOGO.webp" alt="RecycleNet Logo"
                 style="object-fit: contain; width: 22px; height: 22px;">
               <span style="font-size: 0.78rem; font-weight: 600; color: var(--text-secondary);">RecycleNet · Research
                 Project</span>
@@ -255,7 +258,7 @@
             <button class="stage-nav-arrow prev" aria-label="Previous Screen">‹</button>
             <div class="study-hero-screen-stage open-lightbox" data-img="./RecycleNET/main hero recycle net.webp"
               data-caption="RecycleNet - Intelligent Waste Classifier Mobile Interface">
-              <img src="./RecycleNET/main hero recycle net.webp" alt="RecycleNet Main Screen"
+              <img width="675" height="1354" src="./RecycleNET/main hero recycle net.webp" alt="RecycleNet Main Screen"
                 class="study-hero-screen-img" id="studyMainImg" fetchpriority="high" decoding="async">
             </div>
             <button class="stage-nav-arrow next" aria-label="Next Screen">›</button>
@@ -525,7 +528,7 @@
         <div class="study-gallery-card open-lightbox" data-img="./RecycleNET/Group 9.webp"
           data-caption="RecycleNet - Real-Time Desktop Inference & Live Webcam Stream (PET Bottle Detection)">
           <div class="study-gallery-img-wrap">
-            <img loading="lazy" decoding="async" src="./RecycleNET/Group 9.webp" alt="Desktop Web Dashboard"
+            <img width="841" height="688" loading="lazy" decoding="async" src="./RecycleNET/Group 9.webp" alt="Desktop Web Dashboard"
               class="study-gallery-img">
           </div>
           <span class="study-gallery-caption">Desktop Live Inference Dashboard</span>
@@ -535,7 +538,7 @@
         <div class="study-gallery-card open-lightbox" data-img="./RecycleNET/main hero recycle net.webp"
           data-caption="RecycleNet - Intelligent Waste Classifier Mobile Interface">
           <div class="study-gallery-img-wrap">
-            <img loading="lazy" decoding="async" src="./RecycleNET/main hero recycle net.webp"
+            <img width="675" height="1354" loading="lazy" decoding="async" src="./RecycleNET/main hero recycle net.webp"
               alt="RecycleNet Mobile Interface" class="study-gallery-img">
           </div>
           <span class="study-gallery-caption">Mobile Interface & Live Scanner</span>
@@ -545,7 +548,7 @@
         <div class="study-gallery-card open-lightbox" data-img="./RecycleNET/image 31.webp"
           data-caption="RecycleNet - Real-Time Mobile CameraX Live Scanner (PVC Detection with 63% Confidence)">
           <div class="study-gallery-img-wrap">
-            <img loading="lazy" decoding="async" src="./RecycleNET/image 31.webp" alt="Live Scanner PVC"
+            <img width="465" height="995" loading="lazy" decoding="async" src="./RecycleNET/image 31.webp" alt="Live Scanner PVC"
               class="study-gallery-img">
           </div>
           <span class="study-gallery-caption">Mobile Live CameraX Scanner (PVC)</span>
@@ -555,7 +558,7 @@
         <div class="study-gallery-card open-lightbox" data-img="./RecycleNET/image 32.webp"
           data-caption="RecycleNet - Offline PyTorch Lite Static Image Inspection (PET Bottle Detection with 88% Confidence)">
           <div class="study-gallery-img-wrap">
-            <img loading="lazy" decoding="async" src="./RecycleNET/image 32.webp" alt="Static Image Analysis"
+            <img width="465" height="995" loading="lazy" decoding="async" src="./RecycleNET/image 32.webp" alt="Static Image Analysis"
               class="study-gallery-img">
           </div>
           <span class="study-gallery-caption">Offline Image Analysis (PET 88%)</span>
@@ -565,7 +568,7 @@
         <div class="study-gallery-card open-lightbox" data-img="./RecycleNET/download 8.webp"
           data-caption="RecycleNet - Comprehensive Benchmark Metrics Table across YOLO26n, YOLOv8s, YOLO26m, and RF-DETR">
           <div class="study-gallery-img-wrap">
-            <img loading="lazy" decoding="async" src="./RecycleNET/download 8.webp" alt="Model Benchmark Table"
+            <img width="1027" height="145" loading="lazy" decoding="async" src="./RecycleNET/download 8.webp" alt="Model Benchmark Table"
               class="study-gallery-img">
           </div>
           <span class="study-gallery-caption">Model Benchmark Metrics Table</span>
@@ -575,7 +578,7 @@
         <div class="study-gallery-card open-lightbox" data-img="./RecycleNET/download 9.webp"
           data-caption="RecycleNet - Precision vs. Recall Comparison Across Evaluated Model Architectures">
           <div class="study-gallery-img-wrap">
-            <img loading="lazy" decoding="async" src="./RecycleNET/download 9.webp" alt="Precision vs Recall Chart"
+            <img width="735" height="446" loading="lazy" decoding="async" src="./RecycleNET/download 9.webp" alt="Precision vs Recall Chart"
               class="study-gallery-img">
           </div>
           <span class="study-gallery-caption">Precision vs. Recall Comparison</span>
@@ -585,7 +588,7 @@
         <div class="study-gallery-card open-lightbox" data-img="./RecycleNET/download 10.webp"
           data-caption="RecycleNet - Quantitative Progress Comparison from Previous YOLOv8 to Current YOLO26n Architecture">
           <div class="study-gallery-img-wrap">
-            <img loading="lazy" decoding="async" src="./RecycleNET/download 10.webp" alt="Progress Comparison"
+            <img width="750" height="446" loading="lazy" decoding="async" src="./RecycleNET/download 10.webp" alt="Progress Comparison"
               class="study-gallery-img">
           </div>
           <span class="study-gallery-caption">Performance Leap from Previous Work</span>
@@ -595,7 +598,7 @@
         <div class="study-gallery-card open-lightbox" data-img="./RecycleNET/image 36.webp"
           data-caption="RecycleNet - Accuracy (mAP@50) vs Inference Latency (ms) Trade-off Curve">
           <div class="study-gallery-img-wrap">
-            <img loading="lazy" decoding="async" src="./RecycleNET/image 36.webp" alt="Accuracy vs Latency"
+            <img width="724" height="431" loading="lazy" decoding="async" src="./RecycleNET/image 36.webp" alt="Accuracy vs Latency"
               class="study-gallery-img">
           </div>
           <span class="study-gallery-caption">Accuracy vs. Inference Latency</span>
@@ -605,7 +608,7 @@
         <div class="study-gallery-card open-lightbox" data-img="./RecycleNET/dropped-image 1.webp"
           data-caption="RecycleNet - Accuracy (mAP@50) vs Model Parameter Footprint (Millions of Weights)">
           <div class="study-gallery-img-wrap">
-            <img loading="lazy" decoding="async" src="./RecycleNET/dropped-image 1.webp" alt="Accuracy vs Parameters"
+            <img width="621" height="482" loading="lazy" decoding="async" src="./RecycleNET/dropped-image 1.webp" alt="Accuracy vs Parameters"
               class="study-gallery-img">
           </div>
           <span class="study-gallery-caption">Accuracy vs. Model Parameter Scale</span>
@@ -615,7 +618,7 @@
         <div class="study-gallery-card open-lightbox" data-img="./RecycleNET/YOLO26N.webp"
           data-caption="RecycleNet - Normalized Confusion Matrix for Edge-Optimized YOLO26n">
           <div class="study-gallery-img-wrap">
-            <img loading="lazy" decoding="async" src="./RecycleNET/YOLO26N.webp" alt="YOLO26n Confusion Matrix"
+            <img width="708" height="639" loading="lazy" decoding="async" src="./RecycleNET/YOLO26N.webp" alt="YOLO26n Confusion Matrix"
               class="study-gallery-img">
           </div>
           <span class="study-gallery-caption">YOLO26n Normalized Confusion Matrix</span>
@@ -625,7 +628,7 @@
         <div class="study-gallery-card open-lightbox" data-img="./RecycleNET/image 34.webp"
           data-caption="RecycleNet - Unified Desktop Architecture Flowchart (Data Preparation, Flask Microserver & OpenCV Loop)">
           <div class="study-gallery-img-wrap">
-            <img loading="lazy" decoding="async" src="./RecycleNET/image 34.webp" alt="Desktop Architecture Flowchart"
+            <img width="806" height="468" loading="lazy" decoding="async" src="./RecycleNET/image 34.webp" alt="Desktop Architecture Flowchart"
               class="study-gallery-img">
           </div>
           <span class="study-gallery-caption">Desktop Pipeline Architecture</span>
@@ -635,7 +638,7 @@
         <div class="study-gallery-card open-lightbox" data-img="./RecycleNET/image 35.webp"
           data-caption="RecycleNet - Mobile Edge Deployment Flowchart (Kotlin, Jetpack Compose, CameraX & PyTorch Lite)">
           <div class="study-gallery-img-wrap">
-            <img loading="lazy" decoding="async" src="./RecycleNET/image 35.webp" alt="Mobile Architecture Flowchart"
+            <img width="806" height="468" loading="lazy" decoding="async" src="./RecycleNET/image 35.webp" alt="Mobile Architecture Flowchart"
               class="study-gallery-img">
           </div>
           <span class="study-gallery-caption">Mobile Edge Flowchart</span>
@@ -668,7 +671,7 @@
       </div>
     </footer>
 
-  </div>
+  </main>
 
   <!-- ==================== LIGHTBOX MODAL ==================== -->
   <div class="lab-modal-overlay" id="lightboxModalOverlay" aria-hidden="true">

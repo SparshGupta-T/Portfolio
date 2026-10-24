@@ -24,9 +24,12 @@
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  </noscript>
+  <link rel="preload" href="https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yygg_vb.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./style.css">
   <link rel="icon" type="image/x-icon" href="./favicon.ico?v=2">
   <link rel="icon" type="image/png"
@@ -173,7 +176,7 @@
     </div>
   </div>
 
-  <div class="site-wrapper">
+  <main class="site-wrapper" id="main-content">
 
     <!-- ==================== HERO SECTION ==================== -->
     <section class="hero-section" id="hero">
@@ -216,25 +219,25 @@
             <div class="trust-ribbon-label">Experience & Recognition</div>
             <div class="trust-logos-wrap">
               <div class="trust-logo-chip" title="Johnson Controls - Building Automation & Controls">
-                <img decoding="async" src="./LOGOS/Johnson Control.webp" alt="Johnson Controls Logo"
+                <img width="261" height="261" decoding="async" src="./LOGOS/Johnson Control.webp" alt="Johnson Controls Logo"
                   class="trust-logo-img">
                 <span style="font-weight: 600;">Johnson Controls</span>
               </div>
               <a href="https://ieeexplore.ieee.org/abstract/document/11493068" target="_blank" rel="noopener noreferrer"
                 class="trust-logo-chip"
                 title="Published IEEE Paper - Deep Learning-Assisted Dynamic Plastic Identification Technique">
-                <img decoding="async" src="./LOGOS/IEEE.webp" alt="IEEE Logo" class="trust-logo-img">
+                <img width="199" height="66" decoding="async" src="./LOGOS/IEEE.webp" alt="IEEE Logo" class="trust-logo-img">
                 <span>Published Author ↗</span>
               </a>
               <div class="trust-logo-chip" title="IIM Calcutta & VCCircle Pitching">
-                <img decoding="async" src="./LOGOS/IIM Cacutta.webp" alt="IIM Calcutta Logo"
+                <img width="59" height="51" decoding="async" src="./LOGOS/IIM Cacutta.webp" alt="IIM Calcutta Logo"
                   class="trust-logo-img">
-                <img decoding="async" src="./LOGOS/VC Circle.webp" alt="VC Circle Logo"
+                <img width="148" height="73" decoding="async" src="./LOGOS/VC Circle.webp" alt="VC Circle Logo"
                   class="trust-logo-img">
                 <span>Investor Pitching</span>
               </div>
               <div class="trust-logo-chip" title="Hult Prize Milan Summit (On-Campus Winner)">
-                <img decoding="async" src="./LOGOS/Hult Prize.webp" alt="Hult Prize Logo"
+                <img width="180" height="60" decoding="async" src="./LOGOS/Hult Prize.webp" alt="Hult Prize Logo"
                   class="trust-logo-img">
                 <span>Hult Prize (Milan Summit)</span>
               </div>
@@ -261,7 +264,7 @@
               <!-- Phone Mockup Shell with direct link to case study -->
               <a href="./recyclenet.html" class="hero-phone-shell" id="heroDeviceLink"
                 title="Click to view full RecycleNet case study">
-                <img src="./RecycleNET/main hero recycle net.webp" alt="Hero Featured Screen" class="hero-phone-screen"
+                <img width="675" height="1354" src="./RecycleNET/main hero recycle net.webp" alt="Hero Featured Screen" class="hero-phone-screen"
                   id="heroInteractiveImg" fetchpriority="high" decoding="async">
                 <span class="hero-click-badge">Explore Case Study ↗</span>
               </a>
@@ -290,7 +293,7 @@
           <div class="exp-header-row">
             <div class="exp-identity">
               <div class="exp-avatar-badge avatar-jci">
-                <img loading="lazy" decoding="async" src="./LOGOS/Johnson Control.webp" alt="Johnson Controls"
+                <img width="261" height="261" loading="lazy" decoding="async" src="./LOGOS/Johnson Control.webp" alt="Johnson Controls"
                   class="exp-avatar-logo">
               </div>
               <div class="exp-title-group">
@@ -329,7 +332,7 @@
               <div class="sample-thumb-item open-lightbox" data-img="./Johnson Controls/IMG_20260424_121358-2 1.webp"
                 data-caption="Johnson Controls - AHU-1 Flow Layout Schematic">
                 <div class="sample-thumb-img-wrap blueprint-tint">
-                  <img loading="lazy" decoding="async" src="./Johnson Controls/IMG_20260424_121358-2 1.webp"
+                  <img width="957" height="618" loading="lazy" decoding="async" src="./Johnson Controls/IMG_20260424_121358-2 1.webp"
                     alt="AHU-1 Flow Layout" class="sample-thumb-img">
                 </div>
                 <span class="sample-thumb-label">AHU-1 Flow Layout</span>
@@ -338,7 +341,7 @@
               <div class="sample-thumb-item open-lightbox" data-img="./Johnson Controls/IMG_20260424_121408 1.webp"
                 data-caption="Johnson Controls - AHU-1 Controller Input/Output Wiring Details">
                 <div class="sample-thumb-img-wrap blueprint-tint">
-                  <img loading="lazy" decoding="async" src="./Johnson Controls/IMG_20260424_121408 1.webp"
+                  <img width="952" height="618" loading="lazy" decoding="async" src="./Johnson Controls/IMG_20260424_121408 1.webp"
                     alt="AHU-1 Wiring Details" class="sample-thumb-img">
                 </div>
                 <span class="sample-thumb-label">AHU-1 Wiring Details</span>
@@ -347,7 +350,7 @@
               <div class="sample-thumb-item open-lightbox" data-img="./Johnson Controls/IMG_20260424_121421-2 1.webp"
                 data-caption="Johnson Controls - Airflow Measuring Station (AFMS) Schedule & Duct Mounting">
                 <div class="sample-thumb-img-wrap blueprint-tint">
-                  <img loading="lazy" decoding="async" src="./Johnson Controls/IMG_20260424_121421-2 1.webp"
+                  <img width="972" height="628" loading="lazy" decoding="async" src="./Johnson Controls/IMG_20260424_121421-2 1.webp"
                     alt="AFMS Schedule" class="sample-thumb-img">
                 </div>
                 <span class="sample-thumb-label">AFMS Schedule</span>
@@ -356,7 +359,7 @@
               <div class="sample-thumb-item open-lightbox" data-img="./Johnson Controls/IMG_20260424_121434 1.webp"
                 data-caption="Johnson Controls - Hardware Submittal & Product Literature Mini Catalog">
                 <div class="sample-thumb-img-wrap blueprint-tint">
-                  <img loading="lazy" decoding="async" src="./Johnson Controls/IMG_20260424_121434 1.webp"
+                  <img width="473" height="587" loading="lazy" decoding="async" src="./Johnson Controls/IMG_20260424_121434 1.webp"
                     alt="Product Literature Mini Catalog" class="sample-thumb-img">
                 </div>
                 <span class="sample-thumb-label">Product Mini Catalog</span>
@@ -365,7 +368,7 @@
               <div class="sample-thumb-item open-lightbox" data-img="./Johnson Controls/IMG_20260424_121629 1.webp"
                 data-caption="Johnson Controls - CCT Controller Configuration Tool & State Logic">
                 <div class="sample-thumb-img-wrap blueprint-tint">
-                  <img loading="lazy" decoding="async" src="./Johnson Controls/IMG_20260424_121629 1.webp"
+                  <img width="1015" height="578" loading="lazy" decoding="async" src="./Johnson Controls/IMG_20260424_121629 1.webp"
                     alt="CCT System Configuration" class="sample-thumb-img">
                 </div>
                 <span class="sample-thumb-label">CCT System Config</span>
@@ -374,7 +377,7 @@
               <div class="sample-thumb-item open-lightbox" data-img="./Johnson Controls/IMG_20260424_121714 2.webp"
                 data-caption="Johnson Controls - SCT Metasys Point Mapping & BACnet Variables">
                 <div class="sample-thumb-img-wrap blueprint-tint">
-                  <img loading="lazy" decoding="async" src="./Johnson Controls/IMG_20260424_121714 2.webp"
+                  <img width="1033" height="571" loading="lazy" decoding="async" src="./Johnson Controls/IMG_20260424_121714 2.webp"
                     alt="SCT Metasys Point List" class="sample-thumb-img">
                 </div>
                 <span class="sample-thumb-label">SCT Point Mapping</span>
@@ -388,7 +391,7 @@
           <div class="exp-header-row">
             <div class="exp-identity">
               <div class="exp-avatar-badge avatar-scalenow">
-                <img loading="lazy" decoding="async" src="./LOGOS/Scalenow.webp" alt="Scalenow Technosolutions"
+                <img width="260" height="260" loading="lazy" decoding="async" src="./LOGOS/Scalenow.webp" alt="Scalenow Technosolutions"
                   class="exp-avatar-logo">
               </div>
               <div class="exp-title-group">
@@ -424,7 +427,7 @@
                 data-img="./Scalenow Technosolutions/Screenshot 2026-04-24 at 12.58.50 2.webp"
                 data-caption="Scalenow - TravelHoster Marketplace Home & Trip Search">
                 <div class="sample-thumb-img-wrap">
-                  <img loading="lazy" decoding="async"
+                  <img width="995" height="707" loading="lazy" decoding="async"
                     src="./Scalenow Technosolutions/Screenshot 2026-04-24 at 12.58.50 2.webp"
                     alt="TravelHoster Web Portal" class="sample-thumb-img">
                 </div>
@@ -435,7 +438,7 @@
                 data-img="./Scalenow Technosolutions/Screenshot 2026-04-24 at 13.00.33 1.webp"
                 data-caption="Scalenow - CheckIn Society Management Product Landing Page">
                 <div class="sample-thumb-img-wrap">
-                  <img loading="lazy" decoding="async"
+                  <img width="984" height="707" loading="lazy" decoding="async"
                     src="./Scalenow Technosolutions/Screenshot 2026-04-24 at 13.00.33 1.webp"
                     alt="CheckIn Product Landing Page" class="sample-thumb-img">
                 </div>
@@ -446,7 +449,7 @@
                 data-img="./Scalenow Technosolutions/Screenshot 2026-04-24 at 13.02.05 1.webp"
                 data-caption="Scalenow - Midas Super Flat Flooring Client Web Experience">
                 <div class="sample-thumb-img-wrap">
-                  <img loading="lazy" decoding="async"
+                  <img width="1145" height="707" loading="lazy" decoding="async"
                     src="./Scalenow Technosolutions/Screenshot 2026-04-24 at 13.02.05 1.webp"
                     alt="Midas Concrete Floor Solutions" class="sample-thumb-img">
                 </div>
@@ -457,7 +460,7 @@
                 data-img="./Scalenow Technosolutions/Screenshot 2026-04-24 at 13.03.26 1.webp"
                 data-caption="Scalenow - TravelHoster Admin Analytics & Revenue Dashboard">
                 <div class="sample-thumb-img-wrap">
-                  <img loading="lazy" decoding="async"
+                  <img width="718" height="708" loading="lazy" decoding="async"
                     src="./Scalenow Technosolutions/Screenshot 2026-04-24 at 13.03.26 1.webp"
                     alt="TravelHoster Admin Analytics" class="sample-thumb-img">
                 </div>
@@ -468,7 +471,7 @@
                 data-img="./Scalenow Technosolutions/Screenshot 2026-04-24 at 13.04.42 1.webp"
                 data-caption="Scalenow - My Councillor (KMC) Civic Issue & Spotlight Mobile App">
                 <div class="sample-thumb-img-wrap">
-                  <img loading="lazy" decoding="async"
+                  <img width="327" height="708" loading="lazy" decoding="async"
                     src="./Scalenow Technosolutions/Screenshot 2026-04-24 at 13.04.42 1.webp"
                     alt="MyCouncillor Mobile App" class="sample-thumb-img">
                 </div>
@@ -479,7 +482,7 @@
                 data-img="./Scalenow Technosolutions/Screenshot 2026-04-24 at 13.11.15 1.webp"
                 data-caption="Scalenow - TravelHoster Mobile Search & Discovery Flow">
                 <div class="sample-thumb-img-wrap">
-                  <img loading="lazy" decoding="async"
+                  <img width="326" height="707" loading="lazy" decoding="async"
                     src="./Scalenow Technosolutions/Screenshot 2026-04-24 at 13.11.15 1.webp"
                     alt="TravelHoster Mobile Search Flow" class="sample-thumb-img">
                 </div>
@@ -494,7 +497,7 @@
           <div class="exp-header-row">
             <div class="exp-identity">
               <div class="exp-avatar-badge avatar-supportroom">
-                <img loading="lazy" decoding="async" src="./LOGOS/SupportRoom.webp" alt="SupportRoom"
+                <img width="263" height="236" loading="lazy" decoding="async" src="./LOGOS/SupportRoom.webp" alt="SupportRoom"
                   class="exp-avatar-logo">
               </div>
               <div class="exp-title-group">
@@ -528,7 +531,7 @@
                 data-img="./SupportRoom/Screenshot 2026-04-24 at 10.40.31 2.webp"
                 data-caption="SupportRoom - SupportFit Mobile Wellness Home Dashboard">
                 <div class="sample-thumb-img-wrap">
-                  <img loading="lazy" decoding="async" src="./SupportRoom/Screenshot 2026-04-24 at 10.40.31 2.webp"
+                  <img width="370" height="792" loading="lazy" decoding="async" src="./SupportRoom/Screenshot 2026-04-24 at 10.40.31 2.webp"
                     alt="SupportFit Home Dashboard" class="sample-thumb-img">
                 </div>
                 <span class="sample-thumb-label">SupportFit Dashboard</span>
@@ -538,7 +541,7 @@
                 data-img="./SupportRoom/Screenshot 2026-04-24 at 10.50.06 2.webp"
                 data-caption="SupportRoom - SupportFit Calorie Logging & Meal Scanning Screen">
                 <div class="sample-thumb-img-wrap">
-                  <img loading="lazy" decoding="async" src="./SupportRoom/Screenshot 2026-04-24 at 10.50.06 2.webp"
+                  <img width="374" height="793" loading="lazy" decoding="async" src="./SupportRoom/Screenshot 2026-04-24 at 10.50.06 2.webp"
                     alt="SupportFit Calorie & Meal Tracker" class="sample-thumb-img">
                 </div>
                 <span class="sample-thumb-label">Calorie & Meal Tracker</span>
@@ -548,7 +551,7 @@
                 data-img="./SupportRoom/Screenshot 2026-04-24 at 13.42.11 2.webp"
                 data-caption="SupportRoom - SupportFit Sleep Analysis & Weekly Activity Insights">
                 <div class="sample-thumb-img-wrap">
-                  <img loading="lazy" decoding="async" src="./SupportRoom/Screenshot 2026-04-24 at 13.42.11 2.webp"
+                  <img width="369" height="792" loading="lazy" decoding="async" src="./SupportRoom/Screenshot 2026-04-24 at 13.42.11 2.webp"
                     alt="SupportFit Sleep & Health Trends" class="sample-thumb-img">
                 </div>
                 <span class="sample-thumb-label">Sleep & Health Trends</span>
@@ -558,7 +561,7 @@
                 data-img="./SupportRoom/Screenshot 2026-04-24 at 13.46.35 1.webp"
                 data-caption="SupportRoom - SupportFit Guided Exercise & Video Workout Library">
                 <div class="sample-thumb-img-wrap">
-                  <img loading="lazy" decoding="async" src="./SupportRoom/Screenshot 2026-04-24 at 13.46.35 1.webp"
+                  <img width="361" height="793" loading="lazy" decoding="async" src="./SupportRoom/Screenshot 2026-04-24 at 13.46.35 1.webp"
                     alt="SupportFit Workout & Yoga Library" class="sample-thumb-img">
                 </div>
                 <span class="sample-thumb-label">Workouts & Yoga Library</span>
@@ -654,7 +657,7 @@
               <button class="project-card-arrow prev" data-target="recyclenet" aria-label="Previous screen">‹</button>
               <div class="project-preview-media-stage open-lightbox" data-img="./RecycleNET/main hero recycle net.webp"
                 data-caption="RecycleNet - Intelligent Waste Classifier Mobile Interface">
-                <img loading="eager" decoding="async" src="./RecycleNET/main hero recycle net.webp"
+                <img width="675" height="1354" loading="eager" decoding="async" src="./RecycleNET/main hero recycle net.webp"
                   alt="RecycleNet Screen" class="project-preview-img" id="img-recyclenet">
                 <span class="preview-zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
@@ -762,7 +765,7 @@
               <button class="project-card-arrow prev" data-target="supportfit" aria-label="Previous screen">‹</button>
               <div class="project-preview-media-stage open-lightbox" data-img="./SupportFit/MAIN.webp"
                 data-caption="SupportFit - Main Overview Screen">
-                <img loading="eager" decoding="async" src="./SupportFit/MAIN.webp" alt="SupportFit Screen"
+                <img width="1164" height="2096" loading="eager" decoding="async" src="./SupportFit/MAIN.webp" alt="SupportFit Screen"
                   class="project-preview-img" id="img-supportfit">
                 <span class="preview-zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
@@ -839,7 +842,7 @@
               <button class="project-card-arrow prev" data-target="travelhoster" aria-label="Previous screen">‹</button>
               <div class="project-preview-media-stage open-lightbox" data-img="./TravelHoster/MAIN.webp"
                 data-caption="TravelHoster - Itinerary Search & Discover Interface">
-                <img loading="eager" decoding="async" src="./TravelHoster/MAIN.webp" alt="TravelHoster Screen"
+                <img width="759" height="1463" loading="eager" decoding="async" src="./TravelHoster/MAIN.webp" alt="TravelHoster Screen"
                   class="project-preview-img" id="img-travelhoster">
                 <span class="preview-zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
@@ -918,7 +921,7 @@
               <button class="project-card-arrow prev" data-target="mycouncillor" aria-label="Previous screen">‹</button>
               <div class="project-preview-media-stage open-lightbox" data-img="./MyCouncilor/MAIN.webp"
                 data-caption="MyCouncillor - Citizen App Home & Issue Reporting">
-                <img loading="eager" decoding="async" src="./MyCouncilor/MAIN.webp" alt="MyCouncillor Screen"
+                <img width="1558" height="2993" loading="eager" decoding="async" src="./MyCouncilor/MAIN.webp" alt="MyCouncillor Screen"
                   class="project-preview-img" id="img-mycouncillor">
                 <span class="preview-zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
@@ -994,7 +997,7 @@
               <button class="project-card-arrow prev" data-target="checkin" aria-label="Previous screen">‹</button>
               <div class="project-preview-media-stage open-lightbox" data-img="./CheckIn/MAIN.webp"
                 data-caption="CheckIn - Resident Dashboard & Society Home">
-                <img loading="eager" decoding="async" src="./CheckIn/MAIN.webp" alt="CheckIn Screen"
+                <img width="507" height="955" loading="eager" decoding="async" src="./CheckIn/MAIN.webp" alt="CheckIn Screen"
                   class="project-preview-img" id="img-checkin">
                 <span class="preview-zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
@@ -1051,7 +1054,7 @@
         <div class="extra-bento-card">
           <div class="extra-card-header">
             <div class="logo-display-pill" title="Hult Prize Milan Summit">
-              <img loading="lazy" decoding="async" src="./LOGOS/Hult Prize.webp" alt="Hult Prize Logo"
+              <img width="180" height="60" loading="lazy" decoding="async" src="./LOGOS/Hult Prize.webp" alt="Hult Prize Logo"
                 class="extra-logo-img">
             </div>
             <span class="extra-category-chip pill-green">Milan Summit · Sustainability</span>
@@ -1069,7 +1072,7 @@
         <div class="extra-bento-card card-wide-2">
           <div class="extra-card-header">
             <div class="logo-display-pill" title="IEEE (Institute of Electrical and Electronics Engineers)">
-              <img loading="lazy" decoding="async" src="./LOGOS/IEEE.webp" alt="IEEE Logo" class="extra-logo-img">
+              <img width="199" height="66" loading="lazy" decoding="async" src="./LOGOS/IEEE.webp" alt="IEEE Logo" class="extra-logo-img">
             </div>
             <span class="extra-category-chip pill-blue">IEEE Xplore · AI / ML</span>
           </div>
@@ -1092,7 +1095,7 @@
         <div class="extra-bento-card">
           <div class="extra-card-header">
             <div class="logo-display-pill" title="KyodoKyokushin">
-              <img loading="lazy" decoding="async" src="./LOGOS/Kyodokyokushin.webp" alt="Kyodokyokushin Logo"
+              <img width="74" height="78" loading="lazy" decoding="async" src="./LOGOS/Kyodokyokushin.webp" alt="Kyodokyokushin Logo"
                 class="extra-logo-img">
             </div>
             <span class="extra-category-chip pill-purple">Discipline</span>
@@ -1110,7 +1113,7 @@
         <div class="extra-bento-card">
           <div class="extra-card-header">
             <div class="logo-display-pill" title="Japanese Language">
-              <img loading="lazy" decoding="async" src="./LOGOS/Japanese.webp" alt="Japanese Language Logo"
+              <img width="154" height="115" loading="lazy" decoding="async" src="./LOGOS/Japanese.webp" alt="Japanese Language Logo"
                 class="extra-logo-img">
             </div>
             <span class="extra-category-chip pill-orange">Language</span>
@@ -1129,11 +1132,11 @@
           <div class="extra-card-header">
             <div class="dual-logos-row">
               <div class="logo-display-pill" title="IIM Calcutta">
-                <img loading="lazy" decoding="async" src="./LOGOS/IIM Cacutta.webp" alt="IIM Calcutta Logo"
+                <img width="59" height="51" loading="lazy" decoding="async" src="./LOGOS/IIM Cacutta.webp" alt="IIM Calcutta Logo"
                   class="extra-logo-img">
               </div>
               <div class="logo-display-pill" title="VC Circle">
-                <img loading="lazy" decoding="async" src="./LOGOS/VC Circle.webp" alt="VC Circle Logo"
+                <img width="148" height="73" loading="lazy" decoding="async" src="./LOGOS/VC Circle.webp" alt="VC Circle Logo"
                   class="extra-logo-img">
               </div>
             </div>
@@ -1173,7 +1176,7 @@
               <div class="mindmap-node-card">
                 <span class="node-tooltip">Interface Design & Systems</span>
                 <div class="mindmap-node-icon">
-                  <img loading="lazy" decoding="async" src="./Skills Logo/Figma.webp" alt="Figma"
+                  <img width="136" height="125" loading="lazy" decoding="async" src="./Skills Logo/Figma.webp" alt="Figma"
                     class="mindmap-node-img">
                 </div>
                 <span class="mindmap-node-name">Figma</span>
@@ -1182,7 +1185,7 @@
               <div class="mindmap-node-card">
                 <span class="node-tooltip">Interactive Prototyping</span>
                 <div class="mindmap-node-icon">
-                  <img loading="lazy" decoding="async" src="./Skills Logo/Framer.webp" alt="Framer"
+                  <img width="139" height="171" loading="lazy" decoding="async" src="./Skills Logo/Framer.webp" alt="Framer"
                     class="mindmap-node-img">
                 </div>
                 <span class="mindmap-node-name">Framer</span>
@@ -1229,7 +1232,7 @@
                 <div class="mindmap-node-card">
                   <span class="node-tooltip">Semantic Structure</span>
                   <div class="mindmap-node-icon">
-                    <img loading="lazy" decoding="async" src="./Skills Logo/HTML.webp" alt="HTML5"
+                    <img width="73" height="99" loading="lazy" decoding="async" src="./Skills Logo/HTML.webp" alt="HTML5"
                       class="mindmap-node-img">
                   </div>
                   <span class="mindmap-node-name">HTML</span>
@@ -1238,7 +1241,7 @@
                 <div class="mindmap-node-card">
                   <span class="node-tooltip">CSS3 Tokens & Layout</span>
                   <div class="mindmap-node-icon">
-                    <img loading="lazy" decoding="async" src="./Skills Logo/CSS.webp" alt="CSS3"
+                    <img width="83" height="110" loading="lazy" decoding="async" src="./Skills Logo/CSS.webp" alt="CSS3"
                       class="mindmap-node-img">
                   </div>
                   <span class="mindmap-node-name">CSS</span>
@@ -1247,7 +1250,7 @@
                 <div class="mindmap-node-card">
                   <span class="node-tooltip">Modern JavaScript Logic</span>
                   <div class="mindmap-node-icon">
-                    <img loading="lazy" decoding="async" src="./Skills Logo/Javascript.webp" alt="JavaScript"
+                    <img width="94" height="122" loading="lazy" decoding="async" src="./Skills Logo/Javascript.webp" alt="JavaScript"
                       class="mindmap-node-img">
                   </div>
                   <span class="mindmap-node-name">JS</span>
@@ -1262,7 +1265,7 @@
                 <div class="mindmap-node-card">
                   <span class="node-tooltip">System Configuration Tool</span>
                   <div class="mindmap-node-icon">
-                    <img loading="lazy" decoding="async" src="./Skills Logo/SCT.webp" alt="SCT" class="mindmap-node-img">
+                    <img width="114" height="114" loading="lazy" decoding="async" src="./Skills Logo/SCT.webp" alt="SCT" class="mindmap-node-img">
                   </div>
                   <span class="mindmap-node-name">SCT</span>
                 </div>
@@ -1270,7 +1273,7 @@
                 <div class="mindmap-node-card">
                   <span class="node-tooltip">Controller Config Tool</span>
                   <div class="mindmap-node-icon">
-                    <img loading="lazy" decoding="async" src="./Skills Logo/CCT.webp" alt="CCT" class="mindmap-node-img">
+                    <img width="99" height="99" loading="lazy" decoding="async" src="./Skills Logo/CCT.webp" alt="CCT" class="mindmap-node-img">
                   </div>
                   <span class="mindmap-node-name">CCT</span>
                 </div>
@@ -1278,7 +1281,7 @@
                 <div class="mindmap-node-card">
                   <span class="node-tooltip">Solution Navigator</span>
                   <div class="mindmap-node-icon">
-                    <img loading="lazy" decoding="async" src="./Skills Logo/Solution Navigator.webp"
+                    <img width="180" height="163" loading="lazy" decoding="async" src="./Skills Logo/Solution Navigator.webp"
                       alt="Solution Navigator" class="mindmap-node-img">
                   </div>
                   <span class="mindmap-node-name">SN</span>
@@ -1287,7 +1290,7 @@
                 <div class="mindmap-node-card">
                   <span class="node-tooltip">Metasys User Interface</span>
                   <div class="mindmap-node-icon">
-                    <img loading="lazy" decoding="async" src="./Skills Logo/Metasys.webp" alt="Metasys"
+                    <img width="59" height="58" loading="lazy" decoding="async" src="./Skills Logo/Metasys.webp" alt="Metasys"
                       class="mindmap-node-img">
                   </div>
                   <span class="mindmap-node-name">MUI</span>
@@ -1302,7 +1305,7 @@
                 <div class="mindmap-node-card">
                   <span class="node-tooltip">Google Colab Model Training</span>
                   <div class="mindmap-node-icon">
-                    <img loading="lazy" decoding="async" src="./Skills Logo/Colab.webp" alt="Google Colab"
+                    <img width="102" height="68" loading="lazy" decoding="async" src="./Skills Logo/Colab.webp" alt="Google Colab"
                       class="mindmap-node-img">
                   </div>
                   <span class="mindmap-node-name">Colab</span>
@@ -1311,7 +1314,7 @@
                 <div class="mindmap-node-card">
                   <span class="node-tooltip">PyTorch Neural Networks</span>
                   <div class="mindmap-node-icon">
-                    <img loading="lazy" decoding="async" src="./Skills Logo/PyTorch.webp" alt="PyTorch"
+                    <img width="65" height="74" loading="lazy" decoding="async" src="./Skills Logo/PyTorch.webp" alt="PyTorch"
                       class="mindmap-node-img">
                   </div>
                   <span class="mindmap-node-name">PyTorch</span>
@@ -1320,7 +1323,7 @@
                 <div class="mindmap-node-card">
                   <span class="node-tooltip">TensorFlow ML Pipelines</span>
                   <div class="mindmap-node-icon">
-                    <img loading="lazy" decoding="async" src="./Skills Logo/TensorFlow.webp" alt="TensorFlow"
+                    <img width="85" height="97" loading="lazy" decoding="async" src="./Skills Logo/TensorFlow.webp" alt="TensorFlow"
                       class="mindmap-node-img">
                   </div>
                   <span class="mindmap-node-name">TF</span>
@@ -1335,7 +1338,7 @@
                 <div class="mindmap-node-card">
                   <span class="node-tooltip">Arduino Hardware & Sensors</span>
                   <div class="mindmap-node-icon">
-                    <img loading="lazy" decoding="async" src="./Skills Logo/Arduino.webp" alt="Arduino"
+                    <img width="72" height="72" loading="lazy" decoding="async" src="./Skills Logo/Arduino.webp" alt="Arduino"
                       class="mindmap-node-img">
                   </div>
                   <span class="mindmap-node-name">Arduino</span>
@@ -1344,7 +1347,7 @@
                 <div class="mindmap-node-card">
                   <span class="node-tooltip">ThingSpeak IoT Analytics</span>
                   <div class="mindmap-node-icon">
-                    <img loading="lazy" decoding="async" src="./Skills Logo/Thingspeak.webp" alt="ThingSpeak"
+                    <img width="141" height="87" loading="lazy" decoding="async" src="./Skills Logo/Thingspeak.webp" alt="ThingSpeak"
                       class="mindmap-node-img">
                   </div>
                   <span class="mindmap-node-name">IoT</span>
@@ -1353,7 +1356,7 @@
                 <div class="mindmap-node-card">
                   <span class="node-tooltip">Blynk IoT Device Control</span>
                   <div class="mindmap-node-icon">
-                    <img loading="lazy" decoding="async" src="./Skills Logo/Blynk.webp" alt="Blynk"
+                    <img width="70" height="70" loading="lazy" decoding="async" src="./Skills Logo/Blynk.webp" alt="Blynk"
                       class="mindmap-node-img">
                   </div>
                   <span class="mindmap-node-name">Blynk</span>
@@ -1362,7 +1365,7 @@
                 <div class="mindmap-node-card">
                   <span class="node-tooltip tooltip-align-right">C Systems Programming</span>
                   <div class="mindmap-node-icon">
-                    <img loading="lazy" decoding="async" src="./Skills Logo/C.webp" alt="C Language"
+                    <img width="49" height="54" loading="lazy" decoding="async" src="./Skills Logo/C.webp" alt="C Language"
                       class="mindmap-node-img">
                   </div>
                   <span class="mindmap-node-name">C</span>
@@ -1391,7 +1394,7 @@
         <div class="recommender-profile-header">
           <div class="recommender-main-info">
             <div class="recommender-avatar-circle">
-              <img loading="lazy" decoding="async" src="./LOGOS/suvankar-malakar.webp" alt="Suvankar Malakar"
+              <img width="800" height="800" loading="lazy" decoding="async" src="./LOGOS/suvankar-malakar.webp" alt="Suvankar Malakar"
                 class="recommender-avatar-img">
             </div>
             <div>
@@ -1685,7 +1688,7 @@
       </div>
     </footer>
 
-  </div>
+  </main>
 
   <!-- ==================== LIGHTBOX MODAL ==================== -->
   <div class="lab-modal-overlay" id="lightboxModalOverlay" aria-hidden="true">

@@ -21,12 +21,12 @@ const caseStudiesData = {
       "Published IEEE Paper (Lead author, IEEE ICCECE 2026)"
     ],
     contributions: [
-      "Shot and labeled 2,420 images from multiple angles myself, annotated into 8,884 bounding boxes in Roboflow, across the 6 standard polymer codes: PET, HDPE, PVC, LDPE, PP, and PS.",
+      "Collected 2,420 images from multiple sources, annotated into 8,884 bounding boxes in Roboflow, across the 6 standard polymer codes: PET, HDPE, PVC, LDPE, PP, and PS.",
       "Benchmarked YOLO26n, YOLOv8s, YOLO26m, and RF-DETR on dual Nvidia T4 GPUs to weigh speed vs. accuracy on edge devices.",
       "Achieved 2.0 ms inference latency with YOLO26n (2.38M params, 58.6% mAP@50) and 62.0% mAP@50 with RF-DETR, boosting precision from 57.4% to 72.3% and recall from 45.5% to 54.2% over previous YOLOv8 baselines.",
-      "Built a multi-threaded Flask desktop server paired with an async OpenCV video loop, running on Apple Silicon (MPS) or Nvidia CUDA.",
+      "Built a multi-threaded Flask desktop server paired with an async OpenCV video loop, running on Apple Silicon (MPS) or Nvidia CUDA, falling back to CPU if none detected.",
       "Engineered an offline native Android app in Kotlin with Jetpack Compose (Material 3), using CameraX for live frame capture and PyTorch Lite models running entirely on-device without cloud connectivity.",
-      "Lead author, published in the Proceedings of the 2026 IEEE International Conference on Computing, Electronics & Communications Engineering (ICCECE)."
+      "Lead author, published in IEEE, presented at ICCECE 2026 (Proceedings of the 2026 IEEE International Conference on Computing, Electronics & Communications Engineering)."
     ],
     researchData: [
       "Benchmarked trade-offs: YOLO26n (2.38M params, 2.0 ms, 58.6% mAP@50) for conveyor speeds vs RF-DETR (31.99M params, 14.8 ms, 62.0% mAP@50) for maximum accuracy.",

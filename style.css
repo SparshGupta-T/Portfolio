@@ -391,14 +391,14 @@ input::-moz-focus-inner {
   border: 1px solid var(--border-card);
   border-radius: var(--radius-pill);
   padding: 6px 10px 6px 14px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.02);
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  isolation: isolate;
   width: auto;
   max-width: fit-content;
-}
-
-.nav-pill-bar:hover {
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
 }
 
 .brand-link {
@@ -457,7 +457,12 @@ input::-moz-focus-inner {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
   text-decoration: none;
   color: var(--text-secondary);
-  transition: all var(--transition-bounce);
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  isolation: isolate;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform var(--transition-bounce);
   flex-shrink: 0;
 }
 
@@ -509,7 +514,7 @@ input::-moz-focus-inner {
   font-weight: 500;
   padding: 8px 14px;
   border-radius: var(--radius-pill);
-  transition: all var(--transition-bounce);
+  transition: color 0.18s ease, background-color 0.18s ease, transform 0.18s var(--spring-gentle);
   position: relative;
 }
 
@@ -556,7 +561,7 @@ input::-moz-focus-inner {
   text-decoration: none;
   cursor: pointer;
   border: 1px solid transparent;
-  transition: all var(--transition-bounce);
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform var(--transition-bounce);
   white-space: nowrap;
 }
 

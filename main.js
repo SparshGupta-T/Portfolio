@@ -1560,7 +1560,7 @@ function initCustomCursor() {
   }, { passive: true });
 
   // Focus morphing on interactive elements
-  const interactiveSelector = 'a, button, [role="button"], input, textarea, select, .screen-dot-btn, .project-card-arrow, .filter-chip-btn, .open-lightbox, .mindmap-node-card, .pillar-deep-card, .meta-item-box, .sample-thumb-item, .hero-stage-arrow, .showcase-tab-btn, .lightbox-nav-arrow';
+  const interactiveSelector = 'a, button, [role="button"], input, textarea, select, .nav-pill-bar, .screen-dot-btn, .project-card-arrow, .filter-chip-btn, .open-lightbox, .mindmap-node-card, .pillar-deep-card, .meta-item-box, .sample-thumb-item, .hero-stage-arrow, .showcase-tab-btn, .lightbox-nav-arrow';
 
   document.addEventListener('mouseover', (e) => {
     const target = e.target.closest(interactiveSelector);
@@ -1571,6 +1571,10 @@ function initCustomCursor() {
   });
 
   document.addEventListener('mouseout', (e) => {
+    // If moving to another element that is also within an interactive container (e.g. inner span or adjacent nav link), keep hover state stable
+    if (e.relatedTarget && e.relatedTarget.closest && e.relatedTarget.closest(interactiveSelector)) {
+      return;
+    }
     const target = e.target.closest(interactiveSelector);
     if (target) {
       blob.classList.remove('is-hovering');

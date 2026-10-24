@@ -1,4 +1,4 @@
-import { resolve } from 'path';
+import { resolve, extname } from 'path';
 import { defineConfig } from 'vite';
 import fs from 'fs';
 
@@ -35,7 +35,14 @@ function copyStaticAssetsPlugin() {
         const src = resolve(rootDir, folder);
         const dest = resolve(outDir, folder);
         if (fs.existsSync(src)) {
-          fs.cpSync(src, dest, { recursive: true });
+          fs.cpSync(src, dest, {
+            recursive: true,
+            filter: (source) => {
+              const stat = fs.statSync(source);
+              if (stat.isDirectory()) return true;
+              return extname(source).toLowerCase() === '.webp';
+            },
+          });
         }
       });
 

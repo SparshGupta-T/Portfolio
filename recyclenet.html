@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>RecycleNet Case Study | Sparsh Gupta</title>
   <meta name="description"
-    content="RecycleNet case study: a deep learning-assisted plastic resin identification system by Sparsh Gupta. Edge AI benchmarking with YOLO26 and RF-DETR, Flask desktop streaming, and an offline Android app with PyTorch Lite. Published in IEEE ICCECE 2026.">
+    content="RecycleNet case study: an edge AI system Sparsh Gupta built to identify plastic resin types in real time, benchmarking YOLO26 against RF-DETR, with a Flask desktop pipeline and an offline Android app running PyTorch Lite. Published in IEEE ICCECE 2026.">
   <meta property="og:type" content="article">
   <meta property="og:title" content="RecycleNet Case Study | Sparsh Gupta">
   <meta property="og:description"
@@ -214,12 +214,7 @@
           <h1 class="case-study-title">RecycleNet</h1>
           <p class="case-study-tagline">Deep Learning-Assisted Dynamic Plastic Identification Technique For Automated Waste Segregation</p>
           <p class="hero-desc-main" style="max-width: 620px; margin-top: 4px;">
-            RecycleNet is an edge-optimized computer vision architecture engineered to automate industrial plastic resin
-            identification in real time across the 6 standard Resin Identification Codes: <strong>PET, HDPE, PVC, LDPE, PP, and PS</strong>.
-            Trained on a completely custom physical dataset of 2,420 high-resolution images and 8,884 bounding boxes, the system
-            achieves a blistering <strong>2.0 ms inference latency</strong> with YOLO26n and <strong>62.0% mAP@50</strong> with RF-DETR transformers.
-            It features a multi-threaded Python Flask &amp; OpenCV desktop inference pipeline alongside a completely offline native Kotlin/Jetpack Compose
-            Android mobile app running PyTorch Lite. Published in IEEE ICCECE 2026.
+            RecycleNet is an edge computer vision system I built to identify plastic resin types in real time, covering all 6 standard Resin Identification Codes: <strong>PET, HDPE, PVC, LDPE, PP, and PS</strong>. I collected and labeled a custom dataset of 2,420 images into 8,884 bounding boxes, then benchmarked it against YOLO26n and RF-DETR — YOLO26n ran at <strong>2.0 ms inference</strong>, RF-DETR hit <strong>62.0% mAP@50</strong>. There's a multi-threaded Flask and OpenCV desktop pipeline for live inference, and a fully offline Android app in Kotlin and Jetpack Compose running PyTorch Lite. Published in IEEE ICCECE 2026.
           </p>
 
           <div class="case-study-cta-group" style="display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap;">
@@ -335,7 +330,7 @@
         <span>Core Engineering Pillars</span>
       </div>
       <p class="study-section-desc" style="margin-bottom: 24px;">
-        How RecycleNet achieves real-time industrial sorting on commodity edge hardware and zero-cloud smartphones.
+        How the system sorts in real time on regular hardware and phones, with nothing running in the cloud.
       </p>
 
       <div class="pillars-deep-grid">
@@ -345,7 +340,7 @@
             <span class="pillar-deep-title">Custom Dataset &amp; 6 Resin Codes</span>
           </div>
           <p class="pillar-deep-desc">
-            Curated 2,420 unique multi-angle physical images across 8,884 bounding boxes annotated in Roboflow, strictly mapping to the 6 industrial polymer codes: PET, HDPE, PVC, LDPE, PP, and PS.
+            Shot and labeled 2,420 images from multiple angles myself, annotated into 8,884 bounding boxes in Roboflow, across the 6 standard polymer codes: PET, HDPE, PVC, LDPE, PP, and PS.
           </p>
         </div>
 
@@ -355,7 +350,7 @@
             <span class="pillar-deep-title">2.0 ms Inference Loop (YOLO26n)</span>
           </div>
           <p class="pillar-deep-desc">
-            Benchmarked YOLO26n, YOLOv8s, YOLO26m, and RF-DETR on dual Nvidia T4 GPUs. YOLO26n achieved a blistering 2.0 ms processing turnaround per tensor grid with 58.6% mAP@50.
+            Benchmarked YOLO26n, YOLOv8s, YOLO26m, and RF-DETR on dual Nvidia T4 GPUs. YOLO26n came out fastest — 2.0 ms per frame, with 58.6% mAP@50.
           </p>
         </div>
 
@@ -365,7 +360,7 @@
             <span class="pillar-deep-title">Desktop OpenCV &amp; Flask Pipeline</span>
           </div>
           <p class="pillar-deep-desc">
-            Multi-threaded Python Flask microserver paired with an asynchronous OpenCV VideoCapture loop supporting Apple Silicon Metal Performance Shaders (MPS) and Nvidia CUDA.
+            A multi-threaded Flask server paired with an async OpenCV video loop, running on either Apple Silicon (MPS) or Nvidia CUDA.
           </p>
         </div>
 
@@ -375,7 +370,7 @@
             <span class="pillar-deep-title">Offline Native Android (PyTorch Lite)</span>
           </div>
           <p class="pillar-deep-desc">
-            Smartphone edge client built in native Kotlin with Jetpack Compose (Material 3), Android CameraX live frame analyzer, and compiled PyTorch Lite (.ptl) models for zero-cloud operation.
+            Built natively in Kotlin with Jetpack Compose and Material 3, using CameraX for live frame capture and PyTorch Lite models that run entirely on-device — no cloud connection needed.
           </p>
         </div>
       </div>
@@ -398,12 +393,12 @@
             <span>The Challenge: Limitations of Legacy Industrial Methods</span>
           </div>
           <p class="study-section-desc">
-            Plastic waste accumulation forms one of the most critical contemporary ecological crises. Sorting municipal waste streams at material recovery facilities remains the core bottleneck. Legacy sorting methods force an unviable trade-off:
+            Plastic waste is piling up faster than recovery facilities can sort it, and sorting is the real bottleneck. The usual methods force a bad trade-off:
           </p>
           <ul class="study-checklist">
-            <li><strong>Manual Labor Separation:</strong> Highly subjective, prone to severe human error, and exposes workers to chemical leachates and biohazardous contaminants on conveyor lines.</li>
-            <li><strong>Near-Infrared (NIR) Spectrometry:</strong> Offers high specificity but requires capital expenditure in excess of tens of thousands of dollars per sensor, restricting automated sorting to only massive centralized plants.</li>
-            <li><strong>The RecycleNet Alternative:</strong> Replaces specialized spectrometers with consumer-grade optical cameras and edge neural networks, delivering real-time bounding box regression and polymer classification directly at the sorting line.</li>
+            <li><strong>Manual sorting:</strong> inconsistent, error-prone, and exposes workers to chemical runoff and contaminants on the conveyor line.</li>
+            <li><strong>Near-infrared spectrometry:</strong> accurate, but each sensor costs tens of thousands of dollars, which limits it to large centralized plants.</li>
+            <li><strong>What RecycleNet does instead:</strong> uses a regular camera and an edge neural network to classify polymers and draw bounding boxes directly at the sorting line — no specialized sensor required.</li>
           </ul>
         </div>
 
@@ -418,13 +413,13 @@
             <span>Model Benchmarking: Accuracy vs. Inference Latency</span>
           </div>
           <p class="study-section-desc">
-            To evaluate deployment trade-offs between processing speed and classification accuracy, four state-of-the-art vision architectures were benchmarked on parallel Nvidia T4 Tensor Core GPUs:
+            To weigh speed against accuracy, I benchmarked four vision architectures on parallel Nvidia T4 GPUs:
           </p>
           <ul class="study-checklist checklist-data">
-            <li><strong>YOLO26n (Ultra-Lightweight Champion):</strong> 2.38M parameters, achieving a lightning-fast <strong>2.0 ms</strong> inference turnaround and 58.6% mAP@50 — ideal for rapid conveyor belts and mobile devices.</li>
-            <li><strong>RF-DETR (Peak Accuracy Transformer):</strong> Achieves the highest Precision (0.740), Recall (0.591), and <strong>62.0% mAP@50</strong> at an inference loop of 14.8 ms.</li>
-            <li><strong>Progress Over Baseline:</strong> Compared to prior published YOLOv8 models, Precision climbed from 57.4% to <strong>72.3%</strong>, Recall rose from 45.5% to <strong>54.2%</strong>, and mAP@50 increased from 46.5% to <strong>58.6%</strong>.</li>
-            <li><strong>Class-Wise Discrimination:</strong> Normalized confusion matrices revealed high discriminability for PET (81%) and LDPE (75%), with YOLO26n exhibiting lower background false-positives than larger models.</li>
+            <li><strong>YOLO26n, the lightweight option:</strong> 2.38M parameters, 2.0 ms inference, 58.6% mAP@50 — fast enough for conveyor belts and mobile devices.</li>
+            <li><strong>RF-DETR, the most accurate:</strong> 0.740 precision, 0.591 recall, 62.0% mAP@50, at 14.8 ms per frame.</li>
+            <li><strong>Compared to the baseline:</strong> against previously published YOLOv8 results, precision went from 57.4% to 72.3%, recall from 45.5% to 54.2%, and mAP@50 from 46.5% to 58.6%.</li>
+            <li><strong>By class:</strong> the confusion matrix showed strong separation for PET (81%) and LDPE (75%), and YOLO26n had fewer false positives on the background than the larger models.</li>
           </ul>
         </div>
 
@@ -440,12 +435,12 @@
             <span>Dual Deployment Architecture: Desktop Server &amp; Mobile Client</span>
           </div>
           <p class="study-section-desc">
-            To bridge research models into operational physical sorting environments, two unified deployment pathways were built:
+            To get this out of a notebook and into something usable on a real sorting line, I built two deployment paths:
           </p>
           <ul class="study-checklist">
-            <li><strong>Desktop OpenCV / Flask Pipeline:</strong> Captures video frames via <code style="font-family: var(--font-family-mono); font-size: 0.85em; background: var(--bg-subtle); padding: 2px 6px; border-radius: 4px;">cv2.VideoCapture</code>, executes forward-propagation tensor inference utilizing Apple Silicon MPS or Nvidia CUDA, and serves a live multipart JPEG stream to an HTML5 dashboard.</li>
-            <li><strong>Native Kotlin Android Mobile App:</strong> Built with Jetpack Compose following Material 3 guidelines. Integrates Android CameraX for live continuous frame analysis and runs quantized PyTorch Lite (<code style="font-family: var(--font-family-mono); font-size: 0.85em; background: var(--bg-subtle); padding: 2px 6px; border-radius: 4px;">.ptl</code>) models entirely on-device without any cloud connectivity.</li>
-            <li><strong>Dual Operational Modes:</strong> The mobile app supports both <em>Live Scan Mode</em> (real-time camera feed with confidence thresholding and NMS bounding boxes) and <em>Gallery Mode</em> (single-run static image analysis).</li>
+            <li><strong>Desktop, with OpenCV and Flask:</strong> captures frames with <code style="font-family: var(--font-family-mono); font-size: 0.85em; background: var(--bg-subtle); padding: 2px 6px; border-radius: 4px;">cv2.VideoCapture</code>, runs inference on Apple Silicon MPS or Nvidia CUDA, and streams the live result to an HTML5 dashboard.</li>
+            <li><strong>Native Android app, in Kotlin:</strong> built with Jetpack Compose and Material 3. Uses CameraX for continuous frame analysis and runs quantized PyTorch Lite (<code style="font-family: var(--font-family-mono); font-size: 0.85em; background: var(--bg-subtle); padding: 2px 6px; border-radius: 4px;">.ptl</code>) models fully on-device, no cloud needed.</li>
+            <li><strong>Two modes on the app:</strong> Live Scan, which runs the camera feed in real time with confidence thresholding and NMS bounding boxes, and Gallery Mode, for analyzing a single static image.</li>
           </ul>
         </div>
 
@@ -459,8 +454,7 @@
             <span>Published Paper &amp; Physical Sorting Future Scope</span>
           </div>
           <p class="study-impact-text" style="color: var(--text-secondary); line-height: 1.68; font-size: 0.98rem;">
-            Published in the <em>Proceedings of the 2026 IEEE International Conference on Computing, Electronics &amp; Communications Engineering (ICCECE)</em>.
-            Future iterations will integrate the visual detection output directly with Arduino and Raspberry Pi microcontrollers to actuate high-pressure pneumatic air nozzles and mechanical deflector arms, creating a fully automated, low-cost physical sorting conveyor machine.
+            Published in the <em>Proceedings of the 2026 IEEE International Conference on Computing, Electronics &amp; Communications Engineering (ICCECE)</em>. Next step is connecting the detection output to Arduino and Raspberry Pi microcontrollers, to actually trigger pneumatic air nozzles and deflector arms — turning this into a working, low-cost sorting machine instead of just a detection model.
           </p>
         </div>
 
@@ -635,7 +629,7 @@
       <button class="modal-close-btn" id="closeLightboxModal" aria-label="Close lightbox">✕</button>
       <button class="lightbox-nav-arrow prev" id="lightboxPrevBtn" aria-label="Previous Image">‹</button>
       <div class="lightbox-modal-content">
-        <img loading="lazy" decoding="async" src="" alt="Enlarged View" class="lightbox-img-full" id="lightboxFullImg">
+        <img decoding="async" src="" alt="Enlarged View" class="lightbox-img-full" id="lightboxFullImg">
         <div class="lightbox-caption-text" id="lightboxCaption"></div>
       </div>
       <button class="lightbox-nav-arrow next" id="lightboxNextBtn" aria-label="Next Image">›</button>

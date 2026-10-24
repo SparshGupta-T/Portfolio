@@ -608,29 +608,29 @@
           <div class="project-card-top">
             <div class="project-tag-row">
               <span class="domain-pill pill-cyan">Deep Learning · Computer Vision & Edge AI</span>
-              <span class="role-tag-subtle">Lead Researcher & Systems Developer</span>
+              <span class="role-tag-subtle">Lead Researcher & Embedded Systems Developer · Published in IEEE ICCECE 2026</span>
             </div>
             <h3 class="project-card-title">RecycleNet</h3>
             <p class="project-card-tagline">Deep Learning-Assisted Dynamic Plastic Identification Technique For Automated Waste Segregation</p>
             <p class="project-card-desc">
-              An edge-optimized computer vision system trained on 2,420 custom images and 8,884 annotations to classify 6 industrial resin codes (PET, HDPE, PVC, LDPE, PP, PS) in real time. Delivers 2.0 ms inference latency on edge devices and 62.0% mAP@50 with RF-DETR transformers. Deployed via Python Flask/OpenCV desktop streaming and an offline native Kotlin/Jetpack Compose Android app with PyTorch Lite. Published in IEEE ICCECE 2026.
+              Most recycling facilities sort plastics with near-infrared spectrometers, which are expensive, or by hand, which is slow and exposes workers to contaminants. I built RecycleNet to do it with a regular camera instead — edge deep learning models (YOLO26 and RF-DETR) that classify all 6 resin codes (PET, HDPE, PVC, LDPE, PP, PS) from a standard video feed, running fully offline on edge hardware at 2.0 ms latency.
             </p>
 
             <!-- 4 Pillars -->
             <div class="pillars-mini-grid">
-              <div class="pillar-mini-item">
+              <div class="pillar-mini-item" title="Runs in real time on ordinary edge hardware, no specialized chips needed.">
                 <span class="pillar-num-badge">1</span>
-                <span>2,420 Custom Dataset & 6 Resin Codes</span>
+                <span>2.0 ms Edge Latency</span>
               </div>
-              <div class="pillar-mini-item">
+              <div class="pillar-mini-item" title="2,420 images shot from multiple angles, annotated and augmented in Roboflow.">
                 <span class="pillar-num-badge">2</span>
-                <span>2.0 ms Edge Latency (YOLO26n)</span>
+                <span>2,420 Dataset Split</span>
               </div>
-              <div class="pillar-mini-item">
+              <div class="pillar-mini-item" title="Tells apart all six standard resin codes: PET, HDPE, PVC, LDPE, PP, and PS.">
                 <span class="pillar-num-badge">3</span>
-                <span>Offline Native Android App (PyTorch Lite)</span>
+                <span>6 Resin Classes</span>
               </div>
-              <div class="pillar-mini-item">
+              <div class="pillar-mini-item" title="Lead author, presented at IEEE ICCECE 2026.">
                 <span class="pillar-num-badge">4</span>
                 <span>Published IEEE Conference Paper</span>
               </div>
@@ -1663,7 +1663,7 @@
       <button class="modal-close-btn" id="closeLightboxModal" aria-label="Close lightbox">✕</button>
       <button class="lightbox-nav-arrow prev" id="lightboxPrevBtn" aria-label="Previous Image">‹</button>
       <div class="lightbox-modal-content">
-        <img loading="lazy" decoding="async" src="" alt="Enlarged View" class="lightbox-img-full" id="lightboxFullImg">
+        <img decoding="async" src="" alt="Enlarged View" class="lightbox-img-full" id="lightboxFullImg">
         <div class="lightbox-caption-text" id="lightboxCaption"></div>
       </div>
       <button class="lightbox-nav-arrow next" id="lightboxNextBtn" aria-label="Next Image">›</button>

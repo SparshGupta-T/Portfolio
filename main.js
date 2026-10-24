@@ -13,28 +13,28 @@ const caseStudiesData = {
     role: "Lead Researcher & Systems Developer · Computer Vision, Deep Learning & Edge Deployment",
     badge: "Deep Learning · Computer Vision & Edge AI",
     badgeClass: "pill-cyan",
-    overview: "RecycleNet combines modern deep learning architectures (YOLO26 & RF-DETR transformers) with cross-platform edge execution frameworks to automate real-time industrial plastic resin identification across the 6 standard codes (PET, HDPE, PVC, LDPE, PP, PS). Operating at ultra-low latency down to 2.0 ms on edge devices, the system eliminates reliance on expensive NIR spectrometers and hazardous manual sorting. Features a multi-threaded Python Flask / OpenCV desktop inference loop and an entirely offline native Android application built with Kotlin, Jetpack Compose, CameraX, and PyTorch Lite. Published in IEEE ICCECE 2026.",
+    overview: "Most recycling facilities sort plastics with near-infrared spectrometers, which are expensive, or by hand, which is slow and exposes workers to contaminants. I built RecycleNet to do it with a regular camera instead — edge deep learning models (YOLO26 and RF-DETR) that classify all 6 resin codes (PET, HDPE, PVC, LDPE, PP, PS) from a standard video feed, running fully offline on edge hardware at 2.0 ms latency.",
     pillars: [
-      "Custom Dataset: 2,420 Images & 8,884 Resin Bounding Boxes",
-      "Edge Benchmarking: 2.0 ms Inference Loop (YOLO26n)",
-      "Cross-Platform Desktop Pipeline: Flask, OpenCV & Metal/CUDA",
-      "Offline Mobile Architecture: Kotlin, Jetpack Compose & PyTorch Lite"
+      "2.0 ms Edge Latency (Runs in real time on ordinary edge hardware)",
+      "2,420 Dataset Split (Shot from multiple angles, Roboflow)",
+      "6 Resin Classes (Tells apart PET, HDPE, PVC, LDPE, PP, PS)",
+      "Published IEEE Paper (Lead author, IEEE ICCECE 2026)"
     ],
     contributions: [
-      "Curated, organized, and annotated a completely custom multi-angle dataset of 2,420 high-resolution images across 8,884 bounding boxes for 6 standard resin types (PET, HDPE, PVC, LDPE, PP, PS) using Roboflow.",
-      "Benchmarked edge-focused deployment paradigms utilizing YOLO26n, YOLOv8s, YOLO26m, and RF-DETR transformers on dual parallel Nvidia T4 GPUs on Kaggle/Colab.",
-      "Achieved a 2.0 ms processing turnaround per tensor grid with YOLO26n (58.6% mAP@50, 2.38M parameters) and peak structural accuracy of 62.0% mAP@50 with RF-DETR (14.8 ms), boosting Precision from 57.4% to 72.3% and Recall from 45.5% to 54.2% over previous YOLOv8 models.",
-      "Built a multi-threaded Python Flask microserver (app.py) and asynchronous OpenCV VideoCapture streaming loop with Apple Silicon MPS and Nvidia CUDA acceleration.",
-      "Engineered an entirely offline native Android mobile application in Kotlin and Jetpack Compose (Material 3), implementing CameraX live frame analysis and PyTorch Lite (.ptl) on-device inference for zero-cloud, grid-free operation.",
-      "Co-authored and published the peer-reviewed research paper in the IEEE ICCECE 2026 conference."
+      "Shot and labeled 2,420 images from multiple angles myself, annotated into 8,884 bounding boxes in Roboflow, across the 6 standard polymer codes: PET, HDPE, PVC, LDPE, PP, and PS.",
+      "Benchmarked YOLO26n, YOLOv8s, YOLO26m, and RF-DETR on dual Nvidia T4 GPUs to weigh speed vs. accuracy on edge devices.",
+      "Achieved 2.0 ms inference latency with YOLO26n (2.38M params, 58.6% mAP@50) and 62.0% mAP@50 with RF-DETR, boosting precision from 57.4% to 72.3% and recall from 45.5% to 54.2% over previous YOLOv8 baselines.",
+      "Built a multi-threaded Flask desktop server paired with an async OpenCV video loop, running on Apple Silicon (MPS) or Nvidia CUDA.",
+      "Engineered an offline native Android app in Kotlin with Jetpack Compose (Material 3), using CameraX for live frame capture and PyTorch Lite models running entirely on-device without cloud connectivity.",
+      "Lead author, published in the Proceedings of the 2026 IEEE International Conference on Computing, Electronics & Communications Engineering (ICCECE)."
     ],
     researchData: [
-      "Benchmarked trade-offs: YOLO26n (2.38M params, 2.0 ms, 58.6% mAP50) vs RF-DETR (31.99M params, 14.8 ms, 62.0% mAP50).",
-      "Replaced expensive Near-Infrared (NIR) spectrometers and hazardous manual sorting with low-cost consumer webcams and edge mobile sensors.",
-      "Trained models on Roboflow annotated 70/20/10 train/validation/test split with real-time geometric transformations, axial rotation, and salt-and-pepper noise augmentations.",
-      "Class-wise confusion analysis proved strong visual distinguishability for PET (81%) and LDPE (75%), while isolating subtle inter-class features for PP and PVC."
+      "Benchmarked trade-offs: YOLO26n (2.38M params, 2.0 ms, 58.6% mAP@50) for conveyor speeds vs RF-DETR (31.99M params, 14.8 ms, 62.0% mAP@50) for maximum accuracy.",
+      "Replaced costly near-infrared spectrometers and hazardous manual conveyor sorting with standard optical cameras and edge neural networks.",
+      "Annotated 70/20/10 train/validation/test split in Roboflow with real-time geometric transformations, axial rotation, and salt-and-pepper noise augmentations.",
+      "Normalized confusion matrix demonstrated strong class separation for PET (81%) and LDPE (75%), with YOLO26n producing fewer false positives on background objects."
     ],
-    impact: "RecycleNet proves that industrial-grade resin classification can run offline on commodity smartphones and low-power edge microprocessors at 2.0 ms latency, slashing sensor deployment costs and enabling decentralized automated recycling systems.",
+    impact: "RecycleNet proves that industrial plastic resin classification can run offline on regular edge hardware and phones at 2.0 ms latency, enabling low-cost, decentralized automated waste sorting.",
     gallery: [
       { src: "./RecycleNET/main hero recycle net.png", caption: "RecycleNet - Intelligent Waste Classifier Mobile Interface" },
       { src: "./RecycleNET/Group 9.png", caption: "RecycleNet - Real-time Vision Desktop Inference Dashboard" },
@@ -216,39 +216,58 @@ const caseStudiesData = {
 };
 
 // ==========================================
-// Smooth Image Crossfade Helper (Google Labs Calm Transition)
+// Smooth Image Crossfade Helper (Google Labs Calm Transition with Race-Condition Prevention)
 // ==========================================
 function smoothSwapImage(imgEl, newSrc, newAlt = '', onLoaded = null) {
   if (!imgEl || !newSrc) return;
   const currentSrc = imgEl.getAttribute('src');
-  if (currentSrc === newSrc) return;
+  if (currentSrc === newSrc) {
+    if (newAlt) imgEl.alt = newAlt;
+    if (typeof onLoaded === 'function') onLoaded();
+    return;
+  }
 
-  // Gentle fade out
+  // Sequence token guarantees only the latest requested swap executes
+  const token = (imgEl._swapToken = (imgEl._swapToken || 0) + 1);
+
+  // Pre-load incoming image so browser caches it early
+  const preloader = new Image();
+  preloader.src = newSrc;
+
+  // Gentle quick fade out
   imgEl.style.opacity = '0';
-  imgEl.style.transform = 'scale(0.97)';
+  imgEl.style.transform = 'scale(0.98)';
 
   setTimeout(() => {
+    // If a newer swap occurred while waiting for fade out, cancel this stale one
+    if (imgEl._swapToken !== token) return;
+
     imgEl.src = newSrc;
     if (newAlt) imgEl.alt = newAlt;
 
     const reveal = () => {
+      if (imgEl._swapToken !== token) return;
       requestAnimationFrame(() => {
+        if (imgEl._swapToken !== token) return;
         imgEl.style.opacity = '1';
         imgEl.style.transform = 'scale(1)';
-        if (onLoaded) onLoaded();
+        if (typeof onLoaded === 'function') onLoaded();
       });
     };
 
-    if (imgEl.complete) {
+    if (preloader.complete || imgEl.complete) {
       reveal();
     } else {
-      imgEl.onload = () => {
-        reveal();
-      };
-      // Fallback
-      setTimeout(reveal, 250);
+      imgEl.onload = reveal;
+      preloader.onload = reveal;
+      // Fast fallback so image never hangs blank
+      setTimeout(() => {
+        if (imgEl._swapToken === token && imgEl.style.opacity !== '1') {
+          reveal();
+        }
+      }, 180);
     }
-  }, 190);
+  }, 110);
 }
 
 // ==========================================
@@ -764,12 +783,12 @@ function initStudyModal() {
       </div>
     `;
 
-    // Bind sub-screen triggers inside modal to lightbox
-    modalContent.querySelectorAll('.modal-screen-trigger').forEach(thumb => {
+    // Bind sub-screen triggers inside modal to lightbox with full gallery context
+    modalContent.querySelectorAll('.modal-screen-trigger').forEach((thumb, idx) => {
       thumb.addEventListener('click', () => {
         const src = thumb.getAttribute('data-img');
         const caption = thumb.getAttribute('data-caption');
-        openLightbox(src, caption);
+        openLightbox(src, caption, data.gallery, idx);
       });
     });
 
@@ -819,19 +838,44 @@ function initLightbox() {
 
   let currentGallery = [];
   let currentIndex = 0;
+  let activeLightboxToken = 0;
 
   function renderCurrentLightboxItem(animate = true) {
     if (!currentGallery.length || !fullImg) return;
     const item = currentGallery[currentIndex];
+    const targetCaption = item.caption || '';
+    const targetSrc = item.src;
+    const token = ++activeLightboxToken;
 
+    // 1. Immediately and synchronously lock caption text so it NEVER lags or displays stale names
+    if (captionEl) {
+      captionEl.textContent = targetCaption;
+    }
+
+    // 2. Pre-cache adjacent images so next/prev switches happen instantly
+    if (currentGallery.length > 1) {
+      const nextIdx = (currentIndex + 1) % currentGallery.length;
+      const prevIdx = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+      if (currentGallery[nextIdx]?.src) {
+        const nextPre = new Image();
+        nextPre.src = currentGallery[nextIdx].src;
+      }
+      if (currentGallery[prevIdx]?.src) {
+        const prevPre = new Image();
+        prevPre.src = currentGallery[prevIdx].src;
+      }
+    }
+
+    // 3. Swap image with strict token verification
     if (animate) {
-      smoothSwapImage(fullImg, item.src, item.caption || '', () => {
-        captionEl.textContent = item.caption || '';
+      smoothSwapImage(fullImg, targetSrc, targetCaption, () => {
+        if (token === activeLightboxToken && captionEl) {
+          captionEl.textContent = targetCaption;
+        }
       });
-      captionEl.textContent = item.caption || '';
     } else {
-      fullImg.src = item.src;
-      captionEl.textContent = item.caption || '';
+      fullImg.src = targetSrc;
+      fullImg.alt = targetCaption;
       fullImg.style.opacity = '1';
       fullImg.style.transform = 'scale(1)';
     }

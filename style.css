@@ -2137,7 +2137,7 @@ section[id] {
 
 .form-input-control {
   font-family: var(--font-family-body);
-  font-size: 0.95rem;
+  font-size: 16px; /* 16px prevents iOS Safari from automatically zooming in on tap */
   background: var(--bg-subtle);
   border: 1px solid var(--border-card);
   border-radius: var(--radius-md);
@@ -2145,6 +2145,7 @@ section[id] {
   color: var(--text-primary);
   transition: all 0.25s ease;
   outline: none;
+  touch-action: manipulation;
 }
 
 .form-input-control:focus {
@@ -2263,7 +2264,7 @@ textarea.form-input-control {
 
 /* Lightbox Modal Specifics: extra top padding to give close button dedicated space */
 #lightboxModalOverlay .lab-modal-dialog {
-  padding: 48px 28px 24px;
+  padding: 48px 28px calc(24px + env(safe-area-inset-bottom, 0px));
   max-width: 920px;
   overflow: visible;
 }
@@ -2289,6 +2290,11 @@ textarea.form-input-control {
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--text-primary);
+  max-width: 680px;
+  line-height: 1.45;
+  margin: 0 auto;
+  min-height: 1.45em;
+  transition: opacity 0.2s ease;
 }
 
 /* Lightbox Side Navigation Arrows */
@@ -2331,12 +2337,47 @@ textarea.form-input-control {
 
 @media (max-width: 768px) {
   .lightbox-nav-arrow {
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 38px;
     font-size: 1.15rem;
   }
   .lightbox-nav-arrow.prev { left: 8px; }
   .lightbox-nav-arrow.next { right: 8px; }
+}
+
+/* Touchscreen & Cross-Browser Engine Compatibility */
+.lightbox-nav-arrow,
+.stage-nav-arrow,
+.project-card-arrow,
+.screen-dot-btn,
+.hero-screen-tab,
+.modal-close-btn,
+.btn-pill,
+.study-switch-link,
+.open-lightbox {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+@media (pointer: coarse) {
+  .project-card-arrow,
+  .stage-nav-arrow {
+    width: 38px;
+    height: 38px;
+  }
+  .screen-dot-btn {
+    position: relative;
+  }
+  .screen-dot-btn::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    bottom: -8px;
+    left: -8px;
+    right: -8px;
+  }
 }
 
 /* ==========================================================================
@@ -3774,7 +3815,7 @@ textarea.form-input-control {
 
 .case-study-hero-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
   gap: 40px;
   align-items: center;
   margin-top: 10px;
@@ -4415,7 +4456,7 @@ textarea.form-input-control {
 .hero-phone-screen,
 .study-hero-screen-img,
 .lightbox-img-full {
-  transition: opacity 0.38s cubic-bezier(0.4, 0, 0.2, 1), transform 0.42s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease !important;
+  transition: opacity 0.24s cubic-bezier(0.4, 0, 0.2, 1), transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), filter 0.2s ease !important;
   will-change: opacity, transform;
 }
 

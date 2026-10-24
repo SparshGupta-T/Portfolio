@@ -253,21 +253,21 @@
 
           <div class="screen-selector-bar" style="margin-top: 16px;" id="recyclenetSelector">
             <button class="screen-dot-btn active" data-src="./RecycleNET/main hero recycle net.png"
-              data-caption="RecycleNet - Intelligent Waste Classifier Mobile Interface" title="Mobile App Hero"></button>
+              data-caption="RecycleNet - Intelligent Waste Classifier Mobile Interface" title="Mobile Interface & Live Scanner"></button>
             <button class="screen-dot-btn" data-src="./RecycleNET/Group 9.png"
-              data-caption="RecycleNet - Real-Time Desktop Inference & Live Webcam Stream" title="Desktop Inference"></button>
+              data-caption="RecycleNet - Real-Time Desktop Inference & Live Webcam Stream (PET Bottle Detection)" title="Desktop Live Inference Dashboard"></button>
             <button class="screen-dot-btn" data-src="./RecycleNET/image 29.png"
-              data-caption="RecycleNet - Native Android Material 3 Mobile Home Interface" title="Mobile App Home"></button>
+              data-caption="RecycleNet - Native Android Material 3 Mobile Home Interface" title="Mobile Client Home Screen"></button>
             <button class="screen-dot-btn" data-src="./RecycleNET/image 31.png"
-              data-caption="RecycleNet - Real-Time Mobile CameraX Live Scanner (PVC Detection)" title="Live Scanner"></button>
+              data-caption="RecycleNet - Real-Time Mobile CameraX Live Scanner (PVC Detection with 63% Confidence)" title="Mobile Live CameraX Scanner (PVC)"></button>
             <button class="screen-dot-btn" data-src="./RecycleNET/image 32.png"
-              data-caption="RecycleNet - Offline PyTorch Lite Static Image Analysis (PET Detection)" title="Image Analysis"></button>
+              data-caption="RecycleNet - Offline PyTorch Lite Static Image Inspection (PET Bottle Detection with 88% Confidence)" title="Offline Image Analysis (PET 88%)"></button>
             <button class="screen-dot-btn" data-src="./RecycleNET/download 8.png"
-              data-caption="RecycleNet - Architecture Performance Benchmark Metrics Table" title="Metrics Table"></button>
+              data-caption="RecycleNet - Comprehensive Benchmark Metrics Table across YOLO26n, YOLOv8s, YOLO26m, and RF-DETR" title="Model Benchmark Metrics Table"></button>
             <button class="screen-dot-btn" data-src="./RecycleNET/image 36.png"
-              data-caption="RecycleNet - Accuracy vs Inference Time Trade-Off Curve" title="Accuracy vs Latency"></button>
+              data-caption="RecycleNet - Accuracy (mAP@50) vs Inference Latency (ms) Trade-off Curve" title="Accuracy vs. Inference Latency"></button>
             <button class="screen-dot-btn" data-src="./RecycleNET/YOLO26N.png"
-              data-caption="RecycleNet - Normalized Confusion Matrix for YOLO26n" title="Confusion Matrix"></button>
+              data-caption="RecycleNet - Normalized Confusion Matrix for Edge-Optimized YOLO26n" title="YOLO26n Normalized Confusion Matrix"></button>
           </div>
         </div>
       </div>
@@ -396,9 +396,9 @@
             Plastic waste is piling up faster than recovery facilities can sort it, and sorting is the real bottleneck. The usual methods force a bad trade-off:
           </p>
           <ul class="study-checklist">
-            <li><strong>Manual sorting:</strong> inconsistent, error-prone, and exposes workers to chemical runoff and contaminants on the conveyor line.</li>
-            <li><strong>Near-infrared spectrometry:</strong> accurate, but each sensor costs tens of thousands of dollars, which limits it to large centralized plants.</li>
-            <li><strong>What RecycleNet does instead:</strong> uses a regular camera and an edge neural network to classify polymers and draw bounding boxes directly at the sorting line — no specialized sensor required.</li>
+            <li><strong>Manual Sorting:</strong> Inconsistent, error-prone, and exposes workers to chemical runoff and contaminants on the conveyor line.</li>
+            <li><strong>Near-Infrared Spectrometry:</strong> Accurate, but each sensor costs tens of thousands of dollars, which limits it to large centralized plants.</li>
+            <li><strong>What RecycleNet Does Instead:</strong> Uses a regular camera and an edge neural network to classify polymers and draw bounding boxes directly at the sorting line — no specialized sensor required.</li>
           </ul>
         </div>
 
@@ -416,10 +416,10 @@
             To weigh speed against accuracy, I benchmarked four vision architectures on parallel Nvidia T4 GPUs:
           </p>
           <ul class="study-checklist checklist-data">
-            <li><strong>YOLO26n, the lightweight option:</strong> 2.38M parameters, 2.0 ms inference, 58.6% mAP@50 — fast enough for conveyor belts and mobile devices.</li>
-            <li><strong>RF-DETR, the most accurate:</strong> 0.740 precision, 0.591 recall, 62.0% mAP@50, at 14.8 ms per frame.</li>
-            <li><strong>Compared to the baseline:</strong> against previously published YOLOv8 results, precision went from 57.4% to 72.3%, recall from 45.5% to 54.2%, and mAP@50 from 46.5% to 58.6%.</li>
-            <li><strong>By class:</strong> the confusion matrix showed strong separation for PET (81%) and LDPE (75%), and YOLO26n had fewer false positives on the background than the larger models.</li>
+            <li><strong>YOLO26n, the Lightweight Option:</strong> 2.38M parameters, 2.0 ms inference, and 58.6% mAP@50 — fast enough for conveyor belts and mobile devices.</li>
+            <li><strong>RF-DETR, the Most Accurate:</strong> 0.740 precision, 0.591 recall, and 62.0% mAP@50, at 14.8 ms per frame.</li>
+            <li><strong>Compared to the Baseline:</strong> Against previously published YOLOv8 results, precision went from 57.4% to 72.3%, recall from 45.5% to 54.2%, and mAP@50 from 46.5% to 58.6%.</li>
+            <li><strong>By Class:</strong> The confusion matrix showed strong separation for PET (81%) and LDPE (75%), and YOLO26n had fewer false positives on the background than the larger models.</li>
           </ul>
         </div>
 
@@ -438,9 +438,9 @@
             To get this out of a notebook and into something usable on a real sorting line, I built two deployment paths:
           </p>
           <ul class="study-checklist">
-            <li><strong>Desktop, with OpenCV and Flask:</strong> captures frames with <code style="font-family: var(--font-family-mono); font-size: 0.85em; background: var(--bg-subtle); padding: 2px 6px; border-radius: 4px;">cv2.VideoCapture</code>, runs inference on Apple Silicon MPS or Nvidia CUDA, and streams the live result to an HTML5 dashboard.</li>
-            <li><strong>Native Android app, in Kotlin:</strong> built with Jetpack Compose and Material 3. Uses CameraX for continuous frame analysis and runs quantized PyTorch Lite (<code style="font-family: var(--font-family-mono); font-size: 0.85em; background: var(--bg-subtle); padding: 2px 6px; border-radius: 4px;">.ptl</code>) models fully on-device, no cloud needed.</li>
-            <li><strong>Two modes on the app:</strong> Live Scan, which runs the camera feed in real time with confidence thresholding and NMS bounding boxes, and Gallery Mode, for analyzing a single static image.</li>
+            <li><strong>Desktop, with OpenCV and Flask:</strong> Captures frames with <code style="font-family: var(--font-family-mono); font-size: 0.85em; background: var(--bg-subtle); padding: 2px 6px; border-radius: 4px;">cv2.VideoCapture</code>, runs inference on Apple Silicon MPS or Nvidia CUDA, and streams the live result to an HTML5 dashboard.</li>
+            <li><strong>Native Android App, in Kotlin:</strong> Built with Jetpack Compose and Material 3. Uses CameraX for continuous frame analysis and runs quantized PyTorch Lite (<code style="font-family: var(--font-family-mono); font-size: 0.85em; background: var(--bg-subtle); padding: 2px 6px; border-radius: 4px;">.ptl</code>) models fully on-device — no cloud needed.</li>
+            <li><strong>Two Modes on the App:</strong> Live Scan, which runs the camera feed in real time with confidence thresholding and NMS bounding boxes, and Gallery Mode, for analyzing a single static image.</li>
           </ul>
         </div>
 
@@ -591,7 +591,7 @@
           <div class="study-gallery-img-wrap">
             <img loading="lazy" decoding="async" src="./RecycleNET/image 35.png" alt="Mobile Architecture Flowchart" class="study-gallery-img">
           </div>
-          <span class="study-gallery-caption">Mobile Edge Execution Flowchart</span>
+          <span class="study-gallery-caption">Mobile Edge Flowchart</span>
         </div>
       </div>
     </section>

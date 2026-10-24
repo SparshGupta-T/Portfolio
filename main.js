@@ -37,18 +37,18 @@ const caseStudiesData = {
     impact: "RecycleNet proves that industrial plastic resin classification can run offline on regular edge hardware and phones at 2.0 ms latency, enabling low-cost, decentralized automated waste sorting.",
     gallery: [
       { src: "./RecycleNET/main hero recycle net.png", caption: "RecycleNet - Intelligent Waste Classifier Mobile Interface" },
-      { src: "./RecycleNET/Group 9.png", caption: "RecycleNet - Real-time Vision Desktop Inference Dashboard" },
+      { src: "./RecycleNET/Group 9.png", caption: "RecycleNet - Real-Time Desktop Inference & Live Webcam Stream (PET Bottle Detection)" },
       { src: "./RecycleNET/image 29.png", caption: "RecycleNet - Native Android Material 3 Mobile Home Interface" },
-      { src: "./RecycleNET/image 31.png", caption: "RecycleNet - Real-Time Mobile CameraX Live Scanner (PVC Detection)" },
-      { src: "./RecycleNET/image 32.png", caption: "RecycleNet - Offline PyTorch Lite Static Image Analysis (PET Detection)" },
-      { src: "./RecycleNET/download 8.png", caption: "RecycleNet - Comprehensive Model Architecture Benchmark Metrics" },
-      { src: "./RecycleNET/download 9.png", caption: "RecycleNet - Precision vs Recall Comparison across Evaluated Models" },
-      { src: "./RecycleNET/download 10.png", caption: "RecycleNet - Performance Improvement from Previous Work to Current Work" },
-      { src: "./RecycleNET/image 36.png", caption: "RecycleNet - Accuracy vs Inference Time Trade-Off" },
-      { src: "./RecycleNET/dropped-image 1.png", caption: "RecycleNet - Accuracy vs Model Parameters Trade-Off" },
-      { src: "./RecycleNET/YOLO26N.png", caption: "RecycleNet - Normalized Confusion Matrix for YOLO26n" },
-      { src: "./RecycleNET/image 34.png", caption: "RecycleNet - Desktop OpenCV & Flask Inference Architecture Flowchart" },
-      { src: "./RecycleNET/image 35.png", caption: "RecycleNet - Android CameraX & PyTorch Lite Mobile Architecture Flowchart" }
+      { src: "./RecycleNET/image 31.png", caption: "RecycleNet - Real-Time Mobile CameraX Live Scanner (PVC Detection with 63% Confidence)" },
+      { src: "./RecycleNET/image 32.png", caption: "RecycleNet - Offline PyTorch Lite Static Image Inspection (PET Bottle Detection with 88% Confidence)" },
+      { src: "./RecycleNET/download 8.png", caption: "RecycleNet - Comprehensive Benchmark Metrics Table across YOLO26n, YOLOv8s, YOLO26m, and RF-DETR" },
+      { src: "./RecycleNET/download 9.png", caption: "RecycleNet - Precision vs. Recall Comparison Across Evaluated Model Architectures" },
+      { src: "./RecycleNET/download 10.png", caption: "RecycleNet - Quantitative Progress Comparison from Previous YOLOv8 to Current YOLO26n Architecture" },
+      { src: "./RecycleNET/image 36.png", caption: "RecycleNet - Accuracy (mAP@50) vs Inference Latency (ms) Trade-off Curve" },
+      { src: "./RecycleNET/dropped-image 1.png", caption: "RecycleNet - Accuracy (mAP@50) vs Model Parameter Footprint (Millions of Weights)" },
+      { src: "./RecycleNET/YOLO26N.png", caption: "RecycleNet - Normalized Confusion Matrix for Edge-Optimized YOLO26n" },
+      { src: "./RecycleNET/image 34.png", caption: "RecycleNet - Unified Desktop Architecture Flowchart (Data Preparation, Flask Microserver & OpenCV Loop)" },
+      { src: "./RecycleNET/image 35.png", caption: "RecycleNet - Mobile Edge Deployment Flowchart (Kotlin, Jetpack Compose, CameraX & PyTorch Lite)" }
     ]
   },
 

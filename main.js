@@ -1278,6 +1278,9 @@ function initMobileNav() {
     backdrop.addEventListener('click', () => {
       closeMenu();
     });
+    backdrop.addEventListener('touchmove', (e) => {
+      e.preventDefault();
+    }, { passive: false });
   }
 
   // Handle mobile navigation link clicks
@@ -1590,7 +1593,10 @@ function initCardInversions() {
   // Revert inverted card if anywhere else on the document is clicked or tapped
   function handleOutsideInteraction(e) {
     if (e.target.closest('.pillar-deep-card, .about-card-lab')) return;
-    cards.forEach(c => c.classList.remove('is-inverted'));
+    const hasInverted = cards.some(c => c.classList.contains('is-inverted'));
+    if (hasInverted) {
+      cards.forEach(c => c.classList.remove('is-inverted'));
+    }
   }
 
   document.addEventListener('click', handleOutsideInteraction);
@@ -1630,8 +1636,8 @@ function initSpeculativePrefetch() {
     prefetchUrl(href);
   }
 
+  // Hover prefetching on desktop without hijacking touch events on mobile
   document.addEventListener('mouseover', handleInteraction, { passive: true });
-  document.addEventListener('touchstart', handleInteraction, { passive: true });
 }
 
 // External Link Security & Rel Attributes

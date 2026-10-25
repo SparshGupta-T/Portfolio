@@ -214,7 +214,9 @@ input::-moz-focus-inner {
   .study-gallery-card:hover,
   .experience-card-lab:hover,
   .sample-thumb-item:hover,
-  .extra-bento-card:hover {
+  .extra-bento-card:hover,
+  .archive-card:hover,
+  .archive-card:active {
     transform: none !important;
   }
 }
@@ -4919,33 +4921,73 @@ textarea.form-input-control {
   overflow: hidden;
 }
 
-/* Color Inversion on Hover: Black box with white text */
-.archive-card:hover {
+/* Color Inversion on Hover & Touch / Tap: Dark box with crisp white text */
+.archive-card:hover,
+.archive-card:active,
+.archive-card:focus,
+.archive-card:focus-within {
   background: #0F172A;
   border-color: #0F172A;
   transform: translateY(-5px) scale(1.01);
   box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.45);
 }
 
-.archive-card:hover .archive-card-title {
+.archive-card:focus {
+  outline: none;
+}
+
+.archive-card:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+.archive-card:hover .archive-card-title,
+.archive-card:active .archive-card-title,
+.archive-card:focus .archive-card-title,
+.archive-card:focus-within .archive-card-title {
   color: #FFFFFF;
 }
 
-.archive-card:hover .archive-card-title svg {
+.archive-card:hover .archive-card-title svg,
+.archive-card:active .archive-card-title svg,
+.archive-card:focus .archive-card-title svg,
+.archive-card:focus-within .archive-card-title svg {
   color: #A5B4FC !important;
 }
 
-.archive-card:hover .archive-card-desc {
+.archive-card:hover .archive-card-desc,
+.archive-card:active .archive-card-desc,
+.archive-card:focus .archive-card-desc,
+.archive-card:focus-within .archive-card-desc {
   color: #CBD5E1;
 }
 
-.archive-card:hover .archive-pill {
+/* Fix: Bolded section turns crisp pure white with clear font weight for readability on dark inversion */
+.archive-card:hover .archive-card-desc strong,
+.archive-card:hover .archive-card-desc b,
+.archive-card:active .archive-card-desc strong,
+.archive-card:active .archive-card-desc b,
+.archive-card:focus .archive-card-desc strong,
+.archive-card:focus .archive-card-desc b,
+.archive-card:focus-within .archive-card-desc strong,
+.archive-card:focus-within .archive-card-desc b {
+  color: #FFFFFF !important;
+  font-weight: 600;
+}
+
+.archive-card:hover .archive-pill,
+.archive-card:active .archive-pill,
+.archive-card:focus .archive-pill,
+.archive-card:focus-within .archive-pill {
   background: rgba(255, 255, 255, 0.14);
   color: #F8FAFC;
   border-color: rgba(255, 255, 255, 0.22);
 }
 
-.archive-card:hover .archive-subtag {
+.archive-card:hover .archive-subtag,
+.archive-card:active .archive-subtag,
+.archive-card:focus .archive-subtag,
+.archive-card:focus-within .archive-subtag {
   background: rgba(255, 255, 255, 0.1);
   color: #E2E8F0;
   border-color: rgba(255, 255, 255, 0.15);
@@ -4967,6 +5009,11 @@ textarea.form-input-control {
   display: flex;
   align-items: center;
   gap: 8px;
+  transition: color 0.28s ease;
+}
+
+.archive-card-title svg {
+  transition: color 0.28s ease;
 }
 
 .archive-pill {
@@ -4977,6 +5024,7 @@ textarea.form-input-control {
   border-radius: var(--radius-pill);
   font-size: 0.72rem;
   font-weight: 600;
+  transition: all 0.28s ease;
 }
 
 .archive-pill-nda {
@@ -5007,6 +5055,14 @@ textarea.form-input-control {
   font-size: 0.9rem;
   line-height: 1.62;
   color: var(--text-secondary);
+  transition: color 0.28s ease;
+}
+
+.archive-card-desc strong,
+.archive-card-desc b {
+  color: var(--text-primary);
+  font-weight: 600;
+  transition: color 0.28s ease;
 }
 
 .archive-card-tags {

@@ -25,6 +25,9 @@ function copyStaticAssetsPlugin() {
       const filesToCopy = [
         'Sparsh_Resume.pdf',
         'favicon.ico',
+        'favicon.svg',
+        'favicon-32x32.png',
+        'apple-touch-icon.png',
         '_headers',
         '_redirects',
         'robots.txt',

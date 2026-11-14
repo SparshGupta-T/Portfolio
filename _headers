@@ -11,36 +11,52 @@
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
-# Static image & project asset folders (Cached for 30 days with stale-while-revalidate)
+# Static image & media formats (1-year immutable cache)
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.jpeg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.ico
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.woff
+  Cache-Control: public, max-age=31536000, immutable
+
+# Static project folders
 /RecycleNET/*
-  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+  Cache-Control: public, max-age=31536000, immutable
 
 /SupportFit/*
-  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+  Cache-Control: public, max-age=31536000, immutable
 
 /TravelHoster/*
-  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+  Cache-Control: public, max-age=31536000, immutable
 
 /MyCouncilor/*
-  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+  Cache-Control: public, max-age=31536000, immutable
 
 /CheckIn/*
-  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+  Cache-Control: public, max-age=31536000, immutable
 
 /LOGOS/*
-  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
-
-/Johnson*/*
-  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
-
-/Scalenow*/*
-  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
-
-/Skills*/*
-  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+  Cache-Control: public, max-age=31536000, immutable
 
 /SupportRoom/*
-  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+  Cache-Control: public, max-age=31536000, immutable
 
 # PDFs (Resume)
 /*.pdf
@@ -52,7 +68,3 @@
 
 /
   Cache-Control: public, max-age=0, must-revalidate
-
-/favicon.ico
-  Cache-Control: no-cache, no-store, must-revalidate
-

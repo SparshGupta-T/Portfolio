@@ -1,11 +1,4 @@
-/**
- * SPARSH GUPTA - PORTFOLIO INTERACTION LOGIC
- * Google Labs Inspired: Soft • Bouncy • Subtle • Calm
- */
-
-// ==========================================
-// 1. Comprehensive Case Studies Data Store
-// ==========================================
+// Case study galleries used by the lightbox
 const caseStudiesData = {
   recyclenet: {
     title: "RecycleNet",
@@ -215,9 +208,7 @@ const caseStudiesData = {
   }
 };
 
-// ==========================================
-// Smooth Image Crossfade Helper (Google Labs Calm Transition with Race-Condition Prevention)
-// ==========================================
+// Image crossfade helper
 function smoothSwapImage(imgEl, newSrc, newAlt = '', onLoaded = null) {
   if (!imgEl || !newSrc) return;
   const currentSrc = imgEl.getAttribute('src');
@@ -227,19 +218,16 @@ function smoothSwapImage(imgEl, newSrc, newAlt = '', onLoaded = null) {
     return;
   }
 
-  // Sequence token guarantees only the latest requested swap executes
+  // Cancel any in-flight swaps if a newer one was requested
   const token = (imgEl._swapToken = (imgEl._swapToken || 0) + 1);
 
-  // Pre-load incoming image so browser caches it early
   const preloader = new Image();
   preloader.src = newSrc;
 
-  // Gentle quick fade out
   imgEl.style.opacity = '0';
   imgEl.style.transform = 'scale(0.98)';
 
   setTimeout(() => {
-    // If a newer swap occurred while waiting for fade out, cancel this stale one
     if (imgEl._swapToken !== token) return;
 
     imgEl.src = newSrc;
@@ -260,7 +248,6 @@ function smoothSwapImage(imgEl, newSrc, newAlt = '', onLoaded = null) {
     } else {
       imgEl.onload = reveal;
       preloader.onload = reveal;
-      // Fast fallback so image never hangs blank
       setTimeout(() => {
         if (imgEl._swapToken === token && imgEl.style.opacity !== '1') {
           reveal();
@@ -270,9 +257,7 @@ function smoothSwapImage(imgEl, newSrc, newAlt = '', onLoaded = null) {
   }, 110);
 }
 
-// ==========================================
-// Global Carousel Controllers Registry (Pause on background tab)
-// ==========================================
+// Pause carousels when tab is not active
 const activeCarouselControllers = [];
 document.addEventListener('visibilitychange', () => {
   if (document.hidden) {
@@ -282,9 +267,7 @@ document.addEventListener('visibilitychange', () => {
   }
 });
 
-// ==========================================
-// 2. Interactive In-Card Carousel with Auto-Scroll & Arrow Controls
-// ==========================================
+// Project card carousels
 function initProjectCarousels() {
   const previewBoxes = document.querySelectorAll('.project-preview-box');
 
@@ -422,9 +405,7 @@ function initProjectCarousels() {
   });
 }
 
-// ==========================================
-// 3. Hero Interactive Showcase Switcher
-// ==========================================
+// Hero showcase switcher
 function initHeroInteractiveStage() {
   const tabBtns = Array.from(document.querySelectorAll('.showcase-tab-btn'));
   const heroImg = document.getElementById('heroInteractiveImg');
@@ -472,7 +453,7 @@ function initHeroInteractiveStage() {
       }
     });
 
-    // Smoothly scroll ONLY the horizontal switcher pill container (NEVER the page/window)
+    // Keep active pill visible in horizontal scroll
     if (pill && activeBtn && pill.scrollWidth > pill.clientWidth) {
       const targetLeft = Math.max(0, activeBtn.offsetLeft - (pill.clientWidth / 2) + (activeBtn.clientWidth / 2));
       pill.scrollTo({ left: targetLeft, behavior: 'smooth' });
@@ -565,7 +546,7 @@ function initHeroInteractiveStage() {
       startAutoAdvance();
     }, { passive: true });
 
-    // Gentle Parallax Motion on Phone Shell (Desktop Mouse only, never on touchscreens)
+    // Subtle tilt on hover (desktop only)
     const phoneShell = card.querySelector('.hero-phone-shell');
     if (phoneShell && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
       let bounds = null;
@@ -620,9 +601,7 @@ function initHeroInteractiveStage() {
   }
 }
 
-// ==========================================
-// Subtle Calm Mouse Focus Spotlight Effect
-// ==========================================
+// Spotlight effect on hover
 function initCalmMouseFocus() {
   if (window.matchMedia('(pointer: coarse)').matches) return;
   const hoverElements = document.querySelectorAll('.project-lab-card, .experience-card-lab, .extra-bento-card, .mindmap-node-card, .testimonial-card-lab');
@@ -656,9 +635,7 @@ function initCalmMouseFocus() {
   });
 }
 
-// ==========================================
-// 4. Project Filter Tabs
-// ==========================================
+// Project category filter tabs
 function initProjectFilters() {
   const filterBtns = document.querySelectorAll('.filter-chip-btn');
   const projectCards = document.querySelectorAll('.project-lab-card');
@@ -693,9 +670,7 @@ function initProjectFilters() {
 }
 
 
-// ==========================================
-// 6. Lightbox Viewer for Images & Schematics with Next/Prev Navigation
-// ==========================================
+// Image lightbox modal
 let openLightbox = function() {};
 function initLightbox() {
   const overlay = document.getElementById('lightboxModalOverlay');
@@ -718,12 +693,12 @@ function initLightbox() {
     const targetSrc = item.src;
     const token = ++activeLightboxToken;
 
-    // 1. Immediately and synchronously lock caption text so it NEVER lags or displays stale names
+    // Set caption
     if (captionEl) {
       captionEl.textContent = targetCaption;
     }
 
-    // 2. Pre-cache adjacent images so next/prev switches happen instantly
+    // Preload adjacent images for smooth navigation
     if (currentGallery.length > 1) {
       const nextIdx = (currentIndex + 1) % currentGallery.length;
       const prevIdx = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
@@ -737,7 +712,7 @@ function initLightbox() {
       }
     }
 
-    // 3. Swap image with strict token verification
+    // Swap image
     if (animate) {
       smoothSwapImage(fullImg, targetSrc, targetCaption, () => {
         if (token === activeLightboxToken && captionEl) {
@@ -897,9 +872,7 @@ function initLightbox() {
   });
 }
 
-// ==========================================
-// 7. Email One-Click Copy
-// ==========================================
+// Copy email to clipboard
 function initCopyEmail() {
   const btn = document.getElementById('copyEmailBtn');
   const email = 'work.sparshgupta@gmail.com';
@@ -929,9 +902,7 @@ function initCopyEmail() {
   });
 }
 
-// ==========================================
-// 8. Contact Form Handling (FormSubmit.co + Anti-Spam Honeypot)
-// ==========================================
+// Contact form handling
 window.handleFormSubmit = async function(e) {
   if (e && e.preventDefault) e.preventDefault();
 
@@ -947,7 +918,7 @@ window.handleFormSubmit = async function(e) {
   const email = emailInput?.value?.trim() || '';
   const message = messageInput?.value?.trim() || '';
 
-  // 1. Anti-Spam Honeypot Check: Bots fill hidden fields; humans cannot see it.
+  // Honeypot check for bots
   if (honeyInput && honeyInput.value) {
     if (feedback) {
       feedback.style.display = 'block';
@@ -960,7 +931,7 @@ window.handleFormSubmit = async function(e) {
     return;
   }
 
-  // 2. Input validation
+  // Basic validation
   if (!name || name.length < 2) {
     if (feedback) {
       feedback.style.display = 'block';
@@ -1040,7 +1011,7 @@ window.handleFormSubmit = async function(e) {
     }
   } catch (err) {
     clearTimeout(timeoutId);
-    // Graceful fallback to direct mailto if network fails
+    // Fallback to mailto link if request fails
     if (feedback) {
       feedback.style.display = 'block';
       feedback.textContent = `Opening email client... You can also email Sparsh directly at work.sparshgupta@gmail.com.`;
@@ -1058,9 +1029,7 @@ window.handleFormSubmit = async function(e) {
   }
 };
 
-// ==========================================
-// 9. Navigation Active State on Scroll
-// ==========================================
+// Update active navigation link on scroll
 function initScrollSpy() {
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-item-link, .mobile-nav-link');
@@ -1080,7 +1049,6 @@ function initScrollSpy() {
   }
 
   if ('IntersectionObserver' in window) {
-    // High-performance compositor-driven observation with 0 scroll listeners or reflows
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -1118,9 +1086,7 @@ function initScrollSpy() {
   }
 }
 
-// ==========================================
-// 9b. Mobile Navigation Drawer Toggle & Interactions (Instant Touch Response)
-// ==========================================
+// Mobile navigation drawer
 function initMobileNav() {
   const toggleBtn = document.getElementById('mobileMenuBtn');
   const drawer = document.getElementById('mobileNavDrawer');
@@ -1238,9 +1204,7 @@ function initMobileNav() {
   }, { passive: true });
 }
 
-// ==========================================
-// 10. Standalone Case Study Screen Stage (Auto-advance & arrows)
-// ==========================================
+// Case study hero screen carousel
 function initCaseStudyStage() {
   const stage = document.querySelector('.study-hero-screen-stage');
   const mainImg = document.getElementById('studyMainImg');
@@ -1325,7 +1289,7 @@ function initCaseStudyStage() {
   container.addEventListener('mouseenter', stopAuto);
   container.addEventListener('mouseleave', startAuto);
 
-  // Touch swipe support for mobile case study screen stage
+  // Mobile swipe support
   let stageTouchStartX = 0;
   let stageTouchStartY = 0;
   stage.addEventListener('touchstart', (e) => {
@@ -1367,9 +1331,7 @@ function initCaseStudyStage() {
   activeCarouselControllers.push({ start: startAuto, stop: stopAuto });
 }
 
-// ==========================================
-// 11. Google Labs Fluid Interactive Blob Cursor
-// ==========================================
+// Custom trailing cursor
 function initCustomCursor() {
   if (window.matchMedia('(pointer: coarse)').matches) return;
 
@@ -1391,15 +1353,12 @@ function initCustomCursor() {
   let hasMoved = false;
   let isLoopRunning = false;
 
-  // Snappy fluid blob trailing animation loop with zero sluggish drag on Safari
   function renderCursor() {
-    // 1:1 dot follow in the exact same render frame for 100% VSync lockstep
     dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
 
     const dx = mouseX - blobX;
     const dy = mouseY - blobY;
 
-    // Agile follow rate (0.42) - responsive and tight on Safari & 120Hz ProMotion displays
     blobX += dx * 0.42;
     blobY += dy * 0.42;
     blob.style.transform = `translate3d(${blobX.toFixed(1)}px, ${blobY.toFixed(1)}px, 0)`;
@@ -1437,7 +1396,6 @@ function initCustomCursor() {
     startCursorLoop();
   }, { passive: true });
 
-  // Focus morphing on interactive elements
   const interactiveSelector = 'a, button, [role="button"], input, textarea, select, .nav-pill-bar, .screen-dot-btn, .project-card-arrow, .filter-chip-btn, .open-lightbox, .mindmap-node-card, .pillar-deep-card, .meta-item-box, .sample-thumb-item, .hero-stage-arrow, .showcase-tab-btn, .lightbox-nav-arrow';
 
   document.addEventListener('mouseover', (e) => {
@@ -1449,7 +1407,6 @@ function initCustomCursor() {
   });
 
   document.addEventListener('mouseout', (e) => {
-    // If moving to another element that is also within an interactive container (e.g. inner span or adjacent nav link), keep hover state stable
     if (e.relatedTarget && e.relatedTarget.closest && e.relatedTarget.closest(interactiveSelector)) {
       return;
     }
@@ -1482,28 +1439,21 @@ function initCustomCursor() {
   });
 }
 
-// ==========================================
-// 9c. Card Color Inversions on Tap / Click (Pillars & About Card)
-// Enforces single-active-card behavior: only one card can invert at a time,
-// and tapping anywhere outside immediately reverts all cards back to normal.
-// ==========================================
+// Card color inversion toggle
 function initCardInversions() {
   const cards = Array.from(document.querySelectorAll('.pillar-deep-card, .about-card-lab'));
   if (!cards.length) return;
 
   cards.forEach(card => {
     card.addEventListener('click', (e) => {
-      // Don't toggle if user clicked an interactive anchor, button or input inside
       if (e.target.closest('a, button, input, textarea, select')) return;
 
       const wasInverted = card.classList.contains('is-inverted');
 
-      // Revert all other cards so multiple cards can NEVER stay inverted at the same time
       cards.forEach(c => {
         if (c !== card) c.classList.remove('is-inverted');
       });
 
-      // Toggle this card: if it was already inverted, revert it; otherwise invert it
       if (wasInverted) {
         card.classList.remove('is-inverted');
       } else {
@@ -1512,7 +1462,6 @@ function initCardInversions() {
     });
   });
 
-  // Revert inverted card if anywhere else on the document is clicked or tapped
   function handleOutsideInteraction(e) {
     if (e.target.closest('.pillar-deep-card, .about-card-lab')) return;
     const hasInverted = cards.some(c => c.classList.contains('is-inverted'));
@@ -1525,11 +1474,7 @@ function initCardInversions() {
   document.addEventListener('touchstart', handleOutsideInteraction, { passive: true });
 }
 
-// ==========================================
-// 12. Pro-Dev Performance & Polish Details
-// ==========================================
-
-// Speculative Instant-Navigation Prefetcher (Zero Perceived Latency on Desktop)
+// Prefetch internal pages on hover
 function initSpeculativePrefetch() {
   if (window.matchMedia('(pointer: coarse)').matches) return;
   if (navigator.connection && (navigator.connection.saveData || /(2g)/.test(navigator.connection.effectiveType))) {
@@ -1563,11 +1508,10 @@ function initSpeculativePrefetch() {
     prefetchUrl(href);
   }
 
-  // Hover prefetching on desktop without hijacking touch events on mobile
   document.addEventListener('mouseover', handleInteraction, { passive: true });
 }
 
-// External Link Security & Rel Attributes
+// External link security attributes
 function initExternalLinkSecurity() {
   document.querySelectorAll('a[target="_blank"]').forEach((a) => {
     const rel = a.getAttribute('rel') || '';
@@ -1577,9 +1521,7 @@ function initExternalLinkSecurity() {
   });
 }
 
-// ==========================================
-// 13. Initialization on DOM Loaded / Ready
-// ==========================================
+// App initialization
 function initApp() {
   initHeroInteractiveStage();
   initProjectCarousels();

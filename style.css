@@ -1,10 +1,4 @@
-/* ==========================================================================
-   SPARSH GUPTA - PORTFOLIO DESIGN SYSTEM
-   Inspired by Google Labs (labs.google)
-   Vibe: Soft • Bouncy • Subtle • Calm
-   ========================================================================== */
-/* Fonts loaded via preconnected <link> tags in HTML <head> for optimal FCP */
-/* --- Root Design Tokens (Google Labs Inspired Calm Palette) --- */
+/* Design Tokens */
 :root {
   /* Canvas & Surfaces */
   --bg-canvas: #FBFBFA;
@@ -24,14 +18,14 @@
   --border-card-hover: rgba(0, 0, 0, 0.12);
   --border-subtle: rgba(0, 0, 0, 0.04);
 
-  /* Primary Brand Accent (Google Labs Calming Periwinkle / Indigo) */
+  /* Primary Accent */
   --accent-primary: #5046E5;
   --accent-primary-hover: #4338CA;
   --accent-primary-light: #EEF2FF;
   --accent-primary-border: #C7D2FE;
   --accent-primary-text: #3730A3;
 
-  /* Pastel Color Accents (Google Labs Soft Tones) */
+  /* Pastel Tag Accents */
   --pastel-sage-bg: #F0FDF4;
   --pastel-sage-border: #BBF7D0;
   --pastel-sage-text: #166534;
@@ -56,13 +50,13 @@
   --pastel-lavender-border: #E9D5FF;
   --pastel-lavender-text: #6B21A8;
 
-  /* Shadows (Pillowy, Diffuse & Soft) */
+  /* Shadows */
   --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.03), 0 4px 12px rgba(0, 0, 0, 0.02);
   --shadow-card: 0 4px 20px -2px rgba(18, 24, 38, 0.04), 0 1px 4px rgba(18, 24, 38, 0.02);
   --shadow-card-hover: 0 20px 40px -8px rgba(18, 24, 38, 0.08), 0 6px 18px rgba(18, 24, 38, 0.04);
   --shadow-float: 0 24px 60px -12px rgba(18, 24, 38, 0.12), 0 8px 24px rgba(18, 24, 38, 0.06);
 
-  /* Radii (Squircle, Google Labs Soft Corners) */
+  /* Border Radii */
   --radius-sm: 10px;
   --radius-md: 16px;
   --radius-lg: 24px;
@@ -184,9 +178,7 @@ input::-moz-focus-inner {
   height: 0 !important;
 }
 
-/* ==========================================================================
-   CUSTOM INTERACTIVE BLOB CURSOR (Google Labs Subtle & Fluid)
-   ========================================================================== */
+/* Custom Cursor */
 @media (pointer: fine) {
   body.has-custom-cursor,
   body.has-custom-cursor a,
@@ -296,7 +288,7 @@ input::-moz-focus-inner {
   }
 }
 
-/* Subtle, Calm Ambient Aura (Not heavy vignetting) */
+/* Ambient Background Glow */
 .ambient-glow {
   position: fixed;
   top: 0;
@@ -382,10 +374,7 @@ input::-moz-focus-inner {
   padding: 84px 24px 0;
 }
 
-/* ==========================================================================
-   HEADER & NAVIGATION (Google Labs Floating Pill)
-   Website smoothly scrolls underneath this fixed floating header
-   ========================================================================== */
+/* Header & Navigation */
 .header-container {
   position: fixed;
   top: 14px;
@@ -454,7 +443,7 @@ input::-moz-focus-inner {
   display: none;
 }
 
-/* Standalone Back to Work Circular Button on Desktop (Subtle Frosted Glass) */
+/* Back to work button */
 .case-study-header-container {
   display: flex;
   align-items: center;
@@ -568,7 +557,7 @@ input::-moz-focus-inner {
   display: none;
 }
 
-/* Bouncy Buttons */
+/* Pill Buttons */
 .btn-pill {
   display: inline-flex;
   align-items: center;
@@ -624,9 +613,7 @@ input::-moz-focus-inner {
   transform: translateY(-2px) scale(1.02);
 }
 
-/* ==========================================================================
-   HERO SECTION (Balanced, Airy, Soft & Bouncy)
-   ========================================================================== */
+/* Hero Section */
 .hero-section {
   padding: 48px 0 64px;
 }
@@ -656,7 +643,7 @@ input::-moz-focus-inner {
   width: 100%;
 }
 
-/* Soft Status Chip */
+/* Status Badge */
 .status-badge-soft {
   display: inline-flex;
   align-items: center;
@@ -969,7 +956,7 @@ input::-moz-focus-inner {
 .hero-stage-arrow.prev { left: 8px; }
 .hero-stage-arrow.next { right: 8px; }
 
-/* Floating Bouncy Badges */
+/* Floating Badges */
 .floating-pill-badge {
   position: absolute;
   background: rgba(255, 255, 255, 0.95);
@@ -1033,9 +1020,7 @@ input::-moz-focus-inner {
   color: var(--pastel-sage-text);
 }
 
-/* ==========================================================================
-   SECTION COMMON STYLES (Google Labs Minimal Header)
-   ========================================================================== */
+/* Section Header */
 .section-block,
 section[id] {
   padding: 60px 0;
@@ -1091,9 +1076,7 @@ section[id] {
   line-height: 1.6;
 }
 
-/* ==========================================================================
-   CASE STUDIES & PROJECTS (Google Labs Interactive Cards)
-   ========================================================================== */
+/* Case Studies & Projects */
 /* Filter Pills Bar */
 .filter-tabs-container {
   display: flex;
@@ -2242,9 +2225,7 @@ textarea.form-input-control {
   color: var(--text-primary);
 }
 
-/* ==========================================================================
-   MODAL & LIGHTBOX (Google Labs Smooth Spring Modal)
-   ========================================================================== */
+/* Lightbox Modal */
 .lab-modal-overlay {
   position: fixed;
   inset: 0;
@@ -3951,9 +3932,7 @@ textarea.form-input-control {
   }
 }
 
-/* ==========================================================================
-   STANDALONE CASE STUDY PAGES (Google Labs Aesthetic)
-   ========================================================================== */
+/* Case Study Pages */
 .case-study-hero {
   padding: 24px 0 40px;
 }
@@ -4742,9 +4721,7 @@ textarea.form-input-control {
   }
 }
 
-/* ==========================================================================
-   SUBTLE CALM MOUSE FOCUS HIGHLIGHT EFFECT
-   ========================================================================== */
+/* Card Hover Spotlight Effect */
 .project-lab-card,
 .experience-card-lab,
 .extra-bento-card,
@@ -4774,9 +4751,7 @@ textarea.form-input-control {
   opacity: 1;
 }
 
-/* ==========================================================================
-   SMOOTH IMAGE TRANSITIONS (Calm, Fluid Crossfades)
-   ========================================================================== */
+/* Image Transitions */
 .project-preview-img,
 .hero-phone-screen,
 .study-hero-screen-img,
@@ -5028,17 +5003,13 @@ textarea.form-input-control {
   color: #FFFFFF;
 }
 
-/* ==========================================================================
-   PERFORMANCE & RENDERING OPTIMIZATIONS (Smooth 60/120fps Scroll & Low RAM)
-   ========================================================================== */
+/* Rendering optimizations */
 .study-gallery-img-wrap,
 .project-preview-media-stage {
   contain: layout;
 }
 
-/* ==========================================================================
-   KEYBOARD FOCUS-VISIBLE ACCESSIBILITY (Clean Google Labs Focus Ring)
-   ========================================================================== */
+/* Keyboard focus accessibility */
 :focus:not(:focus-visible) {
   outline: none;
 }
@@ -5049,9 +5020,7 @@ textarea.form-input-control {
   border-radius: inherit;
 }
 
-/* ==========================================================================
-   EXECUTIVE PRINT STYLESHEET (Clean resume-grade printing / PDF export)
-   ========================================================================== */
+/* Print styles */
 @media print {
   body {
     background: #FFFFFF !important;

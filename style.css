@@ -119,7 +119,7 @@ strong, b {
 }
 
 h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong,
-.section-title strong, .project-card-title strong {
+.project-card-title strong {
   font-weight: inherit;
   color: inherit;
 }

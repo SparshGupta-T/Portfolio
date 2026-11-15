@@ -94,7 +94,7 @@ html {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  html:not(.mobile-view) {
+  html {
     scroll-behavior: smooth;
   }
 }
@@ -119,7 +119,7 @@ strong, b {
 }
 
 h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong,
-.section-title strong, .hero-title-tag strong, .project-card-title strong {
+.section-title strong, .project-card-title strong {
   font-weight: inherit;
   color: inherit;
 }
@@ -134,7 +134,7 @@ button, input, textarea, select {
   -webkit-tap-highlight-color: transparent;
 }
 
-a, .btn-pill, .mobile-menu-btn, .mobile-dock-btn, .mobile-nav-link {
+a, .btn-pill, .mobile-menu-btn, .mobile-nav-link {
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
 }
@@ -158,21 +158,17 @@ input::-moz-focus-inner {
 
 /* Universal No-Scrollbar Utility (Works across Firefox, Chrome, Safari, Edge) */
 .samples-grid-scroll,
-.case-study-switcher-bar,
 .nav-pill-bar,
 .showcase-switch-pill,
-.study-switch-pills,
-.no-scrollbar {
+.study-switch-pills {
   scrollbar-width: none !important;
   -ms-overflow-style: none !important;
 }
 
 .samples-grid-scroll::-webkit-scrollbar,
-.case-study-switcher-bar::-webkit-scrollbar,
 .nav-pill-bar::-webkit-scrollbar,
 .showcase-switch-pill::-webkit-scrollbar,
-.study-switch-pills::-webkit-scrollbar,
-.no-scrollbar::-webkit-scrollbar {
+.study-switch-pills::-webkit-scrollbar {
   display: none !important;
   width: 0 !important;
   height: 0 !important;
@@ -409,38 +405,6 @@ input::-moz-focus-inner {
   isolation: isolate;
   width: auto;
   max-width: fit-content;
-}
-
-.brand-link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-  color: var(--text-primary);
-  font-weight: 600;
-  font-size: 0.98rem;
-  letter-spacing: -0.01em;
-}
-
-.brand-spark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: #0B0F19;
-  color: #FFFFFF;
-  font-size: 0.9rem;
-  transition: transform var(--transition-bounce);
-}
-
-.brand-link:hover .brand-spark {
-  transform: rotate(90deg) scale(1.15);
-}
-
-.brand-text-short {
-  display: none;
 }
 
 /* Back to work button */
@@ -956,70 +920,6 @@ input::-moz-focus-inner {
 .hero-stage-arrow.prev { left: 8px; }
 .hero-stage-arrow.next { right: 8px; }
 
-/* Floating Badges */
-.floating-pill-badge {
-  position: absolute;
-  background: rgba(255, 255, 255, 0.95);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-  border: 1px solid var(--border-card);
-  padding: 8px 14px;
-  border-radius: var(--radius-pill);
-  box-shadow: 0 10px 25px -4px rgba(0, 0, 0, 0.08);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  animation: floatBounce 6s ease-in-out infinite alternate;
-  pointer-events: auto;
-  cursor: default;
-  transition: transform 0.3s var(--spring-bounce);
-}
-
-.floating-pill-badge:hover {
-  transform: scale(1.08) !important;
-}
-
-.badge-top-left {
-  top: 15px;
-  left: -15px;
-  animation-delay: 0s;
-}
-
-.badge-bottom-right {
-  bottom: 25px;
-  right: -15px;
-  animation-delay: -3s;
-}
-
-@keyframes floatBounce {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
-  100% { transform: translateY(4px); }
-}
-
-.badge-sparkle-dot {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.72rem;
-}
-
-.sparkle-indigo {
-  background: var(--accent-primary-light);
-  color: var(--accent-primary);
-}
-
-.sparkle-emerald {
-  background: var(--pastel-sage-bg);
-  color: var(--pastel-sage-text);
-}
-
 /* Section Header */
 .section-block,
 section[id] {
@@ -1188,12 +1088,6 @@ section[id] {
   background: #ecfeff;
   color: #0e7490;
   border: 1px solid #a5f3fc;
-}
-
-.pill-teal {
-  background: #f0fdfa;
-  color: #0f766e;
-  border: 1px solid #99f6e4;
 }
 
 .pill-orange {
@@ -1452,12 +1346,6 @@ section[id] {
   color: #FFFFFF;
   text-decoration: none !important;
   transform: translateY(-2px) scale(1.02);
-}
-
-.screens-count-indicator {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  font-weight: 500;
 }
 
 /* ==========================================================================
@@ -1853,19 +1741,6 @@ section[id] {
   margin: 0;
 }
 
-.executive-title-chip {
-  display: inline-flex;
-  align-items: center;
-  background: rgba(217, 119, 6, 0.1);
-  color: #B45309;
-  border: 1px solid rgba(217, 119, 6, 0.25);
-  border-radius: var(--radius-pill);
-  padding: 3px 10px;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-}
-
 .recommender-designation {
   font-size: 0.86rem;
   color: var(--text-secondary);
@@ -1932,13 +1807,6 @@ section[id] {
 /* ==========================================================================
    SKILLS & DISCIPLINES MATRIX
    ========================================================================== */
-.skill-pill-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: auto;
-}
-
 .skill-pill-tag {
   background: var(--bg-subtle);
   border: 1px solid var(--border-card);
@@ -2382,7 +2250,6 @@ textarea.form-input-control {
 .stage-nav-arrow,
 .project-card-arrow,
 .screen-dot-btn,
-.hero-screen-tab,
 .modal-close-btn,
 .btn-pill,
 .study-switch-link,
@@ -3133,10 +3000,6 @@ textarea.form-input-control {
     display: none !important;
   }
 
-  .case-study-page .case-study-drawer-list {
-    margin-bottom: 6px;
-  }
-
   .case-study-page {
     padding-bottom: 40px;
   }
@@ -3310,14 +3173,6 @@ textarea.form-input-control {
     text-align: center;
   }
 
-  .hero-desc-lead {
-    font-size: 0.98rem;
-    line-height: 1.62;
-    text-align: center;
-    margin: 0 auto;
-    max-width: 540px;
-  }
-
   .hero-buttons-row {
     flex-direction: column;
     align-items: center;
@@ -3452,11 +3307,6 @@ textarea.form-input-control {
   .hero-stage-arrow.prev { left: 0px; }
   .hero-stage-arrow.next { right: 0px; }
 
-  .floating-pill-badge {
-    position: static;
-    margin-top: 10px;
-  }
-
   /* ========================================================================
      PROJECTS SHOWCASE SECTION
      ======================================================================== */
@@ -3535,16 +3385,6 @@ textarea.form-input-control {
     border-radius: var(--radius-lg);
   }
 
-  .experience-header-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-
-  .role-tenure-badge {
-    align-self: flex-start;
-  }
-
   /* ========================================================================
      TOOLS & MIND MAP SECTION (No Horizontal Overflow)
      ======================================================================== */
@@ -3584,11 +3424,6 @@ textarea.form-input-control {
   /* ========================================================================
      ARCHIVE, CONTACT & FOOTER SECTIONS
      ======================================================================== */
-  .archive-statement-card {
-    padding: 22px 18px;
-    border-radius: var(--radius-lg);
-  }
-
   .archive-grid {
     grid-template-columns: 1fr;
     gap: 14px;
@@ -3647,17 +3482,6 @@ textarea.form-input-control {
     box-sizing: border-box;
     justify-content: center;
     text-align: center;
-  }
-
-  .contact-cta-buttons {
-    flex-direction: column;
-    width: 100%;
-    gap: 10px;
-  }
-
-  .contact-cta-buttons .btn-pill {
-    width: 100% !important;
-    justify-content: center;
   }
 
   .footer-bar {
@@ -3891,14 +3715,12 @@ textarea.form-input-control {
   transform: translateY(0) !important;
 }
 
-.node-tooltip.tooltip-align-left,
 .mindmap-branch-column:first-child .mindmap-cards-cluster .mindmap-node-card:first-child .node-tooltip {
   left: 0 !important;
   right: auto !important;
   transform: translateY(4px) !important;
 }
 
-.mindmap-node-card:hover .node-tooltip.tooltip-align-left,
 .mindmap-branch-column:first-child .mindmap-cards-cluster .mindmap-node-card:first-child:hover .node-tooltip {
   transform: translateY(0) !important;
 }
@@ -4148,19 +3970,6 @@ textarea.form-input-control {
   border-radius: 14px;
   box-shadow: 0 10px 28px -6px rgba(0, 0, 0, 0.12);
   transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-.case-study-hero-showcase {
-  background: #FFFFFF;
-  border: 1px solid var(--border-card);
-  border-radius: var(--radius-xl);
-  padding: 36px;
-  box-shadow: var(--shadow-card);
-  margin-bottom: 48px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
 }
 
 .study-hero-screen-stage {
@@ -4423,15 +4232,6 @@ textarea.form-input-control {
   text-align: center;
 }
 
-.study-impact-card {
-  background: var(--pastel-sage-bg);
-  border: 1px solid var(--pastel-sage-border);
-  border-radius: var(--radius-xl);
-  padding: 34px;
-  box-shadow: var(--shadow-card);
-  margin-bottom: 32px;
-}
-
 .study-impact-text {
   font-size: 1.08rem;
   color: var(--pastel-sage-text);
@@ -4528,9 +4328,6 @@ textarea.form-input-control {
     gap: 14px;
     padding: 20px;
   }
-  .study-deepdive-grid {
-    grid-template-columns: 1fr;
-  }
   .study-narrative-card {
     padding: 32px 24px;
     gap: 30px;
@@ -4538,12 +4335,6 @@ textarea.form-input-control {
 }
 
 @media (max-width: 640px) {
-  .brand-text-full {
-    display: none;
-  }
-  .brand-text-short {
-    display: inline;
-  }
   .site-wrapper {
     padding: 72px 16px 0;
   }
@@ -4762,33 +4553,6 @@ textarea.form-input-control {
 /* ==========================================================================
    BEYOND THE PUBLIC WORK / ARCHIVE & CONFIDENTIAL SECTION
    ========================================================================== */
-.archive-statement-card {
-  background: linear-gradient(135deg, #FFFFFF 0%, #FAFBFC 100%);
-  border: 1px solid var(--border-card);
-  border-radius: var(--radius-xl);
-  padding: 38px 42px;
-  box-shadow: var(--shadow-card);
-  margin-bottom: 24px;
-  position: relative;
-  overflow: hidden;
-}
-
-.archive-statement-text {
-  font-size: 1.04rem;
-  line-height: 1.76;
-  color: var(--text-secondary);
-  margin-bottom: 14px;
-}
-
-.archive-statement-text strong {
-  color: #374151;
-  font-weight: 500;
-}
-
-.archive-statement-text:last-child {
-  margin-bottom: 0;
-}
-
 .archive-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -4915,12 +4679,6 @@ textarea.form-input-control {
   transition: all 0.28s ease;
 }
 
-.archive-pill-nda {
-  background: #FEF3C7;
-  color: #92400E;
-  border: 1px solid #FDE68A;
-}
-
 .archive-pill-research {
   background: var(--pastel-sky-bg);
   color: var(--pastel-sky-text);
@@ -4974,9 +4732,6 @@ textarea.form-input-control {
 @media (max-width: 768px) {
   .archive-grid {
     grid-template-columns: 1fr;
-  }
-  .archive-statement-card {
-    padding: 24px;
   }
 }
 

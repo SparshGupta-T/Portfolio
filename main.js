@@ -692,136 +692,6 @@ function initProjectFilters() {
   });
 }
 
-// ==========================================
-// 5. Full Case Study Deep Dive Modal
-// ==========================================
-function initStudyModal() {
-  const overlay = document.getElementById('studyModalOverlay');
-  const closeBtn = document.getElementById('closeStudyModal');
-  const modalContent = document.getElementById('studyModalContent');
-  const triggers = document.querySelectorAll('.open-study-btn');
-
-  if (!overlay || !modalContent) return;
-
-  function openStudy(studyKey) {
-    const data = caseStudiesData[studyKey];
-    if (!data) return;
-
-    modalContent.innerHTML = `
-      <div style="display: flex; flex-direction: column; gap: 20px;">
-        <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;">
-          <span class="domain-pill ${data.badgeClass}">${data.badge}</span>
-          <span style="font-size: 0.82rem; color: var(--text-muted); font-weight: 500;">${data.role}</span>
-        </div>
-
-        <div>
-          <h2 style="font-family: var(--font-family-display); font-size: 2.2rem; font-weight: 700; color: var(--text-primary); line-height: 1.2;">${data.title}</h2>
-          <p style="font-size: 1.05rem; font-weight: 500; color: var(--accent-primary); margin-top: 4px;">${data.subtitle}</p>
-        </div>
-
-        <div style="background: var(--bg-subtle); border-radius: 16px; padding: 20px; border: 1px solid var(--border-card);">
-          <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 8px;">Product Overview</div>
-          <p style="font-size: 0.96rem; color: var(--text-secondary); line-height: 1.65;">${data.overview}</p>
-        </div>
-
-        <div>
-          <h3 style="font-family: var(--font-family-display); font-size: 1.2rem; font-weight: 700; color: var(--text-primary); margin-bottom: 12px;">Core Product Pillars</h3>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px;">
-            ${data.pillars.map((pillar, idx) => `
-              <div style="display: flex; align-items: center; gap: 10px; background: #FFFFFF; border: 1px solid var(--border-card); border-radius: 12px; padding: 10px 14px; font-size: 0.86rem; color: var(--text-secondary);">
-                <span class="pillar-num-badge">${idx + 1}</span>
-                <span>${pillar}</span>
-              </div>
-            `).join('')}
-          </div>
-        </div>
-
-        <div>
-          <h3 style="font-family: var(--font-family-display); font-size: 1.2rem; font-weight: 700; color: var(--text-primary); margin-bottom: 12px;">Key Contributions & Systems Designed</h3>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px;">
-            ${data.contributions.map(item => `
-              <li style="position: relative; padding-left: 20px; font-size: 0.94rem; color: var(--text-secondary); line-height: 1.6;">
-                <span style="position: absolute; left: 0; color: var(--accent-primary); font-weight: bold;">✓</span>
-                ${item}
-              </li>
-            `).join('')}
-          </ul>
-        </div>
-
-        <div>
-          <h3 style="font-family: var(--font-family-display); font-size: 1.2rem; font-weight: 700; color: var(--text-primary); margin-bottom: 12px;">Research, Data & Logic</h3>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px;">
-            ${data.researchData.map(item => `
-              <li style="position: relative; padding-left: 20px; font-size: 0.94rem; color: var(--text-secondary); line-height: 1.6;">
-                <span style="position: absolute; left: 0; color: #10B981; font-weight: bold;">✦</span>
-                ${item}
-              </li>
-            `).join('')}
-          </ul>
-        </div>
-
-        <div style="background: var(--pastel-sage-bg); border-radius: 16px; padding: 20px; border: 1px solid var(--pastel-sage-border);">
-          <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--pastel-sage-text); margin-bottom: 8px;">Platform Impact</div>
-          <p style="font-size: 0.96rem; color: var(--pastel-sage-text); line-height: 1.65; font-weight: 500;">${data.impact}</p>
-        </div>
-
-        <div>
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
-            <h3 style="font-family: var(--font-family-display); font-size: 1.2rem; font-weight: 700; color: var(--text-primary);">High-Resolution Screen Flows</h3>
-            <span style="font-size: 0.8rem; color: var(--text-muted);">Click any screen to view fullscreen</span>
-          </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px;">
-            ${data.gallery.map(img => `
-              <div class="sample-thumb-item modal-screen-trigger" data-img="${img.src}" data-caption="${img.caption}">
-                <div class="sample-thumb-img-wrap" style="height: 110px;">
-                  <img src="${img.src}" alt="${img.caption}" class="sample-thumb-img">
-                </div>
-                <span class="sample-thumb-label">${img.caption.split(' - ')[1] || img.caption}</span>
-              </div>
-            `).join('')}
-          </div>
-        </div>
-      </div>
-    `;
-
-    // Bind sub-screen triggers inside modal to lightbox with full gallery context
-    modalContent.querySelectorAll('.modal-screen-trigger').forEach((thumb, idx) => {
-      thumb.addEventListener('click', () => {
-        const src = thumb.getAttribute('data-img');
-        const caption = thumb.getAttribute('data-caption');
-        openLightbox(src, caption, data.gallery, idx);
-      });
-    });
-
-    overlay.classList.add('active');
-    overlay.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeModal() {
-    overlay.classList.remove('active');
-    overlay.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-  }
-
-  triggers.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const studyKey = btn.getAttribute('data-study');
-      openStudy(studyKey);
-    });
-  });
-
-  if (closeBtn) closeBtn.addEventListener('click', closeModal);
-  overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) closeModal();
-  });
-
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && overlay.classList.contains('active')) {
-      closeModal();
-    }
-  });
-}
 
 // ==========================================
 // 6. Lightbox Viewer for Images & Schematics with Next/Prev Navigation
@@ -920,10 +790,7 @@ function initLightbox() {
   function closeLightbox() {
     overlay.classList.remove('active');
     overlay.setAttribute('aria-hidden', 'true');
-    const studyModal = document.getElementById('studyModalOverlay');
-    if (!studyModal || !studyModal.classList.contains('active')) {
-      document.body.style.overflow = '';
-    }
+    document.body.style.overflow = '';
   }
 
   // Bind click on all open-lightbox triggers, grouping them by their parent module or container
@@ -1039,18 +906,22 @@ function initCopyEmail() {
 
   if (!btn) return;
 
+  const originalText = btn.textContent;
+  let resetTimer = null;
+
   btn.addEventListener('click', async () => {
     try {
       await navigator.clipboard.writeText(email);
-      const originalText = btn.textContent;
+      if (resetTimer) clearTimeout(resetTimer);
       btn.textContent = 'Copied!';
       btn.style.background = '#10B981';
       btn.style.transform = 'scale(1.08)';
 
-      setTimeout(() => {
+      resetTimer = setTimeout(() => {
         btn.textContent = originalText;
         btn.style.background = '';
         btn.style.transform = '';
+        resetTimer = null;
       }, 2000);
     } catch {
       window.location.href = `mailto:${email}`;
@@ -1131,9 +1002,13 @@ window.handleFormSubmit = async function(e) {
   }
   if (feedback) feedback.style.display = 'none';
 
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 12000);
+
   try {
     const response = await fetch('https://formsubmit.co/ajax/work.sparshgupta@gmail.com', {
       method: 'POST',
+      signal: controller.signal,
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
@@ -1147,9 +1022,11 @@ window.handleFormSubmit = async function(e) {
       })
     });
 
+    clearTimeout(timeoutId);
     const result = await response.json();
 
-    if (response.ok && result.success !== 'false') {
+    const isSuccess = response.ok && (result.success === true || result.success === 'true');
+    if (isSuccess) {
       if (feedback) {
         feedback.style.display = 'block';
         feedback.textContent = `Thank you, ${name}! Your message has been sent directly to Sparsh's inbox.`;
@@ -1162,6 +1039,7 @@ window.handleFormSubmit = async function(e) {
       throw new Error(result.message || 'Submission failed');
     }
   } catch (err) {
+    clearTimeout(timeoutId);
     // Graceful fallback to direct mailto if network fails
     if (feedback) {
       feedback.style.display = 'block';
@@ -1171,7 +1049,7 @@ window.handleFormSubmit = async function(e) {
       feedback.style.border = '1px solid #BBF7D0';
     }
     const mailtoLink = `mailto:work.sparshgupta@gmail.com?subject=Contact%20from%20${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0A%0AFrom:%20${encodeURIComponent(name)}%20(${encodeURIComponent(email)})`;
-    window.open(mailtoLink, '_blank');
+    window.location.href = mailtoLink;
   } finally {
     if (submitBtn) {
       submitBtn.disabled = false;
@@ -1676,6 +1554,10 @@ function initSpeculativePrefetch() {
     if (!link) return;
     const href = link.getAttribute('href');
     if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('http://') || href.startsWith('https://') || href.startsWith('javascript:')) {
+      return;
+    }
+    // Only prefetch HTML / page navigation targets, never binary files like PDFs or images
+    if (/\.(pdf|zip|png|jpe?g|webp|svg|gif|mp4|webm|ico)$/i.test(href)) {
       return;
     }
     prefetchUrl(href);

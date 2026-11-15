@@ -168,7 +168,6 @@ input::-moz-focus-inner {
 .nav-pill-bar,
 .showcase-switch-pill,
 .study-switch-pills,
-.mobile-bottom-nav,
 .no-scrollbar {
   scrollbar-width: none !important;
   -ms-overflow-style: none !important;
@@ -179,7 +178,6 @@ input::-moz-focus-inner {
 .nav-pill-bar::-webkit-scrollbar,
 .showcase-switch-pill::-webkit-scrollbar,
 .study-switch-pills::-webkit-scrollbar,
-.mobile-bottom-nav::-webkit-scrollbar,
 .no-scrollbar::-webkit-scrollbar {
   display: none !important;
   width: 0 !important;
@@ -624,17 +622,6 @@ input::-moz-focus-inner {
 .btn-accent:hover {
   background: #E0E7FF;
   transform: translateY(-2px) scale(1.02);
-}
-
-.mobile-menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.3rem;
-  color: var(--text-primary);
-  cursor: pointer;
-  padding: 6px;
-  border-radius: 8px;
 }
 
 /* ==========================================================================
@@ -1962,53 +1949,6 @@ section[id] {
 /* ==========================================================================
    SKILLS & DISCIPLINES MATRIX
    ========================================================================== */
-.skills-matrix-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
-.skill-matrix-card {
-  background: #FFFFFF;
-  border: 1px solid var(--border-card);
-  border-radius: var(--radius-lg);
-  padding: 24px;
-  box-shadow: var(--shadow-card);
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  transition: all var(--transition-bounce);
-}
-
-.skill-matrix-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-card-hover);
-  border-color: var(--border-card-hover);
-}
-
-.skill-icon-bubble {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.15rem;
-}
-
-.skill-card-name {
-  font-family: var(--font-family-display);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--text-primary);
-}
-
-.skill-card-desc {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  line-height: 1.5;
-}
-
 .skill-pill-tags {
   display: flex;
   flex-wrap: wrap;
@@ -2583,9 +2523,6 @@ textarea.form-input-control {
   }
   .extra-bento-card.card-wide-2 {
     grid-column: span 2;
-  }
-  .skills-matrix-grid {
-    grid-template-columns: repeat(2, 1fr);
   }
   .about-card-lab {
     grid-template-columns: 1fr;
@@ -3612,10 +3549,6 @@ textarea.form-input-control {
     grid-column: span 1;
   }
 
-  .skills-matrix-grid {
-    grid-template-columns: 1fr;
-  }
-
   .experience-card-lab {
     padding: 22px 18px;
     border-radius: var(--radius-lg);
@@ -4278,27 +4211,7 @@ textarea.form-input-control {
   transition: opacity 0.25s ease;
 }
 
-.study-deepdive-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
-  margin-bottom: 32px;
-}
 
-.study-deepdive-card {
-  background: #FFFFFF;
-  border: 1px solid var(--border-card);
-  border-radius: var(--radius-xl);
-  padding: 34px;
-  box-shadow: var(--shadow-card);
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.study-deepdive-card.card-full-width {
-  grid-column: 1 / -1;
-}
 
 .study-section-title {
   font-family: var(--font-family-display);

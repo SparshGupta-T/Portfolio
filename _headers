@@ -7,62 +7,63 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
 
-# Vite bundled assets (fingerprinted with content hash)
+# Vite bundled assets (strictly fingerprinted with content hash)
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
-# Static image & media formats (1-year immutable cache)
-/*.webp
-  Cache-Control: public, max-age=31536000, immutable
+# Unhashed static project folders (1 day fresh, 7 days stale-while-revalidate with ETag)
+/CheckIn/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
 
-/*.png
-  Cache-Control: public, max-age=31536000, immutable
+/Johnson Controls/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
 
-/*.jpg
-  Cache-Control: public, max-age=31536000, immutable
+/LOGOS/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
 
-/*.jpeg
-  Cache-Control: public, max-age=31536000, immutable
+/MyCouncilor/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
 
-/*.svg
-  Cache-Control: public, max-age=31536000, immutable
+/RecycleNET/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
 
-/*.ico
-  Cache-Control: public, max-age=31536000, immutable
+/Scalenow Technosolutions/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
 
+/Skills Logo/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/SupportFit/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/SupportRoom/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/TravelHoster/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+# Fonts (immutable)
 /*.woff2
   Cache-Control: public, max-age=31536000, immutable
 
 /*.woff
   Cache-Control: public, max-age=31536000, immutable
 
-# Static project folders
-/RecycleNET/*
-  Cache-Control: public, max-age=31536000, immutable
+# Root social share images & favicons
+/og-*.png
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
 
-/SupportFit/*
-  Cache-Control: public, max-age=31536000, immutable
+/favicon*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
 
-/TravelHoster/*
-  Cache-Control: public, max-age=31536000, immutable
+/apple-touch-icon.png
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
 
-/MyCouncilor/*
-  Cache-Control: public, max-age=31536000, immutable
-
-/CheckIn/*
-  Cache-Control: public, max-age=31536000, immutable
-
-/LOGOS/*
-  Cache-Control: public, max-age=31536000, immutable
-
-/SupportRoom/*
-  Cache-Control: public, max-age=31536000, immutable
-
-# PDFs (Resume)
-/*.pdf
+# Resume PDF
+/Sparsh_Resume.pdf
   Cache-Control: public, max-age=86400, stale-while-revalidate=3600
 
-# HTML documents (always revalidate to ensure instantaneous live updates on each new deploy)
+# HTML documents (always revalidate to ensure instantaneous live updates on deploy)
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
 

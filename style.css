@@ -5148,15 +5148,15 @@ textarea.form-input-control {
   .ambient-glow,
   .subtle-dot-matrix,
   .header-container,
-  .mobile-drawer-overlay,
+  .mobile-nav-backdrop,
+  .mobile-nav-drawer,
   .case-study-back-pill,
   .nav-pill-bar,
   .stage-nav-arrow,
   .screen-selector-bar,
   .custom-cursor-dot,
-  .custom-cursor-follower,
-  .lab-modal-overlay,
-  .btn-open-study {
+  .custom-cursor-blob,
+  .lab-modal-overlay {
     display: none !important;
   }
 

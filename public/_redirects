@@ -1,0 +1,8 @@
+# Cloudflare Pages Redirects & Bio Shortcuts
+# https://developers.cloudflare.com/pages/configuration/redirects/
+
+# Professional Shorthand Redirects for bio, resume, and social links
+/resume          /Sparsh_Resume.pdf    302
+/cv              /Sparsh_Resume.pdf    302
+/linkedin        https://www.linkedin.com/in/sparsh-gupta-a9b261247  302
+/github          https://github.com/SparshGupta-T                    302

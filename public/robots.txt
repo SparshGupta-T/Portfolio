@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /404.html
+
+# Sitemap
+Sitemap: https://portfolio1-7xf.pages.dev/sitemap.xml
+

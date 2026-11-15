@@ -1,70 +1,32 @@
-import { resolve, extname } from 'path';
+import { resolve } from 'path';
 import { defineConfig } from 'vite';
-import fs from 'fs';
 
-function copyStaticAssetsPlugin() {
+// Middleware to serve extensionless URLs in local Vite dev server
+function cleanUrlsPlugin() {
   return {
-    name: 'copy-static-assets',
-    closeBundle() {
-      const rootDir = process.cwd();
-      const outDir = resolve(rootDir, 'dist');
-
-      const foldersToCopy = [
-        'CheckIn',
-        'Johnson Controls',
-        'LOGOS',
-        'MyCouncilor',
-        'RecycleNET',
-        'Scalenow Technosolutions',
-        'Skills Logo',
-        'SupportFit',
-        'SupportRoom',
-        'TravelHoster',
-      ];
-
-      const filesToCopy = [
-        'Sparsh_Resume.pdf',
-        'og-image.png',
-        'og-image.webp',
-        'favicon.ico',
-        'favicon.svg',
-        'favicon-32x32.png',
-        'apple-touch-icon.png',
-        '_headers',
-        '_redirects',
-        'robots.txt',
-        'sitemap.xml',
-      ];
-
-      foldersToCopy.forEach((folder) => {
-        const src = resolve(rootDir, folder);
-        const dest = resolve(outDir, folder);
-        if (fs.existsSync(src)) {
-          fs.cpSync(src, dest, {
-            recursive: true,
-            filter: (source) => {
-              const stat = fs.statSync(source);
-              if (stat.isDirectory()) return true;
-              return extname(source).toLowerCase() === '.webp';
-            },
-          });
+    name: 'clean-urls-dev-server',
+    configureServer(server) {
+      server.middlewares.use((req, res, next) => {
+        const cleanRoutes = [
+          '/recyclenet',
+          '/supportfit',
+          '/travelhoster',
+          '/mycouncillor',
+          '/checkin',
+        ];
+        const urlPath = req.url ? req.url.split('?')[0].split('#')[0] : '';
+        if (cleanRoutes.includes(urlPath)) {
+          req.url = req.url.replace(urlPath, urlPath + '.html');
         }
+        next();
       });
-
-      filesToCopy.forEach((file) => {
-        const src = resolve(rootDir, file);
-        const dest = resolve(outDir, file);
-        if (fs.existsSync(src)) {
-          fs.copyFileSync(src, dest);
-        }
-      });
-      console.log('✓ [vite-plugin] All static asset folders, PDFs & _headers copied to dist/');
     },
   };
 }
 
 export default defineConfig({
-  plugins: [copyStaticAssetsPlugin()],
+  publicDir: 'public',
+  plugins: [cleanUrlsPlugin()],
   build: {
     rollupOptions: {
       input: {
